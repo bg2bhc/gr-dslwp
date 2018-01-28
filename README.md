@@ -17,7 +17,7 @@ GRC hier blocks are included in the hier folder. To install, please open the .gr
 
 ## Coherent GMSK Demodulator
 ---------------------------------------
-A GMSK demodulator under development, with OQPSK type PLL, sync word detection and Turbo code.
+A GMSK demodulator under development, with OQPSK type PLL, sync word detection and Turbo codes.
 In the examples folder:
 - test_turbo_gmsk_selfloop.grc for software simulation. Try differnet ebn0, ebn0_threshold, pll_loop_bw, etc. for evaluation. 
 - test_turbo_gmsk_tx.grc and test_turbo_gmsk_rx.grc can be used for a test with real channel with 2 USRPs.
