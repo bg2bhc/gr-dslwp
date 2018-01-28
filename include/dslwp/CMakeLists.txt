@@ -21,8 +21,18 @@
 # Install public header files
 ########################################################################
 install(FILES
+    fft.h
     api.h
     tm_header_parser.h
     tm_parser.h
-    tm_parser.h DESTINATION include/dslwp
+    tm_parser.h
+    steam_to_vector_moving_window_cc.h
+    vector_padding_cc.h
+    fft_estimator_cc.h
+    set_gain_by_tag_cc.h
+    oqpsk_coherent_demod_cc.h
+    frame_spliter_c.h
+    ccsds_turbo_encode.h
+    ccsds_turbo_decode.h
+    attach_sync_marker.h DESTINATION include/dslwp
 )

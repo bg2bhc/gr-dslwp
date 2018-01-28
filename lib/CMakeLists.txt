@@ -25,10 +25,19 @@ include(GrPlatform) #define LIB_SUFFIX
 include_directories(${Boost_INCLUDE_DIR})
 link_directories(${Boost_LIBRARY_DIRS})
 list(APPEND dslwp_sources
+    libturbocodes.c
+    libconvcodes.c
     tm_header_parser_impl.cc
     tm_parser_impl.cc
-    tm_parser_impl.cc
-)
+    steam_to_vector_moving_window_cc_impl.cc
+    vector_padding_cc_impl.cc
+    fft_estimator_cc_impl.cc
+    set_gain_by_tag_cc_impl.cc
+    oqpsk_coherent_demod_cc_impl.cc
+    frame_spliter_c_impl.cc
+    ccsds_turbo_encode_impl.cc
+    ccsds_turbo_decode_impl.cc
+    attach_sync_marker_impl.cc )
 
 set(dslwp_sources "${dslwp_sources}" PARENT_SCOPE)
 if(NOT dslwp_sources)

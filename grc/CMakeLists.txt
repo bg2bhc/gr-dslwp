@@ -19,5 +19,14 @@
 install(FILES
     dslwp_tm_header_parser.xml
     dslwp_tm_parser.xml
-    dslwp_tm_parser.xml DESTINATION share/gnuradio/grc/blocks
+    dslwp_tm_parser.xml
+    dslwp_steam_to_vector_moving_window_cc.xml
+    dslwp_vector_padding_cc.xml
+    dslwp_fft_estimator_cc.xml
+    dslwp_set_gain_by_tag_cc.xml
+    dslwp_oqpsk_coherent_demod_cc.xml
+    dslwp_frame_spliter_c.xml
+    dslwp_ccsds_turbo_encode.xml
+    dslwp_ccsds_turbo_decode.xml
+    dslwp_attach_sync_marker.xml DESTINATION share/gnuradio/grc/blocks
 )

@@ -88,47 +88,47 @@ namespace gr {
 	tm_header_t header;
 	const uint8_t* bytes_in = pmt::u8vector_elements(bytes, msg_len);
 
-//	for(i=0; i<LEN_TM_HEADER; i++)
-//	{
-//		((uint8_t *)&header)[i] = bytes_in[i];
-//	}
-
-
-	((uint8_t *)&header)[0] = bytes_in[4];
-	((uint8_t *)&header)[1] = bytes_in[3];
-	((uint8_t *)&header)[2] = bytes_in[2];
-	((uint8_t *)&header)[3] = bytes_in[1];
-	((uint8_t *)&header)[4] = bytes_in[0];
-
-	fprintf(stdout, "\n**** TM Frame Header\n");
-
-	fprintf(stdout, "version_number = 0x%x\n", header.version_number);
-	fprintf(stdout, "spacecraft_id = 0x%x\n", header.spacecraft_id);
-	fprintf(stdout, "virtual_channel_id = 0x%x\n", header.virtual_channel_id);
-	fprintf(stdout, "spare = 0x%x\n", header.spare);
-	fprintf(stdout, "master_frame_count = %d\n", header.master_frame_count);
-	fprintf(stdout, "virtual_channel_frame_count = %d\n", header.virtual_channel_frame_count);
-	fprintf(stdout, "first_header_pointer = %d\n", header.first_header_pointer);
-
-	switch(header.virtual_channel_id)
+	if(msg_len>=LEN_TM_HEADER)
 	{
-		case 0:
+		((uint8_t *)&header)[0] = bytes_in[4];
+		((uint8_t *)&header)[1] = bytes_in[3];
+		((uint8_t *)&header)[2] = bytes_in[2];
+		((uint8_t *)&header)[3] = bytes_in[1];
+		((uint8_t *)&header)[4] = bytes_in[0];
+
+		fprintf(stdout, "\n**** TM Frame Header\n");
+
+		fprintf(stdout, "version_number = 0x%x\n", header.version_number);
+		fprintf(stdout, "spacecraft_id = 0x%x\n", header.spacecraft_id);
+		fprintf(stdout, "virtual_channel_id = 0x%x\n", header.virtual_channel_id);
+		fprintf(stdout, "spare = 0x%x\n", header.spare);
+		fprintf(stdout, "master_frame_count = %d\n", header.master_frame_count);
+		fprintf(stdout, "virtual_channel_frame_count = %d\n", header.virtual_channel_frame_count);
+		fprintf(stdout, "first_header_pointer = %d\n", header.first_header_pointer);
+
+		switch(header.virtual_channel_id)
 		{
-			tm_header_parser_impl::message_port_pub(tm_header_parser_impl::d_out_port_0, pmt::cons(pmt::make_dict(), pmt::init_u8vector(msg_len-LEN_TM_HEADER, (const uint8_t *)bytes_in+LEN_TM_HEADER)));
-			break;
-		}
-		case 1:
-		{
-			tm_header_parser_impl::message_port_pub(tm_header_parser_impl::d_out_port_1, pmt::cons(pmt::make_dict(), pmt::init_u8vector(msg_len-LEN_TM_HEADER, (const uint8_t *)bytes_in+LEN_TM_HEADER)));
-			break;
-		}
-		case 2:
-		{
-			tm_header_parser_impl::message_port_pub(tm_header_parser_impl::d_out_port_2, pmt::cons(pmt::make_dict(), pmt::init_u8vector(msg_len-LEN_TM_HEADER, (const uint8_t *)bytes_in+LEN_TM_HEADER)));
-			break;
+			case 0:
+			{
+				tm_header_parser_impl::message_port_pub(tm_header_parser_impl::d_out_port_0, pmt::cons(pmt::make_dict(), pmt::init_u8vector(msg_len-LEN_TM_HEADER, (const uint8_t *)bytes_in+LEN_TM_HEADER)));
+				break;
+			}
+			case 1:
+			{
+				tm_header_parser_impl::message_port_pub(tm_header_parser_impl::d_out_port_1, pmt::cons(pmt::make_dict(), pmt::init_u8vector(msg_len-LEN_TM_HEADER, (const uint8_t *)bytes_in+LEN_TM_HEADER)));
+				break;
+			}
+			case 2:
+			{
+				tm_header_parser_impl::message_port_pub(tm_header_parser_impl::d_out_port_2, pmt::cons(pmt::make_dict(), pmt::init_u8vector(msg_len-LEN_TM_HEADER, (const uint8_t *)bytes_in+LEN_TM_HEADER)));
+				break;
+			}
 		}
 	}
-
+	else
+	{
+		fprintf(stdout, "\n**** TM Frame Error: Too short PDU\n");
+	}
     }
 
     int
