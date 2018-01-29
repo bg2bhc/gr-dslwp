@@ -25,6 +25,7 @@ include(GrPlatform) #define LIB_SUFFIX
 include_directories(${Boost_INCLUDE_DIR})
 link_directories(${Boost_LIBRARY_DIRS})
 list(APPEND dslwp_sources
+    randomizer.c
     libturbocodes.c
     libconvcodes.c
     tm_header_parser_impl.cc
@@ -37,7 +38,8 @@ list(APPEND dslwp_sources
     frame_spliter_c_impl.cc
     ccsds_turbo_encode_impl.cc
     ccsds_turbo_decode_impl.cc
-    attach_sync_marker_impl.cc )
+    attach_sync_marker_impl.cc
+    ccsds_pseudo_randomizer_impl.cc )
 
 set(dslwp_sources "${dslwp_sources}" PARENT_SCOPE)
 if(NOT dslwp_sources)

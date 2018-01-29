@@ -19,6 +19,7 @@
 #include "dslwp/ccsds_turbo_encode.h"
 #include "dslwp/ccsds_turbo_decode.h"
 #include "dslwp/attach_sync_marker.h"
+#include "dslwp/ccsds_pseudo_randomizer.h"
 %}
 
 
@@ -51,3 +52,5 @@ GR_SWIG_BLOCK_MAGIC2(dslwp, ccsds_turbo_encode);
 GR_SWIG_BLOCK_MAGIC2(dslwp, ccsds_turbo_decode);
 %include "dslwp/attach_sync_marker.h"
 GR_SWIG_BLOCK_MAGIC2(dslwp, attach_sync_marker);
+%include "dslwp/ccsds_pseudo_randomizer.h"
+GR_SWIG_BLOCK_MAGIC2(dslwp, ccsds_pseudo_randomizer);

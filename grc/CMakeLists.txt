@@ -28,5 +28,6 @@ install(FILES
     dslwp_frame_spliter_c.xml
     dslwp_ccsds_turbo_encode.xml
     dslwp_ccsds_turbo_decode.xml
-    dslwp_attach_sync_marker.xml DESTINATION share/gnuradio/grc/blocks
+    dslwp_attach_sync_marker.xml
+    dslwp_ccsds_pseudo_randomizer.xml DESTINATION share/gnuradio/grc/blocks
 )

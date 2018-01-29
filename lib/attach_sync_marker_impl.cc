@@ -43,7 +43,7 @@ namespace gr {
       : gr::sync_block("attach_sync_marker",
               gr::io_signature::make(0, 0, sizeof(float)),
               gr::io_signature::make(0, 0, sizeof(float))),
-d_marker(marker), d_data_format(data_format)
+              d_marker(marker), d_data_format(data_format)
     {
 		d_in_port = pmt::mp("in");
       	message_port_register_in(d_in_port);
@@ -116,7 +116,7 @@ d_marker(marker), d_data_format(data_format)
 			}
 			default:
 			{
-				fprintf(stdout, "\n**** ERROR: Data format do not match!\n");
+				fprintf(stdout, "\n**** ERROR: Unknown data format!\n");
 			}
 		}
     }

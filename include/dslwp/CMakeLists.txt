@@ -34,5 +34,6 @@ install(FILES
     frame_spliter_c.h
     ccsds_turbo_encode.h
     ccsds_turbo_decode.h
-    attach_sync_marker.h DESTINATION include/dslwp
+    attach_sync_marker.h
+    ccsds_pseudo_randomizer.h DESTINATION include/dslwp
 )

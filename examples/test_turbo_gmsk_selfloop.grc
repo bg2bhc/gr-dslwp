@@ -105,7 +105,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>0.5</value>
+      <value>-1</value>
     </param>
   </block>
   <block>
@@ -132,7 +132,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>0</value>
+      <value>-2</value>
     </param>
   </block>
   <block>
@@ -159,7 +159,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>8</value>
+      <value>4</value>
     </param>
   </block>
   <block>
@@ -643,7 +643,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(368, 164)</value>
+      <value>(96, 164)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1149,7 +1149,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(448, 396)</value>
+      <value>(480, 396)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1330,6 +1330,92 @@
     </param>
   </block>
   <block>
+    <key>dslwp_ccsds_pseudo_randomizer</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>data_format</key>
+      <value>3</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1040, 828)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>dslwp_ccsds_pseudo_randomizer_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+  </block>
+  <block>
+    <key>dslwp_ccsds_pseudo_randomizer</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>data_format</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(536, 172)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>dslwp_ccsds_pseudo_randomizer_0_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+  </block>
+  <block>
     <key>dslwp_ccsds_turbo_decode</key>
     <param>
       <key>base</key>
@@ -1416,7 +1502,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(600, 156)</value>
+      <value>(336, 156)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -3219,6 +3305,18 @@
     <sink_key>pdus</sink_key>
   </connection>
   <connection>
+    <source_block_id>dslwp_ccsds_pseudo_randomizer_0</source_block_id>
+    <sink_block_id>dslwp_ccsds_turbo_decode_0</sink_block_id>
+    <source_key>out</source_key>
+    <sink_key>in</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>dslwp_ccsds_pseudo_randomizer_0_0</source_block_id>
+    <sink_block_id>dslwp_attach_sync_marker_0</sink_block_id>
+    <source_key>out</source_key>
+    <sink_key>in</sink_key>
+  </connection>
+  <connection>
     <source_block_id>dslwp_ccsds_turbo_decode_0</source_block_id>
     <sink_block_id>blocks_message_debug_0_0</sink_block_id>
     <source_key>out</source_key>
@@ -3226,13 +3324,13 @@
   </connection>
   <connection>
     <source_block_id>dslwp_ccsds_turbo_encode_0</source_block_id>
-    <sink_block_id>dslwp_attach_sync_marker_0</sink_block_id>
+    <sink_block_id>dslwp_ccsds_pseudo_randomizer_0_0</sink_block_id>
     <source_key>out</source_key>
     <sink_key>in</sink_key>
   </connection>
   <connection>
     <source_block_id>dslwp_frame_spliter_c_0</source_block_id>
-    <sink_block_id>dslwp_ccsds_turbo_decode_0</sink_block_id>
+    <sink_block_id>dslwp_ccsds_pseudo_randomizer_0</sink_block_id>
     <source_key>out</source_key>
     <sink_key>in</sink_key>
   </connection>
