@@ -1427,7 +1427,7 @@
     </param>
     <param>
       <key>code_type</key>
-      <value>1</value>
+      <value>2</value>
     </param>
     <param>
       <key>comment</key>
@@ -1486,7 +1486,7 @@
     </param>
     <param>
       <key>code_type</key>
-      <value>1</value>
+      <value>2</value>
     </param>
     <param>
       <key>comment</key>

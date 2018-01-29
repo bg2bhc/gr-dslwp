@@ -17,25 +17,25 @@
     <type>int</type>
   </param>
   <param>
-    <name>Code_type</name>
+    <name>Code Type</name>
     <key>code_type</key>
-    <value>1</value>
+    <value>2</value>
 	<type>enum</type>
 	<option>
 		<name>Rate 1/2</name>
-		<key>1</key>
-	</option>
-	<option>
-		<name>Rate 1/3</name>
 		<key>2</key>
 	</option>
 	<option>
-		<name>Rate 1/4</name>
+		<name>Rate 1/3</name>
 		<key>3</key>
 	</option>
 	<option>
-		<name>Rate 1/6</name>
+		<name>Rate 1/4</name>
 		<key>4</key>
+	</option>
+	<option>
+		<name>Rate 1/6</name>
+		<key>6</key>
 	</option>
   </param>
   <param>

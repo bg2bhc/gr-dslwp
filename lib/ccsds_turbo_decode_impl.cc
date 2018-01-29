@@ -30,10 +30,10 @@
 #include <math.h>
 #include <time.h>
 
-#define RATE_1_2 1
-#define RATE_1_3 2
-#define RATE_1_4 3
-#define RATE_1_6 4
+#define RATE_1_2 2
+#define RATE_1_3 3
+#define RATE_1_4 4
+#define RATE_1_6 6
 
 namespace gr {
   namespace dslwp {
