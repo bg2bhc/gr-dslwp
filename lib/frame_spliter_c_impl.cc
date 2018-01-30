@@ -26,6 +26,8 @@
 #include "frame_spliter_c_impl.h"
 #include <stdio.h>
 
+#include <cmath>
+
 namespace gr {
   namespace dslwp {
 
@@ -100,7 +102,7 @@ namespace gr {
 
 			pmt::pmt_t p_dict = pmt::make_dict();
 
-			if(!isnan(d_eb_n0_est))
+			if(!std::isnan(d_eb_n0_est))
 			{
 				p_dict = pmt::dict_add(p_dict, pmt::mp("eb_n0_est"), pmt::from_double(d_eb_n0_est));
 			}
