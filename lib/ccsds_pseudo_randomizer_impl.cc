@@ -77,7 +77,7 @@ namespace gr {
 
 				for(int i=0; i<msg_len; i++)
 				{
-					buffer[i] = (sequence[i%255]&(0x80>>(i%8))) ? !bits_in[i] : bits_in[i];
+					buffer[i] = (sequence[(i/8)%255]&(0x80>>(i%8))) ? !bits_in[i] : bits_in[i];
 				}
 
 				ccsds_pseudo_randomizer_impl::message_port_pub(ccsds_pseudo_randomizer_impl::d_out_port, pmt::cons(meta, pmt::init_u8vector(msg_len, buffer)));
@@ -113,7 +113,7 @@ namespace gr {
 
 				for(int i=0; i<msg_len; i++)
 				{
-					buffer[i] = (sequence[i%255]&(0x80>>(i%8))) ? -bits_in[i] : bits_in[i];
+					buffer[i] = (sequence[(i/8)%255]&(0x80>>(i%8))) ? -bits_in[i] : bits_in[i];
 				}
 
 				ccsds_pseudo_randomizer_impl::message_port_pub(ccsds_pseudo_randomizer_impl::d_out_port, pmt::cons(meta, pmt::init_f32vector(msg_len, buffer)));
