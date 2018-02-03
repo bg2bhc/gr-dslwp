@@ -133,13 +133,11 @@ namespace gr {
 					add_item_tag(0, nitems_written(0)+i, pmt::mp("freq_est"), pmt::from_double(freq_est) );
 
 					gr_complex coeff, sum;
-					sum.real() = 0.0f;
-					sum.imag() = 0.0f;
+					sum = 0;
 					float phase_acc = 0.0f;
 					for(int j=0; j<d_fft_size; j++)
 					{
-						coeff.real() = cos(-phase_acc);
-						coeff.imag() = sin(-phase_acc);
+					        coeff = cos(-phase_acc) + 1i*sin(-phase_acc);
 						sum += in_s[i*d_fft_size+j] * coeff;
 
 						phase_acc += freq_est;

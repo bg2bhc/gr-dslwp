@@ -161,8 +161,7 @@ namespace gr {
 		}
 		
 		gr_complex nco;
-		nco.real() = cos(-d_phase);
-		nco.imag() = sin(-d_phase);
+		nco = cos(-d_phase) + 1i*sin(-d_phase);
 		for(int j=0; j<(d_taps.size()-1); j++)
 		{
 			d_mix_out[j] = d_mix_out[j+1];
@@ -174,8 +173,7 @@ namespace gr {
 			d_mf_out[j] = d_mf_out[j+1];
 		}		
 
-		d_mf_out[d_samples_per_symbol/2].real() = 0;
-		d_mf_out[d_samples_per_symbol/2].imag() = 0;
+		d_mf_out[d_samples_per_symbol/2] = 0;
 		for(int j=0; j<d_taps.size(); j++)
 		{
 			d_mf_out[d_samples_per_symbol/2] = d_mf_out[d_samples_per_symbol/2] + d_mix_out[j] * d_taps[j];
@@ -189,9 +187,7 @@ namespace gr {
 			//out[i_output].imag() = d_mf_out[d_samples_per_symbol/2].imag();
 
 			/* For opt_point=4, [B0, B1], [B2, B3]... */
-			out[i_output].real() = d_mf_out[0].imag();
-			out[i_output].imag() = d_mf_out[d_samples_per_symbol/2].real();
-
+			out[i_output] = d_mf_out[0].imag() + 1i*d_mf_out[d_samples_per_symbol/2].real();
 			i_output++;
 
 			/* For opt_point=12, [B-1, B0], [B1, B2]... */
