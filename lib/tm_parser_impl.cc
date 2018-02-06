@@ -148,7 +148,8 @@ namespace gr {
 					fprintf(stdout, "cam_mode = 0x%02x\n", hk_uv.cam_mode);
 					fprintf(stdout, "cam_task_flag = 0x%02x\n", hk_uv.cam_task_flag);
 					fprintf(stdout, "cam_err_flag = 0x%02x\n", hk_uv.cam_err_flag);
-					fprintf(stdout, "cam_pic_len = %d\n", hk_uv.cam_pic_len_2*2048+hk_uv.cam_pic_len_1*256+hk_uv.cam_pic_len_0);
+					fprintf(stdout, "cam_pic_len = %d\n", hk_uv.cam_pic_len_2*65536+hk_uv.cam_pic_len_1*256+hk_uv.cam_pic_len_0);
+					fprintf(stdout, "cam_pic_id = %d\n", hk_uv.cam_pic_id);
 					fprintf(stdout, "n_reset = %d\n", hk_uv.n_reset);
 					fprintf(stdout, "flag_reset = 0x%02x\n", hk_uv.flag_reset);
 					fprintf(stdout, "flag_sys = 0x%02x\n", hk_uv.flag_sys);

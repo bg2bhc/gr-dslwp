@@ -49,11 +49,12 @@ typedef struct hk_uv_t
 	// 48
 	uint8_t cam_mode;
 	uint8_t cam_task_flag;
-	int8_t cam_err_flag;
-	int8_t cam_pic_len_2;
-	int8_t cam_pic_len_1;
-	int8_t cam_pic_len_0;
-	int16_t	rsvd12;
+	uint8_t cam_err_flag;
+	uint8_t cam_pic_len_2;
+	uint8_t cam_pic_len_1;
+	uint8_t cam_pic_len_0;
+	uint8_t cam_pic_id;
+	uint8_t	rsvd12;
 	// 56
 	uint8_t n_reset;
 	uint8_t flag_reset;
