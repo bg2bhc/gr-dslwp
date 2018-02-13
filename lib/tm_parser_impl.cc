@@ -141,10 +141,10 @@ namespace gr {
 					fprintf(stdout, "n_rf_rx_fec_err = %d\n", hk_uv.n_rf_rx_fec_err);
 					fprintf(stdout, "cmd_rf_last_rx = 0x%02x\n", hk_uv.cmd_rf_last_rx);
 					fprintf(stdout, "n_ul = %d\n", sw32(hk_uv.n_ul));
-					fprintf(stdout, "fc_tc = 0x%04x\n", hk_uv.fc_tc);
-					fprintf(stdout, "fc_ham = 0x%04x\n", hk_uv.fc_ham);
-					fprintf(stdout, "rssi_tc = 0x%04x\n", hk_uv.rssi_tc);
-					fprintf(stdout, "rssi_ham = 0x%04x\n", hk_uv.rssi_ham);
+					fprintf(stdout, "fc_asm = %f\n", ((int16_t)sw16(hk_uv.fc_asm))/32768.0f*3.1416f);
+					fprintf(stdout, "snr_asm = %f\n", sw16(hk_uv.snr_asm)/256.0f);
+					fprintf(stdout, "rssi_asm = %f\n", sw16(hk_uv.rssi_asm)/10.0f);
+					fprintf(stdout, "rssi_tc = %f\n", sw16(hk_uv.rssi_tc)/10.0f);
 					fprintf(stdout, "cam_mode = 0x%02x\n", hk_uv.cam_mode);
 					fprintf(stdout, "cam_task_flag = 0x%02x\n", hk_uv.cam_task_flag);
 					fprintf(stdout, "cam_err_flag = 0x%02x\n", hk_uv.cam_err_flag);
