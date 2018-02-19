@@ -171,7 +171,7 @@ unsigned int ccsds_tx_proc(Ccsds *cc, unsigned char *symbols, unsigned int nbits
     unsigned char current_data;
     unsigned int i, j, nbytes;
 
-    if(cc->cfg_using_convolutional_code)
+    if(cc->cfg_using_convolutional_code==1)
     {
         nbytes = nbits/16;
     }
