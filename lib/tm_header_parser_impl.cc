@@ -27,7 +27,7 @@
 
 extern "C"
 {
-    #include "dslwp_tm_header.h"
+    #include "telemetry/dslwp_tm_header.h"
 }
 
 #include <stdio.h>

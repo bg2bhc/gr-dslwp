@@ -18,39 +18,39 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#ifndef INCLUDED_DSLWP_CCSDS_PSEUDO_RANDOMIZER_IMPL_H
-#define INCLUDED_DSLWP_CCSDS_PSEUDO_RANDOMIZER_IMPL_H
 
-#include <dslwp/ccsds_pseudo_randomizer.h>
-extern "C"
-{
-	#include "ccsds/randomizer.h"
-}
+#ifndef INCLUDED_DSLWP_KISS_ENCODE_PDU_H
+#define INCLUDED_DSLWP_KISS_ENCODE_PDU_H
+
+#include <dslwp/api.h>
+#include <gnuradio/block.h>
 
 namespace gr {
   namespace dslwp {
 
-    class ccsds_pseudo_randomizer_impl : public ccsds_pseudo_randomizer
+    /*!
+     * \brief <+description of block+>
+     * \ingroup dslwp
+     *
+     */
+    class DSLWP_API kiss_encode_pdu : virtual public gr::block
     {
-     private:
-      pmt::pmt_t d_in_port;
-      pmt::pmt_t d_out_port;
-      int d_data_format;
-
-      void pmt_in_callback(pmt::pmt_t msg);
-
      public:
-      ccsds_pseudo_randomizer_impl(int data_format);
-      ~ccsds_pseudo_randomizer_impl();
+      typedef boost::shared_ptr<kiss_encode_pdu> sptr;
 
-      // Where all the action really happens
-      int work(int noutput_items,
-         gr_vector_const_void_star &input_items,
-         gr_vector_void_star &output_items);
+      /*!
+       * \brief Return a shared_ptr to a new instance of dslwp::kiss_encode_pdu.
+       *
+       * To avoid accidental use of raw pointers, dslwp::kiss_encode_pdu's
+       * constructor is in a private implementation
+       * class. dslwp::kiss_encode_pdu::make is the public interface for
+       * creating new instances.
+       */
+      static sptr make(int const_length);
     };
 
   } // namespace dslwp
 } // namespace gr
 
-#endif /* INCLUDED_DSLWP_CCSDS_PSEUDO_RANDOMIZER_IMPL_H */
+#endif /* INCLUDED_DSLWP_KISS_ENCODE_PDU_H */
 

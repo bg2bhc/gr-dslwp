@@ -1,6 +1,13 @@
 /* -*- c++ -*- */
 /* 
- * Copyright 2018 <+YOU OR YOUR COMPANY+>.
+ * Copyright 2015 WEI Mingchuan, BG2BHC <bg2bhc@gmail.com>
+ * Copyright 2015 HIT Research Center of Satellite Technology
+ * Copyright 2015 HIT Amateur Radio Club, BY2HIT
+ *
+ * Harbin Institute of Technology <http://www.hit.edu.cn/>
+ * LilacSat - HIT Student Satellites <http://dslwp.hit.edu.cn/>
+ * HIT Amateur Radio Club <http://www.by2hit.net/>
+ * 
  * 
  * This is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,58 +25,40 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#ifndef INCLUDED_DSLWP_CCSDS_TURBO_ENCODE_IMPL_H
-#define INCLUDED_DSLWP_CCSDS_TURBO_ENCODE_IMPL_H
+#ifndef INCLUDED_DSLWP_fec_encode_b_IMPL_H
+#define INCLUDED_DSLWP_fec_encode_b_IMPL_H
 
-#include <dslwp/ccsds_turbo_encode.h>
+#include <dslwp/fec_encode_b.h>
+
 extern "C"
 {
-	#include "ccsds/libconvcodes.h"
-	#include "ccsds/libturbocodes.h"
+	#include "ccsds/ccsds.h"
 }
-
-#define MAX_COMPONENTS 4
 
 namespace gr {
   namespace dslwp {
 
-    class ccsds_turbo_encode_impl : public ccsds_turbo_encode
+    class fec_encode_b_impl : public fec_encode_b
     {
      private:
       pmt::pmt_t d_in_port;
-      pmt::pmt_t d_out_port;
-      int d_base;
-      int d_octets;
-      int d_code_type;
-
-      float d_rate;
-      int d_info_length;
-      int d_encoded_length;
-
-      int *d_pi;
-      const char *d_forward_upper[MAX_COMPONENTS];
-      const char *d_forward_lower[MAX_COMPONENTS];
-      const char *d_backward;
-      t_convcode d_code1;
-      t_convcode d_code2;
-      t_turbocode d_turbo;
-
-
+      pmt::pmt_t d_ptt_port;
+      Ccsds cc;
+      char d_ptt;
       void pmt_in_callback(pmt::pmt_t msg);
-      int puncturing(int k);
 
      public:
-      ccsds_turbo_encode_impl(int base, int octets, int code_type);
-      ~ccsds_turbo_encode_impl();
+      fec_encode_b_impl(int frame_len, int preamble_len, int trailer_len, bool continous, bool padding_zero, bool using_m, uint8_t using_convolutional_code);
+      ~fec_encode_b_impl();
 
       // Where all the action really happens
       int work(int noutput_items,
-         gr_vector_const_void_star &input_items,
-         gr_vector_void_star &output_items);
+	       gr_vector_const_void_star &input_items,
+	       gr_vector_void_star &output_items);
     };
 
   } // namespace dslwp
 } // namespace gr
 
-#endif /* INCLUDED_DSLWP_CCSDS_TURBO_ENCODE_IMPL_H */
+#endif /* INCLUDED_DSLWP_fec_encode_b_IMPL_H */
 

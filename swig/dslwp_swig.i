@@ -20,6 +20,9 @@
 #include "dslwp/ccsds_turbo_decode.h"
 #include "dslwp/attach_sync_marker.h"
 #include "dslwp/ccsds_pseudo_randomizer.h"
+#include "dslwp/kiss_encode_pdu.h"
+#include "dslwp/kiss_decode_pdu.h"
+#include "dslwp/fec_encode_b.h"
 %}
 
 
@@ -54,3 +57,9 @@ GR_SWIG_BLOCK_MAGIC2(dslwp, ccsds_turbo_decode);
 GR_SWIG_BLOCK_MAGIC2(dslwp, attach_sync_marker);
 %include "dslwp/ccsds_pseudo_randomizer.h"
 GR_SWIG_BLOCK_MAGIC2(dslwp, ccsds_pseudo_randomizer);
+%include "dslwp/kiss_encode_pdu.h"
+GR_SWIG_BLOCK_MAGIC2(dslwp, kiss_encode_pdu);
+%include "dslwp/kiss_decode_pdu.h"
+GR_SWIG_BLOCK_MAGIC2(dslwp, kiss_decode_pdu);
+%include "dslwp/fec_encode_b.h"
+GR_SWIG_BLOCK_MAGIC2(dslwp, fec_encode_b);

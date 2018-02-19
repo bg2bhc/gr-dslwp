@@ -18,39 +18,39 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#ifndef INCLUDED_DSLWP_CCSDS_PSEUDO_RANDOMIZER_IMPL_H
-#define INCLUDED_DSLWP_CCSDS_PSEUDO_RANDOMIZER_IMPL_H
 
-#include <dslwp/ccsds_pseudo_randomizer.h>
-extern "C"
-{
-	#include "ccsds/randomizer.h"
-}
+#ifndef INCLUDED_DSLWP_FEC_ENCODE_B_H
+#define INCLUDED_DSLWP_FEC_ENCODE_B_H
+
+#include <dslwp/api.h>
+#include <gnuradio/sync_block.h>
 
 namespace gr {
   namespace dslwp {
 
-    class ccsds_pseudo_randomizer_impl : public ccsds_pseudo_randomizer
+    /*!
+     * \brief <+description of block+>
+     * \ingroup dslwp
+     *
+     */
+    class DSLWP_API fec_encode_b : virtual public gr::sync_block
     {
-     private:
-      pmt::pmt_t d_in_port;
-      pmt::pmt_t d_out_port;
-      int d_data_format;
-
-      void pmt_in_callback(pmt::pmt_t msg);
-
      public:
-      ccsds_pseudo_randomizer_impl(int data_format);
-      ~ccsds_pseudo_randomizer_impl();
+      typedef boost::shared_ptr<fec_encode_b> sptr;
 
-      // Where all the action really happens
-      int work(int noutput_items,
-         gr_vector_const_void_star &input_items,
-         gr_vector_void_star &output_items);
+      /*!
+       * \brief Return a shared_ptr to a new instance of dslwp::fec_encode_b.
+       *
+       * To avoid accidental use of raw pointers, dslwp::fec_encode_b's
+       * constructor is in a private implementation
+       * class. dslwp::fec_encode_b::make is the public interface for
+       * creating new instances.
+       */
+      static sptr make(int frame_len, int preamble_len, int trailer_len, bool continous, bool padding_zero, bool using_m, uint8_t using_convolutional_code);
     };
 
   } // namespace dslwp
 } // namespace gr
 
-#endif /* INCLUDED_DSLWP_CCSDS_PSEUDO_RANDOMIZER_IMPL_H */
+#endif /* INCLUDED_DSLWP_FEC_ENCODE_B_H */
 

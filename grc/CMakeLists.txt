@@ -29,5 +29,8 @@ install(FILES
     dslwp_ccsds_turbo_encode.xml
     dslwp_ccsds_turbo_decode.xml
     dslwp_attach_sync_marker.xml
-    dslwp_ccsds_pseudo_randomizer.xml DESTINATION share/gnuradio/grc/blocks
+    dslwp_ccsds_pseudo_randomizer.xml
+    dslwp_kiss_encode_pdu.xml
+    dslwp_kiss_decode_pdu.xml
+    dslwp_fec_encode_b.xml DESTINATION share/gnuradio/grc/blocks
 )

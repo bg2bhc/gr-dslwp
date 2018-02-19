@@ -24,8 +24,8 @@
 #include <dslwp/ccsds_turbo_decode.h>
 extern "C"
 {
-	#include "libconvcodes.h"
-	#include "libturbocodes.h"
+	#include "ccsds/libconvcodes.h"
+	#include "ccsds/libturbocodes.h"
 }
 
 #define MAX_COMPONENTS 4

@@ -35,5 +35,8 @@ install(FILES
     ccsds_turbo_encode.h
     ccsds_turbo_decode.h
     attach_sync_marker.h
-    ccsds_pseudo_randomizer.h DESTINATION include/dslwp
+    ccsds_pseudo_randomizer.h
+    kiss_encode_pdu.h
+    kiss_decode_pdu.h
+    fec_encode_b.h DESTINATION include/dslwp
 )

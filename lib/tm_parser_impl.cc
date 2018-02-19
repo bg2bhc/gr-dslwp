@@ -30,9 +30,9 @@
 
 extern "C"
 {
-    #include "dslwp_hk.h"
-    #include "sdar_hk.h"
-    #include "dslwp_packet_header.h"
+    #include "telemetry/dslwp_hk.h"
+    #include "telemetry/sdar_hk.h"
+    #include "telemetry/dslwp_packet_header.h"
 }
 
 #define sw16(x) (uint16_t)( ( ( ((uint16_t)x) & ((uint16_t)0x00FFU) ) << 8 ) | ( ( ((uint16_t)x) & ((uint16_t)0xFF00U) ) >> 8 ) )
