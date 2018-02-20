@@ -38,5 +38,6 @@ install(FILES
     ccsds_pseudo_randomizer.h
     kiss_encode_pdu.h
     kiss_decode_pdu.h
-    fec_encode_b.h DESTINATION include/dslwp
+    fec_encode_b.h
+    differential_phase_detection_1bit_cc.h DESTINATION include/dslwp
 )

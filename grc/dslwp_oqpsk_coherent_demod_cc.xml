@@ -5,7 +5,7 @@
   <import>import dslwp</import>
   <make>dslwp.oqpsk_coherent_demod_cc($samples_per_symbol, $taps, $opt_point, $pll, $pll_loop_bw, $pll_damping, $freq_max, $freq_min, $dttl, $dttl_loop_bw, $dttl_damping, $max_rate_deviation)</make>
   <param>
-    <name>Samples per symbol</name>
+    <name>Samples per Symbol</name>
     <key>samples_per_symbol</key>
     <value>16</value>
     <type>int</type>

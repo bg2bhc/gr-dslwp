@@ -340,45 +340,44 @@ void ccsds_send(Ccsds *cc, uint8_t *message)
 
     if(cc->cfg_using_convolutional_code==2)
     {
-	int i,j;
-	uint8_t packet[255], symbols[16], byte;
-	cc->encstate = 0;
+		int i,j;
+		uint8_t packet[255], symbols[16], byte;
+		cc->encstate = 0;
 
-	for(i=0; i<cc->len_frame; i++)
-	{
-		packet[i] = message[i];
-	}
-	for(i=0; i<RS_LENGTH; i++)
-	{
-		packet[i+cc->len_frame] = rs_data[i];
-	}
-	packet[cc->len_frame+RS_LENGTH] = 0;
-
-	for(i=0; i<cc->len_frame+RS_LENGTH+1; i++)
-	{
-		byte = packet[i]^sequence[i];
-		encode27(&(cc->encstate), symbols, &byte, 1);
-
-		byte = 0;
-		for(j=0; j<8; j++)
+		for(i=0; i<cc->len_frame; i++)
 		{
-			byte = byte | (symbols[j]?(0x80>>j):0);
+			packet[i] = message[i]^sequence[i];
 		}
-		ccsds_txwrite(cc, byte);
-
-		byte = 0;
-		for(j=0; j<8; j++)
+		for(i=0; i<RS_LENGTH; i++)
 		{
-			byte = byte | (symbols[j+8]?(0x80>>j):0);
+			packet[i+cc->len_frame] = rs_data[i]^sequence[i+cc->len_frame];
 		}
-		ccsds_txwrite(cc, byte);
-	}
+		packet[cc->len_frame+RS_LENGTH] = 0;
+
+		for(i=0; i<cc->len_frame+RS_LENGTH+1; i++)
+		{
+			encode27(&(cc->encstate), symbols, packet+i, 1);
+
+			byte = 0;
+			for(j=0; j<8; j++)
+			{
+				byte = byte | (symbols[j]?(0x80>>j):0);
+			}
+			ccsds_txwrite(cc, byte);
+
+			byte = 0;
+			for(j=0; j<8; j++)
+			{
+				byte = byte | (symbols[j+8]?(0x80>>j):0);
+			}
+			ccsds_txwrite(cc, byte);
+		}
     }
     else
     {
     	int i;
-	for(i=0; i<cc->len_frame; i++) ccsds_txwrite(cc, message[i]^sequence[i]);
-	for(i=0; i<RS_LENGTH; i++) ccsds_txwrite(cc, rs_data[i]^sequence[i+cc->len_frame]);
+		for(i=0; i<cc->len_frame; i++) ccsds_txwrite(cc, message[i]^sequence[i]);
+		for(i=0; i<RS_LENGTH; i++) ccsds_txwrite(cc, rs_data[i]^sequence[i+cc->len_frame]);
     }
 }
 
