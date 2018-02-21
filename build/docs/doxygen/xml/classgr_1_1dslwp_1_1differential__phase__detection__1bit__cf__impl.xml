@@ -1,0 +1,277 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf__impl" kind="class" language="C++" prot="public">
+    <compoundname>gr::dslwp::differential_phase_detection_1bit_cf_impl</compoundname>
+    <basecompoundref refid="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf" prot="public" virt="non-virtual">gr::dslwp::differential_phase_detection_1bit_cf</basecompoundref>
+    <includes refid="differential__phase__detection__1bit__cf__impl_8h" local="no">differential_phase_detection_1bit_cf_impl.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf__impl_1a08a0d95930449481e55b2acfa8ea8a3c" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dslwp::differential_phase_detection_1bit_cf_impl::d_samples_per_symbol</definition>
+        <argsstring></argsstring>
+        <name>d_samples_per_symbol</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/differential_phase_detection_1bit_cf_impl.h" line="32" column="1" bodyfile="/home/lilac/gr-dslwp/lib/differential_phase_detection_1bit_cf_impl.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf__impl_1a6b3835295f1a0e2c25b7c6ab548056f4" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; gr_complex &gt;</type>
+        <definition>std::vector&lt;gr_complex&gt; gr::dslwp::differential_phase_detection_1bit_cf_impl::d_taps</definition>
+        <argsstring></argsstring>
+        <name>d_taps</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/differential_phase_detection_1bit_cf_impl.h" line="33" column="1" bodyfile="/home/lilac/gr-dslwp/lib/differential_phase_detection_1bit_cf_impl.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf__impl_1a11283615e08064c0a731748564aeea56" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dslwp::differential_phase_detection_1bit_cf_impl::d_opt_point</definition>
+        <argsstring></argsstring>
+        <name>d_opt_point</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/differential_phase_detection_1bit_cf_impl.h" line="34" column="1" bodyfile="/home/lilac/gr-dslwp/lib/differential_phase_detection_1bit_cf_impl.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf__impl_1a5268881193995a756cd5d028b5a4adde" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dslwp::differential_phase_detection_1bit_cf_impl::d_delay</definition>
+        <argsstring></argsstring>
+        <name>d_delay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/differential_phase_detection_1bit_cf_impl.h" line="35" column="1" bodyfile="/home/lilac/gr-dslwp/lib/differential_phase_detection_1bit_cf_impl.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf__impl_1a4ac07608d129266399de94d13277371a" prot="private" static="no" mutable="no">
+        <type>gr_complex *</type>
+        <definition>gr_complex* gr::dslwp::differential_phase_detection_1bit_cf_impl::d_mix_out</definition>
+        <argsstring></argsstring>
+        <name>d_mix_out</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/differential_phase_detection_1bit_cf_impl.h" line="37" column="1" bodyfile="/home/lilac/gr-dslwp/lib/differential_phase_detection_1bit_cf_impl.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf__impl_1aba9d7418743890e980ca0cb70946ba1b" prot="private" static="no" mutable="no">
+        <type>gr_complex *</type>
+        <definition>gr_complex* gr::dslwp::differential_phase_detection_1bit_cf_impl::d_mf_out</definition>
+        <argsstring></argsstring>
+        <name>d_mf_out</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/differential_phase_detection_1bit_cf_impl.h" line="38" column="1" bodyfile="/home/lilac/gr-dslwp/lib/differential_phase_detection_1bit_cf_impl.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf__impl_1a9aa71c298ef283a99ef759cc86cc7d5f" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dslwp::differential_phase_detection_1bit_cf_impl::d_sample_in_symbol</definition>
+        <argsstring></argsstring>
+        <name>d_sample_in_symbol</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/differential_phase_detection_1bit_cf_impl.h" line="39" column="1" bodyfile="/home/lilac/gr-dslwp/lib/differential_phase_detection_1bit_cf_impl.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf__impl_1a5a6c659c70983a7e84063f91927cd639" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float gr::dslwp::differential_phase_detection_1bit_cf_impl::d_freq</definition>
+        <argsstring></argsstring>
+        <name>d_freq</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/differential_phase_detection_1bit_cf_impl.h" line="40" column="1" bodyfile="/home/lilac/gr-dslwp/lib/differential_phase_detection_1bit_cf_impl.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf__impl_1ae957874cc39f19a00a73d8d4d7f1a734" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float gr::dslwp::differential_phase_detection_1bit_cf_impl::d_phase</definition>
+        <argsstring></argsstring>
+        <name>d_phase</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/differential_phase_detection_1bit_cf_impl.h" line="41" column="1" bodyfile="/home/lilac/gr-dslwp/lib/differential_phase_detection_1bit_cf_impl.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf__impl_1ab066e54f28ee2d8a621c76512a704e68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::dslwp::differential_phase_detection_1bit_cf_impl::differential_phase_detection_1bit_cf_impl</definition>
+        <argsstring>(int samples_per_symbol, const std::vector&lt; gr_complex &gt; &amp;taps, int opt_point, int delay)</argsstring>
+        <name>differential_phase_detection_1bit_cf_impl</name>
+        <param>
+          <type>int</type>
+          <declname>samples_per_symbol</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; gr_complex &gt; &amp;</type>
+          <declname>taps</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>opt_point</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>delay</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/differential_phase_detection_1bit_cf_impl.h" line="44" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf__impl_1a7bf5910234abdf7f67bbe149edb9a471" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::dslwp::differential_phase_detection_1bit_cf_impl::~differential_phase_detection_1bit_cf_impl</definition>
+        <argsstring>()</argsstring>
+        <name>~differential_phase_detection_1bit_cf_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/differential_phase_detection_1bit_cf_impl.h" line="45" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf__impl_1ade1483ecfbae235042bf9392b1f30cfe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dslwp::differential_phase_detection_1bit_cf_impl::forecast</definition>
+        <argsstring>(int noutput_items, gr_vector_int &amp;ninput_items_required)</argsstring>
+        <name>forecast</name>
+        <param>
+          <type>int</type>
+          <declname>noutput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_int &amp;</type>
+          <declname>ninput_items_required</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/differential_phase_detection_1bit_cf_impl.h" line="48" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf__impl_1a77888d61484655fff9bf91cc28c7f444" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::dslwp::differential_phase_detection_1bit_cf_impl::general_work</definition>
+        <argsstring>(int noutput_items, gr_vector_int &amp;ninput_items, gr_vector_const_void_star &amp;input_items, gr_vector_void_star &amp;output_items)</argsstring>
+        <name>general_work</name>
+        <param>
+          <type>int</type>
+          <declname>noutput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_int &amp;</type>
+          <declname>ninput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_const_void_star &amp;</type>
+          <declname>input_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_void_star &amp;</type>
+          <declname>output_items</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/differential_phase_detection_1bit_cf_impl.h" line="50" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="55">
+        <label>gr::dslwp::differential_phase_detection_1bit_cf_impl</label>
+        <link refid="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf__impl"/>
+        <childnode refid="56" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="57">
+        <label>block</label>
+      </node>
+      <node id="56">
+        <label>gr::dslwp::differential_phase_detection_1bit_cf</label>
+        <link refid="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf"/>
+        <childnode refid="57" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="58">
+        <label>gr::dslwp::differential_phase_detection_1bit_cf_impl</label>
+        <link refid="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf__impl"/>
+        <childnode refid="59" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="60">
+        <label>block</label>
+      </node>
+      <node id="59">
+        <label>gr::dslwp::differential_phase_detection_1bit_cf</label>
+        <link refid="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf"/>
+        <childnode refid="60" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/lilac/gr-dslwp/lib/differential_phase_detection_1bit_cf_impl.h" line="30" column="1" bodyfile="/home/lilac/gr-dslwp/lib/differential_phase_detection_1bit_cf_impl.h" bodystart="29" bodyend="54"/>
+    <listofallmembers>
+      <member refid="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf__impl_1a5268881193995a756cd5d028b5a4adde" prot="private" virt="non-virtual"><scope>gr::dslwp::differential_phase_detection_1bit_cf_impl</scope><name>d_delay</name></member>
+      <member refid="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf__impl_1a5a6c659c70983a7e84063f91927cd639" prot="private" virt="non-virtual"><scope>gr::dslwp::differential_phase_detection_1bit_cf_impl</scope><name>d_freq</name></member>
+      <member refid="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf__impl_1aba9d7418743890e980ca0cb70946ba1b" prot="private" virt="non-virtual"><scope>gr::dslwp::differential_phase_detection_1bit_cf_impl</scope><name>d_mf_out</name></member>
+      <member refid="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf__impl_1a4ac07608d129266399de94d13277371a" prot="private" virt="non-virtual"><scope>gr::dslwp::differential_phase_detection_1bit_cf_impl</scope><name>d_mix_out</name></member>
+      <member refid="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf__impl_1a11283615e08064c0a731748564aeea56" prot="private" virt="non-virtual"><scope>gr::dslwp::differential_phase_detection_1bit_cf_impl</scope><name>d_opt_point</name></member>
+      <member refid="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf__impl_1ae957874cc39f19a00a73d8d4d7f1a734" prot="private" virt="non-virtual"><scope>gr::dslwp::differential_phase_detection_1bit_cf_impl</scope><name>d_phase</name></member>
+      <member refid="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf__impl_1a9aa71c298ef283a99ef759cc86cc7d5f" prot="private" virt="non-virtual"><scope>gr::dslwp::differential_phase_detection_1bit_cf_impl</scope><name>d_sample_in_symbol</name></member>
+      <member refid="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf__impl_1a08a0d95930449481e55b2acfa8ea8a3c" prot="private" virt="non-virtual"><scope>gr::dslwp::differential_phase_detection_1bit_cf_impl</scope><name>d_samples_per_symbol</name></member>
+      <member refid="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf__impl_1a6b3835295f1a0e2c25b7c6ab548056f4" prot="private" virt="non-virtual"><scope>gr::dslwp::differential_phase_detection_1bit_cf_impl</scope><name>d_taps</name></member>
+      <member refid="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf__impl_1ab066e54f28ee2d8a621c76512a704e68" prot="public" virt="non-virtual"><scope>gr::dslwp::differential_phase_detection_1bit_cf_impl</scope><name>differential_phase_detection_1bit_cf_impl</name></member>
+      <member refid="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf__impl_1ade1483ecfbae235042bf9392b1f30cfe" prot="public" virt="non-virtual"><scope>gr::dslwp::differential_phase_detection_1bit_cf_impl</scope><name>forecast</name></member>
+      <member refid="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf__impl_1a77888d61484655fff9bf91cc28c7f444" prot="public" virt="non-virtual"><scope>gr::dslwp::differential_phase_detection_1bit_cf_impl</scope><name>general_work</name></member>
+      <member refid="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf_1a17f1db50687203a6bbf24291fa9c764e" prot="public" virt="non-virtual"><scope>gr::dslwp::differential_phase_detection_1bit_cf_impl</scope><name>make</name></member>
+      <member refid="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf_1ae520f29dc2353153c04f2eeffe597d7c" prot="public" virt="non-virtual"><scope>gr::dslwp::differential_phase_detection_1bit_cf_impl</scope><name>sptr</name></member>
+      <member refid="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf__impl_1a7bf5910234abdf7f67bbe149edb9a471" prot="public" virt="non-virtual"><scope>gr::dslwp::differential_phase_detection_1bit_cf_impl</scope><name>~differential_phase_detection_1bit_cf_impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

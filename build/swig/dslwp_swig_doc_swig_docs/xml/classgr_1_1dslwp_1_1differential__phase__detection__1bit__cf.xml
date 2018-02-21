@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf" kind="class" language="C++" prot="public">
+    <compoundname>gr::dslwp::differential_phase_detection_1bit_cf</compoundname>
+    <basecompoundref prot="public" virt="virtual">block</basecompoundref>
+    <includes refid="differential__phase__detection__1bit__cf_8h" local="no">differential_phase_detection_1bit_cf.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf_1ae520f29dc2353153c04f2eeffe597d7c" prot="public" static="no">
+        <type>boost::shared_ptr&lt; <ref refid="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf" kindref="compound">differential_phase_detection_1bit_cf</ref> &gt;</type>
+        <definition>typedef boost::shared_ptr&lt;differential_phase_detection_1bit_cf&gt; gr::dslwp::differential_phase_detection_1bit_cf::sptr</definition>
+        <argsstring></argsstring>
+        <name>sptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/include/dslwp/differential_phase_detection_1bit_cf.h" line="39" column="1" bodyfile="/home/lilac/gr-dslwp/include/dslwp/differential_phase_detection_1bit_cf.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf_1a17f1db50687203a6bbf24291fa9c764e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf_1ae520f29dc2353153c04f2eeffe597d7c" kindref="member">sptr</ref></type>
+        <definition>static sptr gr::dslwp::differential_phase_detection_1bit_cf::make</definition>
+        <argsstring>(int samples_per_symbol, const std::vector&lt; gr_complex &gt; &amp;taps, int opt_point, int delay)</argsstring>
+        <name>make</name>
+        <param>
+          <type>int</type>
+          <declname>samples_per_symbol</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; gr_complex &gt; &amp;</type>
+          <declname>taps</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>opt_point</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>delay</declname>
+        </param>
+        <briefdescription>
+<para>Return a shared_ptr to a new instance of <ref refid="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf" kindref="compound">dslwp::differential_phase_detection_1bit_cf</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>To avoid accidental use of raw pointers, <ref refid="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf" kindref="compound">dslwp::differential_phase_detection_1bit_cf</ref>&apos;s constructor is in a private implementation class. <ref refid="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf_1a17f1db50687203a6bbf24291fa9c764e" kindref="member">dslwp::differential_phase_detection_1bit_cf::make</ref> is the public interface for creating new instances. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/include/dslwp/differential_phase_detection_1bit_cf.h" line="49" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>&lt;+description of block+&gt; </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="17">
+        <label>block</label>
+      </node>
+      <node id="16">
+        <label>gr::dslwp::differential_phase_detection_1bit_cf</label>
+        <link refid="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf"/>
+        <childnode refid="17" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="19">
+        <label>block</label>
+      </node>
+      <node id="18">
+        <label>gr::dslwp::differential_phase_detection_1bit_cf</label>
+        <link refid="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf"/>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/lilac/gr-dslwp/include/dslwp/differential_phase_detection_1bit_cf.h" line="37" column="1" bodyfile="/home/lilac/gr-dslwp/include/dslwp/differential_phase_detection_1bit_cf.h" bodystart="36" bodyend="50"/>
+    <listofallmembers>
+      <member refid="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf_1a17f1db50687203a6bbf24291fa9c764e" prot="public" virt="non-virtual"><scope>gr::dslwp::differential_phase_detection_1bit_cf</scope><name>make</name></member>
+      <member refid="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf_1ae520f29dc2353153c04f2eeffe597d7c" prot="public" virt="non-virtual"><scope>gr::dslwp::differential_phase_detection_1bit_cf</scope><name>sptr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

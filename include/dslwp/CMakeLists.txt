@@ -39,5 +39,5 @@ install(FILES
     kiss_encode_pdu.h
     kiss_decode_pdu.h
     fec_encode_b.h
-    differential_phase_detection_1bit_cc.h DESTINATION include/dslwp
+    differential_phase_detection_1bit_cf.h DESTINATION include/dslwp
 )

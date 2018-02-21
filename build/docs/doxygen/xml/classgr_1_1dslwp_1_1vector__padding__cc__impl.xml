@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classgr_1_1dslwp_1_1vector__padding__cc__impl" kind="class" language="C++" prot="public">
+    <compoundname>gr::dslwp::vector_padding_cc_impl</compoundname>
+    <basecompoundref refid="classgr_1_1dslwp_1_1vector__padding__cc" prot="public" virt="non-virtual">gr::dslwp::vector_padding_cc</basecompoundref>
+    <includes refid="vector__padding__cc__impl_8h" local="no">vector_padding_cc_impl.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1vector__padding__cc__impl_1a74e70fb51d38a69de67fb2d8ffbb1bc4" prot="private" static="no" mutable="no">
+        <type>gr_complex</type>
+        <definition>gr_complex gr::dslwp::vector_padding_cc_impl::d_padding</definition>
+        <argsstring></argsstring>
+        <name>d_padding</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/vector_padding_cc_impl.h" line="32" column="1" bodyfile="/home/lilac/gr-dslwp/lib/vector_padding_cc_impl.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1vector__padding__cc__impl_1af95f63b17273d0d25d853d7e5089a6c3" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dslwp::vector_padding_cc_impl::d_position</definition>
+        <argsstring></argsstring>
+        <name>d_position</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/vector_padding_cc_impl.h" line="33" column="1" bodyfile="/home/lilac/gr-dslwp/lib/vector_padding_cc_impl.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1vector__padding__cc__impl_1a3fd1935dd4e8aa1c5a5b1bd8075092ee" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t gr::dslwp::vector_padding_cc_impl::d_vlen_in</definition>
+        <argsstring></argsstring>
+        <name>d_vlen_in</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/vector_padding_cc_impl.h" line="34" column="1" bodyfile="/home/lilac/gr-dslwp/lib/vector_padding_cc_impl.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1vector__padding__cc__impl_1a28a90a614f90303bfb678f4647e473d1" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t gr::dslwp::vector_padding_cc_impl::d_vlen_out</definition>
+        <argsstring></argsstring>
+        <name>d_vlen_out</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/vector_padding_cc_impl.h" line="35" column="1" bodyfile="/home/lilac/gr-dslwp/lib/vector_padding_cc_impl.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1vector__padding__cc__impl_1a0d08ef55de8f7334446262c38a9d6d46" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::dslwp::vector_padding_cc_impl::vector_padding_cc_impl</definition>
+        <argsstring>(gr_complex padding, int position, size_t vlen_in, size_t vlen_out)</argsstring>
+        <name>vector_padding_cc_impl</name>
+        <param>
+          <type>gr_complex</type>
+          <declname>padding</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>position</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>vlen_in</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>vlen_out</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/vector_padding_cc_impl.h" line="38" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1vector__padding__cc__impl_1a054500983e7577347f329d466ab27dc7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::dslwp::vector_padding_cc_impl::~vector_padding_cc_impl</definition>
+        <argsstring>()</argsstring>
+        <name>~vector_padding_cc_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/vector_padding_cc_impl.h" line="39" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1vector__padding__cc__impl_1a3f2fd13268cd261563f986b92f2c3e37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::dslwp::vector_padding_cc_impl::work</definition>
+        <argsstring>(int noutput_items, gr_vector_const_void_star &amp;input_items, gr_vector_void_star &amp;output_items)</argsstring>
+        <name>work</name>
+        <param>
+          <type>int</type>
+          <declname>noutput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_const_void_star &amp;</type>
+          <declname>input_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_void_star &amp;</type>
+          <declname>output_items</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/vector_padding_cc_impl.h" line="42" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="181">
+        <label>gr::dslwp::vector_padding_cc_impl</label>
+        <link refid="classgr_1_1dslwp_1_1vector__padding__cc__impl"/>
+        <childnode refid="182" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="182">
+        <label>gr::dslwp::vector_padding_cc</label>
+        <link refid="classgr_1_1dslwp_1_1vector__padding__cc"/>
+        <childnode refid="183" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="183">
+        <label>sync_block</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="184">
+        <label>gr::dslwp::vector_padding_cc_impl</label>
+        <link refid="classgr_1_1dslwp_1_1vector__padding__cc__impl"/>
+        <childnode refid="185" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="185">
+        <label>gr::dslwp::vector_padding_cc</label>
+        <link refid="classgr_1_1dslwp_1_1vector__padding__cc"/>
+        <childnode refid="186" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="186">
+        <label>sync_block</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/lilac/gr-dslwp/lib/vector_padding_cc_impl.h" line="30" column="1" bodyfile="/home/lilac/gr-dslwp/lib/vector_padding_cc_impl.h" bodystart="29" bodyend="45"/>
+    <listofallmembers>
+      <member refid="classgr_1_1dslwp_1_1vector__padding__cc__impl_1a74e70fb51d38a69de67fb2d8ffbb1bc4" prot="private" virt="non-virtual"><scope>gr::dslwp::vector_padding_cc_impl</scope><name>d_padding</name></member>
+      <member refid="classgr_1_1dslwp_1_1vector__padding__cc__impl_1af95f63b17273d0d25d853d7e5089a6c3" prot="private" virt="non-virtual"><scope>gr::dslwp::vector_padding_cc_impl</scope><name>d_position</name></member>
+      <member refid="classgr_1_1dslwp_1_1vector__padding__cc__impl_1a3fd1935dd4e8aa1c5a5b1bd8075092ee" prot="private" virt="non-virtual"><scope>gr::dslwp::vector_padding_cc_impl</scope><name>d_vlen_in</name></member>
+      <member refid="classgr_1_1dslwp_1_1vector__padding__cc__impl_1a28a90a614f90303bfb678f4647e473d1" prot="private" virt="non-virtual"><scope>gr::dslwp::vector_padding_cc_impl</scope><name>d_vlen_out</name></member>
+      <member refid="classgr_1_1dslwp_1_1vector__padding__cc_1a00a8b3273c9db6c9be78fbc7f169bf52" prot="public" virt="non-virtual"><scope>gr::dslwp::vector_padding_cc_impl</scope><name>make</name></member>
+      <member refid="classgr_1_1dslwp_1_1vector__padding__cc_1ac2f4a9c984208911540a148bd34702ac" prot="public" virt="non-virtual"><scope>gr::dslwp::vector_padding_cc_impl</scope><name>sptr</name></member>
+      <member refid="classgr_1_1dslwp_1_1vector__padding__cc__impl_1a0d08ef55de8f7334446262c38a9d6d46" prot="public" virt="non-virtual"><scope>gr::dslwp::vector_padding_cc_impl</scope><name>vector_padding_cc_impl</name></member>
+      <member refid="classgr_1_1dslwp_1_1vector__padding__cc__impl_1a3f2fd13268cd261563f986b92f2c3e37" prot="public" virt="non-virtual"><scope>gr::dslwp::vector_padding_cc_impl</scope><name>work</name></member>
+      <member refid="classgr_1_1dslwp_1_1vector__padding__cc__impl_1a054500983e7577347f329d466ab27dc7" prot="public" virt="non-virtual"><scope>gr::dslwp::vector_padding_cc_impl</scope><name>~vector_padding_cc_impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

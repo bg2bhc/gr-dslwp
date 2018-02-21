@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="kiss__decode__pdu_8h" kind="file" language="C++">
+    <compoundname>kiss_decode_pdu.h</compoundname>
+    <includes refid="api_8h" local="no">dslwp/api.h</includes>
+    <includes local="no">gnuradio/block.h</includes>
+    <includedby refid="kiss__decode__pdu__impl_8h" local="no">kiss_decode_pdu_impl.h</includedby>
+    <incdepgraph>
+      <node id="183">
+        <label>kiss_decode_pdu.h</label>
+        <link refid="kiss_decode_pdu.h"/>
+        <childnode refid="184" relation="include">
+        </childnode>
+        <childnode refid="186" relation="include">
+        </childnode>
+      </node>
+      <node id="185">
+        <label>gnuradio/attributes.h</label>
+      </node>
+      <node id="186">
+        <label>gnuradio/block.h</label>
+      </node>
+      <node id="184">
+        <label>dslwp/api.h</label>
+        <link refid="api_8h"/>
+        <childnode refid="185" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="188">
+        <label>kiss_decode_pdu_impl.h</label>
+        <link refid="kiss__decode__pdu__impl_8h"/>
+      </node>
+      <node id="187">
+        <label>kiss_decode_pdu.h</label>
+        <link refid="kiss_decode_pdu.h"/>
+        <childnode refid="188" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classgr_1_1dslwp_1_1kiss__decode__pdu" prot="public">gr::dslwp::kiss_decode_pdu</innerclass>
+    <innernamespace refid="namespacegr">gr</innernamespace>
+    <innernamespace refid="namespacegr_1_1dslwp">gr::dslwp</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/lilac/gr-dslwp/include/dslwp/kiss_decode_pdu.h"/>
+  </compounddef>
+</doxygen>

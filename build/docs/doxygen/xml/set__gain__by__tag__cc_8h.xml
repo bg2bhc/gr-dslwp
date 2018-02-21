@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="set__gain__by__tag__cc_8h" kind="file" language="C++">
+    <compoundname>set_gain_by_tag_cc.h</compoundname>
+    <includes refid="api_8h" local="no">dslwp/api.h</includes>
+    <includes local="no">gnuradio/sync_block.h</includes>
+    <includedby refid="set__gain__by__tag__cc__impl_8h" local="no">set_gain_by_tag_cc_impl.h</includedby>
+    <incdepgraph>
+      <node id="247">
+        <label>set_gain_by_tag_cc.h</label>
+        <link refid="set_gain_by_tag_cc.h"/>
+        <childnode refid="248" relation="include">
+        </childnode>
+        <childnode refid="250" relation="include">
+        </childnode>
+      </node>
+      <node id="250">
+        <label>gnuradio/sync_block.h</label>
+      </node>
+      <node id="249">
+        <label>gnuradio/attributes.h</label>
+      </node>
+      <node id="248">
+        <label>dslwp/api.h</label>
+        <link refid="api_8h"/>
+        <childnode refid="249" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="251">
+        <label>set_gain_by_tag_cc.h</label>
+        <link refid="set_gain_by_tag_cc.h"/>
+        <childnode refid="252" relation="include">
+        </childnode>
+      </node>
+      <node id="252">
+        <label>set_gain_by_tag_cc_impl.h</label>
+        <link refid="set__gain__by__tag__cc__impl_8h"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classgr_1_1dslwp_1_1set__gain__by__tag__cc" prot="public">gr::dslwp::set_gain_by_tag_cc</innerclass>
+    <innernamespace refid="namespacegr">gr</innernamespace>
+    <innernamespace refid="namespacegr_1_1dslwp">gr::dslwp</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/lilac/gr-dslwp/include/dslwp/set_gain_by_tag_cc.h"/>
+  </compounddef>
+</doxygen>

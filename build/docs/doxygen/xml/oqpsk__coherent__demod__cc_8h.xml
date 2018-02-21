@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="oqpsk__coherent__demod__cc_8h" kind="file" language="C++">
+    <compoundname>oqpsk_coherent_demod_cc.h</compoundname>
+    <includes refid="api_8h" local="no">dslwp/api.h</includes>
+    <includes local="no">gnuradio/block.h</includes>
+    <includedby refid="oqpsk__coherent__demod__cc__impl_8h" local="no">oqpsk_coherent_demod_cc_impl.h</includedby>
+    <incdepgraph>
+      <node id="225">
+        <label>gnuradio/attributes.h</label>
+      </node>
+      <node id="226">
+        <label>gnuradio/block.h</label>
+      </node>
+      <node id="223">
+        <label>oqpsk_coherent_demod_cc.h</label>
+        <link refid="oqpsk_coherent_demod_cc.h"/>
+        <childnode refid="224" relation="include">
+        </childnode>
+        <childnode refid="226" relation="include">
+        </childnode>
+      </node>
+      <node id="224">
+        <label>dslwp/api.h</label>
+        <link refid="api_8h"/>
+        <childnode refid="225" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="228">
+        <label>oqpsk_coherent_demod_cc_impl.h</label>
+        <link refid="oqpsk__coherent__demod__cc__impl_8h"/>
+      </node>
+      <node id="227">
+        <label>oqpsk_coherent_demod_cc.h</label>
+        <link refid="oqpsk_coherent_demod_cc.h"/>
+        <childnode refid="228" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classgr_1_1dslwp_1_1oqpsk__coherent__demod__cc" prot="public">gr::dslwp::oqpsk_coherent_demod_cc</innerclass>
+    <innernamespace refid="namespacegr">gr</innernamespace>
+    <innernamespace refid="namespacegr_1_1dslwp">gr::dslwp</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/lilac/gr-dslwp/include/dslwp/oqpsk_coherent_demod_cc.h"/>
+  </compounddef>
+</doxygen>

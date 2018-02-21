@@ -1,0 +1,271 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classgr_1_1dslwp_1_1fft__estimator__cc__impl" kind="class" language="C++" prot="public">
+    <compoundname>gr::dslwp::fft_estimator_cc_impl</compoundname>
+    <basecompoundref refid="classgr_1_1dslwp_1_1fft__estimator__cc" prot="public" virt="non-virtual">gr::dslwp::fft_estimator_cc</basecompoundref>
+    <includes refid="fft__estimator__cc__impl_8h" local="no">fft_estimator_cc_impl.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1fft__estimator__cc__impl_1a3ff4aba217ed67e6c08627cd62855567" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t gr::dslwp::fft_estimator_cc_impl::d_fft_size</definition>
+        <argsstring></argsstring>
+        <name>d_fft_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/fft_estimator_cc_impl.h" line="32" column="1" bodyfile="/home/lilac/gr-dslwp/lib/fft_estimator_cc_impl.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1fft__estimator__cc__impl_1a7eb29f2ade25688edd571441b17d2509" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float gr::dslwp::fft_estimator_cc_impl::d_threshold</definition>
+        <argsstring></argsstring>
+        <name>d_threshold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/fft_estimator_cc_impl.h" line="33" column="1" bodyfile="/home/lilac/gr-dslwp/lib/fft_estimator_cc_impl.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1fft__estimator__cc__impl_1a25d440e3d7f371793fc845dac64b8bd7" prot="private" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* gr::dslwp::fft_estimator_cc_impl::d_power</definition>
+        <argsstring></argsstring>
+        <name>d_power</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/fft_estimator_cc_impl.h" line="34" column="1" bodyfile="/home/lilac/gr-dslwp/lib/fft_estimator_cc_impl.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1fft__estimator__cc__impl_1abed2315f4cc523f4038b0003c9b2a909" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float gr::dslwp::fft_estimator_cc_impl::d_snr</definition>
+        <argsstring></argsstring>
+        <name>d_snr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/fft_estimator_cc_impl.h" line="35" column="1" bodyfile="/home/lilac/gr-dslwp/lib/fft_estimator_cc_impl.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1fft__estimator__cc__impl_1aa18e5134a674b96e6590b8e7ff76991b" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float gr::dslwp::fft_estimator_cc_impl::d_power_s_plus_n</definition>
+        <argsstring></argsstring>
+        <name>d_power_s_plus_n</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/fft_estimator_cc_impl.h" line="36" column="1" bodyfile="/home/lilac/gr-dslwp/lib/fft_estimator_cc_impl.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1fft__estimator__cc__impl_1aa8505af4e3a2672a57b004a05d148010" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float gr::dslwp::fft_estimator_cc_impl::d_power_s</definition>
+        <argsstring></argsstring>
+        <name>d_power_s</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/fft_estimator_cc_impl.h" line="37" column="1" bodyfile="/home/lilac/gr-dslwp/lib/fft_estimator_cc_impl.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1fft__estimator__cc__impl_1a787d5f7a4edd86a5048b8437e1df7ff7" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float gr::dslwp::fft_estimator_cc_impl::d_amp_i0</definition>
+        <argsstring></argsstring>
+        <name>d_amp_i0</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/fft_estimator_cc_impl.h" line="38" column="1" bodyfile="/home/lilac/gr-dslwp/lib/fft_estimator_cc_impl.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1fft__estimator__cc__impl_1afd959c4be3c7f2da171bbef4909f8661" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float gr::dslwp::fft_estimator_cc_impl::d_amp_i1</definition>
+        <argsstring></argsstring>
+        <name>d_amp_i1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/fft_estimator_cc_impl.h" line="39" column="1" bodyfile="/home/lilac/gr-dslwp/lib/fft_estimator_cc_impl.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1fft__estimator__cc__impl_1ad4c42c380cd191672524b1e86c798fe4" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dslwp::fft_estimator_cc_impl::d_index_s</definition>
+        <argsstring></argsstring>
+        <name>d_index_s</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/fft_estimator_cc_impl.h" line="40" column="1" bodyfile="/home/lilac/gr-dslwp/lib/fft_estimator_cc_impl.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1fft__estimator__cc__impl_1a48b858edca3912d401688086692ead9a" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dslwp::fft_estimator_cc_impl::d_over_threshold</definition>
+        <argsstring></argsstring>
+        <name>d_over_threshold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/fft_estimator_cc_impl.h" line="41" column="1" bodyfile="/home/lilac/gr-dslwp/lib/fft_estimator_cc_impl.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1fft__estimator__cc__impl_1a039098dbe1c9947a2a322187b960782c" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dslwp::fft_estimator_cc_impl::d_corr_found</definition>
+        <argsstring></argsstring>
+        <name>d_corr_found</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/fft_estimator_cc_impl.h" line="42" column="1" bodyfile="/home/lilac/gr-dslwp/lib/fft_estimator_cc_impl.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1fft__estimator__cc__impl_1a22fbc8512f39f1e524f16f96de2bbe3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::dslwp::fft_estimator_cc_impl::fft_estimator_cc_impl</definition>
+        <argsstring>(size_t fft_size, float threshold)</argsstring>
+        <name>fft_estimator_cc_impl</name>
+        <param>
+          <type>size_t</type>
+          <declname>fft_size</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>threshold</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/fft_estimator_cc_impl.h" line="45" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1fft__estimator__cc__impl_1ae4a3ffadbaab99fb5952b85a88064acf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::dslwp::fft_estimator_cc_impl::~fft_estimator_cc_impl</definition>
+        <argsstring>()</argsstring>
+        <name>~fft_estimator_cc_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/fft_estimator_cc_impl.h" line="46" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1fft__estimator__cc__impl_1a1fcb4697dba77fc44416390c458ea298" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::dslwp::fft_estimator_cc_impl::work</definition>
+        <argsstring>(int noutput_items, gr_vector_const_void_star &amp;input_items, gr_vector_void_star &amp;output_items)</argsstring>
+        <name>work</name>
+        <param>
+          <type>int</type>
+          <declname>noutput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_const_void_star &amp;</type>
+          <declname>input_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_void_star &amp;</type>
+          <declname>output_items</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/fft_estimator_cc_impl.h" line="49" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="80">
+        <label>gr::dslwp::fft_estimator_cc</label>
+        <link refid="classgr_1_1dslwp_1_1fft__estimator__cc"/>
+        <childnode refid="81" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="81">
+        <label>sync_block</label>
+      </node>
+      <node id="79">
+        <label>gr::dslwp::fft_estimator_cc_impl</label>
+        <link refid="classgr_1_1dslwp_1_1fft__estimator__cc__impl"/>
+        <childnode refid="80" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="83">
+        <label>gr::dslwp::fft_estimator_cc</label>
+        <link refid="classgr_1_1dslwp_1_1fft__estimator__cc"/>
+        <childnode refid="84" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="84">
+        <label>sync_block</label>
+      </node>
+      <node id="82">
+        <label>gr::dslwp::fft_estimator_cc_impl</label>
+        <link refid="classgr_1_1dslwp_1_1fft__estimator__cc__impl"/>
+        <childnode refid="83" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/lilac/gr-dslwp/lib/fft_estimator_cc_impl.h" line="30" column="1" bodyfile="/home/lilac/gr-dslwp/lib/fft_estimator_cc_impl.h" bodystart="29" bodyend="52"/>
+    <listofallmembers>
+      <member refid="classgr_1_1dslwp_1_1fft__estimator__cc__impl_1a787d5f7a4edd86a5048b8437e1df7ff7" prot="private" virt="non-virtual"><scope>gr::dslwp::fft_estimator_cc_impl</scope><name>d_amp_i0</name></member>
+      <member refid="classgr_1_1dslwp_1_1fft__estimator__cc__impl_1afd959c4be3c7f2da171bbef4909f8661" prot="private" virt="non-virtual"><scope>gr::dslwp::fft_estimator_cc_impl</scope><name>d_amp_i1</name></member>
+      <member refid="classgr_1_1dslwp_1_1fft__estimator__cc__impl_1a039098dbe1c9947a2a322187b960782c" prot="private" virt="non-virtual"><scope>gr::dslwp::fft_estimator_cc_impl</scope><name>d_corr_found</name></member>
+      <member refid="classgr_1_1dslwp_1_1fft__estimator__cc__impl_1a3ff4aba217ed67e6c08627cd62855567" prot="private" virt="non-virtual"><scope>gr::dslwp::fft_estimator_cc_impl</scope><name>d_fft_size</name></member>
+      <member refid="classgr_1_1dslwp_1_1fft__estimator__cc__impl_1ad4c42c380cd191672524b1e86c798fe4" prot="private" virt="non-virtual"><scope>gr::dslwp::fft_estimator_cc_impl</scope><name>d_index_s</name></member>
+      <member refid="classgr_1_1dslwp_1_1fft__estimator__cc__impl_1a48b858edca3912d401688086692ead9a" prot="private" virt="non-virtual"><scope>gr::dslwp::fft_estimator_cc_impl</scope><name>d_over_threshold</name></member>
+      <member refid="classgr_1_1dslwp_1_1fft__estimator__cc__impl_1a25d440e3d7f371793fc845dac64b8bd7" prot="private" virt="non-virtual"><scope>gr::dslwp::fft_estimator_cc_impl</scope><name>d_power</name></member>
+      <member refid="classgr_1_1dslwp_1_1fft__estimator__cc__impl_1aa8505af4e3a2672a57b004a05d148010" prot="private" virt="non-virtual"><scope>gr::dslwp::fft_estimator_cc_impl</scope><name>d_power_s</name></member>
+      <member refid="classgr_1_1dslwp_1_1fft__estimator__cc__impl_1aa18e5134a674b96e6590b8e7ff76991b" prot="private" virt="non-virtual"><scope>gr::dslwp::fft_estimator_cc_impl</scope><name>d_power_s_plus_n</name></member>
+      <member refid="classgr_1_1dslwp_1_1fft__estimator__cc__impl_1abed2315f4cc523f4038b0003c9b2a909" prot="private" virt="non-virtual"><scope>gr::dslwp::fft_estimator_cc_impl</scope><name>d_snr</name></member>
+      <member refid="classgr_1_1dslwp_1_1fft__estimator__cc__impl_1a7eb29f2ade25688edd571441b17d2509" prot="private" virt="non-virtual"><scope>gr::dslwp::fft_estimator_cc_impl</scope><name>d_threshold</name></member>
+      <member refid="classgr_1_1dslwp_1_1fft__estimator__cc__impl_1a22fbc8512f39f1e524f16f96de2bbe3d" prot="public" virt="non-virtual"><scope>gr::dslwp::fft_estimator_cc_impl</scope><name>fft_estimator_cc_impl</name></member>
+      <member refid="classgr_1_1dslwp_1_1fft__estimator__cc_1a8df00924a8c54889e3c798e5223e3e64" prot="public" virt="non-virtual"><scope>gr::dslwp::fft_estimator_cc_impl</scope><name>make</name></member>
+      <member refid="classgr_1_1dslwp_1_1fft__estimator__cc_1adf72eca260dbe800a5c2682e53a0a0f2" prot="public" virt="non-virtual"><scope>gr::dslwp::fft_estimator_cc_impl</scope><name>sptr</name></member>
+      <member refid="classgr_1_1dslwp_1_1fft__estimator__cc__impl_1a1fcb4697dba77fc44416390c458ea298" prot="public" virt="non-virtual"><scope>gr::dslwp::fft_estimator_cc_impl</scope><name>work</name></member>
+      <member refid="classgr_1_1dslwp_1_1fft__estimator__cc__impl_1ae4a3ffadbaab99fb5952b85a88064acf" prot="public" virt="non-virtual"><scope>gr::dslwp::fft_estimator_cc_impl</scope><name>~fft_estimator_cc_impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -23,7 +23,7 @@
 #include "dslwp/kiss_encode_pdu.h"
 #include "dslwp/kiss_decode_pdu.h"
 #include "dslwp/fec_encode_b.h"
-#include "dslwp/differential_phase_detection_1bit_cc.h"
+#include "dslwp/differential_phase_detection_1bit_cf.h"
 %}
 
 
@@ -64,5 +64,5 @@ GR_SWIG_BLOCK_MAGIC2(dslwp, kiss_encode_pdu);
 GR_SWIG_BLOCK_MAGIC2(dslwp, kiss_decode_pdu);
 %include "dslwp/fec_encode_b.h"
 GR_SWIG_BLOCK_MAGIC2(dslwp, fec_encode_b);
-%include "dslwp/differential_phase_detection_1bit_cc.h"
-GR_SWIG_BLOCK_MAGIC2(dslwp, differential_phase_detection_1bit_cc);
+%include "dslwp/differential_phase_detection_1bit_cf.h"
+GR_SWIG_BLOCK_MAGIC2(dslwp, differential_phase_detection_1bit_cf);

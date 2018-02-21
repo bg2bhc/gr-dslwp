@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespacegr_1_1dslwp" kind="namespace" language="C++">
+    <compoundname>gr::dslwp</compoundname>
+    <innerclass refid="classgr_1_1dslwp_1_1attach__sync__marker" prot="public">gr::dslwp::attach_sync_marker</innerclass>
+    <innerclass refid="classgr_1_1dslwp_1_1ccsds__pseudo__randomizer" prot="public">gr::dslwp::ccsds_pseudo_randomizer</innerclass>
+    <innerclass refid="classgr_1_1dslwp_1_1ccsds__turbo__decode" prot="public">gr::dslwp::ccsds_turbo_decode</innerclass>
+    <innerclass refid="classgr_1_1dslwp_1_1ccsds__turbo__encode" prot="public">gr::dslwp::ccsds_turbo_encode</innerclass>
+    <innerclass refid="classgr_1_1dslwp_1_1differential__phase__detection__1bit__cf" prot="public">gr::dslwp::differential_phase_detection_1bit_cf</innerclass>
+    <innerclass refid="classgr_1_1dslwp_1_1fec__encode__b" prot="public">gr::dslwp::fec_encode_b</innerclass>
+    <innerclass refid="classgr_1_1dslwp_1_1fft__complex" prot="public">gr::dslwp::fft_complex</innerclass>
+    <innerclass refid="classgr_1_1dslwp_1_1fft__estimator__cc" prot="public">gr::dslwp::fft_estimator_cc</innerclass>
+    <innerclass refid="classgr_1_1dslwp_1_1fft__real__fwd" prot="public">gr::dslwp::fft_real_fwd</innerclass>
+    <innerclass refid="classgr_1_1dslwp_1_1fft__real__rev" prot="public">gr::dslwp::fft_real_rev</innerclass>
+    <innerclass refid="classgr_1_1dslwp_1_1frame__spliter__c" prot="public">gr::dslwp::frame_spliter_c</innerclass>
+    <innerclass refid="classgr_1_1dslwp_1_1kiss__decode__pdu" prot="public">gr::dslwp::kiss_decode_pdu</innerclass>
+    <innerclass refid="classgr_1_1dslwp_1_1kiss__encode__pdu" prot="public">gr::dslwp::kiss_encode_pdu</innerclass>
+    <innerclass refid="classgr_1_1dslwp_1_1oqpsk__coherent__demod__cc" prot="public">gr::dslwp::oqpsk_coherent_demod_cc</innerclass>
+    <innerclass refid="classgr_1_1dslwp_1_1planner" prot="public">gr::dslwp::planner</innerclass>
+    <innerclass refid="classgr_1_1dslwp_1_1set__gain__by__tag__cc" prot="public">gr::dslwp::set_gain_by_tag_cc</innerclass>
+    <innerclass refid="classgr_1_1dslwp_1_1steam__to__vector__moving__window__cc" prot="public">gr::dslwp::steam_to_vector_moving_window_cc</innerclass>
+    <innerclass refid="classgr_1_1dslwp_1_1tm__header__parser" prot="public">gr::dslwp::tm_header_parser</innerclass>
+    <innerclass refid="classgr_1_1dslwp_1_1tm__parser" prot="public">gr::dslwp::tm_parser</innerclass>
+    <innerclass refid="classgr_1_1dslwp_1_1vector__padding__cc" prot="public">gr::dslwp::vector_padding_cc</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacegr_1_1dslwp_1a414064c1e647c448c967b0c5abbe1c0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="api_8h_1a7223299599ee66fc8b9bd2a19e4918a6" kindref="member">DSLWP_API</ref> gr_complex *</type>
+        <definition>DSLWP_API gr_complex* gr::dslwp::malloc_complex</definition>
+        <argsstring>(int size)</argsstring>
+        <name>malloc_complex</name>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>Helper function for allocating complex* buffers. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/include/dslwp/fft.h" line="40" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacegr_1_1dslwp_1a25c256adf8f68dbb7870b387abe4c774" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="api_8h_1a7223299599ee66fc8b9bd2a19e4918a6" kindref="member">DSLWP_API</ref> float *</type>
+        <definition>DSLWP_API float* gr::dslwp::malloc_float</definition>
+        <argsstring>(int size)</argsstring>
+        <name>malloc_float</name>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>Helper function for allocating float* buffers. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/include/dslwp/fft.h" line="44" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacegr_1_1dslwp_1a04f92ae32eee45bdd896d009b2e140d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="api_8h_1a7223299599ee66fc8b9bd2a19e4918a6" kindref="member">DSLWP_API</ref> double *</type>
+        <definition>DSLWP_API double* gr::dslwp::malloc_double</definition>
+        <argsstring>(int size)</argsstring>
+        <name>malloc_double</name>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>Helper function for allocating double* buffers. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/include/dslwp/fft.h" line="48" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacegr_1_1dslwp_1a52bba503f1de0624cdcbbd37a05769e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="api_8h_1a7223299599ee66fc8b9bd2a19e4918a6" kindref="member">DSLWP_API</ref> void</type>
+        <definition>DSLWP_API void gr::dslwp::free</definition>
+        <argsstring>(void *b)</argsstring>
+        <name>free</name>
+        <param>
+          <type>void *</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+<para>Helper function for freeing fft buffers. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/include/dslwp/fft.h" line="52" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/lilac/gr-dslwp/include/dslwp/attach_sync_marker.h" line="29" column="1"/>
+  </compounddef>
+</doxygen>

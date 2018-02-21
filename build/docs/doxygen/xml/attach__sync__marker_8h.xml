@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="attach__sync__marker_8h" kind="file" language="C++">
+    <compoundname>attach_sync_marker.h</compoundname>
+    <includes refid="api_8h" local="no">dslwp/api.h</includes>
+    <includes local="no">gnuradio/sync_block.h</includes>
+    <includedby refid="attach__sync__marker__impl_8h" local="no">attach_sync_marker_impl.h</includedby>
+    <incdepgraph>
+      <node id="39">
+        <label>gnuradio/sync_block.h</label>
+      </node>
+      <node id="38">
+        <label>gnuradio/attributes.h</label>
+      </node>
+      <node id="37">
+        <label>dslwp/api.h</label>
+        <link refid="api_8h"/>
+        <childnode refid="38" relation="include">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>attach_sync_marker.h</label>
+        <link refid="attach_sync_marker.h"/>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="41">
+        <label>attach_sync_marker_impl.h</label>
+        <link refid="attach__sync__marker__impl_8h"/>
+      </node>
+      <node id="40">
+        <label>attach_sync_marker.h</label>
+        <link refid="attach_sync_marker.h"/>
+        <childnode refid="41" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classgr_1_1dslwp_1_1attach__sync__marker" prot="public">gr::dslwp::attach_sync_marker</innerclass>
+    <innernamespace refid="namespacegr">gr</innernamespace>
+    <innernamespace refid="namespacegr_1_1dslwp">gr::dslwp</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/lilac/gr-dslwp/include/dslwp/attach_sync_marker.h"/>
+  </compounddef>
+</doxygen>

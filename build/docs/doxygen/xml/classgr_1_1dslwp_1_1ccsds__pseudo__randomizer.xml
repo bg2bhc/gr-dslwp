@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classgr_1_1dslwp_1_1ccsds__pseudo__randomizer" kind="class" language="C++" prot="public">
+    <compoundname>gr::dslwp::ccsds_pseudo_randomizer</compoundname>
+    <basecompoundref prot="public" virt="virtual">sync_block</basecompoundref>
+    <derivedcompoundref refid="classgr_1_1dslwp_1_1ccsds__pseudo__randomizer__impl" prot="public" virt="non-virtual">gr::dslwp::ccsds_pseudo_randomizer_impl</derivedcompoundref>
+    <includes refid="ccsds__pseudo__randomizer_8h" local="no">ccsds_pseudo_randomizer.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classgr_1_1dslwp_1_1ccsds__pseudo__randomizer_1aa36b2a2a09e7f0cd2c915190ce077551" prot="public" static="no">
+        <type>boost::shared_ptr&lt; <ref refid="classgr_1_1dslwp_1_1ccsds__pseudo__randomizer" kindref="compound">ccsds_pseudo_randomizer</ref> &gt;</type>
+        <definition>typedef boost::shared_ptr&lt;ccsds_pseudo_randomizer&gt; gr::dslwp::ccsds_pseudo_randomizer::sptr</definition>
+        <argsstring></argsstring>
+        <name>sptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/include/dslwp/ccsds_pseudo_randomizer.h" line="39" column="1" bodyfile="/home/lilac/gr-dslwp/include/dslwp/ccsds_pseudo_randomizer.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1ccsds__pseudo__randomizer_1add4e22d4aef78d2bef37da5a46a0fbc3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classgr_1_1dslwp_1_1ccsds__pseudo__randomizer_1aa36b2a2a09e7f0cd2c915190ce077551" kindref="member">sptr</ref></type>
+        <definition>static sptr gr::dslwp::ccsds_pseudo_randomizer::make</definition>
+        <argsstring>(int data_format)</argsstring>
+        <name>make</name>
+        <param>
+          <type>int</type>
+          <declname>data_format</declname>
+        </param>
+        <briefdescription>
+<para>Return a shared_ptr to a new instance of <ref refid="classgr_1_1dslwp_1_1ccsds__pseudo__randomizer" kindref="compound">dslwp::ccsds_pseudo_randomizer</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>To avoid accidental use of raw pointers, <ref refid="classgr_1_1dslwp_1_1ccsds__pseudo__randomizer" kindref="compound">dslwp::ccsds_pseudo_randomizer</ref>&apos;s constructor is in a private implementation class. <ref refid="classgr_1_1dslwp_1_1ccsds__pseudo__randomizer_1add4e22d4aef78d2bef37da5a46a0fbc3" kindref="member">dslwp::ccsds_pseudo_randomizer::make</ref> is the public interface for creating new instances. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/include/dslwp/ccsds_pseudo_randomizer.h" line="49" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>&lt;+description of block+&gt; </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="17">
+        <label>gr::dslwp::ccsds_pseudo_randomizer_impl</label>
+        <link refid="classgr_1_1dslwp_1_1ccsds__pseudo__randomizer__impl"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>sync_block</label>
+      </node>
+      <node id="15">
+        <label>gr::dslwp::ccsds_pseudo_randomizer</label>
+        <link refid="classgr_1_1dslwp_1_1ccsds__pseudo__randomizer"/>
+        <childnode refid="16" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="19">
+        <label>sync_block</label>
+      </node>
+      <node id="18">
+        <label>gr::dslwp::ccsds_pseudo_randomizer</label>
+        <link refid="classgr_1_1dslwp_1_1ccsds__pseudo__randomizer"/>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/lilac/gr-dslwp/include/dslwp/ccsds_pseudo_randomizer.h" line="37" column="1" bodyfile="/home/lilac/gr-dslwp/include/dslwp/ccsds_pseudo_randomizer.h" bodystart="36" bodyend="50"/>
+    <listofallmembers>
+      <member refid="classgr_1_1dslwp_1_1ccsds__pseudo__randomizer_1add4e22d4aef78d2bef37da5a46a0fbc3" prot="public" virt="non-virtual"><scope>gr::dslwp::ccsds_pseudo_randomizer</scope><name>make</name></member>
+      <member refid="classgr_1_1dslwp_1_1ccsds__pseudo__randomizer_1aa36b2a2a09e7f0cd2c915190ce077551" prot="public" virt="non-virtual"><scope>gr::dslwp::ccsds_pseudo_randomizer</scope><name>sptr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

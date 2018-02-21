@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classgr_1_1dslwp_1_1ccsds__turbo__decode" kind="class" language="C++" prot="public">
+    <compoundname>gr::dslwp::ccsds_turbo_decode</compoundname>
+    <basecompoundref prot="public" virt="virtual">sync_block</basecompoundref>
+    <includes refid="ccsds__turbo__decode_8h" local="no">ccsds_turbo_decode.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classgr_1_1dslwp_1_1ccsds__turbo__decode_1a3505c7fced8bb2e35859704415f819ed" prot="public" static="no">
+        <type>boost::shared_ptr&lt; <ref refid="classgr_1_1dslwp_1_1ccsds__turbo__decode" kindref="compound">ccsds_turbo_decode</ref> &gt;</type>
+        <definition>typedef boost::shared_ptr&lt;ccsds_turbo_decode&gt; gr::dslwp::ccsds_turbo_decode::sptr</definition>
+        <argsstring></argsstring>
+        <name>sptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/include/dslwp/ccsds_turbo_decode.h" line="39" column="1" bodyfile="/home/lilac/gr-dslwp/include/dslwp/ccsds_turbo_decode.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1ccsds__turbo__decode_1a8bbebf91c646b5110f20d9c8c3946193" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classgr_1_1dslwp_1_1ccsds__turbo__decode_1a3505c7fced8bb2e35859704415f819ed" kindref="member">sptr</ref></type>
+        <definition>static sptr gr::dslwp::ccsds_turbo_decode::make</definition>
+        <argsstring>(int base=223, int octets=1, int code_type=1, int iterations=2, float sigma=0.707)</argsstring>
+        <name>make</name>
+        <param>
+          <type>int</type>
+          <declname>base</declname>
+          <defval>223</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>octets</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>code_type</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>iterations</declname>
+          <defval>2</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>sigma</declname>
+          <defval>0.707</defval>
+        </param>
+        <briefdescription>
+<para>Return a shared_ptr to a new instance of <ref refid="classgr_1_1dslwp_1_1ccsds__turbo__decode" kindref="compound">dslwp::ccsds_turbo_decode</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>To avoid accidental use of raw pointers, <ref refid="classgr_1_1dslwp_1_1ccsds__turbo__decode" kindref="compound">dslwp::ccsds_turbo_decode</ref>&apos;s constructor is in a private implementation class. <ref refid="classgr_1_1dslwp_1_1ccsds__turbo__decode_1a8bbebf91c646b5110f20d9c8c3946193" kindref="member">dslwp::ccsds_turbo_decode::make</ref> is the public interface for creating new instances. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/include/dslwp/ccsds_turbo_decode.h" line="49" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>&lt;+description of block+&gt; </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="8">
+        <label>gr::dslwp::ccsds_turbo_decode</label>
+        <link refid="classgr_1_1dslwp_1_1ccsds__turbo__decode"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>sync_block</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="10">
+        <label>gr::dslwp::ccsds_turbo_decode</label>
+        <link refid="classgr_1_1dslwp_1_1ccsds__turbo__decode"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>sync_block</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/lilac/gr-dslwp/include/dslwp/ccsds_turbo_decode.h" line="37" column="1" bodyfile="/home/lilac/gr-dslwp/include/dslwp/ccsds_turbo_decode.h" bodystart="36" bodyend="50"/>
+    <listofallmembers>
+      <member refid="classgr_1_1dslwp_1_1ccsds__turbo__decode_1a8bbebf91c646b5110f20d9c8c3946193" prot="public" virt="non-virtual"><scope>gr::dslwp::ccsds_turbo_decode</scope><name>make</name></member>
+      <member refid="classgr_1_1dslwp_1_1ccsds__turbo__decode_1a3505c7fced8bb2e35859704415f819ed" prot="public" virt="non-virtual"><scope>gr::dslwp::ccsds_turbo_decode</scope><name>sptr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

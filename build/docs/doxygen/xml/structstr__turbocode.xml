@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structstr__turbocode" kind="struct" language="C++" prot="public">
+    <compoundname>str_turbocode</compoundname>
+    <includes refid="libturbocodes_8h" local="no">libturbocodes.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structstr__turbocode_1afe2234f419f7adc9b464b285584a8c2f" prot="public" static="no" mutable="no">
+        <type><ref refid="libconvcodes_8h_1aafb522000da615a123694bdb6d40d0c5" kindref="member">t_convcode</ref></type>
+        <definition>t_convcode str_turbocode::upper_code</definition>
+        <argsstring></argsstring>
+        <name>upper_code</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds/libturbocodes.h" line="11" column="1" bodyfile="/home/lilac/gr-dslwp/lib/ccsds/libturbocodes.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structstr__turbocode_1a07cd949fc2f3f8ab53ddd954f5966537" prot="public" static="no" mutable="no">
+        <type><ref refid="libconvcodes_8h_1aafb522000da615a123694bdb6d40d0c5" kindref="member">t_convcode</ref></type>
+        <definition>t_convcode str_turbocode::lower_code</definition>
+        <argsstring></argsstring>
+        <name>lower_code</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds/libturbocodes.h" line="12" column="1" bodyfile="/home/lilac/gr-dslwp/lib/ccsds/libturbocodes.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structstr__turbocode_1a37c30b6560ea53ed452cff6e93aafe4d" prot="public" static="no" mutable="no">
+        <type>int *</type>
+        <definition>int* str_turbocode::interleaver</definition>
+        <argsstring></argsstring>
+        <name>interleaver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds/libturbocodes.h" line="14" column="1" bodyfile="/home/lilac/gr-dslwp/lib/ccsds/libturbocodes.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structstr__turbocode_1a650b6483bacd0ff86b7990814cd743b1" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int str_turbocode::packet_length</definition>
+        <argsstring></argsstring>
+        <name>packet_length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds/libturbocodes.h" line="15" column="1" bodyfile="/home/lilac/gr-dslwp/lib/ccsds/libturbocodes.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structstr__turbocode_1a19b7d1056599cc01530c0bfc1f55882f" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int str_turbocode::encoded_length</definition>
+        <argsstring></argsstring>
+        <name>encoded_length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds/libturbocodes.h" line="16" column="1" bodyfile="/home/lilac/gr-dslwp/lib/ccsds/libturbocodes.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="173">
+        <label>str_convcode</label>
+        <link refid="structstr__convcode"/>
+      </node>
+      <node id="172">
+        <label>str_turbocode</label>
+        <link refid="structstr__turbocode"/>
+        <childnode refid="173" relation="usage">
+          <edgelabel>upper_code</edgelabel>
+          <edgelabel>lower_code</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/lilac/gr-dslwp/lib/ccsds/libturbocodes.h" line="10" column="1" bodyfile="/home/lilac/gr-dslwp/lib/ccsds/libturbocodes.h" bodystart="10" bodyend="17"/>
+    <listofallmembers>
+      <member refid="structstr__turbocode_1a19b7d1056599cc01530c0bfc1f55882f" prot="public" virt="non-virtual"><scope>str_turbocode</scope><name>encoded_length</name></member>
+      <member refid="structstr__turbocode_1a37c30b6560ea53ed452cff6e93aafe4d" prot="public" virt="non-virtual"><scope>str_turbocode</scope><name>interleaver</name></member>
+      <member refid="structstr__turbocode_1a07cd949fc2f3f8ab53ddd954f5966537" prot="public" virt="non-virtual"><scope>str_turbocode</scope><name>lower_code</name></member>
+      <member refid="structstr__turbocode_1a650b6483bacd0ff86b7990814cd743b1" prot="public" virt="non-virtual"><scope>str_turbocode</scope><name>packet_length</name></member>
+      <member refid="structstr__turbocode_1afe2234f419f7adc9b464b285584a8c2f" prot="public" virt="non-virtual"><scope>str_turbocode</scope><name>upper_code</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

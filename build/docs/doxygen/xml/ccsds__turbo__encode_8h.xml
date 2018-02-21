@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="ccsds__turbo__encode_8h" kind="file" language="C++">
+    <compoundname>ccsds_turbo_encode.h</compoundname>
+    <includes refid="api_8h" local="no">dslwp/api.h</includes>
+    <includes local="no">gnuradio/sync_block.h</includes>
+    <includedby refid="ccsds__turbo__encode__impl_8h" local="no">ccsds_turbo_encode_impl.h</includedby>
+    <incdepgraph>
+      <node id="89">
+        <label>gnuradio/sync_block.h</label>
+      </node>
+      <node id="88">
+        <label>gnuradio/attributes.h</label>
+      </node>
+      <node id="86">
+        <label>ccsds_turbo_encode.h</label>
+        <link refid="ccsds_turbo_encode.h"/>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+      </node>
+      <node id="87">
+        <label>dslwp/api.h</label>
+        <link refid="api_8h"/>
+        <childnode refid="88" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="91">
+        <label>ccsds_turbo_encode_impl.h</label>
+        <link refid="ccsds__turbo__encode__impl_8h"/>
+      </node>
+      <node id="90">
+        <label>ccsds_turbo_encode.h</label>
+        <link refid="ccsds_turbo_encode.h"/>
+        <childnode refid="91" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classgr_1_1dslwp_1_1ccsds__turbo__encode" prot="public">gr::dslwp::ccsds_turbo_encode</innerclass>
+    <innernamespace refid="namespacegr">gr</innernamespace>
+    <innernamespace refid="namespacegr_1_1dslwp">gr::dslwp</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/lilac/gr-dslwp/include/dslwp/ccsds_turbo_encode.h"/>
+  </compounddef>
+</doxygen>
