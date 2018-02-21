@@ -612,7 +612,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1136, 888)</value>
+      <value>(1136, 896)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1472,6 +1472,10 @@
     <param>
       <key>sigma</key>
       <value>0.707</value>
+    </param>
+    <param>
+      <key>update_sigma</key>
+      <value>1</value>
     </param>
   </block>
   <block>

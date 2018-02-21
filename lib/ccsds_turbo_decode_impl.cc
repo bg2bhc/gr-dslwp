@@ -39,20 +39,20 @@ namespace gr {
   namespace dslwp {
 
     ccsds_turbo_decode::sptr
-    ccsds_turbo_decode::make(int base, int octets, int code_type, int iterations, float sigma)
+    ccsds_turbo_decode::make(int base, int octets, int code_type, int iterations, float sigma, uint8_t update_sigma)
     {
       return gnuradio::get_initial_sptr
-        (new ccsds_turbo_decode_impl(base, octets, code_type, iterations, sigma));
+        (new ccsds_turbo_decode_impl(base, octets, code_type, iterations, sigma, update_sigma));
     }
 
     /*
      * The private constructor
      */
-    ccsds_turbo_decode_impl::ccsds_turbo_decode_impl(int base, int octets, int code_type, int iterations, float sigma)
+    ccsds_turbo_decode_impl::ccsds_turbo_decode_impl(int base, int octets, int code_type, int iterations, float sigma, uint8_t update_sigma)
       : gr::sync_block("ccsds_turbo_decode",
               gr::io_signature::make(0, 0, sizeof(int)),
               gr::io_signature::make(0, 0, sizeof(int))),
-              d_base(base), d_octets(octets), d_code_type(code_type), d_iterations(iterations), d_sigma(sigma)
+              d_base(base), d_octets(octets), d_code_type(code_type), d_iterations(iterations), d_sigma(sigma), d_update_sigma(update_sigma)
     {
 		d_in_port = pmt::mp("in");
       	message_port_register_in(d_in_port);
@@ -207,13 +207,16 @@ namespace gr {
 		pmt::pmt_t meta(pmt::car(msg));
 		pmt::pmt_t bits(pmt::cdr(msg));
 
-		pmt::pmt_t p_value = pmt::dict_ref(meta, pmt::mp("eb_n0_est"), pmt::mp("not_found"));
-		if(pmt::is_real(p_value))
+		if(d_update_sigma)
 		{
-			float value = pmt::to_double(p_value);
-			float sigma_old = d_sigma;
-			d_sigma = sqrt(1.0f/(value*2.0f));
-			fprintf(stdout, "\n**** Set sigma: %f -> %f\n", sigma_old, d_sigma);
+			pmt::pmt_t p_value = pmt::dict_ref(meta, pmt::mp("eb_n0_est"), pmt::mp("not_found"));
+			if(pmt::is_real(p_value))
+			{
+				float value = pmt::to_double(p_value);
+				float sigma_old = d_sigma;
+				d_sigma = sqrt(1.0f/(value*2.0f));
+				fprintf(stdout, "\n**** Set sigma: %f -> %f\n", sigma_old, d_sigma);
+			}
 		}
 
 		size_t msg_len;

@@ -33,5 +33,6 @@ install(FILES
     dslwp_kiss_encode_pdu.xml
     dslwp_kiss_decode_pdu.xml
     dslwp_fec_encode_b.xml
-    dslwp_differential_phase_detection_1bit_cf.xml DESTINATION share/gnuradio/grc/blocks
+    dslwp_differential_phase_detection_1bit_cf.xml
+    dslwp_frame_spliter_f.xml DESTINATION share/gnuradio/grc/blocks
 )

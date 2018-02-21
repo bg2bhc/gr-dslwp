@@ -23,27 +23,25 @@
 #endif
 
 #include <gnuradio/io_signature.h>
-#include "frame_spliter_c_impl.h"
+#include "frame_spliter_f_impl.h"
 #include <stdio.h>
-
-#include <cmath>
 
 namespace gr {
   namespace dslwp {
 
-    frame_spliter_c::sptr
-    frame_spliter_c::make(const std::string &key, int frame_length)
+    frame_spliter_f::sptr
+    frame_spliter_f::make(const std::string &key, int frame_length)
     {
       return gnuradio::get_initial_sptr
-        (new frame_spliter_c_impl(key, frame_length));
+        (new frame_spliter_f_impl(key, frame_length));
     }
 
     /*
      * The private constructor
      */
-    frame_spliter_c_impl::frame_spliter_c_impl(const std::string &key, int frame_length)
-      : gr::sync_block("frame_spliter_c",
-              gr::io_signature::make(1, 1, sizeof(gr_complex)),
+    frame_spliter_f_impl::frame_spliter_f_impl(const std::string &key, int frame_length)
+      : gr::block("frame_spliter_f",
+              gr::io_signature::make(1, 1, sizeof(float)),
               gr::io_signature::make(0, 0, 0)),
               d_frame_length(frame_length)
     {
@@ -58,16 +56,23 @@ namespace gr {
     /*
      * Our virtual destructor.
      */
-    frame_spliter_c_impl::~frame_spliter_c_impl()
+    frame_spliter_f_impl::~frame_spliter_f_impl()
     {
     }
 
-    int
-    frame_spliter_c_impl::work(int noutput_items,
-        gr_vector_const_void_star &input_items,
-        gr_vector_void_star &output_items)
+    void
+    frame_spliter_f_impl::forecast (int noutput_items, gr_vector_int &ninput_items_required)
     {
-      const gr_complex *in = (const gr_complex *) input_items[0];
+      /* <+forecast+> e.g. ninput_items_required[0] = noutput_items */
+    }
+
+    int
+    frame_spliter_f_impl::general_work (int noutput_items,
+                       gr_vector_int &ninput_items,
+                       gr_vector_const_void_star &input_items,
+                       gr_vector_void_star &output_items)
+    {
+      const float *in = (const float *) input_items[0];
 
       // Do <+signal processing+>
       for(int i=0; i<noutput_items; i++)
@@ -99,7 +104,7 @@ namespace gr {
 
 		if(d_bits_in>=0)
 		{
-			d_payload[d_bits_in++] = in[i].real();
+			d_payload[d_bits_in++] = in[i];
 
 			if(d_bits_in >= d_frame_length)
 			{
@@ -108,26 +113,13 @@ namespace gr {
 				{
 					p_dict = pmt::dict_add(p_dict, pmt::mp("eb_n0_est"), pmt::from_double(d_eb_n0_est));
 				}
-				frame_spliter_c_impl::message_port_pub(frame_spliter_c_impl::d_out_port, pmt::cons(p_dict, pmt::init_f32vector(d_frame_length, d_payload)));
-				d_bits_in = -1;
-				continue;
-			}
-
-			d_payload[d_bits_in++] = in[i].imag();
-
-			if(d_bits_in >= d_frame_length)
-			{
-				pmt::pmt_t p_dict = pmt::make_dict();
-				if(!std::isnan(d_eb_n0_est))
-				{
-					p_dict = pmt::dict_add(p_dict, pmt::mp("eb_n0_est"), pmt::from_double(d_eb_n0_est));
-				}
-				frame_spliter_c_impl::message_port_pub(frame_spliter_c_impl::d_out_port, pmt::cons(p_dict, pmt::init_f32vector(d_frame_length, d_payload)));
+				frame_spliter_f_impl::message_port_pub(frame_spliter_f_impl::d_out_port, pmt::cons(p_dict, pmt::init_f32vector(d_frame_length, d_payload)));
 				d_bits_in = -1;
 			}
 		}
 
       }
+      consume_each (noutput_items);
 
       // Tell runtime system how many output items we produced.
       return noutput_items;

@@ -105,7 +105,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>200</value>
+      <value>7</value>
     </param>
   </block>
   <block>
@@ -132,7 +132,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>9</value>
+      <value>5</value>
     </param>
   </block>
   <block>
@@ -455,7 +455,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>0</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -945,7 +945,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>0</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -1035,7 +1035,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>0</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -1067,7 +1067,11 @@
     </param>
     <param>
       <key>sigma</key>
-      <value>0.707</value>
+      <value>1</value>
+    </param>
+    <param>
+      <key>update_sigma</key>
+      <value>0</value>
     </param>
   </block>
   <block>
@@ -1137,7 +1141,7 @@
     </param>
     <param>
       <key>delay</key>
-      <value>1</value>
+      <value>2</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -1165,7 +1169,7 @@
     </param>
     <param>
       <key>opt_point</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>samples_per_symbol</key>
@@ -1173,7 +1177,54 @@
     </param>
     <param>
       <key>taps</key>
-      <value>[0,1,0]</value>
+      <value>[0.000000, 0.000000, 0.000000, 0.000001, 0.000075, 0.003255, 0.048048, 0.241631, 0.413981, 0.241631, 0.048048, 0.003255, 0.000075, 0.000001, 0.000000, 0.000000, 0.000000]</value>
+    </param>
+  </block>
+  <block>
+    <key>dslwp_frame_spliter_f</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>frame_length</key>
+      <value>3576</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(808, 812)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>dslwp_frame_spliter_f_0</value>
+    </param>
+    <param>
+      <key>key</key>
+      <value>payload_start</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
     </param>
   </block>
   <block>
@@ -2809,9 +2860,21 @@
   </connection>
   <connection>
     <source_block_id>dslwp_differential_phase_detection_1bit_cf_0</source_block_id>
+    <sink_block_id>dslwp_frame_spliter_f_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>dslwp_differential_phase_detection_1bit_cf_0</source_block_id>
     <sink_block_id>qtgui_time_sink_x_2_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>dslwp_frame_spliter_f_0</source_block_id>
+    <sink_block_id>dslwp_ccsds_pseudo_randomizer_0</sink_block_id>
+    <source_key>out</source_key>
+    <sink_key>in</sink_key>
   </connection>
   <connection>
     <source_block_id>dslwp_set_gain_by_tag_cc_0</source_block_id>

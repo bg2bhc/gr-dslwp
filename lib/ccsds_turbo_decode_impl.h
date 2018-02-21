@@ -43,6 +43,7 @@ namespace gr {
       int d_code_type;
       int d_iterations;
       float d_sigma;
+      bool d_update_sigma;
 
       float d_rate;
       int d_info_length;
@@ -61,7 +62,7 @@ namespace gr {
       int puncturing(int k);
 
      public:
-      ccsds_turbo_decode_impl(int base, int octets, int code_type, int iterations, float sigma);
+      ccsds_turbo_decode_impl(int base, int octets, int code_type, int iterations, float sigma, uint8_t update_sigma);
       ~ccsds_turbo_decode_impl();
 
       // Where all the action really happens

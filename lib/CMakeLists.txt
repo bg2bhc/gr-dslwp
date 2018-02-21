@@ -50,7 +50,8 @@ list(APPEND dslwp_sources
     kiss_encode_pdu_impl.cc
     kiss_decode_pdu_impl.cc
     fec_encode_b_impl.cc
-    differential_phase_detection_1bit_cf_impl.cc )
+    differential_phase_detection_1bit_cf_impl.cc
+    frame_spliter_f_impl.cc )
 
 set(dslwp_sources "${dslwp_sources}" PARENT_SCOPE)
 if(NOT dslwp_sources)

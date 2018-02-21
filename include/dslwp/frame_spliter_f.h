@@ -19,11 +19,11 @@
  */
 
 
-#ifndef INCLUDED_DSLWP_CCSDS_TURBO_DECODE_H
-#define INCLUDED_DSLWP_CCSDS_TURBO_DECODE_H
+#ifndef INCLUDED_DSLWP_FRAME_SPLITER_F_H
+#define INCLUDED_DSLWP_FRAME_SPLITER_F_H
 
 #include <dslwp/api.h>
-#include <gnuradio/sync_block.h>
+#include <gnuradio/block.h>
 
 namespace gr {
   namespace dslwp {
@@ -33,24 +33,24 @@ namespace gr {
      * \ingroup dslwp
      *
      */
-    class DSLWP_API ccsds_turbo_decode : virtual public gr::sync_block
+    class DSLWP_API frame_spliter_f : virtual public gr::block
     {
      public:
-      typedef boost::shared_ptr<ccsds_turbo_decode> sptr;
+      typedef boost::shared_ptr<frame_spliter_f> sptr;
 
       /*!
-       * \brief Return a shared_ptr to a new instance of dslwp::ccsds_turbo_decode.
+       * \brief Return a shared_ptr to a new instance of dslwp::frame_spliter_f.
        *
-       * To avoid accidental use of raw pointers, dslwp::ccsds_turbo_decode's
+       * To avoid accidental use of raw pointers, dslwp::frame_spliter_f's
        * constructor is in a private implementation
-       * class. dslwp::ccsds_turbo_decode::make is the public interface for
+       * class. dslwp::frame_spliter_f::make is the public interface for
        * creating new instances.
        */
-      static sptr make(int base=223, int octets=1, int code_type=1, int iterations=2, float sigma=0.707, uint8_t update_sigma=1);
+      static sptr make(const std::string &key, int frame_length);
     };
 
   } // namespace dslwp
 } // namespace gr
 
-#endif /* INCLUDED_DSLWP_CCSDS_TURBO_DECODE_H */
+#endif /* INCLUDED_DSLWP_FRAME_SPLITER_F_H */
 

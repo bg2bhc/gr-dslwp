@@ -3,7 +3,7 @@
   <key>dslwp_ccsds_turbo_decode</key>
   <category>[DSLWP]</category>
   <import>import dslwp</import>
-  <make>dslwp.ccsds_turbo_decode($base, $octets, $code_type, $iterations, $sigma)</make>
+  <make>dslwp.ccsds_turbo_decode($base, $octets, $code_type, $iterations, $sigma, $update_sigma)</make>
   <param>
     <name>Base</name>
     <key>base</key>
@@ -49,6 +49,20 @@
     <key>sigma</key>
     <value>0.707</value>
     <type>float</type>
+  </param>
+  <param>
+    <name>Update Sigma</name>
+    <key>update_sigma</key>
+    <value>true</value>
+    <type>enum</type>
+    <option>
+	<name>ON</name>
+	<key>1</key>
+    </option>
+    <option>
+	<name>OFF</name>
+	<key>0</key>
+    </option>
   </param>
   <sink>
     <name>in</name>
