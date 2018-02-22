@@ -143,7 +143,9 @@ namespace gr {
 		}
 
 		gr_complex nco;
-		nco = cos(-d_phase) + 1i*sin(-d_phase);
+		nco.real() = cos(-d_phase);
+		nco.imag() = sin(-d_phase);
+
 		for(int j=0; j<(d_taps.size()-1); j++)
 		{
 			d_mix_out[j] = d_mix_out[j+1];
@@ -155,7 +157,8 @@ namespace gr {
 			d_mf_out[j] = d_mf_out[j+1];
 		}		
 
-		d_mf_out[d_samples_per_symbol] = 0;
+		d_mf_out[d_samples_per_symbol].real() = 0.0f;
+		d_mf_out[d_samples_per_symbol].imag() = 0.0f;
 		for(int j=0; j<d_taps.size(); j++)
 		{
 			d_mf_out[d_samples_per_symbol] = d_mf_out[d_samples_per_symbol] + d_mix_out[j] * d_taps[j];
