@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<?grc format='1' created='3.7.12'?>
+<?grc format='1' created='3.7.11'?>
 <flow_graph>
   <timestamp>Thu Jan 25 22:01:20 2018</timestamp>
   <block>
@@ -199,7 +199,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(808, 328)</value>
+      <value>(808, 324)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -216,6 +216,10 @@
     <param>
       <key>minoutbuf</key>
       <value>0</value>
+    </param>
+    <param>
+      <key>tap_len</key>
+      <value>tap_len</value>
     </param>
     <param>
       <key>threshold</key>
@@ -355,10 +359,6 @@
       <value></value>
     </param>
     <param>
-      <key>hide</key>
-      <value>none</value>
-    </param>
-    <param>
       <key>type</key>
       <value>intx</value>
     </param>
@@ -494,10 +494,6 @@
     <param>
       <key>short_id</key>
       <value></value>
-    </param>
-    <param>
-      <key>hide</key>
-      <value>none</value>
     </param>
     <param>
       <key>type</key>
@@ -900,10 +896,6 @@
       <value></value>
     </param>
     <param>
-      <key>hide</key>
-      <value>none</value>
-    </param>
-    <param>
       <key>type</key>
       <value>intx</value>
     </param>
@@ -947,10 +939,6 @@
       <value></value>
     </param>
     <param>
-      <key>hide</key>
-      <value>none</value>
-    </param>
-    <param>
       <key>type</key>
       <value></value>
     </param>
@@ -992,10 +980,6 @@
     <param>
       <key>short_id</key>
       <value></value>
-    </param>
-    <param>
-      <key>hide</key>
-      <value>none</value>
     </param>
     <param>
       <key>type</key>

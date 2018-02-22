@@ -31,6 +31,7 @@ namespace gr {
      private:
 		size_t d_fft_size;
 		float d_threshold;
+		size_t d_tap_len;
 		float* d_power;
 		float d_snr;
 		float d_power_s_plus_n;
@@ -42,7 +43,7 @@ namespace gr {
 		int d_corr_found;
 
      public:
-      fft_estimator_cc_impl(size_t fft_size, float threshold);
+      fft_estimator_cc_impl(size_t fft_size, float threshold, size_t tap_len);
       ~fft_estimator_cc_impl();
 
       // Where all the action really happens

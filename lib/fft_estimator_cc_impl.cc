@@ -30,20 +30,20 @@ namespace gr {
   namespace dslwp {
 
     fft_estimator_cc::sptr
-    fft_estimator_cc::make(size_t fft_size, float threshold)
+    fft_estimator_cc::make(size_t fft_size, float threshold, size_t tap_len)
     {
       return gnuradio::get_initial_sptr
-        (new fft_estimator_cc_impl(fft_size, threshold));
+        (new fft_estimator_cc_impl(fft_size, threshold, tap_len));
     }
 
     /*
      * The private constructor
      */
-    fft_estimator_cc_impl::fft_estimator_cc_impl(size_t fft_size, float threshold)
+    fft_estimator_cc_impl::fft_estimator_cc_impl(size_t fft_size, float threshold, size_t tap_len)
       : gr::sync_block("fft_estimator_cc",
               gr::io_signature::make(2, 2, sizeof(gr_complex)*fft_size),
               gr::io_signature::make(1, 1, sizeof(gr_complex))),
-              d_fft_size(fft_size), d_threshold(threshold), d_over_threshold(0)
+              d_fft_size(fft_size), d_threshold(threshold), d_over_threshold(0), d_tap_len(tap_len)
     {
 		d_power = (float *)malloc(sizeof(float) * fft_size);
 		set_history(2);
@@ -123,7 +123,7 @@ namespace gr {
 				{
 					d_corr_found = 1;
 					add_item_tag(0, nitems_written(0)+i, pmt::mp("corr_start"), pmt::from_double(0.0) );
-					add_item_tag(0, nitems_written(0)+i+512, pmt::mp("payload_start"), pmt::from_double(0.0) );
+					add_item_tag(0, nitems_written(0)+i+d_tap_len, pmt::mp("payload_start"), pmt::from_double(0.0) );
 
 					float freq_est = ( d_index_s + d_amp_i1/(d_amp_i0+d_amp_i1) )/d_fft_size*2.0f*M_PI;
 					if(freq_est>M_PI)

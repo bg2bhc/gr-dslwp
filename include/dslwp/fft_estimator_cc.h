@@ -46,7 +46,7 @@ namespace gr {
        * class. dslwp::fft_estimator_cc::make is the public interface for
        * creating new instances.
        */
-      static sptr make(size_t fft_size, float threshold);
+      static sptr make(size_t fft_size, float threshold, size_t tap_len);
     };
 
   } // namespace dslwp
