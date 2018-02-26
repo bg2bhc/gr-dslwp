@@ -61,7 +61,7 @@ typedef struct hk_uv_t
 	uint8_t n_dma_overflow;
 	uint32_t runtime;
 	// 64
-	uint32_t rsvd13;
+	uint32_t seconds_since_epoch;
 	uint32_t rsvd14;
 	// 72
 } hk_uv_t;

@@ -155,6 +155,7 @@ namespace gr {
 					fprintf(stdout, "flag_sys = 0x%02x\n", hk_uv.flag_sys);
 					fprintf(stdout, "n_dma_overflow = %d\n", hk_uv.n_dma_overflow);
 					fprintf(stdout, "runtime = %f\n", ((float)sw32(hk_uv.runtime))*0.004f);
+					fprintf(stdout, "seconds_since_epoch = %d\n", sw32(hk_uv.seconds_since_epoch));
 				}
 
 				if( (header.nid == 0xA0) && (protocol==0) && (header.packet_data_len == sizeof(hk_tanrus_uv_t)) )
