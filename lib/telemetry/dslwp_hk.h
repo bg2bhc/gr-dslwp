@@ -6,10 +6,11 @@
 typedef struct hk_uv_t
 {
 	uint8_t config;
-	uint8_t tx_mode;
+	uint8_t rx_freq;
 	uint8_t tx_gain;
+	uint8_t tx_modulation;
+	uint8_t tx_coding;
 	uint8_t flag_7021;
-	uint16_t rsvd1;
 	uint8_t n_cmd_buf;
 	uint8_t n_cmd_dropped;
 	// 8
@@ -19,7 +20,8 @@ typedef struct hk_uv_t
 	uint8_t u_bus_tx;
 	int8_t t_pa;
 	int8_t t_tx7021;
-	int16_t rsvd4;
+	int8_t n_tx_jt4;
+	int8_t rsvd4;
 	// 16
 	uint8_t n_422_tx;
 	uint8_t n_422_rx;
@@ -39,9 +41,10 @@ typedef struct hk_uv_t
 	int16_t fc_asm;
 	uint16_t snr_asm;
 	uint16_t rssi_asm;
-	uint16_t rssi_tc;
+	uint16_t rssi_channel;
 	// 40
-	int16_t rsvd11;
+	int8_t rssi_7021;
+	int8_t flag_agc;
 	int16_t rsvd15;
 	int16_t	rsvd16;
 	int16_t	rsvd17;
@@ -52,7 +55,7 @@ typedef struct hk_uv_t
 	uint8_t cam_pic_len_2;
 	uint8_t cam_pic_len_1;
 	uint8_t cam_pic_len_0;
-	uint8_t cam_pic_id;
+	uint8_t cam_memory_id;
 	uint8_t	rsvd12;
 	// 56
 	uint8_t n_reset;

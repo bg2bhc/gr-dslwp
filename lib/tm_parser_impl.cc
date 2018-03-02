@@ -117,8 +117,10 @@ namespace gr {
 					if(header.nid == 0x0E) fprintf(stdout, "\n**** DSLWP V/U Transceiver 0 Telemetry 0\n");
 					if(header.nid == 0x0F) fprintf(stdout, "\n**** DSLWP V/U Transceiver 1 Telemetry 0\n");
 					fprintf(stdout, "config = 0x%02x\n", hk_uv.config);
-					fprintf(stdout, "tx_mode = 0x%02x\n", hk_uv.tx_mode);
+					fprintf(stdout, "rx_freq = 0x%02x\n", hk_uv.rx_freq);
 					fprintf(stdout, "tx_gain = 0x%02x\n", hk_uv.tx_gain);
+					fprintf(stdout, "tx_modulation = 0x%02x\n", hk_uv.tx_modulation);
+					fprintf(stdout, "tx_coding = 0x%02x\n", hk_uv.tx_coding);
 					fprintf(stdout, "flag_7021 = 0x%02x\n", hk_uv.flag_7021);
 					fprintf(stdout, "n_cmd_buf = 0x%02x\n", hk_uv.n_cmd_buf);
 					fprintf(stdout, "n_cmd_dropped = 0x%02x\n", hk_uv.n_cmd_dropped);
@@ -128,6 +130,7 @@ namespace gr {
 					fprintf(stdout, "u_bus_tx = %f\n", ((float)hk_uv.u_bus_tx) * 0.16f);
 					fprintf(stdout, "t_pa = %d\n", hk_uv.t_pa);
 					fprintf(stdout, "t_tx7021 = 0x%02x\n", hk_uv.t_tx7021);
+					fprintf(stdout, "n_tx_jt4 = %d\n", hk_uv.n_tx_jt4);
 					fprintf(stdout, "n_422_tx = %d\n", hk_uv.n_422_tx);
 					fprintf(stdout, "n_422_rx = %d\n", hk_uv.n_422_rx);
 					fprintf(stdout, "n_422_rx_pkg_err = %d\n", hk_uv.n_422_rx_pkg_err);
@@ -143,13 +146,65 @@ namespace gr {
 					fprintf(stdout, "n_ul = %d\n", sw32(hk_uv.n_ul));
 					fprintf(stdout, "fc_asm = %f\n", ((int16_t)sw16(hk_uv.fc_asm))/32768.0f*3.1416f);
 					fprintf(stdout, "snr_asm = %f\n", sw16(hk_uv.snr_asm)/256.0f);
-					fprintf(stdout, "rssi_asm = %f\n", sw16(hk_uv.rssi_asm)/10.0f);
-					fprintf(stdout, "rssi_tc = %f\n", sw16(hk_uv.rssi_tc)/10.0f);
+
+					float gain_agc;
+					switch(hk_uv.flag_agc)
+					{
+						case 0:
+						{
+							gain_agc =43.0f;
+							break;
+						}
+						case 1:
+						{
+							gain_agc =33;
+							break;		
+						}
+						case 2:
+						{
+							gain_agc =26.0f;
+							break;
+						}
+						case 4:
+						{
+							gain_agc =29.0f;
+							break;
+						}
+						case 5:
+						{
+							gain_agc =19.0f;
+							break;		
+						}
+						case 6:
+						{
+							gain_agc =12.0f;
+							break;		
+						}
+						case 8:
+						{
+							gain_agc =17.0f;
+							break;		
+						}
+						case 9:
+						{
+							gain_agc =7.0f;
+							break;		
+						}
+						case 10:
+						{
+							gain_agc =0.0f;
+							break;		
+						}
+					}
+
+					fprintf(stdout, "rssi_asm = %f\n", -174.0f+sw16(hk_uv.rssi_asm)/10.0f+gain_agc);
+					fprintf(stdout, "rssi_channel = %f\n", -174.0f+sw16(hk_uv.rssi_channel)/10.0f+gain_agc);
+					fprintf(stdout, "rssi_7021 = %f\n", -140.0f+hk_uv.rssi_7021*0.5f+gain_agc);
 					fprintf(stdout, "cam_mode = 0x%02x\n", hk_uv.cam_mode);
 					fprintf(stdout, "cam_task_flag = 0x%02x\n", hk_uv.cam_task_flag);
 					fprintf(stdout, "cam_err_flag = 0x%02x\n", hk_uv.cam_err_flag);
 					fprintf(stdout, "cam_pic_len = %d\n", hk_uv.cam_pic_len_2*65536+hk_uv.cam_pic_len_1*256+hk_uv.cam_pic_len_0);
-					fprintf(stdout, "cam_pic_id = %d\n", hk_uv.cam_pic_id);
+					fprintf(stdout, "cam_memory_id = %d\n", hk_uv.cam_memory_id);
 					fprintf(stdout, "n_reset = %d\n", hk_uv.n_reset);
 					fprintf(stdout, "flag_reset = 0x%02x\n", hk_uv.flag_reset);
 					fprintf(stdout, "flag_sys = 0x%02x\n", hk_uv.flag_sys);
