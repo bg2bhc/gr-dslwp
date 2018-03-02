@@ -46,8 +46,7 @@ typedef struct hk_uv_t
 	int8_t rssi_7021;
 	int8_t flag_agc;
 	int16_t rsvd15;
-	int16_t	rsvd16;
-	int16_t	rsvd17;
+	int32_t	seconds_since_epoch;
 	// 48
 	uint8_t cam_mode;
 	uint8_t cam_task_flag;
@@ -64,8 +63,7 @@ typedef struct hk_uv_t
 	uint8_t n_dma_overflow;
 	uint32_t runtime;
 	// 64
-	uint32_t seconds_since_epoch;
-	uint32_t rsvd14;
+	char message[8];
 	// 72
 } hk_uv_t;
 

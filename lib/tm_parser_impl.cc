@@ -200,6 +200,7 @@ namespace gr {
 					fprintf(stdout, "rssi_asm = %f\n", -174.0f+sw16(hk_uv.rssi_asm)/10.0f+gain_agc);
 					fprintf(stdout, "rssi_channel = %f\n", -174.0f+sw16(hk_uv.rssi_channel)/10.0f+gain_agc);
 					fprintf(stdout, "rssi_7021 = %f\n", -140.0f+hk_uv.rssi_7021*0.5f+gain_agc);
+					fprintf(stdout, "seconds_since_epoch = %d\n", sw32(hk_uv.seconds_since_epoch));
 					fprintf(stdout, "cam_mode = 0x%02x\n", hk_uv.cam_mode);
 					fprintf(stdout, "cam_task_flag = 0x%02x\n", hk_uv.cam_task_flag);
 					fprintf(stdout, "cam_err_flag = 0x%02x\n", hk_uv.cam_err_flag);
@@ -210,7 +211,10 @@ namespace gr {
 					fprintf(stdout, "flag_sys = 0x%02x\n", hk_uv.flag_sys);
 					fprintf(stdout, "n_dma_overflow = %d\n", hk_uv.n_dma_overflow);
 					fprintf(stdout, "runtime = %f\n", ((float)sw32(hk_uv.runtime))*0.004f);
-					fprintf(stdout, "seconds_since_epoch = %d\n", sw32(hk_uv.seconds_since_epoch));
+
+					fprintf(stdout, "message = \"");
+					for(int i=0; i<8; i++) fprintf(stdout, "%c", hk_uv.message[i]);
+					fprintf(stdout, "\"\n");
 				}
 
 				if( (header.nid == 0xA0) && (protocol==0) && (header.packet_data_len == sizeof(hk_tanrus_uv_t)) )
