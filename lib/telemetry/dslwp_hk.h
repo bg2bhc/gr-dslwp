@@ -55,7 +55,7 @@ typedef struct hk_uv_t
 	uint8_t cam_pic_len_1;
 	uint8_t cam_pic_len_0;
 	uint8_t cam_memory_id;
-	uint8_t	rsvd12;
+	uint8_t	jt4_task_flag;
 	// 56
 	uint8_t n_reset;
 	uint8_t flag_reset;
