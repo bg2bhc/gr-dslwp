@@ -20,7 +20,7 @@ typedef struct hk_uv_t
 	uint8_t u_bus_tx;
 	int8_t t_pa;
 	int8_t t_tx7021;
-	int8_t n_tx_jt4;
+	int8_t n_jt4_tx;
 	int8_t rsvd4;
 	// 16
 	uint8_t n_422_tx;
