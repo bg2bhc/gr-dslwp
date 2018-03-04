@@ -117,10 +117,10 @@ namespace gr {
 					if(header.nid == 0x0E) fprintf(stdout, "\n**** DSLWP V/U Transceiver 0 Telemetry 0\n");
 					if(header.nid == 0x0F) fprintf(stdout, "\n**** DSLWP V/U Transceiver 1 Telemetry 0\n");
 					fprintf(stdout, "config = 0x%02x\n", hk_uv.config);
-					fprintf(stdout, "rx_freq = 0x%02x\n", hk_uv.rx_freq);
+					fprintf(stdout, "flag_rx = 0x%02x\n", hk_uv.flag_rx);
 					fprintf(stdout, "tx_gain = 0x%02x\n", hk_uv.tx_gain);
 					fprintf(stdout, "tx_modulation = 0x%02x\n", hk_uv.tx_modulation);
-					fprintf(stdout, "tx_coding = 0x%02x\n", hk_uv.tx_coding);
+					fprintf(stdout, "flag_tx = 0x%02x\n", hk_uv.flag_tx);
 					fprintf(stdout, "flag_7021 = 0x%02x\n", hk_uv.flag_7021);
 					fprintf(stdout, "n_cmd_buf = 0x%02x\n", hk_uv.n_cmd_buf);
 					fprintf(stdout, "n_cmd_dropped = 0x%02x\n", hk_uv.n_cmd_dropped);

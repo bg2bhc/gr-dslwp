@@ -6,10 +6,10 @@
 typedef struct hk_uv_t
 {
 	uint8_t config;
-	uint8_t rx_freq;
+	uint8_t flag_rx;
 	uint8_t tx_gain;
 	uint8_t tx_modulation;
-	uint8_t tx_coding;
+	uint8_t flag_tx;
 	uint8_t flag_7021;
 	uint8_t n_cmd_buf;
 	uint8_t n_cmd_dropped;
