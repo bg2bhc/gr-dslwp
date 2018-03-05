@@ -131,6 +131,7 @@ namespace gr {
 					fprintf(stdout, "t_pa = %d\n", hk_uv.t_pa);
 					fprintf(stdout, "t_tx7021 = 0x%02x\n", hk_uv.t_tx7021);
 					fprintf(stdout, "n_jt4_tx = %d\n", hk_uv.n_jt4_tx);
+					fprintf(stdout, "n_ham_rx = %d\n", hk_uv.n_ham_rx);
 					fprintf(stdout, "n_422_tx = %d\n", hk_uv.n_422_tx);
 					fprintf(stdout, "n_422_rx = %d\n", hk_uv.n_422_rx);
 					fprintf(stdout, "n_422_rx_pkg_err = %d\n", hk_uv.n_422_rx_pkg_err);

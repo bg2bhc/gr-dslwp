@@ -20,8 +20,8 @@ typedef struct hk_uv_t
 	uint8_t u_bus_tx;
 	int8_t t_pa;
 	int8_t t_tx7021;
-	int8_t n_jt4_tx;
-	int8_t rsvd4;
+	uint8_t n_jt4_tx;
+	uint8_t n_ham_rx;
 	// 16
 	uint8_t n_422_tx;
 	uint8_t n_422_rx;
@@ -43,10 +43,10 @@ typedef struct hk_uv_t
 	uint16_t rssi_asm;
 	uint16_t rssi_channel;
 	// 40
-	int8_t rssi_7021;
-	int8_t flag_agc;
+	uint8_t rssi_7021;
+	uint8_t flag_agc;
 	int16_t rsvd15;
-	int32_t	seconds_since_epoch;
+	uint32_t seconds_since_epoch;
 	// 48
 	uint8_t cam_mode;
 	uint8_t cam_task_flag;
