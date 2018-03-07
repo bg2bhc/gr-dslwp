@@ -235,6 +235,7 @@ namespace gr {
 					fprintf(stdout, "compressing = 0x%02x\n", cfg_cam.compressing);
 					fprintf(stdout, "colour = 0x%02x\n", cfg_cam.colour);
 					fprintf(stdout, "config = 0x%02x\n", cfg_cam.config);
+					fprintf(stdout, "id = 0x%02x\n", cfg_cam.id);
 				}
 
 				if( ((header.nid == 0x0E)||(header.nid == 0x0F)) && (protocol==4) && (header.packet_data_len == sizeof(cfg_uv_t)) )

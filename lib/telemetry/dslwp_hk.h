@@ -108,7 +108,7 @@ typedef struct cfg_cam_t
 	uint8_t compressing;
 	uint8_t colour;
 	uint8_t config;
-	uint8_t rsvd;
+	uint8_t id;
 } cfg_cam_t;
 
 #endif
