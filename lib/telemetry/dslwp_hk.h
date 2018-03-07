@@ -67,4 +67,48 @@ typedef struct hk_uv_t
 	// 72
 } hk_uv_t;
 
+typedef struct cfg_uv_t
+{
+	// 0
+	uint8_t dem_clk_divide;
+	uint8_t tx_frequency_deviation;
+	uint8_t tx_gain;
+	uint8_t turbo_rate;
+	uint8_t precoder_en;
+	uint8_t preamble_len;
+	uint8_t trailer_len;
+	uint8_t rsvd0;
+	// 8
+	float snr_threshold;
+	uint8_t rx_freq;
+	uint8_t jt4_beacon_en;
+	uint8_t interval_gmsk_beacon;
+	uint8_t interval_jt4_beacon;
+	// 16
+	char message_hk[8];
+	// 24
+	char callsign[5];
+	uint8_t open_camera_en;
+	uint8_t repeater_en;
+	uint8_t take_picture_at_power_on;
+	// 32
+	uint32_t rsvd1;
+	uint32_t crc;
+	// 40
+} cfg_uv_t;
+
+typedef struct cfg_cam_t
+{
+	// 0
+	uint8_t size;
+	uint8_t brightness;
+	uint8_t contrast;
+	uint8_t sharpness;
+	uint8_t exposure;
+	uint8_t compressing;
+	uint8_t colour;
+	uint8_t config;
+	uint8_t rsvd;
+} cfg_cam_t;
+
 #endif

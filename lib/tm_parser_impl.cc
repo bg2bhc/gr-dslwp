@@ -114,8 +114,8 @@ namespace gr {
 
 					memcpy(&hk_uv, bytes_in+LEN_PACKET_HEADER+1, sizeof(hk_uv_t));
 					
-					if(header.nid == 0x0E) fprintf(stdout, "\n**** DSLWP V/U Transceiver 0 Telemetry 0\n");
-					if(header.nid == 0x0F) fprintf(stdout, "\n**** DSLWP V/U Transceiver 1 Telemetry 0\n");
+					if(header.nid == 0x0E) fprintf(stdout, "\n**** DSLWP V/U Transceiver 0 Telemetry\n");
+					if(header.nid == 0x0F) fprintf(stdout, "\n**** DSLWP V/U Transceiver 1 Telemetry\n");
 					fprintf(stdout, "config = 0x%02x\n", hk_uv.config);
 					fprintf(stdout, "flag_rx = 0x%02x\n", hk_uv.flag_rx);
 					fprintf(stdout, "tx_gain = 0x%02x\n", hk_uv.tx_gain);
@@ -158,7 +158,7 @@ namespace gr {
 						}
 						case 1:
 						{
-							gain_agc =33;
+							gain_agc =33.0f;
 							break;		
 						}
 						case 2:
@@ -217,6 +217,58 @@ namespace gr {
 					fprintf(stdout, "message = \"");
 					for(int i=0; i<8; i++) fprintf(stdout, "%c", hk_uv.message[i]);
 					fprintf(stdout, "\"\n");
+				}
+
+				if( ((header.nid == 0x0E)||(header.nid == 0x0F)) && (protocol==1) && (header.packet_data_len == sizeof(cfg_cam_t)) )
+				{
+					cfg_cam_t cfg_cam;		
+
+					memcpy(&cfg_cam, bytes_in+LEN_PACKET_HEADER+1, sizeof(cfg_cam_t));
+					
+					if(header.nid == 0x0E) fprintf(stdout, "\n**** DSLWP V/U Transceiver 0 Camera Config\n");
+					if(header.nid == 0x0F) fprintf(stdout, "\n**** DSLWP V/U Transceiver 1 Camera Config\n");
+					fprintf(stdout, "size = 0x%02x\n", cfg_cam.size);
+					fprintf(stdout, "brightness = 0x%02x\n", cfg_cam.brightness);
+					fprintf(stdout, "contrast = 0x%02x\n", cfg_cam.contrast);
+					fprintf(stdout, "sharpness = 0x%02x\n", cfg_cam.sharpness);
+					fprintf(stdout, "exposure = 0x%02x\n", cfg_cam.exposure);
+					fprintf(stdout, "compressing = 0x%02x\n", cfg_cam.compressing);
+					fprintf(stdout, "colour = 0x%02x\n", cfg_cam.colour);
+					fprintf(stdout, "config = 0x%02x\n", cfg_cam.config);
+				}
+
+				if( ((header.nid == 0x0E)||(header.nid == 0x0F)) && (protocol==4) && (header.packet_data_len == sizeof(cfg_uv_t)) )
+				{
+					cfg_uv_t cfg_uv;		
+
+					memcpy(&cfg_uv, bytes_in+LEN_PACKET_HEADER+1, sizeof(cfg_uv_t));
+					
+					if(header.nid == 0x0E) fprintf(stdout, "\n**** DSLWP V/U Transceiver 0 Config\n");
+					if(header.nid == 0x0F) fprintf(stdout, "\n**** DSLWP V/U Transceiver 1 Config\n");
+					fprintf(stdout, "dem_clk_divide = %d\n", cfg_uv.dem_clk_divide);
+					fprintf(stdout, "tx_frequency_deviation = %d\n", cfg_uv.tx_frequency_deviation);
+					fprintf(stdout, "tx_gain = %d\n", cfg_uv.tx_gain);
+					fprintf(stdout, "turbo_rate = 0x%02x\n", cfg_uv.turbo_rate);
+					fprintf(stdout, "precoder_en = 0x%02x\n", cfg_uv.precoder_en);
+					fprintf(stdout, "preamble_len = %d\n", cfg_uv.preamble_len);
+					fprintf(stdout, "trailer_len = %d\n", cfg_uv.trailer_len);
+					fprintf(stdout, "snr_threshold = %f\n", (float)sw32(cfg_uv.snr_threshold));
+					fprintf(stdout, "rx_freq = %d\n", cfg_uv.rx_freq);
+					fprintf(stdout, "jt4_beacon_en = 0x%02x\n", cfg_uv.jt4_beacon_en);
+					fprintf(stdout, "interval_gmsk_beacon = %d\n", cfg_uv.interval_gmsk_beacon);
+					fprintf(stdout, "interval_jt4_beacon = %d\n", cfg_uv.interval_jt4_beacon);
+
+					fprintf(stdout, "message_hk = \"");
+					for(int i=0; i<8; i++) fprintf(stdout, "%c", cfg_uv.message_hk[i]);
+					fprintf(stdout, "\"\n");
+
+					fprintf(stdout, "callsign = \"");
+					for(int i=0; i<5; i++) fprintf(stdout, "%c", cfg_uv.callsign[i]);
+					fprintf(stdout, "\"\n");
+
+					fprintf(stdout, "open_camera_en = 0x%02x\n", cfg_uv.open_camera_en);
+					fprintf(stdout, "repeater_en = 0x%02x\n", cfg_uv.repeater_en);
+					fprintf(stdout, "take_picture_at_power_on = 0x%02x\n", cfg_uv.take_picture_at_power_on);
 				}
 
 				if( (header.nid == 0xA0) && (protocol==0) && (header.packet_data_len == sizeof(hk_tanrus_uv_t)) )
