@@ -77,13 +77,13 @@ typedef struct cfg_uv_t
 	uint8_t precoder_en;
 	uint8_t preamble_len;
 	uint8_t trailer_len;
-	uint8_t rsvd0;
+	uint8_t rx_freq;
 	// 8
 	float snr_threshold;
-	uint8_t rx_freq;
+	uint8_t gmsk_beacon_en;
 	uint8_t jt4_beacon_en;
-	uint8_t interval_gmsk_beacon;
-	uint8_t interval_jt4_beacon;
+	uint8_t interval_beacon;
+	uint8_t interval_vc0_timeout;
 	// 16
 	char message_hk[8];
 	// 24

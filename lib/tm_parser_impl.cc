@@ -253,11 +253,12 @@ namespace gr {
 					fprintf(stdout, "precoder_en = 0x%02x\n", cfg_uv.precoder_en);
 					fprintf(stdout, "preamble_len = %d\n", cfg_uv.preamble_len);
 					fprintf(stdout, "trailer_len = %d\n", cfg_uv.trailer_len);
-					fprintf(stdout, "snr_threshold = %f\n", (float)sw32(cfg_uv.snr_threshold));
 					fprintf(stdout, "rx_freq = %d\n", cfg_uv.rx_freq);
+					fprintf(stdout, "snr_threshold = %f\n", (float)sw32(cfg_uv.snr_threshold));
+					fprintf(stdout, "gmsk_beacon_en = 0x%02x\n", cfg_uv.gmsk_beacon_en);
 					fprintf(stdout, "jt4_beacon_en = 0x%02x\n", cfg_uv.jt4_beacon_en);
-					fprintf(stdout, "interval_gmsk_beacon = %d\n", cfg_uv.interval_gmsk_beacon);
-					fprintf(stdout, "interval_jt4_beacon = %d\n", cfg_uv.interval_jt4_beacon);
+					fprintf(stdout, "interval_beacon = %d\n", cfg_uv.interval_beacon);
+					fprintf(stdout, "interval_vc0_timeout = %d\n", cfg_uv.interval_vc0_timeout);
 
 					fprintf(stdout, "message_hk = \"");
 					for(int i=0; i<8; i++) fprintf(stdout, "%c", cfg_uv.message_hk[i]);
