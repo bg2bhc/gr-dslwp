@@ -36,7 +36,10 @@ typedef struct hk_uv_t
 	uint8_t n_rf_rx_exe_err;
 	uint8_t n_rf_rx_fec_err;
 	uint8_t cmd_rf_last_rx;
-	uint32_t n_ul;
+	uint8_t rsvd0;
+	uint8_t rsvd1;
+	uint8_t rsvd2;
+	uint8_t n_cmd;
 	// 32
 	int16_t fc_asm;
 	uint16_t snr_asm;

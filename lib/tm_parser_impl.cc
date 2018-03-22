@@ -144,7 +144,7 @@ namespace gr {
 					fprintf(stdout, "n_rf_rx_exe_err = %d\n", hk_uv.n_rf_rx_exe_err);
 					fprintf(stdout, "n_rf_rx_fec_err = %d\n", hk_uv.n_rf_rx_fec_err);
 					fprintf(stdout, "cmd_rf_last_rx = 0x%02x\n", hk_uv.cmd_rf_last_rx);
-					fprintf(stdout, "n_ul = %d\n", sw32(hk_uv.n_ul));
+					fprintf(stdout, "n_cmd = %d\n", hk_uv.n_cmd);
 					fprintf(stdout, "fc_asm = %f\n", ((int16_t)sw16(hk_uv.fc_asm))/32768.0f*3.1416f);
 					fprintf(stdout, "snr_asm = %f\n", sw16(hk_uv.snr_asm)/256.0f);
 
