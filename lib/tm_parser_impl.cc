@@ -238,6 +238,18 @@ namespace gr {
 					fprintf(stdout, "id = 0x%02x\n", cfg_cam.id);
 				}
 
+				if( ((header.nid == 0xAC)||(header.nid == 0xAE)) && (protocol==0) && (header.packet_data_len == sizeof(hk_wod_t)) )
+				{
+					hk_wod_t hk_wod;		
+
+					memcpy(&hk_wod, bytes_in+LEN_PACKET_HEADER+1, sizeof(hk_wod_t));
+
+					if(header.nid == 0xAC) fprintf(stdout, "\n**** DSLWP Satellite A WOD\n");
+					if(header.nid == 0xAE) fprintf(stdout, "\n**** DSLWP Satellite B WOD\n");
+
+					fprintf(stdout, "seconds_since_epoch = %d\n", sw32(hk_wod.seconds_since_epoch));
+
+				}
 				if( ((header.nid == 0x0E)||(header.nid == 0x0F)) && (protocol==4) && (header.packet_data_len == sizeof(cfg_uv_t)) )
 				{
 					cfg_uv_t cfg_uv;		

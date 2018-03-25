@@ -26,6 +26,7 @@
 #include "differential_phase_detection_1bit_cf_impl.h"
 #include <math.h>
 #include <stdio.h>
+#include <time.h>
 
 namespace gr {
   namespace dslwp {
@@ -101,7 +102,13 @@ namespace gr {
 
 				add_item_tag(0, nitems_written(0)+i_output+d_delay, tags[j].key, tags[j].value );
 
-				fprintf(stdout, "\n**** ASM found!\nSet sample_in_symbol: %d -> 0\n", sample_in_symbol_old);
+				static time_t time_curr;
+				static struct tm *tblock_curr;
+
+				time_curr = time(NULL);
+				tblock_curr = gmtime(&time_curr);
+
+				fprintf(stdout, "\n**** ASM found at: %02d:%02d:%02d\nSet sample_in_symbol: %d -> 0\n", tblock_curr->tm_hour, tblock_curr->tm_min, tblock_curr->tm_sec, sample_in_symbol_old);
 			}
 			else if(tags[j].key == pmt::mp("payload_start"))
 			{

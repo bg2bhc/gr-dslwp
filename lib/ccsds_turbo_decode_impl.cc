@@ -28,7 +28,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include <time.h>
 
 #define RATE_1_2 2
 #define RATE_1_3 3
@@ -250,14 +249,6 @@ namespace gr {
 			}
 
 			int *decoded = turbo_decode(bits_depunctured, d_iterations, d_sigma*d_sigma, d_turbo);
-
-			static time_t time_curr;
-			static struct tm *tblock_curr;
-
-			time_curr = time(NULL);
-			tblock_curr = gmtime(&time_curr);
-
-			fprintf(stdout, "\n**** Turbo decoded at: %02d:%02d:%02d\n", tblock_curr->tm_hour, tblock_curr->tm_min, tblock_curr->tm_sec);
 
 			uint8_t *decoded_u8 = (uint8_t *)malloc(sizeof(uint8_t)*d_info_length/8);
 			for(int i=0; i<d_info_length/8; i++)

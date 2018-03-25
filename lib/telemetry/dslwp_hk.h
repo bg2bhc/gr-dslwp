@@ -70,6 +70,12 @@ typedef struct hk_uv_t
 	// 72
 } hk_uv_t;
 
+typedef struct hk_wod_t
+{
+	uint32_t seconds_since_epoch;
+	char message[196];
+} hk_wod_t;
+
 typedef struct cfg_uv_t
 {
 	// 0
