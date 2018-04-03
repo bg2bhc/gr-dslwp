@@ -253,8 +253,7 @@ namespace gr {
 				}
 				if( ((header.nid == 0x0E)||(header.nid == 0x0F)) && (protocol==4) && (header.packet_data_len == sizeof(cfg_uv_t)) )
 				{
-					cfg_uv_t cfg_uv;
-					float test_f32 = 1.0f;		
+					cfg_uv_t cfg_uv;	
 
 					memcpy(&cfg_uv, bytes_in+LEN_PACKET_HEADER+1, sizeof(cfg_uv_t));
 					
@@ -267,6 +266,7 @@ namespace gr {
 					fprintf(stdout, "precoder_en = 0x%02x\n", cfg_uv.precoder_en);
 					fprintf(stdout, "preamble_len = %d\n", cfg_uv.preamble_len);
 					fprintf(stdout, "trailer_len = %d\n", cfg_uv.trailer_len);
+					fprintf(stdout, "rx_freq = %d\n", cfg_uv.rx_freq);
 
 					uint32_t snr_threshold_u32 = sw32(*((int *)(&cfg_uv.snr_threshold)));
 					fprintf(stdout, "snr_threshold = %f\n", *((float *)&snr_threshold_u32));
