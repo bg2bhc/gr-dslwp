@@ -101,7 +101,7 @@ typedef struct cfg_uv_t
 	uint8_t repeater_en;
 	uint8_t take_picture_at_power_on;
 	// 32
-	uint32_t rsvd1;
+	uint32_t rx7021_r9;
 	uint32_t crc;
 	// 40
 } cfg_uv_t;

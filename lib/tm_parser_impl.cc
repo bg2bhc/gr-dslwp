@@ -253,7 +253,8 @@ namespace gr {
 				}
 				if( ((header.nid == 0x0E)||(header.nid == 0x0F)) && (protocol==4) && (header.packet_data_len == sizeof(cfg_uv_t)) )
 				{
-					cfg_uv_t cfg_uv;		
+					cfg_uv_t cfg_uv;
+					float test_f32 = 1.0f;		
 
 					memcpy(&cfg_uv, bytes_in+LEN_PACKET_HEADER+1, sizeof(cfg_uv_t));
 					
@@ -266,8 +267,10 @@ namespace gr {
 					fprintf(stdout, "precoder_en = 0x%02x\n", cfg_uv.precoder_en);
 					fprintf(stdout, "preamble_len = %d\n", cfg_uv.preamble_len);
 					fprintf(stdout, "trailer_len = %d\n", cfg_uv.trailer_len);
-					fprintf(stdout, "rx_freq = %d\n", cfg_uv.rx_freq);
-					fprintf(stdout, "snr_threshold = %f\n", (float)sw32(cfg_uv.snr_threshold));
+
+					uint32_t snr_threshold_u32 = sw32(*((int *)(&cfg_uv.snr_threshold)));
+					fprintf(stdout, "snr_threshold = %f\n", *((float *)&snr_threshold_u32));
+
 					fprintf(stdout, "gmsk_beacon_en = 0x%02x\n", cfg_uv.gmsk_beacon_en);
 					fprintf(stdout, "jt4_beacon_en = 0x%02x\n", cfg_uv.jt4_beacon_en);
 					fprintf(stdout, "interval_beacon = %d\n", cfg_uv.interval_beacon);
@@ -284,6 +287,8 @@ namespace gr {
 					fprintf(stdout, "open_camera_en = 0x%02x\n", cfg_uv.open_camera_en);
 					fprintf(stdout, "repeater_en = 0x%02x\n", cfg_uv.repeater_en);
 					fprintf(stdout, "take_picture_at_power_on = 0x%02x\n", cfg_uv.take_picture_at_power_on);
+					fprintf(stdout, "rx7021_r9 = 0x%08x\n", sw32(cfg_uv.rx7021_r9));
+					fprintf(stdout, "crc = 0x%08x\n", sw32(cfg_uv.crc));
 				}
 
 				if( (header.nid == 0xA0) && (protocol==0) && (header.packet_data_len == sizeof(hk_tanrus_uv_t)) )
