@@ -38,7 +38,7 @@ typedef struct hk_uv_t
 	uint8_t cmd_rf_last_rx;
 	uint8_t rsvd0;
 	uint8_t rsvd1;
-	uint8_t rsvd2;
+	int8_t byte_corr;
 	uint8_t n_cmd;
 	// 32
 	int16_t fc_asm;
