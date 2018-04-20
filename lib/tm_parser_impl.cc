@@ -240,17 +240,110 @@ namespace gr {
 					fprintf(stdout, "id = 0x%02x\n", cfg_cam.id);
 				}
 
-				if( ((header.nid == 0xAC)||(header.nid == 0xAE)) && (protocol==0) && (header.packet_data_len == sizeof(hk_wod_t)) )
+				if( (header.nid == 0xAC) && (protocol==0) && (header.packet_data_len == sizeof(hk_wod_t)) )
 				{
 					hk_wod_t hk_wod;		
 
 					memcpy(&hk_wod, bytes_in+LEN_PACKET_HEADER+1, sizeof(hk_wod_t));
 
-					if(header.nid == 0xAC) fprintf(stdout, "\n**** DSLWP Satellite A WOD\n");
-					if(header.nid == 0xAE) fprintf(stdout, "\n**** DSLWP Satellite B WOD\n");
-
+					fprintf(stdout, "\n**** DSLWP WOD\n");
 					fprintf(stdout, "seconds_since_epoch = %d\n", sw32(hk_wod.seconds_since_epoch));
-
+					fprintf(stdout, "n_cmd_exe = %d\n", hk_wod.n_cmd_exe);
+					fprintf(stdout, "n_cmd_delay = %d\n", hk_wod.n_cmd_delay);
+					fprintf(stdout, "this_wdt_timeout_count = %d\n", hk_wod.this_wdt_timeout_count);
+					fprintf(stdout, "that_wdt_timeout_count = %d\n", hk_wod.that_wdt_timeout_count);
+					fprintf(stdout, "sta_reset_count = %d\n", hk_wod.sta_reset_count);
+					fprintf(stdout, "stb_reset_count = %d\n", hk_wod.stb_reset_count);
+					fprintf(stdout, "ss_reset_count = %d\n", hk_wod.ss_reset_count);
+					fprintf(stdout, "is_reset_count = %d\n", hk_wod.is_reset_count);
+					fprintf(stdout, "pl_task_err_flag = %d\n", hk_wod.pl_task_err_flag);
+					fprintf(stdout, "hsd_task_err_flag = %d\n", hk_wod.hsd_task_err_flag);
+					fprintf(stdout, "tc_wdt_timeout_period = %d\n", hk_wod.tc_wdt_timeout_period);
+					fprintf(stdout, "v_bus = %d\n", sw16(hk_wod.v_bus));
+					fprintf(stdout, "v_battery = %d\n", sw16(hk_wod.v_battery));
+					fprintf(stdout, "i_solar_panel = %d\n", sw16(hk_wod.i_solar_panel));
+					fprintf(stdout, "i_load = %d\n", sw16(hk_wod.i_load));
+					fprintf(stdout, "i_bus = %d\n", sw16(hk_wod.i_bus));
+					fprintf(stdout, "sw_flag_1 = %02x\n", hk_wod.sw_flag_1);
+					fprintf(stdout, "sw_flag_2 = %02x\n", hk_wod.sw_flag_2);
+					fprintf(stdout, "sw_flag_3 = %02x\n", hk_wod.sw_flag_3);
+					fprintf(stdout, "sw_flag_4 = %02x\n", hk_wod.sw_flag_4);
+					fprintf(stdout, "sta_q0 = %d\n", sw32(hk_wod.sta_q0));
+					fprintf(stdout, "sta_q1 = %d\n", sw32(hk_wod.sta_q1));
+					fprintf(stdout, "sta_q2 = %d\n", sw32(hk_wod.sta_q2));
+					fprintf(stdout, "sta_q3 = %d\n", sw32(hk_wod.sta_q3));
+					fprintf(stdout, "sta_flag = %d\n", hk_wod.sta_flag);
+					fprintf(stdout, "stb_q0 = %d\n", sw32(hk_wod.stb_q0));
+					fprintf(stdout, "stb_q1 = %d\n", sw32(hk_wod.stb_q1));
+					fprintf(stdout, "stb_q2 = %d\n", sw32(hk_wod.stb_q2));
+					fprintf(stdout, "stb_q3 = %d\n", sw32(hk_wod.stb_q3));
+					fprintf(stdout, "stb_flag = %d\n", hk_wod.stb_flag);
+					fprintf(stdout, "stc_q0 = %d\n", sw32(hk_wod.stc_q0));
+					fprintf(stdout, "stc_q1 = %d\n", sw32(hk_wod.stc_q1));
+					fprintf(stdout, "stc_q2 = %d\n", sw32(hk_wod.stc_q2));
+					fprintf(stdout, "stc_q3 = %d\n", sw32(hk_wod.stc_q3));
+					fprintf(stdout, "stc_flag = %d\n", hk_wod.stc_flag);
+					fprintf(stdout, "ss_x = %d\n", sw32(hk_wod.ss_x));
+					fprintf(stdout, "ss_y = %d\n", sw32(hk_wod.ss_y));
+					fprintf(stdout, "ss_flag = %d\n", hk_wod.ss_flag);
+					fprintf(stdout, "fwx_rate = %d\n", sw16(hk_wod.fwx_rate));
+					fprintf(stdout, "fwx_cmd = %d\n", sw16(hk_wod.fwx_cmd));
+					fprintf(stdout, "fwy_rate = %d\n", sw16(hk_wod.fwy_rate));
+					fprintf(stdout, "fwy_cmd = %d\n", sw16(hk_wod.fwy_cmd));
+					fprintf(stdout, "fwz_rate = %d\n", sw16(hk_wod.fwz_rate));
+					fprintf(stdout, "fwz_cmd = %d\n", sw16(hk_wod.fwz_cmd));
+					fprintf(stdout, "gyro_x = %d\n", sw32(hk_wod.gyro_x));
+					fprintf(stdout, "gyro_y = %d\n", sw32(hk_wod.gyro_y));
+					fprintf(stdout, "gyro_z = %d\n", sw32(hk_wod.gyro_z));
+					fprintf(stdout, "tank_pressure = %d\n", sw16(hk_wod.tank_pressure));
+					fprintf(stdout, "aocs_period = %d\n", hk_wod.aocs_period);
+					fprintf(stdout, "error_q1 = %d\n", sw16(hk_wod.error_q1));
+					fprintf(stdout, "error_q2 = %d\n", sw16(hk_wod.error_q2));
+					fprintf(stdout, "error_q3 = %d\n", sw16(hk_wod.error_q3));
+					fprintf(stdout, "error_w1 = %d\n", sw16(hk_wod.error_w1));
+					fprintf(stdout, "error_w2 = %d\n", sw16(hk_wod.error_w2));
+					fprintf(stdout, "error_w3 = %d\n", sw16(hk_wod.error_w3));
+					fprintf(stdout, "usb_agc = %d\n", hk_wod.usb_agc);
+					fprintf(stdout, "usb_rf_power = %d\n", hk_wod.usb_rf_power);
+					fprintf(stdout, "usb_temp2 = %d\n", hk_wod.usb_temp2);
+					fprintf(stdout, "usb_flag1 = %d\n", hk_wod.usb_flag1);
+					fprintf(stdout, "usb_flag2 = %d\n", hk_wod.usb_flag2);
+					fprintf(stdout, "usb_n_cmd = %d\n", hk_wod.usb_n_cmd);
+					fprintf(stdout, "usb_n_direct_cmd = %d\n", hk_wod.usb_n_direct_cmd);
+					fprintf(stdout, "usb_n_inject_cmd = %d\n", hk_wod.usb_n_inject_cmd);
+					fprintf(stdout, "usb_n_inject_cmd_err = %d\n", hk_wod.usb_n_inject_cmd_err);
+					fprintf(stdout, "usb_n_sync = %d\n", hk_wod.usb_n_sync);
+					fprintf(stdout, "t_pl = %d\n", sw16(hk_wod.t_pl));
+					fprintf(stdout, "t_hsd = %d\n", sw16(hk_wod.t_hsd));
+					fprintf(stdout, "t_obc = %d\n", sw16(hk_wod.t_obc));
+					fprintf(stdout, "t_stb = %d\n", sw16(hk_wod.t_stb));
+					fprintf(stdout, "t_ss = %d\n", sw16(hk_wod.t_ss));
+					fprintf(stdout, "t_battery = %d\n", sw16(hk_wod.t_battery));
+					fprintf(stdout, "t_thrustor1a = %d\n", sw16(hk_wod.t_thrustor1a));
+					fprintf(stdout, "t_thrustor5a = %d\n", sw16(hk_wod.t_thrustor5a));
+					fprintf(stdout, "t_value1 = %d\n", sw16(hk_wod.t_value1));
+					fprintf(stdout, "t_value5 = %d\n", sw16(hk_wod.t_value5));
+					fprintf(stdout, "t_tube1 = %d\n", sw16(hk_wod.t_tube1));
+					fprintf(stdout, "t_tank = %d\n", sw16(hk_wod.t_tank));
+					fprintf(stdout, "heater_flag1 = %d\n", hk_wod.heater_flag1);
+					fprintf(stdout, "heater_flag2 = %d\n", hk_wod.heater_flag2);
+					fprintf(stdout, "heater_flag3 = %d\n", hk_wod.heater_flag3);
+					fprintf(stdout, "heater_flag4 = %d\n", hk_wod.heater_flag4);
+					fprintf(stdout, "heater_flag5 = %d\n", hk_wod.heater_flag5);
+					fprintf(stdout, "uva_flag_rx = %d\n", hk_wod.uva_flag_rx);
+					fprintf(stdout, "uva_tx_gain = %d\n", hk_wod.uva_tx_gain);
+					fprintf(stdout, "uva_tx_modulation = %d\n", hk_wod.uva_tx_modulation);
+					fprintf(stdout, "uva_fc_asm = %d\n", sw16(hk_wod.uva_fc_asm));
+					fprintf(stdout, "uva_snr_asm = %d\n", sw16(hk_wod.uva_snr_asm));
+					fprintf(stdout, "uva_rssi_asm = %d\n", sw16(hk_wod.uva_rssi_asm));
+					fprintf(stdout, "uva_rssi_7021 = %d\n", hk_wod.uva_rssi_7021);
+					fprintf(stdout, "uvb_flag_rx = %d\n", hk_wod.uvb_flag_rx);
+					fprintf(stdout, "uvb_tx_gain = %d\n", hk_wod.uvb_tx_gain);
+					fprintf(stdout, "uvb_tx_modulation = %d\n", hk_wod.uvb_tx_modulation);
+					fprintf(stdout, "uvb_fc_asm = %d\n", sw16(hk_wod.uvb_fc_asm));
+					fprintf(stdout, "uvb_snr_asm = %d\n", sw16(hk_wod.uvb_snr_asm));
+					fprintf(stdout, "uvb_rssi_asm = %d\n", sw16(hk_wod.uvb_rssi_asm));
+					fprintf(stdout, "uvb_rssi_7021 = %d\n", hk_wod.uvb_rssi_7021);
 				}
 				if( ((header.nid == 0x0E)||(header.nid == 0x0F)) && (protocol==4) && (header.packet_data_len == sizeof(cfg_uv_t)) )
 				{
@@ -446,7 +539,7 @@ namespace gr {
 		}
 		else
 		{
-		
+		  fprintf(stdout, "\n**** Packet Length Do Not Match!!!\n");
 		}
 	}
     }
