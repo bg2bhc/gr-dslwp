@@ -68,164 +68,188 @@ namespace gr {
       // Do <+signal processing+>
       for(int i=0; i<noutput_items; i++)
       {
-		float power_s_plus_n = 0;
-		for(int j=0; j<d_fft_size; j++)
-		{
-			d_power[j] = in_fft[(i+1)*d_fft_size+j].real() * in_fft[(i+1)*d_fft_size+j].real() + in_fft[(i+1)*d_fft_size+j].imag() * in_fft[(i+1)*d_fft_size+j].imag();
-			power_s_plus_n += d_power[j];
-		}
+				//float power_s_plus_n = 0;
+				for(int j=0; j<d_fft_size; j++)
+				{
+					d_power[j] = in_fft[(i+1)*d_fft_size+j].real() * in_fft[(i+1)*d_fft_size+j].real() + in_fft[(i+1)*d_fft_size+j].imag() * in_fft[(i+1)*d_fft_size+j].imag();
+					//power_s_plus_n += d_power[j];
+				}
 	
-		float power_s = 0;
-		int index_s;
-		for(int j=0; j<d_fft_size; j++)
-		{
-			float sum;
-			if( j == (d_fft_size-1) )
-			{
-				sum = d_power[j] + d_power[0];
-			}
-			else
-			{
-				sum = d_power[j] + d_power[j+1];
-			}
+				float power_s = 0;
+				int index_s;
+				for(int j=0; j<d_fft_size; j++)
+				{
+					float sum;
+					if( j == (d_fft_size-1) )
+					{
+						sum = d_power[j] + d_power[0];
+					}
+					else
+					{
+						sum = d_power[j] + d_power[j+1];
+					}
 
-			if (sum > power_s)
-			{
-				power_s = sum;
-				index_s = j;
-			}
-		}
+					if (sum > power_s)
+					{
+						power_s = sum;
+						index_s = j;
+					}
+				}				
+
+				float power_s_plus_n = 0.0f;
+				for(int j=0; j<d_fft_size/16; j++)
+				{
+					if((index_s-j)<0)
+					{
+						power_s_plus_n = power_s_plus_n + d_power[index_s-j+d_fft_size];
+					}
+					else
+					{
+						power_s_plus_n = power_s_plus_n + d_power[index_s-j];
+					}
+
+					if((index_s+1+j)>=d_fft_size)
+					{
+						power_s_plus_n = power_s_plus_n + d_power[index_s+1+j-d_fft_size];
+					}
+					else
+					{
+						power_s_plus_n = power_s_plus_n + d_power[index_s+1+j];
+					}
+				}
+
 		
-		float snr = power_s/(power_s_plus_n-power_s);
+				float snr = power_s/(power_s_plus_n-power_s)/8.0f; 
+				//float snr = power_s/(power_s_plus_n-power_s);
 
-		if(d_over_threshold)
-		{
-			if(!d_corr_found)
-			{
-				if(power_s > d_power_s)
+				if(d_over_threshold)
 				{
-					d_power_s = power_s;
-					d_power_s_plus_n = power_s_plus_n;
-					d_snr = snr;
-					d_index_s = index_s;
+					if(!d_corr_found)
+					{
+						if(power_s > d_power_s)
+						{
+							d_power_s = power_s;
+							d_power_s_plus_n = power_s_plus_n;
+							d_snr = snr;
+							d_index_s = index_s;
 
-					d_amp_i0 = sqrt(d_power[index_s]);
-					if(index_s == d_fft_size-1)
-					{
-						d_amp_i1 = sqrt(d_power[0]);
+							d_amp_i0 = sqrt(d_power[index_s]);
+							if(index_s == d_fft_size-1)
+							{
+								d_amp_i1 = sqrt(d_power[0]);
+							}
+							else
+							{
+								d_amp_i1 = sqrt(d_power[index_s+1]);
+							}
+						}
+						else
+						{
+							d_corr_found = 1;
+							add_item_tag(0, nitems_written(0)+i, pmt::mp("corr_start"), pmt::from_double(0.0) );
+							add_item_tag(0, nitems_written(0)+i+d_tap_len, pmt::mp("payload_start"), pmt::from_double(0.0) );
+
+							float freq_est = ( d_index_s + d_amp_i1/(d_amp_i0+d_amp_i1) )/d_fft_size*2.0f*M_PI;
+							if(freq_est>M_PI)
+							{
+								freq_est -= 2.0f*M_PI;
+							}
+							add_item_tag(0, nitems_written(0)+i, pmt::mp("freq_est"), pmt::from_double(freq_est) );
+
+							gr_complex coeff, sum;
+							sum.real() = 0.0f;
+							sum.imag() = 0.0f;
+
+							float phase_acc = 0.0f;
+							for(int j=0; j<d_fft_size; j++)
+							{
+								coeff.real() = cos(-phase_acc);
+								coeff.imag() = sin(-phase_acc);
+
+								sum += in_s[i*d_fft_size+j] * coeff;
+
+								phase_acc += freq_est;
+
+								if(phase_acc>M_PI)
+								{
+									phase_acc -= 2.0f*M_PI;
+								}
+								else if(phase_acc<-M_PI)
+								{
+									phase_acc += 2.0f*M_PI;
+								}
+							}
+
+							float phase_est = 0.0f;
+							if(sum.real()>0.0f)
+							{
+								phase_est = atan(sum.imag()/sum.real());
+							}
+							else if(sum.real()<0.0f)
+							{
+								if(sum.imag()>0.0f)
+								{
+									phase_est = atan(sum.imag()/sum.real()) + M_PI;
+								}
+								else
+								{
+									phase_est = atan(sum.imag()/sum.real()) - M_PI;
+								}
+							}
+							else
+							{
+								if(sum.imag()>0.0f)
+								{
+									phase_est = M_PI/2.0f;
+								}
+								else if(sum.imag()<0.0f)
+								{
+									phase_est = -M_PI/2.0f;
+								}
+								else
+								{
+									phase_est = 0.0f;
+								}
+							}
+
+							add_item_tag(0, nitems_written(0)+i, pmt::mp("phase_est"), pmt::from_double(phase_est) );
+
+							float power_est = sum.real() * sum.real() + sum.imag() * sum.imag();
+							add_item_tag(0, nitems_written(0)+i, pmt::mp("amp_est"), pmt::from_double(sqrt(power_est)));
+							add_item_tag(0, nitems_written(0)+i, pmt::mp("snr_est"), pmt::from_double(power_est/(d_power_s_plus_n-power_est)/8.0f) );					
+						}
 					}
-					else
+
+					if(snr < d_threshold)
 					{
-						d_amp_i1 = sqrt(d_power[index_s+1]);
+						d_over_threshold = 0;
 					}
 				}
 				else
 				{
-					d_corr_found = 1;
-					add_item_tag(0, nitems_written(0)+i, pmt::mp("corr_start"), pmt::from_double(0.0) );
-					add_item_tag(0, nitems_written(0)+i+d_tap_len, pmt::mp("payload_start"), pmt::from_double(0.0) );
+					if(snr >= d_threshold)
+					{				
+						d_power_s = power_s;
+						d_power_s_plus_n = power_s_plus_n;
+						d_snr = snr;
+						d_index_s = index_s;
 
-					float freq_est = ( d_index_s + d_amp_i1/(d_amp_i0+d_amp_i1) )/d_fft_size*2.0f*M_PI;
-					if(freq_est>M_PI)
-					{
-						freq_est -= 2.0f*M_PI;
-					}
-					add_item_tag(0, nitems_written(0)+i, pmt::mp("freq_est"), pmt::from_double(freq_est) );
-
-					gr_complex coeff, sum;
-					sum.real() = 0.0f;
-					sum.imag() = 0.0f;
-
-					float phase_acc = 0.0f;
-					for(int j=0; j<d_fft_size; j++)
-					{
-					        coeff.real() = cos(-phase_acc);
-						coeff.imag() = sin(-phase_acc);
-
-						sum += in_s[i*d_fft_size+j] * coeff;
-
-						phase_acc += freq_est;
-
-						if(phase_acc>M_PI)
+						d_amp_i0 = sqrt(d_power[index_s]);
+						if(index_s == d_fft_size-1)
 						{
-							phase_acc -= 2.0f*M_PI;
-						}
-						else if(phase_acc<-M_PI)
-						{
-							phase_acc += 2.0f*M_PI;
-						}
-					}
-
-					float phase_est = 0.0f;
-					if(sum.real()>0.0f)
-					{
-						phase_est = atan(sum.imag()/sum.real());
-					}
-					else if(sum.real()<0.0f)
-					{
-						if(sum.imag()>0.0f)
-						{
-							phase_est = atan(sum.imag()/sum.real()) + M_PI;
+							d_amp_i1 = sqrt(d_power[0]);
 						}
 						else
 						{
-							phase_est = atan(sum.imag()/sum.real()) - M_PI;
+							d_amp_i1 = sqrt(d_power[index_s+1]);
 						}
+
+						d_over_threshold = 1;
+						d_corr_found = 0;
 					}
-					else
-					{
-						if(sum.imag()>0.0f)
-						{
-							phase_est = M_PI/2.0f;
-						}
-						else if(sum.imag()<0.0f)
-						{
-							phase_est = -M_PI/2.0f;
-						}
-						else
-						{
-							phase_est = 0.0f;
-						}
-					}
-
-					add_item_tag(0, nitems_written(0)+i, pmt::mp("phase_est"), pmt::from_double(phase_est) );
-
-					float power_est = sum.real() * sum.real() + sum.imag() * sum.imag();
-					add_item_tag(0, nitems_written(0)+i, pmt::mp("amp_est"), pmt::from_double(sqrt(power_est)));
-					add_item_tag(0, nitems_written(0)+i, pmt::mp("snr_est"), pmt::from_double(power_est/(d_power_s_plus_n-power_est)) );					
-				}
-			}
-
-			if(snr < d_threshold)
-			{
-				d_over_threshold = 0;
-			}
-		}
-		else
-		{
-			if(snr >= d_threshold)
-			{				
-				d_power_s = power_s;
-				d_power_s_plus_n = power_s_plus_n;
-				d_snr = snr;
-				d_index_s = index_s;
-
-				d_amp_i0 = sqrt(d_power[index_s]);
-				if(index_s == d_fft_size-1)
-				{
-					d_amp_i1 = sqrt(d_power[0]);
-				}
-				else
-				{
-					d_amp_i1 = sqrt(d_power[index_s+1]);
 				}
 
-				d_over_threshold = 1;
-				d_corr_found = 0;
-			}
-		}
-
-		out[i] = in_s[i*d_fft_size];
+				out[i] = in_s[i*d_fft_size];
       }
 
       // Tell runtime system how many output items we produced.

@@ -364,7 +364,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>1024</value>
+      <value>512</value>
     </param>
   </block>
   <block>
@@ -846,7 +846,7 @@
     </param>
     <param>
       <key>ymax</key>
-      <value>0.2</value>
+      <value>2</value>
     </param>
     <param>
       <key>ymin</key>
