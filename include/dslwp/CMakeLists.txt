@@ -40,5 +40,6 @@ install(FILES
     kiss_decode_pdu.h
     fec_encode_b.h
     differential_phase_detection_1bit_cf.h
-    frame_spliter_f.h DESTINATION include/dslwp
+    frame_spliter_f.h
+    program_tracking_cc.h DESTINATION include/dslwp
 )

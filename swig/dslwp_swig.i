@@ -25,6 +25,7 @@
 #include "dslwp/fec_encode_b.h"
 #include "dslwp/differential_phase_detection_1bit_cf.h"
 #include "dslwp/frame_spliter_f.h"
+#include "dslwp/program_tracking_cc.h"
 %}
 
 
@@ -69,3 +70,6 @@ GR_SWIG_BLOCK_MAGIC2(dslwp, fec_encode_b);
 GR_SWIG_BLOCK_MAGIC2(dslwp, differential_phase_detection_1bit_cf);
 %include "dslwp/frame_spliter_f.h"
 GR_SWIG_BLOCK_MAGIC2(dslwp, frame_spliter_f);
+
+%include "dslwp/program_tracking_cc.h"
+GR_SWIG_BLOCK_MAGIC2(dslwp, program_tracking_cc);
