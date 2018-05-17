@@ -46,7 +46,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>frontend_dslwp_rx_uhd</value>
+      <value>frontend_dslwp_rx_rtl</value>
     </param>
     <param>
       <key>max_nouts</key>
@@ -78,7 +78,7 @@
     </param>
     <param>
       <key>title</key>
-      <value>Frontend DSLWP RX UHD</value>
+      <value>Frontend DSLWP RX RTL</value>
     </param>
   </block>
   <block>
