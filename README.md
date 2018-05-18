@@ -14,6 +14,11 @@ $sudo ldconfig
 
 GRC hier blocks are included in the hier folder. To install, please open the .grc files, press the "Generate flow graph" botton and restart GRC.
 
+## Important Before Running
+---------------------------------------
+Please edit the path in Program Tracking CC in all the demod grc to the correct program tracking file. Currently /examples/ 
+program_tracking_dslwp-a_20180520_window1.txt for the first launch window.
+
 
 ## Coherent GMSK Demodulator
 ---------------------------------------
