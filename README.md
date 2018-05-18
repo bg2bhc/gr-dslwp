@@ -5,12 +5,12 @@ GNU Radio OOT Module for DSWLP, a lunar formation flying mission consists of 2 m
 
 ## Install
 ---------------------------------------
-$mkdir build 
-$cd build 
-$cmake ../ 
-$make 
-$sudo make install 
-$sudo ldconfig 
+$ mkdir build 
+$ cd build 
+$ cmake ../ 
+$ make 
+$ sudo make install 
+$ sudo ldconfig 
 
 GRC hier blocks are included in the hier folder. To install, please open the .grc files, press the "Generate flow graph" botton and restart GRC.
 
