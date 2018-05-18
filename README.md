@@ -5,7 +5,7 @@ GNU Radio OOT Module for DSWLP, a lunar formation flying mission consists of 2 m
 
 ## Install
 ---------------------------------------
-$mkdir build
+$mkdir build 
 $cd build 
 $cmake ../ 
 $make 
