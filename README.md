@@ -25,10 +25,10 @@ As the bandwidth of the downlink signal is quite small, please calibrate your re
 ---------------------------------------
 6 different demod GRCs are provided for differnet frequencies and modes.
 After sepration, the following GRCs should be used:
-demod_dslwp_gmsk_a0_500bps_0.25_dpd.grc 
-demod_dslwp_gmsk_a1_250bps_0.5_coherent.grc 
-demod_dslwp_gmsk_b0_500bps_0.25_dpd.grc 
-demod_dslwp_gmsk_b1_250bps_0.5_coherent.grc 
+demod_dslwp_gmsk_a0_500bps_0.25_dpd.grc (Satellite A Radio 0, 500 bps GMSK with 1/4 Turbo code)
+demod_dslwp_gmsk_a1_250bps_0.5_coherent.grc (Satellite A Radio 1, 250 bps GMSK with 1/2 Turbo code and precoder)
+demod_dslwp_gmsk_b0_500bps_0.25_dpd.grc (Satellite B Radio 0, 500 bps GMSK with 1/4 Turbo code) 
+demod_dslwp_gmsk_b1_250bps_0.5_coherent.grc (Satellite B Radio 1, 250 bps GMSK with 1/2 Turbo code and precoder)
 
 ## Coherent GMSK Demodulator
 ---------------------------------------
@@ -36,7 +36,5 @@ A GMSK demodulator under development, with OQPSK type PLL, sync word detection a
 In the examples folder:
 - test_turbo_gmsk_selfloop.grc for software simulation. Try differnet ebn0, ebn0_threshold, pll_loop_bw, etc. for evaluation. 
 - test_turbo_gmsk_tx.grc and test_turbo_gmsk_rx.grc can be used for a test with real channel with 2 USRPs.
-
-
 
 Thanks to Gianluna for the turbo encoder / decoder: https://github.com/geeanlooca/deepspace-turbo
