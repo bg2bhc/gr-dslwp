@@ -16,8 +16,10 @@ GRC hier blocks are included in the hier folder. To install, please open the .gr
 
 ## Important Before Running
 ---------------------------------------
-Please edit the path in Program Tracking CC in all the demod grc to the correct program tracking file. Currently gr-dslwp/examples/ 
+Please edit the path in Program Tracking CC in all the demod GRCs to the correct program tracking file. Currently gr-dslwp/examples/ 
 program_tracking_dslwp-a_20180520_window1.txt for the first launch window.
+
+As the bandwidth of the downlink signal is quite small, please calibrate your receiver frequency within 500 Hz. Warming up your receiver for at least 15 minutes, then transmit with a precise frequency, and edit the value of f_offset in frontend GRCs in Hz.
 
 
 ## Coherent GMSK Demodulator
