@@ -21,6 +21,14 @@ program_tracking_dslwp-a_20180520_window1.txt for the first launch window.
 
 As the bandwidth of the downlink signal is quite small, please calibrate your receiver frequency within 500 Hz. Warming up your receiver for at least 15 minutes, then transmit with a precise frequency, and edit the value of f_offset in frontend GRCs in Hz.
 
+## Demod GRCs
+---------------------------------------
+6 different demod GRCs are provided for differnet frequencies and modes.
+After sepration, the following GRCs should be used:
+demod_dslwp_gmsk_a0_500bps_0.25_dpd.grc 
+demod_dslwp_gmsk_a1_250bps_0.5_coherent.grc 
+demod_dslwp_gmsk_b0_500bps_0.25_dpd.grc 
+demod_dslwp_gmsk_b1_250bps_0.5_coherent.grc 
 
 ## Coherent GMSK Demodulator
 ---------------------------------------
