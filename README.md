@@ -37,9 +37,9 @@ A TLE was provided on http://lilacsat.hit.edu.cn/tle/dslwp.txt. It is not a prec
 
 ## Telemetry Display 
 ---------------------------------------
-Decoded telemetry will be displayed here, if uploaded with the proxy. These pages will also be used as a proof of applying QSL cards and awards. 
-http://lilacsat.hit.edu.cn/dashboard/pages_en/telemetry-a.html
-http://lilacsat.hit.edu.cn/dashboard/pages_en/telemetry-b.html
+Decoded telemetry will be displayed here, if uploaded with the proxy: http://lilacsat.hit.edu.cn/dashboard/pages_en/telemetry-a.html and http://lilacsat.hit.edu.cn/dashboard/pages_en/telemetry-b.html
+These pages will also be used as a proof of applying QSL cards and awards. 
+
 
 ## About TLE
 ---------------------------------------
