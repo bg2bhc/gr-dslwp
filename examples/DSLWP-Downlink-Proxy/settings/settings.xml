@@ -1,9 +1,9 @@
 <?xml version="1.0" ?>
 <settings>
-<nickname>test_user</nickname>
-<lon>0</lon>
-<lat>0</lat>
-<alt>0</alt>
+<nickname>BG2BHC</nickname>
+<lon>126</lon>
+<lat>45</lat>
+<alt>200</alt>
 <backup_server_url>127.0.0.1</backup_server_url>
 <back_server_enable>0</back_server_enable>
 <tle_url>http://lilacsat.hit.edu.cn/tle/dslwp.txt</tle_url>
