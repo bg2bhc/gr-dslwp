@@ -196,46 +196,12 @@ namespace gr {
 			*el = atan(r2x / sqrt(r2y*r2y + r2z*r2z));
 
 			*az = acos(r2z / sqrt(r2y*r2y + r2z*r2z));
-			if(r2z < 0)
+			if(r2y < 0)
 			{
 				*az = 2*M_PI - *az;
 			}
 		}
 
-/*		void program_tracking_cc_impl::ecef2aer(double x, double y, double z, double lat, double lon, double *azm, double *elv, double *range)
-		{
-			double x1 = -sin(lon)*cos(lat)*x - sin(lon)*sin(lat)*y + cos(lon)*z;
-			double y1 = -sin(lat) * x + cos(lat) * y;
-			double z1 = -cos(lon)*cos(lat)*x - cos(lon)*sin(lat)*y - sin(lon)*z;
-
-			fprintf(stdout, "%f %f %f\n", x1, y1, z1);
-
-			if((x>0.0)&&(y>=0.0))
-			{
-				*azm = atan(y1/x1);
-			}
-			else if((x<0.0)&&(y>=0.0))
-			{
-				*azm = M_PI + atan(y1/x1);
-			}
-			else if((x<0.0)&&(y<=0.0))
-			{
-				*azm = M_PI + atan(y1/x1);
-			}
-			else if((x>0.0)&&(y<=0.0))
-			{
-				*azm = M_PI*2.0 - atan(y1/x1);
-			}
-			else
-			{
-				*azm = 0.0;
-			}
-
-			*elv = -atan(z1/pow(x1*x1+y1*y1, 0.5));
-
-			*range = pow(x1*x1+y1*y1+z1*z1, 0.5);
-		}
-*/
     int
     program_tracking_cc_impl::work(int noutput_items,
         gr_vector_const_void_star &input_items,
