@@ -13,7 +13,7 @@ echo $basepath > /usr/local/lib/python2.7/dist-packages/grc.pth
 
 echo "[Desktop Entry]
 Name=LilacProxy
-Exec="$PWD"/mun_downlink_proxy.py
+Exec=python "$PWD"/mun_downlink_proxy.py
 Icon="$PWD"/icon.xpm
 Terminal=false
 Type=Application
