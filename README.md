@@ -35,6 +35,12 @@ It is recommanded to generate the .py files first, then run them in different te
 ---------------------------------------
 A TLE was provided on http://lilacsat.hit.edu.cn/tle/dslwp.txt. It is not a precise way to describe a lunar transfer orbit, but can be used for antenna pointing during lunar transferring. After lunar injection, TLE is no longer useful.
 
+## Telemetry Display 
+---------------------------------------
+Decoded telemetry will be displayed here, if uploaded with the proxy. These pages will also be used as a proof of applying QSL cards and awards. 
+http://lilacsat.hit.edu.cn/dashboard/pages_en/telemetry-a.html
+http://lilacsat.hit.edu.cn/dashboard/pages_en/telemetry-b.html
+
 ## About TLE
 ---------------------------------------
 A TLE was provided on http://lilacsat.hit.edu.cn/tle/dslwp.txt. It is not a precise way to describe a lunar transfer orbit, but can be used for antenna pointing during lunar transferring. After lunar injection, TLE is no longer useful.
