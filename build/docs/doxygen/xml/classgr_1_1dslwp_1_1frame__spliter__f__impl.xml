@@ -1,0 +1,227 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classgr_1_1dslwp_1_1frame__spliter__f__impl" kind="class" language="C++" prot="public">
+    <compoundname>gr::dslwp::frame_spliter_f_impl</compoundname>
+    <basecompoundref refid="classgr_1_1dslwp_1_1frame__spliter__f" prot="public" virt="non-virtual">gr::dslwp::frame_spliter_f</basecompoundref>
+    <includes refid="frame__spliter__f__impl_8h" local="no">frame_spliter_f_impl.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1frame__spliter__f__impl_1a23fc6f8023b7a3bf08932af92db051f0" prot="private" static="no" mutable="no">
+        <type>pmt::pmt_t</type>
+        <definition>pmt::pmt_t gr::dslwp::frame_spliter_f_impl::d_out_port</definition>
+        <argsstring></argsstring>
+        <name>d_out_port</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/frame_spliter_f_impl.h" line="32" column="1" bodyfile="/home/lilac/gr-dslwp/lib/frame_spliter_f_impl.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1frame__spliter__f__impl_1ac383a66615ca449e8460b141fb77b425" prot="private" static="no" mutable="no">
+        <type>pmt::pmt_t</type>
+        <definition>pmt::pmt_t gr::dslwp::frame_spliter_f_impl::d_key</definition>
+        <argsstring></argsstring>
+        <name>d_key</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/frame_spliter_f_impl.h" line="33" column="1" bodyfile="/home/lilac/gr-dslwp/lib/frame_spliter_f_impl.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1frame__spliter__f__impl_1af41c7472040042c2ee4acb537736b9d0" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dslwp::frame_spliter_f_impl::d_frame_length</definition>
+        <argsstring></argsstring>
+        <name>d_frame_length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/frame_spliter_f_impl.h" line="34" column="1" bodyfile="/home/lilac/gr-dslwp/lib/frame_spliter_f_impl.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1frame__spliter__f__impl_1a46340cb06d814cab9ad4ffc27bcb6209" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dslwp::frame_spliter_f_impl::d_bits_in</definition>
+        <argsstring></argsstring>
+        <name>d_bits_in</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/frame_spliter_f_impl.h" line="35" column="1" bodyfile="/home/lilac/gr-dslwp/lib/frame_spliter_f_impl.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1frame__spliter__f__impl_1a34474580fe9bf400a3439f743a1dccf5" prot="private" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* gr::dslwp::frame_spliter_f_impl::d_payload</definition>
+        <argsstring></argsstring>
+        <name>d_payload</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/frame_spliter_f_impl.h" line="36" column="1" bodyfile="/home/lilac/gr-dslwp/lib/frame_spliter_f_impl.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1frame__spliter__f__impl_1ad4962941132cf2653730ad7081148629" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float gr::dslwp::frame_spliter_f_impl::d_eb_n0_est</definition>
+        <argsstring></argsstring>
+        <name>d_eb_n0_est</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/frame_spliter_f_impl.h" line="37" column="1" bodyfile="/home/lilac/gr-dslwp/lib/frame_spliter_f_impl.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1frame__spliter__f__impl_1a7d5a63e002f7e623210da5c9ca134fc0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::dslwp::frame_spliter_f_impl::frame_spliter_f_impl</definition>
+        <argsstring>(const std::string &amp;key, int frame_length)</argsstring>
+        <name>frame_spliter_f_impl</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>frame_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/frame_spliter_f_impl.h" line="40" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1frame__spliter__f__impl_1aa2471ea1c7b83caada367549caf8deb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::dslwp::frame_spliter_f_impl::~frame_spliter_f_impl</definition>
+        <argsstring>()</argsstring>
+        <name>~frame_spliter_f_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/frame_spliter_f_impl.h" line="41" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1frame__spliter__f__impl_1a2cfb75710888756c8f8ec9aaa8306be8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dslwp::frame_spliter_f_impl::forecast</definition>
+        <argsstring>(int noutput_items, gr_vector_int &amp;ninput_items_required)</argsstring>
+        <name>forecast</name>
+        <param>
+          <type>int</type>
+          <declname>noutput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_int &amp;</type>
+          <declname>ninput_items_required</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/frame_spliter_f_impl.h" line="44" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1frame__spliter__f__impl_1a55c7cb344abcd2266334c692a2bad4bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::dslwp::frame_spliter_f_impl::general_work</definition>
+        <argsstring>(int noutput_items, gr_vector_int &amp;ninput_items, gr_vector_const_void_star &amp;input_items, gr_vector_void_star &amp;output_items)</argsstring>
+        <name>general_work</name>
+        <param>
+          <type>int</type>
+          <declname>noutput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_int &amp;</type>
+          <declname>ninput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_const_void_star &amp;</type>
+          <declname>input_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_void_star &amp;</type>
+          <declname>output_items</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/frame_spliter_f_impl.h" line="46" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="114">
+        <label>gr::dslwp::frame_spliter_f</label>
+        <link refid="classgr_1_1dslwp_1_1frame__spliter__f"/>
+        <childnode refid="115" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="115">
+        <label>gr::block</label>
+      </node>
+      <node id="113">
+        <label>gr::dslwp::frame_spliter_f_impl</label>
+        <link refid="classgr_1_1dslwp_1_1frame__spliter__f__impl"/>
+        <childnode refid="114" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="117">
+        <label>gr::dslwp::frame_spliter_f</label>
+        <link refid="classgr_1_1dslwp_1_1frame__spliter__f"/>
+        <childnode refid="118" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="118">
+        <label>gr::block</label>
+      </node>
+      <node id="116">
+        <label>gr::dslwp::frame_spliter_f_impl</label>
+        <link refid="classgr_1_1dslwp_1_1frame__spliter__f__impl"/>
+        <childnode refid="117" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/lilac/gr-dslwp/lib/frame_spliter_f_impl.h" line="30" column="1" bodyfile="/home/lilac/gr-dslwp/lib/frame_spliter_f_impl.h" bodystart="29" bodyend="50"/>
+    <listofallmembers>
+      <member refid="classgr_1_1dslwp_1_1frame__spliter__f__impl_1a46340cb06d814cab9ad4ffc27bcb6209" prot="private" virt="non-virtual"><scope>gr::dslwp::frame_spliter_f_impl</scope><name>d_bits_in</name></member>
+      <member refid="classgr_1_1dslwp_1_1frame__spliter__f__impl_1ad4962941132cf2653730ad7081148629" prot="private" virt="non-virtual"><scope>gr::dslwp::frame_spliter_f_impl</scope><name>d_eb_n0_est</name></member>
+      <member refid="classgr_1_1dslwp_1_1frame__spliter__f__impl_1af41c7472040042c2ee4acb537736b9d0" prot="private" virt="non-virtual"><scope>gr::dslwp::frame_spliter_f_impl</scope><name>d_frame_length</name></member>
+      <member refid="classgr_1_1dslwp_1_1frame__spliter__f__impl_1ac383a66615ca449e8460b141fb77b425" prot="private" virt="non-virtual"><scope>gr::dslwp::frame_spliter_f_impl</scope><name>d_key</name></member>
+      <member refid="classgr_1_1dslwp_1_1frame__spliter__f__impl_1a23fc6f8023b7a3bf08932af92db051f0" prot="private" virt="non-virtual"><scope>gr::dslwp::frame_spliter_f_impl</scope><name>d_out_port</name></member>
+      <member refid="classgr_1_1dslwp_1_1frame__spliter__f__impl_1a34474580fe9bf400a3439f743a1dccf5" prot="private" virt="non-virtual"><scope>gr::dslwp::frame_spliter_f_impl</scope><name>d_payload</name></member>
+      <member refid="classgr_1_1dslwp_1_1frame__spliter__f__impl_1a2cfb75710888756c8f8ec9aaa8306be8" prot="public" virt="non-virtual"><scope>gr::dslwp::frame_spliter_f_impl</scope><name>forecast</name></member>
+      <member refid="classgr_1_1dslwp_1_1frame__spliter__f__impl_1a7d5a63e002f7e623210da5c9ca134fc0" prot="public" virt="non-virtual"><scope>gr::dslwp::frame_spliter_f_impl</scope><name>frame_spliter_f_impl</name></member>
+      <member refid="classgr_1_1dslwp_1_1frame__spliter__f__impl_1a55c7cb344abcd2266334c692a2bad4bb" prot="public" virt="non-virtual"><scope>gr::dslwp::frame_spliter_f_impl</scope><name>general_work</name></member>
+      <member refid="classgr_1_1dslwp_1_1frame__spliter__f_1a265babecb8b6da314069682a2456bd3a" prot="public" virt="non-virtual"><scope>gr::dslwp::frame_spliter_f_impl</scope><name>make</name></member>
+      <member refid="classgr_1_1dslwp_1_1frame__spliter__f_1a5a0e42c3cc0f20c397ffaa948641bf6b" prot="public" virt="non-virtual"><scope>gr::dslwp::frame_spliter_f_impl</scope><name>sptr</name></member>
+      <member refid="classgr_1_1dslwp_1_1frame__spliter__f__impl_1aa2471ea1c7b83caada367549caf8deb4" prot="public" virt="non-virtual"><scope>gr::dslwp::frame_spliter_f_impl</scope><name>~frame_spliter_f_impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

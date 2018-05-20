@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dslwp__hk_8h" kind="file" language="C++">
+    <compoundname>dslwp_hk.h</compoundname>
+    <includes local="no">inttypes.h</includes>
+    <incdepgraph>
+      <node id="116">
+        <label>dslwp_hk.h</label>
+        <link refid="dslwp_hk.h"/>
+        <childnode refid="117" relation="include">
+        </childnode>
+      </node>
+      <node id="117">
+        <label>inttypes.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structhk__uv__t" prot="public">hk_uv_t</innerclass>
+    <innerclass refid="structcfg__uv__t" prot="public">cfg_uv_t</innerclass>
+    <innerclass refid="structcfg__cam__t" prot="public">cfg_cam_t</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="dslwp__hk_8h_1a5ef38c2e6f8a69130b8768539dd4f41f" prot="public" static="no">
+        <type>struct <ref refid="structhk__uv__t" kindref="compound">hk_uv_t</ref></type>
+        <definition>typedef struct hk_uv_t  hk_uv_t</definition>
+        <argsstring></argsstring>
+        <name>hk_uv_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" line="71" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="dslwp__hk_8h_1aa36352459d29729d4af559221e5d61de" prot="public" static="no">
+        <type>struct <ref refid="structcfg__uv__t" kindref="compound">cfg_uv_t</ref></type>
+        <definition>typedef struct cfg_uv_t  cfg_uv_t</definition>
+        <argsstring></argsstring>
+        <name>cfg_uv_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" line="206" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="dslwp__hk_8h_1a7028a2abe5ef3cdbd7fc334a1ec4ad70" prot="public" static="no">
+        <type>struct <ref refid="structcfg__cam__t" kindref="compound">cfg_cam_t</ref></type>
+        <definition>typedef struct cfg_cam_t  cfg_cam_t</definition>
+        <argsstring></argsstring>
+        <name>cfg_cam_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" line="220" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="dslwp__hk_8h_1abd87fb00c6d46089b92883453a4113bc" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>hk_wod_t</definition>
+        <argsstring></argsstring>
+        <name>hk_wod_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" line="176" column="1" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="dslwp__hk_8h_1ad09246453a4dabd919c7541484046a87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct</type>
+        <definition>struct __attribute__</definition>
+        <argsstring>((__packed__))</argsstring>
+        <name>__attribute__</name>
+        <param>
+          <type>(__packed__)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" line="40" column="1" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" bodystart="73" bodyend="176"/>
+        <references refid="structhk__uv__t_1a4cc06b633adf5315d91bc1e87ae76ec1" compoundref="dslwp__hk_8h" startline="52">hk_uv_t::seconds_since_epoch</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h"/>
+  </compounddef>
+</doxygen>

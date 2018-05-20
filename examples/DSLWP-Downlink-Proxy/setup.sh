@@ -13,11 +13,11 @@ echo $basepath > /usr/local/lib/python2.7/dist-packages/grc.pth
 
 echo "[Desktop Entry]
 Name=LilacProxy
-Exec=sh "$PWD"/launch.sh
-Icon="$PWD"/logo/mun_icon.ico
+Exec="$PWD"/mun_downlink_proxy.py
+Icon="$PWD"/icon.xpm
 Terminal=false
 Type=Application
-Name[en_US]=dslwp_proxy.desktop">$PWD/lilacsat_dslwp.desktop
+Name[en_US]=dslwp_proxy.desktop">>$PWD/lilacsat_dslwp.desktop
 sudo chmod 777 $PWD/lilacsat_dslwp.desktop
 
 

@@ -1,0 +1,320 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="libconvcodes_8h" kind="file" language="C++">
+    <compoundname>libconvcodes.h</compoundname>
+    <includedby refid="libturbocodes_8h" local="yes">libturbocodes.h</includedby>
+    <includedby refid="ccsds__turbo__decode__impl_8h" local="yes">ccsds_turbo_decode_impl.h</includedby>
+    <includedby refid="ccsds__turbo__encode__impl_8h" local="yes">ccsds_turbo_encode_impl.h</includedby>
+    <invincdepgraph>
+      <node id="231">
+        <label>ccsds_turbo_encode_impl.h</label>
+        <link refid="ccsds__turbo__encode__impl_8h"/>
+      </node>
+      <node id="228">
+        <label>libconvcodes.h</label>
+        <link refid="libconvcodes.h"/>
+        <childnode refid="229" relation="include">
+        </childnode>
+        <childnode refid="230" relation="include">
+        </childnode>
+        <childnode refid="231" relation="include">
+        </childnode>
+      </node>
+      <node id="230">
+        <label>ccsds_turbo_decode_impl.h</label>
+        <link refid="ccsds__turbo__decode__impl_8h"/>
+      </node>
+      <node id="229">
+        <label>libturbocodes.h</label>
+        <link refid="libturbocodes_8h"/>
+        <childnode refid="230" relation="include">
+        </childnode>
+        <childnode refid="231" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structstr__convcode" prot="public">str_convcode</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="libconvcodes_8h_1aafb522000da615a123694bdb6d40d0c5" prot="public" static="no">
+        <type>struct <ref refid="structstr__convcode" kindref="compound">str_convcode</ref></type>
+        <definition>typedef struct str_convcode  t_convcode</definition>
+        <argsstring></argsstring>
+        <name>t_convcode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds/libconvcodes.h" line="16" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="libconvcodes_8h_1a3ec6b996728b85caaf84418c3f0f4b40" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>static int get_bit</definition>
+        <argsstring>(int num, int position)</argsstring>
+        <name>get_bit</name>
+        <param>
+          <type>int</type>
+          <declname>num</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>position</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds/libconvcodes.h" line="18" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="libconvcodes_8h_1a77664d426ba03803cf988c37715f35dc" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>static char* state2str</definition>
+        <argsstring>(int state, int memory)</argsstring>
+        <name>state2str</name>
+        <param>
+          <type>int</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>memory</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds/libconvcodes.h" line="19" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="libconvcodes_8h_1aa645f232f977cc1b79e3e6a940520a09" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>static int convcode_stateupdate</definition>
+        <argsstring>(int state, int input, t_convcode code)</argsstring>
+        <name>convcode_stateupdate</name>
+        <param>
+          <type>int</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type><ref refid="libconvcodes_8h_1aafb522000da615a123694bdb6d40d0c5" kindref="member">t_convcode</ref></type>
+          <declname>code</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds/libconvcodes.h" line="20" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="libconvcodes_8h_1a427479d83b9ba2958c766f13fa1b40c7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int *</type>
+        <definition>static int* convcode_output</definition>
+        <argsstring>(int state, int input, t_convcode code)</argsstring>
+        <name>convcode_output</name>
+        <param>
+          <type>int</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type><ref refid="libconvcodes_8h_1aafb522000da615a123694bdb6d40d0c5" kindref="member">t_convcode</ref></type>
+          <declname>code</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds/libconvcodes.h" line="21" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="libconvcodes_8h_1aee36e99746b1d20e3931c3ae1ab0e25a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="libconvcodes_8h_1aafb522000da615a123694bdb6d40d0c5" kindref="member">t_convcode</ref></type>
+        <definition>t_convcode convcode_initialize</definition>
+        <argsstring>(char *forward[], char *backward, int N_components)</argsstring>
+        <name>convcode_initialize</name>
+        <param>
+          <type>char *</type>
+          <declname>forward</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>backward</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>N_components</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds/libconvcodes.h" line="23" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="libconvcodes_8h_1a80917ab8ec87458a286d5af70f91e2f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void convcode_clear</definition>
+        <argsstring>(t_convcode code)</argsstring>
+        <name>convcode_clear</name>
+        <param>
+          <type><ref refid="libconvcodes_8h_1aafb522000da615a123694bdb6d40d0c5" kindref="member">t_convcode</ref></type>
+          <declname>code</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds/libconvcodes.h" line="24" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="libconvcodes_8h_1ab54748817a4e2684897fb3f62fd214cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int *</type>
+        <definition>int* convcode_encode</definition>
+        <argsstring>(int *packet, int packet_length, t_convcode code)</argsstring>
+        <name>convcode_encode</name>
+        <param>
+          <type>int *</type>
+          <declname>packet</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>packet_length</declname>
+        </param>
+        <param>
+          <type><ref refid="libconvcodes_8h_1aafb522000da615a123694bdb6d40d0c5" kindref="member">t_convcode</ref></type>
+          <declname>code</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds/libconvcodes.h" line="25" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="libconvcodes_8h_1a8965f7194902ec0b5bab22eb4cbd8644" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int *</type>
+        <definition>int* convcode_decode</definition>
+        <argsstring>(double *received, int length, t_convcode code)</argsstring>
+        <name>convcode_decode</name>
+        <param>
+          <type>double *</type>
+          <declname>received</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>length</declname>
+        </param>
+        <param>
+          <type><ref refid="libconvcodes_8h_1aafb522000da615a123694bdb6d40d0c5" kindref="member">t_convcode</ref></type>
+          <declname>code</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds/libconvcodes.h" line="26" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="libconvcodes_8h_1acfae8b3f2315db279414f2e1102d667a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void print_neighbors</definition>
+        <argsstring>(t_convcode code)</argsstring>
+        <name>print_neighbors</name>
+        <param>
+          <type><ref refid="libconvcodes_8h_1aafb522000da615a123694bdb6d40d0c5" kindref="member">t_convcode</ref></type>
+          <declname>code</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds/libconvcodes.h" line="27" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="libconvcodes_8h_1a11f9c412073c0b2e7482daa35d79d0e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int *</type>
+        <definition>int* convcode_extrinsic</definition>
+        <argsstring>(double *received, double length, double ***a_priori, t_convcode code, double noise_variance, int decision)</argsstring>
+        <name>convcode_extrinsic</name>
+        <param>
+          <type>double *</type>
+          <declname>received</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>length</declname>
+        </param>
+        <param>
+          <type>double ***</type>
+          <declname>a_priori</declname>
+        </param>
+        <param>
+          <type><ref refid="libconvcodes_8h_1aafb522000da615a123694bdb6d40d0c5" kindref="member">t_convcode</ref></type>
+          <declname>code</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>noise_variance</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>decision</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds/libconvcodes.h" line="30" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="libconvcodes_8h_1adbe9dd9b862e21b050f4e6827e1ad3e1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>static double exp_sum</definition>
+        <argsstring>(double a, double b)</argsstring>
+        <name>exp_sum</name>
+        <param>
+          <type>double</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds/libconvcodes.h" line="33" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/lilac/gr-dslwp/lib/ccsds/libconvcodes.h"/>
+  </compounddef>
+</doxygen>

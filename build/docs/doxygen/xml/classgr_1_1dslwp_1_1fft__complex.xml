@@ -1,0 +1,232 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classgr_1_1dslwp_1_1fft__complex" kind="class" language="C++" prot="public">
+    <compoundname>gr::dslwp::fft_complex</compoundname>
+    <includes refid="fft_8h" local="no">fft.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1fft__complex_1a59633ea332955323e5a982ac7e2d6d7f" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dslwp::fft_complex::d_fft_size</definition>
+        <argsstring></argsstring>
+        <name>d_fft_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/include/dslwp/fft.h" line="72" column="1" bodyfile="/home/lilac/gr-dslwp/include/dslwp/fft.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1fft__complex_1a7e442a2e76df2b2ea996739296ae5ccd" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dslwp::fft_complex::d_nthreads</definition>
+        <argsstring></argsstring>
+        <name>d_nthreads</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/include/dslwp/fft.h" line="73" column="1" bodyfile="/home/lilac/gr-dslwp/include/dslwp/fft.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1fft__complex_1aeef655b7c342cf04073c960635509eb1" prot="private" static="no" mutable="no">
+        <type>gr_complex *</type>
+        <definition>gr_complex* gr::dslwp::fft_complex::d_inbuf</definition>
+        <argsstring></argsstring>
+        <name>d_inbuf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/include/dslwp/fft.h" line="74" column="1" bodyfile="/home/lilac/gr-dslwp/include/dslwp/fft.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1fft__complex_1a40f812465c8f7d3f9bd9d3281e9f3ed6" prot="private" static="no" mutable="no">
+        <type>gr_complex *</type>
+        <definition>gr_complex* gr::dslwp::fft_complex::d_outbuf</definition>
+        <argsstring></argsstring>
+        <name>d_outbuf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/include/dslwp/fft.h" line="75" column="1" bodyfile="/home/lilac/gr-dslwp/include/dslwp/fft.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1fft__complex_1a73057e07a09163f0b37ae59eee2a8750" prot="private" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* gr::dslwp::fft_complex::d_plan</definition>
+        <argsstring></argsstring>
+        <name>d_plan</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/include/dslwp/fft.h" line="76" column="1" bodyfile="/home/lilac/gr-dslwp/include/dslwp/fft.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1fft__complex_1a7285a068b764e884a875386d7d518885" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::dslwp::fft_complex::fft_complex</definition>
+        <argsstring>(int fft_size, bool forward=true, int nthreads=1)</argsstring>
+        <name>fft_complex</name>
+        <param>
+          <type>int</type>
+          <declname>fft_size</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>forward</declname>
+          <defval>true</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nthreads</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/include/dslwp/fft.h" line="79" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1fft__complex_1aaafb1f78a228b17790b9726ab2805d23" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual gr::dslwp::fft_complex::~fft_complex</definition>
+        <argsstring>()</argsstring>
+        <name>~fft_complex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/include/dslwp/fft.h" line="80" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1fft__complex_1a1ee387fdc93bd6eea5bb08652d4b7e5d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>gr_complex *</type>
+        <definition>gr_complex* gr::dslwp::fft_complex::get_inbuf</definition>
+        <argsstring>() const </argsstring>
+        <name>get_inbuf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/include/dslwp/fft.h" line="87" column="1" bodyfile="/home/lilac/gr-dslwp/include/dslwp/fft.h" bodystart="87" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1fft__complex_1a2663697f49ed568a67b4ee7e036a2418" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>gr_complex *</type>
+        <definition>gr_complex* gr::dslwp::fft_complex::get_outbuf</definition>
+        <argsstring>() const </argsstring>
+        <name>get_outbuf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/include/dslwp/fft.h" line="88" column="1" bodyfile="/home/lilac/gr-dslwp/include/dslwp/fft.h" bodystart="88" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1fft__complex_1a07adc2d60c0409f4344c6e3161301ec0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::dslwp::fft_complex::inbuf_length</definition>
+        <argsstring>() const </argsstring>
+        <name>inbuf_length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/include/dslwp/fft.h" line="90" column="1" bodyfile="/home/lilac/gr-dslwp/include/dslwp/fft.h" bodystart="90" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1fft__complex_1a539846ac977e049abe367936d4a6af8c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::dslwp::fft_complex::outbuf_length</definition>
+        <argsstring>() const </argsstring>
+        <name>outbuf_length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/include/dslwp/fft.h" line="91" column="1" bodyfile="/home/lilac/gr-dslwp/include/dslwp/fft.h" bodystart="91" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1fft__complex_1aecce040d277395450b315bb29862dc1e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dslwp::fft_complex::set_nthreads</definition>
+        <argsstring>(int n)</argsstring>
+        <name>set_nthreads</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the number of threads to use for caclulation. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/include/dslwp/fft.h" line="96" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1fft__complex_1a01e092aeb561bcaa45f43e4ef818f608" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::dslwp::fft_complex::nthreads</definition>
+        <argsstring>() const </argsstring>
+        <name>nthreads</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the number of threads being used by FFTW </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/include/dslwp/fft.h" line="101" column="1" bodyfile="/home/lilac/gr-dslwp/include/dslwp/fft.h" bodystart="101" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1fft__complex_1a211f8e70183dc4b66752407cc8567741" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dslwp::fft_complex::execute</definition>
+        <argsstring>()</argsstring>
+        <name>execute</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>compute FFT. The input comes from inbuf, the output is placed in outbuf. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/include/dslwp/fft.h" line="107" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>FFT: complex in, complex out. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/lilac/gr-dslwp/include/dslwp/fft.h" line="71" column="1" bodyfile="/home/lilac/gr-dslwp/include/dslwp/fft.h" bodystart="71" bodyend="108"/>
+    <listofallmembers>
+      <member refid="classgr_1_1dslwp_1_1fft__complex_1a59633ea332955323e5a982ac7e2d6d7f" prot="private" virt="non-virtual"><scope>gr::dslwp::fft_complex</scope><name>d_fft_size</name></member>
+      <member refid="classgr_1_1dslwp_1_1fft__complex_1aeef655b7c342cf04073c960635509eb1" prot="private" virt="non-virtual"><scope>gr::dslwp::fft_complex</scope><name>d_inbuf</name></member>
+      <member refid="classgr_1_1dslwp_1_1fft__complex_1a7e442a2e76df2b2ea996739296ae5ccd" prot="private" virt="non-virtual"><scope>gr::dslwp::fft_complex</scope><name>d_nthreads</name></member>
+      <member refid="classgr_1_1dslwp_1_1fft__complex_1a40f812465c8f7d3f9bd9d3281e9f3ed6" prot="private" virt="non-virtual"><scope>gr::dslwp::fft_complex</scope><name>d_outbuf</name></member>
+      <member refid="classgr_1_1dslwp_1_1fft__complex_1a73057e07a09163f0b37ae59eee2a8750" prot="private" virt="non-virtual"><scope>gr::dslwp::fft_complex</scope><name>d_plan</name></member>
+      <member refid="classgr_1_1dslwp_1_1fft__complex_1a211f8e70183dc4b66752407cc8567741" prot="public" virt="non-virtual"><scope>gr::dslwp::fft_complex</scope><name>execute</name></member>
+      <member refid="classgr_1_1dslwp_1_1fft__complex_1a7285a068b764e884a875386d7d518885" prot="public" virt="non-virtual"><scope>gr::dslwp::fft_complex</scope><name>fft_complex</name></member>
+      <member refid="classgr_1_1dslwp_1_1fft__complex_1a1ee387fdc93bd6eea5bb08652d4b7e5d" prot="public" virt="non-virtual"><scope>gr::dslwp::fft_complex</scope><name>get_inbuf</name></member>
+      <member refid="classgr_1_1dslwp_1_1fft__complex_1a2663697f49ed568a67b4ee7e036a2418" prot="public" virt="non-virtual"><scope>gr::dslwp::fft_complex</scope><name>get_outbuf</name></member>
+      <member refid="classgr_1_1dslwp_1_1fft__complex_1a07adc2d60c0409f4344c6e3161301ec0" prot="public" virt="non-virtual"><scope>gr::dslwp::fft_complex</scope><name>inbuf_length</name></member>
+      <member refid="classgr_1_1dslwp_1_1fft__complex_1a01e092aeb561bcaa45f43e4ef818f608" prot="public" virt="non-virtual"><scope>gr::dslwp::fft_complex</scope><name>nthreads</name></member>
+      <member refid="classgr_1_1dslwp_1_1fft__complex_1a539846ac977e049abe367936d4a6af8c" prot="public" virt="non-virtual"><scope>gr::dslwp::fft_complex</scope><name>outbuf_length</name></member>
+      <member refid="classgr_1_1dslwp_1_1fft__complex_1aecce040d277395450b315bb29862dc1e" prot="public" virt="non-virtual"><scope>gr::dslwp::fft_complex</scope><name>set_nthreads</name></member>
+      <member refid="classgr_1_1dslwp_1_1fft__complex_1aaafb1f78a228b17790b9726ab2805d23" prot="public" virt="virtual"><scope>gr::dslwp::fft_complex</scope><name>~fft_complex</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

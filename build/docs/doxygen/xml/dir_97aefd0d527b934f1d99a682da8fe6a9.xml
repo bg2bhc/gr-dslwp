@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dir_97aefd0d527b934f1d99a682da8fe6a9" kind="dir">
+    <compoundname>lib</compoundname>
+    <innerdir refid="dir_06f077f2b4b004a0b68c90c961bda4ef">ccsds</innerdir>
+    <innerdir refid="dir_615ff8166f28f9385b714092d061e68b">kiss</innerdir>
+    <innerdir refid="dir_0a9cd71c70f63c77d4fdf57488b8e54a">telemetry</innerdir>
+    <innerfile refid="attach__sync__marker__impl_8h">attach_sync_marker_impl.h</innerfile>
+    <innerfile refid="ccsds__pseudo__randomizer__impl_8h">ccsds_pseudo_randomizer_impl.h</innerfile>
+    <innerfile refid="ccsds__turbo__decode__impl_8h">ccsds_turbo_decode_impl.h</innerfile>
+    <innerfile refid="ccsds__turbo__encode__impl_8h">ccsds_turbo_encode_impl.h</innerfile>
+    <innerfile refid="differential__phase__detection__1bit__cf__impl_8h">differential_phase_detection_1bit_cf_impl.h</innerfile>
+    <innerfile refid="fec__encode__b__impl_8h">fec_encode_b_impl.h</innerfile>
+    <innerfile refid="fft__estimator__cc__impl_8h">fft_estimator_cc_impl.h</innerfile>
+    <innerfile refid="frame__spliter__c__impl_8h">frame_spliter_c_impl.h</innerfile>
+    <innerfile refid="frame__spliter__f__impl_8h">frame_spliter_f_impl.h</innerfile>
+    <innerfile refid="kiss__decode__pdu__impl_8h">kiss_decode_pdu_impl.h</innerfile>
+    <innerfile refid="kiss__encode__pdu__impl_8h">kiss_encode_pdu_impl.h</innerfile>
+    <innerfile refid="oqpsk__coherent__demod__cc__impl_8h">oqpsk_coherent_demod_cc_impl.h</innerfile>
+    <innerfile refid="program__tracking__cc__impl_8h">program_tracking_cc_impl.h</innerfile>
+    <innerfile refid="set__gain__by__tag__cc__impl_8h">set_gain_by_tag_cc_impl.h</innerfile>
+    <innerfile refid="steam__to__vector__moving__window__cc__impl_8h">steam_to_vector_moving_window_cc_impl.h</innerfile>
+    <innerfile refid="tm__header__parser__impl_8h">tm_header_parser_impl.h</innerfile>
+    <innerfile refid="tm__parser__impl_8h">tm_parser_impl.h</innerfile>
+    <innerfile refid="vector__padding__cc__impl_8h">vector_padding_cc_impl.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/lilac/gr-dslwp/lib/"/>
+  </compounddef>
+</doxygen>

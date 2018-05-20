@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classgr_1_1dslwp_1_1steam__to__vector__moving__window__cc__impl" kind="class" language="C++" prot="public">
+    <compoundname>gr::dslwp::steam_to_vector_moving_window_cc_impl</compoundname>
+    <basecompoundref refid="classgr_1_1dslwp_1_1steam__to__vector__moving__window__cc" prot="public" virt="non-virtual">gr::dslwp::steam_to_vector_moving_window_cc</basecompoundref>
+    <includes refid="steam__to__vector__moving__window__cc__impl_8h" local="no">steam_to_vector_moving_window_cc_impl.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1steam__to__vector__moving__window__cc__impl_1a8d72e184c2f4aae6fd96f36f9c112e93" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t gr::dslwp::steam_to_vector_moving_window_cc_impl::d_vlen</definition>
+        <argsstring></argsstring>
+        <name>d_vlen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/steam_to_vector_moving_window_cc_impl.h" line="33" column="1" bodyfile="/home/lilac/gr-dslwp/lib/steam_to_vector_moving_window_cc_impl.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1steam__to__vector__moving__window__cc__impl_1a1891cda21e8404ea629ba3342e86e7f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::dslwp::steam_to_vector_moving_window_cc_impl::steam_to_vector_moving_window_cc_impl</definition>
+        <argsstring>(size_t vlen)</argsstring>
+        <name>steam_to_vector_moving_window_cc_impl</name>
+        <param>
+          <type>size_t</type>
+          <declname>vlen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/steam_to_vector_moving_window_cc_impl.h" line="36" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1steam__to__vector__moving__window__cc__impl_1a148f3dd23f9201747a68958bcea14200" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::dslwp::steam_to_vector_moving_window_cc_impl::~steam_to_vector_moving_window_cc_impl</definition>
+        <argsstring>()</argsstring>
+        <name>~steam_to_vector_moving_window_cc_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/steam_to_vector_moving_window_cc_impl.h" line="37" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1steam__to__vector__moving__window__cc__impl_1a43ff8cfcf47b2713745982fd903af2e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::dslwp::steam_to_vector_moving_window_cc_impl::work</definition>
+        <argsstring>(int noutput_items, gr_vector_const_void_star &amp;input_items, gr_vector_void_star &amp;output_items)</argsstring>
+        <name>work</name>
+        <param>
+          <type>int</type>
+          <declname>noutput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_const_void_star &amp;</type>
+          <declname>input_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_void_star &amp;</type>
+          <declname>output_items</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/steam_to_vector_moving_window_cc_impl.h" line="40" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="189">
+        <label>gr::dslwp::steam_to_vector_moving_window_cc_impl</label>
+        <link refid="classgr_1_1dslwp_1_1steam__to__vector__moving__window__cc__impl"/>
+        <childnode refid="190" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="191">
+        <label>sync_block</label>
+      </node>
+      <node id="190">
+        <label>gr::dslwp::steam_to_vector_moving_window_cc</label>
+        <link refid="classgr_1_1dslwp_1_1steam__to__vector__moving__window__cc"/>
+        <childnode refid="191" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="192">
+        <label>gr::dslwp::steam_to_vector_moving_window_cc_impl</label>
+        <link refid="classgr_1_1dslwp_1_1steam__to__vector__moving__window__cc__impl"/>
+        <childnode refid="193" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="194">
+        <label>sync_block</label>
+      </node>
+      <node id="193">
+        <label>gr::dslwp::steam_to_vector_moving_window_cc</label>
+        <link refid="classgr_1_1dslwp_1_1steam__to__vector__moving__window__cc"/>
+        <childnode refid="194" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/lilac/gr-dslwp/lib/steam_to_vector_moving_window_cc_impl.h" line="30" column="1" bodyfile="/home/lilac/gr-dslwp/lib/steam_to_vector_moving_window_cc_impl.h" bodystart="29" bodyend="43"/>
+    <listofallmembers>
+      <member refid="classgr_1_1dslwp_1_1steam__to__vector__moving__window__cc__impl_1a8d72e184c2f4aae6fd96f36f9c112e93" prot="private" virt="non-virtual"><scope>gr::dslwp::steam_to_vector_moving_window_cc_impl</scope><name>d_vlen</name></member>
+      <member refid="classgr_1_1dslwp_1_1steam__to__vector__moving__window__cc_1ab53aaafaed396ab698dd691e0fd5885f" prot="public" virt="non-virtual"><scope>gr::dslwp::steam_to_vector_moving_window_cc_impl</scope><name>make</name></member>
+      <member refid="classgr_1_1dslwp_1_1steam__to__vector__moving__window__cc_1a699f32c6c8eeec95be8e821dc2ca8ee9" prot="public" virt="non-virtual"><scope>gr::dslwp::steam_to_vector_moving_window_cc_impl</scope><name>sptr</name></member>
+      <member refid="classgr_1_1dslwp_1_1steam__to__vector__moving__window__cc__impl_1a1891cda21e8404ea629ba3342e86e7f4" prot="public" virt="non-virtual"><scope>gr::dslwp::steam_to_vector_moving_window_cc_impl</scope><name>steam_to_vector_moving_window_cc_impl</name></member>
+      <member refid="classgr_1_1dslwp_1_1steam__to__vector__moving__window__cc__impl_1a43ff8cfcf47b2713745982fd903af2e2" prot="public" virt="non-virtual"><scope>gr::dslwp::steam_to_vector_moving_window_cc_impl</scope><name>work</name></member>
+      <member refid="classgr_1_1dslwp_1_1steam__to__vector__moving__window__cc__impl_1a148f3dd23f9201747a68958bcea14200" prot="public" virt="non-virtual"><scope>gr::dslwp::steam_to_vector_moving_window_cc_impl</scope><name>~steam_to_vector_moving_window_cc_impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

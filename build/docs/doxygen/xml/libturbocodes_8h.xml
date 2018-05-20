@@ -1,0 +1,225 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="libturbocodes_8h" kind="file" language="C++">
+    <compoundname>libturbocodes.h</compoundname>
+    <includes refid="libconvcodes_8h" local="yes">libconvcodes.h</includes>
+    <includedby refid="ccsds__turbo__decode__impl_8h" local="yes">ccsds_turbo_decode_impl.h</includedby>
+    <includedby refid="ccsds__turbo__encode__impl_8h" local="yes">ccsds_turbo_encode_impl.h</includedby>
+    <incdepgraph>
+      <node id="233">
+        <label>libconvcodes.h</label>
+        <link refid="libconvcodes_8h"/>
+      </node>
+      <node id="232">
+        <label>libturbocodes.h</label>
+        <link refid="libturbocodes.h"/>
+        <childnode refid="233" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="236">
+        <label>ccsds_turbo_encode_impl.h</label>
+        <link refid="ccsds__turbo__encode__impl_8h"/>
+      </node>
+      <node id="235">
+        <label>ccsds_turbo_decode_impl.h</label>
+        <link refid="ccsds__turbo__decode__impl_8h"/>
+      </node>
+      <node id="234">
+        <label>libturbocodes.h</label>
+        <link refid="libturbocodes.h"/>
+        <childnode refid="235" relation="include">
+        </childnode>
+        <childnode refid="236" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structstr__turbocode" prot="public">str_turbocode</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="libturbocodes_8h_1ae41dea5c438222d86c0642417d7fdf47" prot="public" static="no">
+        <type>struct <ref refid="structstr__turbocode" kindref="compound">str_turbocode</ref></type>
+        <definition>typedef struct str_turbocode  t_turbocode</definition>
+        <argsstring></argsstring>
+        <name>t_turbocode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds/libturbocodes.h" line="17" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="libturbocodes_8h_1acbcb21f00362fa4a8c6b66ab976c4fac" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int *</type>
+        <definition>static int* turbo_interleave</definition>
+        <argsstring>(int *packet, t_turbocode code)</argsstring>
+        <name>turbo_interleave</name>
+        <param>
+          <type>int *</type>
+          <declname>packet</declname>
+        </param>
+        <param>
+          <type><ref refid="libturbocodes_8h_1ae41dea5c438222d86c0642417d7fdf47" kindref="member">t_turbocode</ref></type>
+          <declname>code</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds/libturbocodes.h" line="19" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="libturbocodes_8h_1a533cb3ddd3d31364d7ee565c954d1e0a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int *</type>
+        <definition>static int* turbo_deinterleave</definition>
+        <argsstring>(int *packet, t_turbocode code)</argsstring>
+        <name>turbo_deinterleave</name>
+        <param>
+          <type>int *</type>
+          <declname>packet</declname>
+        </param>
+        <param>
+          <type><ref refid="libturbocodes_8h_1ae41dea5c438222d86c0642417d7fdf47" kindref="member">t_turbocode</ref></type>
+          <declname>code</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds/libturbocodes.h" line="20" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="libturbocodes_8h_1aba9b9beba335ca5a8dc59b53b51dafe1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void message_interleave</definition>
+        <argsstring>(double ***messages, t_turbocode code)</argsstring>
+        <name>message_interleave</name>
+        <param>
+          <type>double ***</type>
+          <declname>messages</declname>
+        </param>
+        <param>
+          <type><ref refid="libturbocodes_8h_1ae41dea5c438222d86c0642417d7fdf47" kindref="member">t_turbocode</ref></type>
+          <declname>code</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds/libturbocodes.h" line="21" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="libturbocodes_8h_1a2d8ad0cde673d66b952d7db544df2cf8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void message_deinterleave</definition>
+        <argsstring>(double ***messages, t_turbocode code)</argsstring>
+        <name>message_deinterleave</name>
+        <param>
+          <type>double ***</type>
+          <declname>messages</declname>
+        </param>
+        <param>
+          <type><ref refid="libturbocodes_8h_1ae41dea5c438222d86c0642417d7fdf47" kindref="member">t_turbocode</ref></type>
+          <declname>code</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds/libturbocodes.h" line="22" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="libturbocodes_8h_1a56115b31fde3ad6966010cab75d44032" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="libturbocodes_8h_1ae41dea5c438222d86c0642417d7fdf47" kindref="member">t_turbocode</ref></type>
+        <definition>t_turbocode turbo_initialize</definition>
+        <argsstring>(t_convcode upper, t_convcode lower, int *interleaver, int packet_length)</argsstring>
+        <name>turbo_initialize</name>
+        <param>
+          <type><ref refid="libconvcodes_8h_1aafb522000da615a123694bdb6d40d0c5" kindref="member">t_convcode</ref></type>
+          <declname>upper</declname>
+        </param>
+        <param>
+          <type><ref refid="libconvcodes_8h_1aafb522000da615a123694bdb6d40d0c5" kindref="member">t_convcode</ref></type>
+          <declname>lower</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>interleaver</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>packet_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds/libturbocodes.h" line="24" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="libturbocodes_8h_1a3336938a0bb84a4f105fa1583ebcd1bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int *</type>
+        <definition>int* turbo_encode</definition>
+        <argsstring>(int *packet, t_turbocode code)</argsstring>
+        <name>turbo_encode</name>
+        <param>
+          <type>int *</type>
+          <declname>packet</declname>
+        </param>
+        <param>
+          <type><ref refid="libturbocodes_8h_1ae41dea5c438222d86c0642417d7fdf47" kindref="member">t_turbocode</ref></type>
+          <declname>code</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds/libturbocodes.h" line="26" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="libturbocodes_8h_1af097f4c53464424f2414251511db4fdf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int *</type>
+        <definition>int* turbo_decode</definition>
+        <argsstring>(double *received, int iterations, double noise_variance, t_turbocode code)</argsstring>
+        <name>turbo_decode</name>
+        <param>
+          <type>double *</type>
+          <declname>received</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>iterations</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>noise_variance</declname>
+        </param>
+        <param>
+          <type><ref refid="libturbocodes_8h_1ae41dea5c438222d86c0642417d7fdf47" kindref="member">t_turbocode</ref></type>
+          <declname>code</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds/libturbocodes.h" line="28" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/lilac/gr-dslwp/lib/ccsds/libturbocodes.h"/>
+  </compounddef>
+</doxygen>
