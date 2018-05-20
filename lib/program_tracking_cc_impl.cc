@@ -60,27 +60,6 @@ namespace gr {
 
 				fprintf(stdout, "Set home location in ECEF: %f, %f, %f\n", d_rgs_x, d_rgs_y, d_rgs_z);
 
-				d_rot_x = d_rgs_y * 2.0 * M_PI / 86164.0;
-				d_rot_y = d_rgs_x * 2.0 * M_PI / 86164.0;
-				d_rot_z = 0;
-
-				if((d_rot_x>=0)&&(d_rot_y>=0))
-				{
-					d_rot_x = -d_rot_x;
-				}
-				else if((d_rot_x<0)&&(d_rot_y>=0))
-				{
-					d_rot_y = -d_rot_y;
-				}
-				else if((d_rot_x<0)&&(d_rot_y<0))
-				{
-					d_rot_x = -d_rot_x;
-				}
-				else if((d_rot_x>=0)&&(d_rot_y<0))
-				{
-					d_rot_y = -d_rot_y;
-				}
-
 				if(fscanf(d_fp, "%010ld %015lf %015lf %015lf %010lf %010lf %010lf\r\n", &d_timestamp0, &d_rsat0_x, &d_rsat0_y, &d_rsat0_z, &d_vsat0_x, &d_vsat0_y, &d_vsat0_z) != 7)
 				{
 					fclose(d_fp);
@@ -128,7 +107,7 @@ namespace gr {
 					vec_unit_y = vec_y / d_range0;
 					vec_unit_z = vec_z / d_range0;
 
-					d_rr0 = (d_vsat0_x - d_rot_x) * vec_unit_x + (d_vsat0_y - d_rot_y) * vec_unit_y + (d_vsat0_z - d_rot_z) * vec_unit_z;
+					d_rr0 = d_vsat0_x * vec_unit_x + d_vsat0_y * vec_unit_y + d_vsat0_z * vec_unit_z;
 
 					if(fscanf(d_fp, "%010ld %015lf %015lf %015lf %010lf %010lf %010lf\r\n", &d_timestamp1, &d_rsat1_x, &d_rsat1_y, &d_rsat1_z, &d_vsat1_x, &d_vsat1_y, &d_vsat1_z) != 7)
 					{
@@ -147,7 +126,7 @@ namespace gr {
 					vec_unit_y = vec_y / d_range1;
 					vec_unit_z = vec_z / d_range1;
 
-					d_rr1 = (d_vsat1_x - d_rot_x) * vec_unit_x + (d_vsat1_y - d_rot_y) * vec_unit_y + (d_vsat1_z - d_rot_z) * vec_unit_z;				
+					d_rr1 = d_vsat1_x * vec_unit_x + d_vsat1_y * vec_unit_y + d_vsat1_z * vec_unit_z;				
 					d_rrr = d_rr1 - d_rr0;
 
 					struct tm *tblock;
@@ -178,6 +157,26 @@ namespace gr {
 		{
 			double a = 6378.137;
 			double e2 = 0.00669437999013;
+
+			double v = a * pow(1-e2*sin(lat)*sin(lat), -0.5);
+
+			*rx = (v+alt)*cos(lat)*cos(lon);
+			*ry = (v+alt)*cos(lat)*sin(lon);
+			*rz = ((1-e2)*v+alt)*sin(lat);
+		}
+
+/*		void program_tracking_cc_impl::ecef2llr(double rx, double ry, double rz, double *lat, double *lon, double *r)
+		{
+			double a = 6378.137;
+			double e2 = 0.00669437999013;
+
+			lon = acos(rx/sqrt(rx*rx+ry*ry));
+			if(ry<0)
+			{
+				lon = -lon;
+			}
+			
+			lat = atan();
 
 			double v = a * pow(1-e2*sin(lat)*sin(lat), -0.5);
 
@@ -219,7 +218,7 @@ namespace gr {
 
 			*range = pow(x1*x1+y1*y1+z1*z1, 0.5);
 		}
-
+*/
     int
     program_tracking_cc_impl::work(int noutput_items,
         gr_vector_const_void_star &input_items,
@@ -276,7 +275,7 @@ namespace gr {
 							vec_unit_y = vec_y / d_range1;
 							vec_unit_z = vec_z / d_range1;
 
-							d_rr1 = (d_vsat1_x - d_rot_x) * vec_unit_x + (d_vsat1_y - d_rot_y) * vec_unit_y + (d_vsat1_z - d_rot_z) * vec_unit_z;				
+							d_rr1 = d_vsat1_x * vec_unit_x + d_vsat1_y * vec_unit_y + d_vsat1_z * vec_unit_z;						
 							d_rrr = d_rr1 - d_rr0;
 
 							struct tm *tblock;
@@ -320,7 +319,7 @@ namespace gr {
 									vec_unit_y = vec_y / d_range0;
 									vec_unit_z = vec_z / d_range0;
 
-									d_rr0 = (d_vsat0_x - d_rot_x) * vec_unit_x + (d_vsat0_y - d_rot_y) * vec_unit_y + (d_vsat0_z - d_rot_z) * vec_unit_z;
+									d_rr0 = d_vsat0_x * vec_unit_x + d_vsat0_y * vec_unit_y + d_vsat0_z * vec_unit_z;
 
 									if(fscanf(d_fp, "%010ld %015lf %015lf %015lf %010lf %010lf %010lf\r\n", &d_timestamp1, &d_rsat1_x, &d_rsat1_y, &d_rsat1_z, &d_vsat1_x, &d_vsat1_y, &d_vsat1_z) != 7)
 									{
@@ -339,7 +338,7 @@ namespace gr {
 									vec_unit_y = vec_y / d_range1;
 									vec_unit_z = vec_z / d_range1;
 
-									d_rr1 = (d_vsat1_x - d_rot_x) * vec_unit_x + (d_vsat1_y - d_rot_y) * vec_unit_y + (d_vsat1_z - d_rot_z) * vec_unit_z;				
+									d_rr1 = d_vsat1_x * vec_unit_x + d_vsat1_y * vec_unit_y + d_vsat1_z * vec_unit_z;					
 									d_rrr = d_rr1 - d_rr0;
 
 									struct tm *tblock;
