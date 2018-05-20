@@ -26,7 +26,6 @@
 #include "program_tracking_cc_impl.h"
 
 #include <math.h>
-#include <time.h>
 
 namespace gr {
   namespace dslwp {
@@ -45,56 +44,126 @@ namespace gr {
       : gr::sync_block("program_tracking_cc",
               gr::io_signature::make(1, 1, sizeof(gr_complex)),
               gr::io_signature::make(1, 1, sizeof(gr_complex))),
-							d_lat(lat), d_lon(lon), d_alt(alt), d_fc(fc), d_samp_rate(samp_rate), d_txrx(txrx), d_verbose(verbose)
+							d_enable(enable), d_lat(lat), d_lon(lon), d_alt(alt), d_fc(fc), d_samp_rate(samp_rate), d_txrx(txrx), d_verbose(verbose)
     {
-			d_fp = fopen((const char *)(path.data()), "r");
+			if(d_enable)
+			{
+				d_fp = fopen((const char *)(path.data()), "r");
 
-			program_tracking_cc_impl::lla2ecef(lat/180.0*M_PI, lon/180.0*M_PI, alt/1000.0, &d_rgs_x, &d_rgs_y, &d_rgs_z);
+				fprintf(stdout, "\n**** Program tracking\n");
 /*
-			char c;
-			while((c=fgetc(d_fp))!=EOF)
-			{
-				fprintf(stdout, "%c", c);
-			}
-
-			uint32_t timestamp;
-			double rx, ry, rz, vx, vy, vz;
-			int ret;
-
-			while((ret=fscanf(d_fp, "%010d %015lf %015lf %015lf %010lf %010lf %010lf\r\n", &timestamp, &rx, &ry, &rz, &vx, &vy, &vz)) == 7)
-			{
-				fprintf(stdout, "%d, %010d %015lf %015lf %015lf %010lf %010lf %010lf\r\n", ret, timestamp, rx, ry, rz, vx, vy, vz);
-			}
+				double azm, elv, range;
+				program_tracking_cc_impl::ecef2aer(-207.8135, 286.0307, 353.5534, 45.0/180*M_PI, 126.0/180*M_PI, &azm, &elv, &range);
+				fprintf(stdout, "%f, %f, %f\n", azm, elv, range);
 */
+				program_tracking_cc_impl::lla2ecef(lat/180.0*M_PI, lon/180.0*M_PI, alt/1000.0, &d_rgs_x, &d_rgs_y, &d_rgs_z);
 
-			if(fscanf(d_fp, "%010d %015lf %015lf %015lf %010lf %010lf %010lf\r\n", &d_timestamp0, &d_rsat0_x, &d_rsat0_y, &d_rsat0_z, &d_vsat0_x, &d_vsat0_y, &d_vsat0_z) != 7)
-			{
-				fclose(d_fp);
-				fprintf(stdout, "\n**** Error reading tracking file!!!\n");
-				exit(0);
+				fprintf(stdout, "Set home location in ECEF: %f, %f, %f\n", d_rgs_x, d_rgs_y, d_rgs_z);
+
+				d_rot_x = d_rgs_y * 2.0 * M_PI / 86164.0;
+				d_rot_y = d_rgs_x * 2.0 * M_PI / 86164.0;
+				d_rot_z = 0;
+
+				if((d_rot_x>=0)&&(d_rot_y>=0))
+				{
+					d_rot_x = -d_rot_x;
+				}
+				else if((d_rot_x<0)&&(d_rot_y>=0))
+				{
+					d_rot_y = -d_rot_y;
+				}
+				else if((d_rot_x<0)&&(d_rot_y<0))
+				{
+					d_rot_x = -d_rot_x;
+				}
+				else if((d_rot_x>=0)&&(d_rot_y<0))
+				{
+					d_rot_y = -d_rot_y;
+				}
+
+				if(fscanf(d_fp, "%010ld %015lf %015lf %015lf %010lf %010lf %010lf\r\n", &d_timestamp0, &d_rsat0_x, &d_rsat0_y, &d_rsat0_z, &d_vsat0_x, &d_vsat0_y, &d_vsat0_z) != 7)
+				{
+					fclose(d_fp);
+					fprintf(stdout, "\n**** Error read tracking file!!!\n");
+					exit(0);
+				}
+
+				d_time_curr = time(NULL);
+
+				if(d_time_curr < d_timestamp0)
+				{
+					struct tm *tblock;
+
+					tblock =  gmtime(&d_time_curr);
+					fprintf(stdout, "Current time: %ld, %02d/%02d/%02d %02d:%02d:%02d\n", d_time_curr, tblock->tm_year+1900, tblock->tm_mon+1, tblock->tm_mday, tblock->tm_hour, tblock->tm_min, tblock->tm_sec);
+
+					tblock =  gmtime((time_t *)&d_timestamp0);
+					fprintf(stdout, "Tracking start at: %ld, %02d/%02d/%02d %02d:%02d:%02d\n", d_timestamp0, tblock->tm_year+1900, tblock->tm_mon+1, tblock->tm_mday, tblock->tm_hour, tblock->tm_min, tblock->tm_sec);
+
+					d_tracking = 0;
+				}
+				else
+				{
+					while(d_time_curr > d_timestamp0)
+					{
+								if(fscanf(d_fp, "%010ld %015lf %015lf %015lf %010lf %010lf %010lf\r\n", &d_timestamp0, &d_rsat0_x, &d_rsat0_y, &d_rsat0_z, &d_vsat0_x, &d_vsat0_y, &d_vsat0_z) != 7)
+								{
+									fclose(d_fp);
+									fprintf(stdout, "\n**** Error read tracking file or EOF!!!\n");
+									exit(0);
+								}	
+					}
+					fprintf(stdout, "\n**** Tracking start!\n");
+					d_tracking = 1;
+
+					double vec_x, vec_y, vec_z, vec_unit_x, vec_unit_y, vec_unit_z;
+
+					vec_x = d_rsat0_x - d_rgs_x;
+					vec_y = d_rsat0_y - d_rgs_y;
+					vec_z = d_rsat0_z - d_rgs_z;			
+
+					d_range0 = pow(vec_x*vec_x+vec_y*vec_y+vec_z*vec_z, 0.5);
+
+					vec_unit_x = vec_x / d_range0;
+					vec_unit_y = vec_y / d_range0;
+					vec_unit_z = vec_z / d_range0;
+
+					d_rr0 = (d_vsat0_x - d_rot_x) * vec_unit_x + (d_vsat0_y - d_rot_y) * vec_unit_y + (d_vsat0_z - d_rot_z) * vec_unit_z;
+
+					if(fscanf(d_fp, "%010ld %015lf %015lf %015lf %010lf %010lf %010lf\r\n", &d_timestamp1, &d_rsat1_x, &d_rsat1_y, &d_rsat1_z, &d_vsat1_x, &d_vsat1_y, &d_vsat1_z) != 7)
+					{
+						fclose(d_fp);
+						fprintf(stdout, "\n**** Error read tracking file or EOF!!!\n");
+						exit(0);
+					}
+
+					vec_x = d_rsat1_x - d_rgs_x;
+					vec_y = d_rsat1_y - d_rgs_y;
+					vec_z = d_rsat1_z - d_rgs_z;			
+
+					d_range1 = pow(vec_x*vec_x+vec_y*vec_y+vec_z*vec_z, 0.5);
+
+					vec_unit_x = vec_x / d_range1;
+					vec_unit_y = vec_y / d_range1;
+					vec_unit_z = vec_z / d_range1;
+
+					d_rr1 = (d_vsat1_x - d_rot_x) * vec_unit_x + (d_vsat1_y - d_rot_y) * vec_unit_y + (d_vsat1_z - d_rot_z) * vec_unit_z;				
+					d_rrr = d_rr1 - d_rr0;
+
+					struct tm *tblock;
+					tblock =  gmtime((time_t *)&d_timestamp0);
+
+					d_doppler = d_rr0/2.99792458e5*d_fc;
+					d_doppler_rate = d_rrr/2.99792458e5*d_fc;
+					if(d_txrx)
+					{
+						d_doppler = -d_doppler;
+						d_doppler_rate = -d_doppler_rate;
+					}
+
+					fprintf(stdout, "%02d/%02d/%02d %02d:%02d:%02d, range = %f, rr = %f, rrr = %f, doppler = %f\n", tblock->tm_year+1900, tblock->tm_mon+1, tblock->tm_mday, tblock->tm_hour, tblock->tm_min, tblock->tm_sec, d_range0, d_rr0, d_rrr, -d_doppler);
+				}
 			}
-
-			fprintf(stdout, "\n**** Program tracking\n");
-
-			
-			//fprintf(stdout, "%010d %015lf %015lf %015lf %010lf %010lf %010lf\r\n", d_timestamp0, d_rsat0_x, d_rsat0_y, d_rsat0_z, d_vsat0_x, d_vsat0_y, d_vsat0_z);
-
-			time_t time_curr;
-			struct tm *tblock_curr;
-
-			time_curr = d_timestamp0;
-			tblock_curr =  gmtime(&time_curr);
-			fprintf(stdout, "Start time: %ld, %02d/%02d/%02d %02d:%02d:%02d\n", time_curr, tblock_curr->tm_year+1900, tblock_curr->tm_mon+1, tblock_curr->tm_mday, tblock_curr->tm_hour, tblock_curr->tm_min, tblock_curr->tm_sec);
-
-			time_curr = time(NULL);
-			tblock_curr =  gmtime(&time_curr);
-			fprintf(stdout, "Current time: %ld, %02d/%02d/%02d %02d:%02d:%02d\n", time_curr, tblock_curr->tm_year+1900, tblock_curr->tm_mon+1, tblock_curr->tm_mday, tblock_curr->tm_hour, tblock_curr->tm_min, tblock_curr->tm_sec);
-
-			double azm, elv, range;
-			program_tracking_cc_impl::ecef2aer(-207.8135, 286.0307, 353.5534, 45.0/180*M_PI, 126.0/180*M_PI, &azm, &elv, &range);
-			fprintf(stdout, "%f, %f, %f\n", azm, elv, range);
-
-			d_init = 0;
 		}
 
     /*
@@ -159,15 +228,145 @@ namespace gr {
       const gr_complex *in = (const gr_complex *) input_items[0];
       gr_complex *out = (gr_complex *) output_items[0];
 
-      // Do <+signal processing+>
-			if(!d_init)
-			{
-				static time_t time_curr;
-				static struct tm *tblock_curr;
+			int i;
+			static float k_real = 1, k_imag = 0;
+			static double  current_phase = 0;
+			static uint32_t sample_in_second = 0;
 
-				time_curr = time(NULL);
-				tblock_curr =  gmtime(&time_curr);
-				fprintf(stdout, "Current time: %ld, %02d/%02d/%02d %02d:%02d:%02d\n", time_curr, tblock_curr->tm_year+1900, tblock_curr->tm_mon+1, tblock_curr->tm_mday, tblock_curr->tm_hour, tblock_curr->tm_min, tblock_curr->tm_sec);				
+			for(i=0; i<noutput_items; i++)
+			{
+				if(d_enable)
+				{
+					k_real = cos(current_phase);
+					k_imag = sin(current_phase);
+
+					if(sample_in_second >= d_samp_rate)
+					{
+						sample_in_second = 0;
+						d_time_curr++;
+
+						if(d_tracking)
+						{
+							d_timestamp0 = d_timestamp1;
+							d_rsat0_x = d_rsat1_x;
+							d_rsat0_y = d_rsat1_y;
+							d_rsat0_z = d_rsat1_z;
+							d_vsat0_x = d_vsat1_x;
+							d_vsat0_y = d_vsat1_y;
+							d_vsat0_z = d_vsat1_z;
+							d_range0 = d_range1;
+							d_rr0 = d_rr1;
+
+							if(fscanf(d_fp, "%010ld %015lf %015lf %015lf %010lf %010lf %010lf\r\n", &d_timestamp1, &d_rsat1_x, &d_rsat1_y, &d_rsat1_z, &d_vsat1_x, &d_vsat1_y, &d_vsat1_z) != 7)
+							{
+								fclose(d_fp);
+								fprintf(stdout, "\n**** Error read tracking file or EOF!!!\n");
+								exit(0);
+							}
+
+							double vec_x, vec_y, vec_z, vec_unit_x, vec_unit_y, vec_unit_z;
+
+							vec_x = d_rsat1_x - d_rgs_x;
+							vec_y = d_rsat1_y - d_rgs_y;
+							vec_z = d_rsat1_z - d_rgs_z;			
+
+							d_range1 = pow(vec_x*vec_x+vec_y*vec_y+vec_z*vec_z, 0.5);
+
+							vec_unit_x = vec_x / d_range1;
+							vec_unit_y = vec_y / d_range1;
+							vec_unit_z = vec_z / d_range1;
+
+							d_rr1 = (d_vsat1_x - d_rot_x) * vec_unit_x + (d_vsat1_y - d_rot_y) * vec_unit_y + (d_vsat1_z - d_rot_z) * vec_unit_z;				
+							d_rrr = d_rr1 - d_rr0;
+
+							struct tm *tblock;
+							tblock =  gmtime((time_t *)&d_timestamp0);
+
+							d_doppler = d_rr0/2.99792458e5*d_fc;
+							d_doppler_rate = d_rrr/2.99792458e5*d_fc;
+							if(d_txrx)
+							{
+								d_doppler = -d_doppler;
+								d_doppler_rate = -d_doppler_rate;
+							}
+
+							fprintf(stdout, "%02d/%02d/%02d %02d:%02d:%02d, range = %f, rr = %f, rrr = %f, doppler = %f\n", tblock->tm_year+1900, tblock->tm_mon+1, tblock->tm_mday, tblock->tm_hour, tblock->tm_min, tblock->tm_sec, d_range0, d_rr0, d_rrr, -d_doppler);
+						}
+						else
+						{
+							{
+								if(d_time_curr == d_timestamp0)
+								{
+
+									fprintf(stdout, "\n**** Tracking start!\n");
+									d_tracking = 1;
+
+									if(fscanf(d_fp, "%010ld %015lf %015lf %015lf %010lf %010lf %010lf\r\n", &d_timestamp0, &d_rsat0_x, &d_rsat0_y, &d_rsat0_z, &d_vsat0_x, &d_vsat0_y, &d_vsat0_z) != 7)
+									{
+										fclose(d_fp);
+										fprintf(stdout, "\n**** Error read tracking file or EOF!!!\n");
+										exit(0);
+									}
+
+									double vec_x, vec_y, vec_z, vec_unit_x, vec_unit_y, vec_unit_z;
+
+									vec_x = d_rsat0_x - d_rgs_x;
+									vec_y = d_rsat0_y - d_rgs_y;
+									vec_z = d_rsat0_z - d_rgs_z;			
+
+									d_range0 = pow(vec_x*vec_x+vec_y*vec_y+vec_z*vec_z, 0.5);
+
+									vec_unit_x = vec_x / d_range0;
+									vec_unit_y = vec_y / d_range0;
+									vec_unit_z = vec_z / d_range0;
+
+									d_rr0 = (d_vsat0_x - d_rot_x) * vec_unit_x + (d_vsat0_y - d_rot_y) * vec_unit_y + (d_vsat0_z - d_rot_z) * vec_unit_z;
+
+									if(fscanf(d_fp, "%010ld %015lf %015lf %015lf %010lf %010lf %010lf\r\n", &d_timestamp1, &d_rsat1_x, &d_rsat1_y, &d_rsat1_z, &d_vsat1_x, &d_vsat1_y, &d_vsat1_z) != 7)
+									{
+										fclose(d_fp);
+										fprintf(stdout, "\n**** Error read tracking file or EOF!!!\n");
+										exit(0);
+									}
+
+									vec_x = d_rsat1_x - d_rgs_x;
+									vec_y = d_rsat1_y - d_rgs_y;
+									vec_z = d_rsat1_z - d_rgs_z;			
+
+									d_range1 = pow(vec_x*vec_x+vec_y*vec_y+vec_z*vec_z, 0.5);
+
+									vec_unit_x = vec_x / d_range1;
+									vec_unit_y = vec_y / d_range1;
+									vec_unit_z = vec_z / d_range1;
+
+									d_rr1 = (d_vsat1_x - d_rot_x) * vec_unit_x + (d_vsat1_y - d_rot_y) * vec_unit_y + (d_vsat1_z - d_rot_z) * vec_unit_z;				
+									d_rrr = d_rr1 - d_rr0;
+
+									struct tm *tblock;
+									tblock =  gmtime((time_t *)&d_timestamp0);
+
+									d_doppler = d_rr0/2.99792458e5*d_fc;
+									d_doppler_rate = d_rrr/2.99792458e5*d_fc;
+									if(d_txrx)
+									{
+										d_doppler = -d_doppler;
+										d_doppler_rate = -d_doppler_rate;
+									}
+
+									fprintf(stdout, "%02d/%02d/%02d %02d:%02d:%02d, range = %f, rr = %f, rrr = %f, doppler = %f\n", tblock->tm_year+1900, tblock->tm_mon+1, tblock->tm_mday, tblock->tm_hour, tblock->tm_min, tblock->tm_sec, d_range0, d_rr0, d_rrr, -d_doppler);
+								}
+							}
+						}
+					}
+
+					current_phase += d_doppler/d_samp_rate*2*M_PI;
+
+					d_doppler += d_doppler_rate/d_samp_rate;
+					sample_in_second++;
+				}
+
+				out[i].real() = k_real * in[i].real() - k_imag * in[i].imag();
+				out[i].imag() = k_real * in[i].imag() + k_imag * in[i].real();
 			}
 			
 

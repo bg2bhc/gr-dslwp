@@ -24,6 +24,7 @@
 #include <dslwp/program_tracking_cc.h>
 #include <stdio.h>
 #include <inttypes.h>
+#include <time.h>
 
 namespace gr {
   namespace dslwp {
@@ -37,7 +38,11 @@ namespace gr {
 			double d_rgs_y;
 			double d_rgs_z;
 
-			uint32_t d_timestamp0;
+			double d_rot_x;
+			double d_rot_y;
+			double d_rot_z;
+
+			time_t d_timestamp0;
 			double d_rsat0_x;
 			double d_rsat0_y;
 			double d_rsat0_z;
@@ -45,7 +50,7 @@ namespace gr {
 			double d_vsat0_y;
 			double d_vsat0_z;
 
-			uint32_t d_timestamp1;
+			time_t d_timestamp1;
 			double d_rsat1_x;
 			double d_rsat1_y;
 			double d_rsat1_z;
@@ -57,12 +62,23 @@ namespace gr {
 			float d_lon;
 			float d_alt;
 			float d_fc;
-			float d_samp_rate;
+			uint32_t d_samp_rate;
 			bool d_txrx;
 			bool d_verbose;
 
+			double d_range0;
+			double d_range1;
+			double d_rr0;
+			double d_rr1;
+			double d_rrr;
+
+			time_t d_time_curr;
+
 			FILE *d_fp;
-			uint8_t d_init;
+			uint8_t d_tracking;
+
+			double d_doppler;
+			double d_doppler_rate;
 
 			void lla2ecef(double lat, double lon, double alt, double *rx, double *ry, double *rz);
 			void ecef2aer(double x, double y, double z, double lat, double lon, double *azm, double *elv, double *range);
