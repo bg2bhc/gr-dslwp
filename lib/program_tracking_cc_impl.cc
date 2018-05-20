@@ -186,7 +186,7 @@ namespace gr {
 		void program_tracking_cc_impl::ecef2azel(double rx, double ry, double rz, double lat, double lon, double *az, double *el)
 		{
 			float r1x = cos(lon)*rx + sin(lon)*ry;
-			float r1y = -sin(lon)*ry + cos(lon)*rz;
+			float r1y = -sin(lon)*rx + cos(lon)*ry;
 			float r1z = rz;
 
 			float r2x = cos(-lat)*r1x - sin(-lat)*r1z;
