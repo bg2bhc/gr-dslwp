@@ -44,7 +44,7 @@ namespace gr {
       : gr::sync_block("program_tracking_cc",
               gr::io_signature::make(1, 1, sizeof(gr_complex)),
               gr::io_signature::make(1, 1, sizeof(gr_complex))),
-							d_enable(enable), d_lat(lat), d_lon(lon), d_alt(alt), d_fc(fc), d_samp_rate(samp_rate), d_txrx(txrx), d_verbose(verbose)
+							d_enable(enable), d_fc(fc), d_samp_rate(samp_rate), d_txrx(txrx), d_verbose(verbose)
     {
 			if(d_enable)
 			{
@@ -56,7 +56,9 @@ namespace gr {
 				program_tracking_cc_impl::ecef2aer(-207.8135, 286.0307, 353.5534, 45.0/180*M_PI, 126.0/180*M_PI, &azm, &elv, &range);
 				fprintf(stdout, "%f, %f, %f\n", azm, elv, range);
 */
+				double rgs; 				
 				program_tracking_cc_impl::lla2ecef(lat/180.0*M_PI, lon/180.0*M_PI, alt/1000.0, &d_rgs_x, &d_rgs_y, &d_rgs_z);
+				program_tracking_cc_impl::ecef2llr(d_rgs_x, d_rgs_y, d_rgs_z, &d_lat, &d_lon, &rgs);
 
 				fprintf(stdout, "Set home location in ECEF: %f, %f, %f\n", d_rgs_x, d_rgs_y, d_rgs_z);
 
@@ -99,7 +101,9 @@ namespace gr {
 
 					vec_x = d_rsat0_x - d_rgs_x;
 					vec_y = d_rsat0_y - d_rgs_y;
-					vec_z = d_rsat0_z - d_rgs_z;			
+					vec_z = d_rsat0_z - d_rgs_z;	
+
+					program_tracking_cc_impl::ecef2azel(vec_x, vec_y, vec_z, d_lat, d_lon, &d_az0, &d_el0);		
 
 					d_range0 = pow(vec_x*vec_x+vec_y*vec_y+vec_z*vec_z, 0.5);
 
@@ -118,7 +122,9 @@ namespace gr {
 
 					vec_x = d_rsat1_x - d_rgs_x;
 					vec_y = d_rsat1_y - d_rgs_y;
-					vec_z = d_rsat1_z - d_rgs_z;			
+					vec_z = d_rsat1_z - d_rgs_z;
+
+					program_tracking_cc_impl::ecef2azel(vec_x, vec_y, vec_z, d_lat, d_lon, &d_az1, &d_el1);	
 
 					d_range1 = pow(vec_x*vec_x+vec_y*vec_y+vec_z*vec_z, 0.5);
 
@@ -140,7 +146,7 @@ namespace gr {
 						d_doppler_rate = -d_doppler_rate;
 					}
 
-					fprintf(stdout, "%02d/%02d/%02d %02d:%02d:%02d, range = %f, rr = %f, rrr = %f, doppler = %f\n", tblock->tm_year+1900, tblock->tm_mon+1, tblock->tm_mday, tblock->tm_hour, tblock->tm_min, tblock->tm_sec, d_range0, d_rr0, d_rrr, -d_doppler);
+					fprintf(stdout, "%02d/%02d/%02d %02d:%02d:%02d, az = %.2f, el = %.2f, range = %f, rr = %f, rrr = %f, doppler = %.2f, doppler_rate = %.2f\n", tblock->tm_year+1900, tblock->tm_mon+1, tblock->tm_mday, tblock->tm_hour, tblock->tm_min, tblock->tm_sec, d_az0/M_PI*180.0, d_el0/M_PI*180.0, d_range0, d_rr0, d_rrr, -d_doppler, -d_doppler_rate);
 				}
 			}
 		}
@@ -165,27 +171,38 @@ namespace gr {
 			*rz = ((1-e2)*v+alt)*sin(lat);
 		}
 
-/*		void program_tracking_cc_impl::ecef2llr(double rx, double ry, double rz, double *lat, double *lon, double *r)
+		void program_tracking_cc_impl::ecef2llr(double rx, double ry, double rz, double *lat, double *lon, double *r)
 		{
-			double a = 6378.137;
-			double e2 = 0.00669437999013;
-
-			lon = acos(rx/sqrt(rx*rx+ry*ry));
+			*lon = acos(rx / sqrt(rx*rx+ry*ry));
 			if(ry<0)
 			{
-				lon = -lon;
+				*lon = -*lon;
 			}
 			
-			lat = atan();
-
-			double v = a * pow(1-e2*sin(lat)*sin(lat), -0.5);
-
-			*rx = (v+alt)*cos(lat)*cos(lon);
-			*ry = (v+alt)*cos(lat)*sin(lon);
-			*rz = ((1-e2)*v+alt)*sin(lat);
+			*lat = atan(rz / sqrt(rx*rx+ry*ry));
+			*r = sqrt(rx*rx + ry*ry + rz*rz);
 		}
 
-		void program_tracking_cc_impl::ecef2aer(double x, double y, double z, double lat, double lon, double *azm, double *elv, double *range)
+		void program_tracking_cc_impl::ecef2azel(double rx, double ry, double rz, double lat, double lon, double *az, double *el)
+		{
+			float r1x = cos(lon)*rx + sin(lon)*ry;
+			float r1y = -sin(lon)*ry + cos(lon)*rz;
+			float r1z = rz;
+
+			float r2x = cos(-lat)*r1x - sin(-lat)*r1z;
+			float r2y = r1y;
+			float r2z = sin(-lat)*r1x + cos(-lat)*r1z;
+
+			*el = atan(r2x / sqrt(r2y*r2y + r2z*r2z));
+
+			*az = acos(r2z / sqrt(r2y*r2y + r2z*r2z));
+			if(r2z < 0)
+			{
+				*az = 2*M_PI - *az;
+			}
+		}
+
+/*		void program_tracking_cc_impl::ecef2aer(double x, double y, double z, double lat, double lon, double *azm, double *elv, double *range)
 		{
 			double x1 = -sin(lon)*cos(lat)*x - sin(lon)*sin(lat)*y + cos(lon)*z;
 			double y1 = -sin(lat) * x + cos(lat) * y;
@@ -255,6 +272,8 @@ namespace gr {
 							d_vsat0_z = d_vsat1_z;
 							d_range0 = d_range1;
 							d_rr0 = d_rr1;
+							d_el0 = d_el1;
+							d_az0 = d_az1;
 
 							if(fscanf(d_fp, "%010ld %015lf %015lf %015lf %010lf %010lf %010lf\r\n", &d_timestamp1, &d_rsat1_x, &d_rsat1_y, &d_rsat1_z, &d_vsat1_x, &d_vsat1_y, &d_vsat1_z) != 7)
 							{
@@ -267,7 +286,9 @@ namespace gr {
 
 							vec_x = d_rsat1_x - d_rgs_x;
 							vec_y = d_rsat1_y - d_rgs_y;
-							vec_z = d_rsat1_z - d_rgs_z;			
+							vec_z = d_rsat1_z - d_rgs_z;		
+
+							program_tracking_cc_impl::ecef2azel(vec_x, vec_y, vec_z, d_lat, d_lon, &d_az1, &d_el1);		
 
 							d_range1 = pow(vec_x*vec_x+vec_y*vec_y+vec_z*vec_z, 0.5);
 
@@ -278,9 +299,6 @@ namespace gr {
 							d_rr1 = d_vsat1_x * vec_unit_x + d_vsat1_y * vec_unit_y + d_vsat1_z * vec_unit_z;						
 							d_rrr = d_rr1 - d_rr0;
 
-							struct tm *tblock;
-							tblock =  gmtime((time_t *)&d_timestamp0);
-
 							d_doppler = d_rr0/2.99792458e5*d_fc;
 							d_doppler_rate = d_rrr/2.99792458e5*d_fc;
 							if(d_txrx)
@@ -289,7 +307,10 @@ namespace gr {
 								d_doppler_rate = -d_doppler_rate;
 							}
 
-							fprintf(stdout, "%02d/%02d/%02d %02d:%02d:%02d, range = %f, rr = %f, rrr = %f, doppler = %f\n", tblock->tm_year+1900, tblock->tm_mon+1, tblock->tm_mday, tblock->tm_hour, tblock->tm_min, tblock->tm_sec, d_range0, d_rr0, d_rrr, -d_doppler);
+							struct tm *tblock;
+							tblock =  gmtime((time_t *)&d_timestamp0);
+
+							fprintf(stdout, "%02d/%02d/%02d %02d:%02d:%02d, az = %.2f, el = %.2f, range = %f, rr = %f, rrr = %f, doppler = %.2f, doppler_rate = %.2f\n", tblock->tm_year+1900, tblock->tm_mon+1, tblock->tm_mday, tblock->tm_hour, tblock->tm_min, tblock->tm_sec, d_az0/M_PI*180.0, d_el0/M_PI*180.0, d_range0, d_rr0, d_rrr, -d_doppler, -d_doppler_rate);
 						}
 						else
 						{
@@ -311,7 +332,9 @@ namespace gr {
 
 									vec_x = d_rsat0_x - d_rgs_x;
 									vec_y = d_rsat0_y - d_rgs_y;
-									vec_z = d_rsat0_z - d_rgs_z;			
+									vec_z = d_rsat0_z - d_rgs_z;	
+
+									program_tracking_cc_impl::ecef2azel(vec_x, vec_y, vec_z, d_lat, d_lon, &d_az0, &d_el0);			
 
 									d_range0 = pow(vec_x*vec_x+vec_y*vec_y+vec_z*vec_z, 0.5);
 
@@ -330,7 +353,9 @@ namespace gr {
 
 									vec_x = d_rsat1_x - d_rgs_x;
 									vec_y = d_rsat1_y - d_rgs_y;
-									vec_z = d_rsat1_z - d_rgs_z;			
+									vec_z = d_rsat1_z - d_rgs_z;	
+
+									program_tracking_cc_impl::ecef2azel(vec_x, vec_y, vec_z, d_lat, d_lon, &d_az1, &d_el1);			
 
 									d_range1 = pow(vec_x*vec_x+vec_y*vec_y+vec_z*vec_z, 0.5);
 
@@ -352,7 +377,7 @@ namespace gr {
 										d_doppler_rate = -d_doppler_rate;
 									}
 
-									fprintf(stdout, "%02d/%02d/%02d %02d:%02d:%02d, range = %f, rr = %f, rrr = %f, doppler = %f\n", tblock->tm_year+1900, tblock->tm_mon+1, tblock->tm_mday, tblock->tm_hour, tblock->tm_min, tblock->tm_sec, d_range0, d_rr0, d_rrr, -d_doppler);
+									fprintf(stdout, "%02d/%02d/%02d %02d:%02d:%02d, az = %.2f, el = %.2f, range = %f, rr = %f, rrr = %f, doppler = %.2f, doppler_rate = %.2f\n", tblock->tm_year+1900, tblock->tm_mon+1, tblock->tm_mday, tblock->tm_hour, tblock->tm_min, tblock->tm_sec, d_az0/M_PI*180.0, d_el0/M_PI*180.0, d_range0, d_rr0, d_rrr, -d_doppler, -d_doppler_rate);
 								}
 							}
 						}

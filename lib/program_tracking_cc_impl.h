@@ -38,10 +38,6 @@ namespace gr {
 			double d_rgs_y;
 			double d_rgs_z;
 
-			double d_rot_x;
-			double d_rot_y;
-			double d_rot_z;
-
 			time_t d_timestamp0;
 			double d_rsat0_x;
 			double d_rsat0_y;
@@ -58,10 +54,9 @@ namespace gr {
 			double d_vsat1_y;
 			double d_vsat1_z;
 
-			float d_lat;
-			float d_lon;
-			float d_alt;
-			float d_fc;
+			double d_lat;
+			double d_lon;
+			double d_fc;
 			uint32_t d_samp_rate;
 			bool d_txrx;
 			bool d_verbose;
@@ -80,8 +75,12 @@ namespace gr {
 			double d_doppler;
 			double d_doppler_rate;
 
+			double d_az0, d_az1, d_el0, d_el1;
+
 			void lla2ecef(double lat, double lon, double alt, double *rx, double *ry, double *rz);
-			void ecef2aer(double x, double y, double z, double lat, double lon, double *azm, double *elv, double *range);
+			void ecef2llr(double rx, double ry, double rz, double *lat, double *lon, double *r);
+			void ecef2azel(double rx, double ry, double rz, double lat, double lon, double *az, double *el);
+			//void ecef2aer(double x, double y, double z, double lat, double lon, double *azm, double *elv, double *range);
 
      public:
       program_tracking_cc_impl(bool enable, const std::string& path, float lon, float lat, float alt, float fc, uint32_t samp_rate, bool txrx, bool verbose);
