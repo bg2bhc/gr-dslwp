@@ -29,6 +29,11 @@ After sepration, the following GRCs should be used:
 - demod_dslwp_gmsk_a1_250bps_0.5_coherent.grc (Satellite A Radio 1, 250 bps GMSK with 1/2 Turbo code and precoder)
 - demod_dslwp_gmsk_b0_500bps_0.25_dpd.grc (Satellite B Radio 0, 500 bps GMSK with 1/4 Turbo code) 
 - demod_dslwp_gmsk_b1_250bps_0.5_coherent.grc (Satellite B Radio 1, 250 bps GMSK with 1/2 Turbo code and precoder)
+It is recommanded to generate the .py files first, then run them in different terminals to distinguish the messages from different channels. 
+
+## About TLE
+---------------------------------------
+A TLE was provided on http://lilacsat.hit.edu.cn/tle/dslwp.txt. It is not a precise way to describe a lunar transfer orbit, but can be used for antenna pointing during lunar transferring. After lunar injection, TLE is no longer useful.
 
 ## About TLE
 ---------------------------------------
