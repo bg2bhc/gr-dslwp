@@ -57,6 +57,7 @@ $ sudo apt install python-qt4
 $ chmod a+x launch.sh
  
 ## To run
+----------------------------------------------------------------------------------
 change dir to proxy path and run  
 `$ ./launch.sh`  
 or  
@@ -64,8 +65,18 @@ or
 
 
 ## To configure proxy
+----------------------------------------------------------------------------------
 Usually, the proxy is configured.   
 You only to change your **nickname**, **longitude**, **latitude**, **altitude**(altitude is not necessary)  
 ![configure proxy](https://raw.githubusercontent.com/ArtisticZhao/DSLWP-Downlink-Proxy/master/guide_images/02.png)
+
 if you send the date to server sucessful. server will return some text.  
 ![proxy send](https://raw.githubusercontent.com/ArtisticZhao/DSLWP-Downlink-Proxy/master/guide_images/03.png)
+
+
+## Tornado Issue
+----------------------------------------------------------------------------------
+The proxy does not work with new versions of tornado. To fix this:
+$ sudo python -m pip uninstall tornado
+$ sudo python -m pip install tornado==4.5.3
+
