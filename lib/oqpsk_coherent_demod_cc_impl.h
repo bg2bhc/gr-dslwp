@@ -50,8 +50,11 @@ namespace gr {
 		float d_freq;
 		float d_phase;
 
+                int d_asm_ignore;
+                int d_symbols_since_asm;
+
      public:
-      oqpsk_coherent_demod_cc_impl(int samples_per_symbol, const std::vector<gr_complex> &taps, int opt_point, int pll, float pll_loop_bw, float pll_damping, float freq_max, float freq_min, int dttl, float dttl_loop_bw, float dttl_damping, float max_rate_deviation);
+      oqpsk_coherent_demod_cc_impl(int samples_per_symbol, const std::vector<gr_complex> &taps, int opt_point, int pll, float pll_loop_bw, float pll_damping, float freq_max, float freq_min, int dttl, float dttl_loop_bw, float dttl_damping, float max_rate_deviation, int asm_ignore);
       ~oqpsk_coherent_demod_cc_impl();
 
       // Where all the action really happens
