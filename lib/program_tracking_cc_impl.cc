@@ -68,7 +68,7 @@ namespace gr {
 					fprintf(stdout, "\n**** Error read tracking file!!!\n");
 					exit(0);
 				}
-
+				
 				d_time_curr = time(NULL);
 
 				if(d_time_curr < d_timestamp0)
@@ -145,8 +145,10 @@ namespace gr {
 						d_doppler = -d_doppler;
 						d_doppler_rate = -d_doppler_rate;
 					}
-
-					fprintf(stdout, "%02d/%02d/%02d %02d:%02d:%02d, az = %.2f, el = %.2f, range = %f, rr = %f, rrr = %f, doppler = %.2f, doppler_rate = %.2f\n", tblock->tm_year+1900, tblock->tm_mon+1, tblock->tm_mday, tblock->tm_hour, tblock->tm_min, tblock->tm_sec, d_az0/M_PI*180.0, d_el0/M_PI*180.0, d_range0, d_rr0, d_rrr, -d_doppler, -d_doppler_rate);
+					if(d_verbose)
+					{
+						fprintf(stdout, "%02d/%02d/%02d %02d:%02d:%02d, az = %.2f, el = %.2f, range = %f, rr = %f, rrr = %f, doppler = %.2f, doppler_rate = %.2f\n", tblock->tm_year+1900, tblock->tm_mon+1, tblock->tm_mday, tblock->tm_hour, tblock->tm_min, tblock->tm_sec, d_az0/M_PI*180.0, d_el0/M_PI*180.0, d_range0, d_rr0, d_rrr, -d_doppler, -d_doppler_rate);
+					}
 				}
 			}
 		}
@@ -276,7 +278,10 @@ namespace gr {
 							struct tm *tblock;
 							tblock =  gmtime((time_t *)&d_timestamp0);
 
-							fprintf(stdout, "%02d/%02d/%02d %02d:%02d:%02d, az = %.2f, el = %.2f, range = %f, rr = %f, rrr = %f, doppler = %.2f, doppler_rate = %.2f\n", tblock->tm_year+1900, tblock->tm_mon+1, tblock->tm_mday, tblock->tm_hour, tblock->tm_min, tblock->tm_sec, d_az0/M_PI*180.0, d_el0/M_PI*180.0, d_range0, d_rr0, d_rrr, -d_doppler, -d_doppler_rate);
+							if(d_verbose)
+							{							
+								fprintf(stdout, "%02d/%02d/%02d %02d:%02d:%02d, az = %.2f, el = %.2f, range = %f, rr = %f, rrr = %f, doppler = %.2f, doppler_rate = %.2f\n", tblock->tm_year+1900, tblock->tm_mon+1, tblock->tm_mday, tblock->tm_hour, tblock->tm_min, tblock->tm_sec, d_az0/M_PI*180.0, d_el0/M_PI*180.0, d_range0, d_rr0, d_rrr, -d_doppler, -d_doppler_rate);
+							}
 						}
 						else
 						{
@@ -343,7 +348,10 @@ namespace gr {
 										d_doppler_rate = -d_doppler_rate;
 									}
 
-									fprintf(stdout, "%02d/%02d/%02d %02d:%02d:%02d, az = %.2f, el = %.2f, range = %f, rr = %f, rrr = %f, doppler = %.2f, doppler_rate = %.2f\n", tblock->tm_year+1900, tblock->tm_mon+1, tblock->tm_mday, tblock->tm_hour, tblock->tm_min, tblock->tm_sec, d_az0/M_PI*180.0, d_el0/M_PI*180.0, d_range0, d_rr0, d_rrr, -d_doppler, -d_doppler_rate);
+									if(d_verbose)
+									{
+										fprintf(stdout, "%02d/%02d/%02d %02d:%02d:%02d, az = %.2f, el = %.2f, range = %f, rr = %f, rrr = %f, doppler = %.2f, doppler_rate = %.2f\n", tblock->tm_year+1900, tblock->tm_mon+1, tblock->tm_mday, tblock->tm_hour, tblock->tm_min, tblock->tm_sec, d_az0/M_PI*180.0, d_el0/M_PI*180.0, d_range0, d_rr0, d_rrr, -d_doppler, -d_doppler_rate);
+									}
 								}
 							}
 						}
