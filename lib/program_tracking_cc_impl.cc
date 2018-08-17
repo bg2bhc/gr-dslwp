@@ -355,8 +355,8 @@ namespace gr {
 					sample_in_second++;
 				}
 
-				out[i].real() = k_real * in[i].real() - k_imag * in[i].imag();
-				out[i].imag() = k_real * in[i].imag() + k_imag * in[i].real();
+				out[i] = k_real * in[i].real() - k_imag * in[i].imag()
+				  + 1i * (k_real * in[i].imag() + k_imag * in[i].real());
 			}
 			
 
