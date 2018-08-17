@@ -46,7 +46,7 @@ namespace gr {
        * class. dslwp::oqpsk_coherent_demod_cc::make is the public interface for
        * creating new instances.
        */
-      static sptr make(int samples_per_symbol, const std::vector<gr_complex> &taps, int opt_point, int pll, float pll_loop_bw, float pll_damping, float freq_max, float freq_min, int dttl, float dttl_loop_bw, float dttl_damping, float max_rate_deviation);
+      static sptr make(int samples_per_symbol, const std::vector<gr_complex> &taps, int opt_point, int pll, float pll_loop_bw, float pll_damping, float freq_max, float freq_min, int dttl, float dttl_loop_bw, float dttl_damping, float max_rate_deviation, int asm_ignore);
     };
 
   } // namespace dslwp

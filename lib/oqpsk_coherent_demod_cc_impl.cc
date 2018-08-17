@@ -32,20 +32,20 @@ namespace gr {
   namespace dslwp {
 
     oqpsk_coherent_demod_cc::sptr
-    oqpsk_coherent_demod_cc::make(int samples_per_symbol, const std::vector<gr_complex> &taps, int opt_point, int pll, float pll_loop_bw, float pll_damping, float freq_max, float freq_min, int dttl, float dttl_loop_bw, float dttl_damping, float max_rate_deviation)
+    oqpsk_coherent_demod_cc::make(int samples_per_symbol, const std::vector<gr_complex> &taps, int opt_point, int pll, float pll_loop_bw, float pll_damping, float freq_max, float freq_min, int dttl, float dttl_loop_bw, float dttl_damping, float max_rate_deviation, int asm_ignore)
     {
       return gnuradio::get_initial_sptr
-        (new oqpsk_coherent_demod_cc_impl(samples_per_symbol, taps, opt_point, pll, pll_loop_bw, pll_damping, freq_max, freq_min, dttl, dttl_loop_bw, dttl_damping, max_rate_deviation));
+	      (new oqpsk_coherent_demod_cc_impl(samples_per_symbol, taps, opt_point, pll, pll_loop_bw, pll_damping, freq_max, freq_min, dttl, dttl_loop_bw, dttl_damping, max_rate_deviation, asm_ignore));
     }
 
     /*
      * The private constructor
      */
-    oqpsk_coherent_demod_cc_impl::oqpsk_coherent_demod_cc_impl(int samples_per_symbol, const std::vector<gr_complex> &taps, int opt_point, int pll, float pll_loop_bw, float pll_damping, float freq_max, float freq_min, int dttl, float dttl_loop_bw, float dttl_damping, float max_rate_deviation)
+	  oqpsk_coherent_demod_cc_impl::oqpsk_coherent_demod_cc_impl(int samples_per_symbol, const std::vector<gr_complex> &taps, int opt_point, int pll, float pll_loop_bw, float pll_damping, float freq_max, float freq_min, int dttl, float dttl_loop_bw, float dttl_damping, float max_rate_deviation, int asm_ignore)
       : gr::block("oqpsk_coherent_demod_cc",
               gr::io_signature::make(1, 1, sizeof(gr_complex)),
               gr::io_signature::make(1, 1, sizeof(gr_complex))),
-              d_samples_per_symbol(samples_per_symbol), d_taps(taps), d_opt_point(opt_point), d_pll(pll), d_pll_loop_bw(pll_loop_bw), d_pll_damping(pll_damping), d_freq_max(freq_max), d_freq_min(freq_min), d_dttl(dttl), d_dttl_loop_bw(dttl_loop_bw), d_dttl_damping(dttl_damping), d_max_rate_deviation(max_rate_deviation)
+      d_samples_per_symbol(samples_per_symbol), d_taps(taps), d_opt_point(opt_point), d_pll(pll), d_pll_loop_bw(pll_loop_bw), d_pll_damping(pll_damping), d_freq_max(freq_max), d_freq_min(freq_min), d_dttl(dttl), d_dttl_loop_bw(dttl_loop_bw), d_dttl_damping(dttl_damping), d_max_rate_deviation(max_rate_deviation), d_asm_ignore(asm_ignore), d_symbols_since_asm(0)
     {
 		d_mix_out = (gr_complex *)malloc(sizeof(gr_complex)*taps.size());		
 		for(int i=0; i<taps.size(); i++)
@@ -93,32 +93,48 @@ namespace gr {
       const gr_complex *in = (const gr_complex *) input_items[0];
       gr_complex *out = (gr_complex *) output_items[0];
       int i_output = 0;
+      bool use_asm;
 
       for(int i=0; i<ninput_items[0]; i++)
       {
 		std::vector<tag_t> tags;
 		get_tags_in_window(tags, 0, i, i+1);
 
+		use_asm = d_symbols_since_asm >= d_asm_ignore;
 		for(int j=0; j<tags.size(); j++)
 		{
 			if(tags[j].key == pmt::mp("corr_start"))
 			{
-				int sample_in_symbol_old = d_sample_in_symbol;
-				d_sample_in_symbol = 0;
+				if (use_asm)
+				{
+					int sample_in_symbol_old = d_sample_in_symbol;
+					d_sample_in_symbol = 0;
+					d_symbols_since_asm = 0;
 
-				/* For opt_point=12, [B-1, B0], [B1, B2]... */
-				//add_item_tag(0, nitems_written(0)+i_output+1, tags[j].key, tags[j].value );
-
-				/* For opt_point=4, [B0, B1], [B2, B3]... */
-				add_item_tag(0, nitems_written(0)+i_output+2, tags[j].key, tags[j].value );
-
-				static time_t time_curr;
-				static struct tm *tblock_curr;
-
-				time_curr = time(NULL);
-				tblock_curr = gmtime(&time_curr);
-
-				fprintf(stdout, "\n**** ASM found at: %02d:%02d:%02d\nSet sample_in_symbol: %d -> 0\n", tblock_curr->tm_hour, tblock_curr->tm_min, tblock_curr->tm_sec, sample_in_symbol_old);
+					/* For opt_point=12, [B-1, B0], [B1, B2]... */
+					//add_item_tag(0, nitems_written(0)+i_output+1, tags[j].key, tags[j].value );
+					
+					/* For opt_point=4, [B0, B1], [B2, B3]... */
+					add_item_tag(0, nitems_written(0)+i_output+2, tags[j].key, tags[j].value );
+					
+					static time_t time_curr;
+					static struct tm *tblock_curr;
+					
+					time_curr = time(NULL);
+					tblock_curr = gmtime(&time_curr);
+					
+					fprintf(stdout, "\n**** ASM found at: %02d:%02d:%02d\nSet sample_in_symbol: %d -> 0\n", tblock_curr->tm_hour, tblock_curr->tm_min, tblock_curr->tm_sec, sample_in_symbol_old);
+				}
+				else
+				{
+					static time_t time_curr;
+					static struct tm *tblock_curr;
+					
+					time_curr = time(NULL);
+					tblock_curr = gmtime(&time_curr);
+					
+					fprintf(stdout, "\n**** Ignored ASM at: %02d:%02d:%02d\n", tblock_curr->tm_hour, tblock_curr->tm_min, tblock_curr->tm_sec);
+				}
 			}
 			if(tags[j].key == pmt::mp("payload_start"))
 			{
@@ -128,7 +144,7 @@ namespace gr {
 				/* For opt_point=4, [B0, B1], [B2, B3]... */
 				add_item_tag(0, nitems_written(0)+i_output+2, tags[j].key, tags[j].value );
 			}
-			else if(tags[j].key == pmt::mp("freq_est"))
+			else if(use_asm && (tags[j].key == pmt::mp("freq_est")))
 			{
 				if(pmt::is_real(tags[j].value))
 				{
@@ -138,7 +154,7 @@ namespace gr {
 					fprintf(stdout, "Set freq: %f -> %f\n", freq_old, d_freq);
 				}
 			}
-			else if(tags[j].key == pmt::mp("phase_est"))
+			else if(use_asm && (tags[j].key == pmt::mp("phase_est")))
 			{
 				if(pmt::is_real(tags[j].value))
 				{
@@ -148,22 +164,20 @@ namespace gr {
 					fprintf(stdout, "Set phase: %f -> %f\n", phase_old, d_phase);
 				}
 			}
-			else if(tags[j].key == pmt::mp("snr_est"))
+			else if(use_asm && (tags[j].key == pmt::mp("snr_est")))
 			{
 				if(pmt::is_real(tags[j].value))
 				{
 					float value = pmt::to_double(tags[j].value);
 					float eb_n0_est = value*d_samples_per_symbol/2.0f;
 
-				/* For opt_point=12, [B-1, B0], [B1, B2]... */
-				//add_item_tag(0, nitems_written(0)+i_output+1, pmt::mp("eb_n0"), pmt::from_double(value*d_samples_per_symbol/2.0f) );
-
-				/* For opt_point=4, [B0, B1], [B2, B3]... */
-				add_item_tag(0, nitems_written(0)+i_output+2, pmt::mp("eb_n0_est"), pmt::from_double(eb_n0_est) );
-				fprintf(stdout, "Estimated Eb/N0 = %f\n", eb_n0_est);
-
+					/* For opt_point=12, [B-1, B0], [B1, B2]... */
+					//add_item_tag(0, nitems_written(0)+i_output+1, pmt::mp("eb_n0"), pmt::from_double(value*d_samples_per_symbol/2.0f) );
+					
+					/* For opt_point=4, [B0, B1], [B2, B3]... */
+					add_item_tag(0, nitems_written(0)+i_output+2, pmt::mp("eb_n0_est"), pmt::from_double(eb_n0_est) );
+					fprintf(stdout, "Estimated Eb/N0 = %f\n", eb_n0_est);
 				}
-
 			}
 		}
 		
@@ -197,6 +211,7 @@ namespace gr {
 			/* For opt_point=4, [B0, B1], [B2, B3]... */
 			out[i_output] = d_mf_out[0].imag() + 1i*d_mf_out[d_samples_per_symbol/2].real();
 			i_output++;
+			d_symbols_since_asm++;
 
 			/* For opt_point=12, [B-1, B0], [B1, B2]... */
 			//pd_out = d_mf_out[0].real()*d_mf_out[0].imag() - d_mf_out[d_samples_per_symbol/2].real()*d_mf_out[d_samples_per_symbol/2].imag();
