@@ -35,5 +35,6 @@ install(FILES
     dslwp_fec_encode_b.xml
     dslwp_differential_phase_detection_1bit_cf.xml
     dslwp_frame_spliter_f.xml
-    dslwp_program_tracking_cc.xml DESTINATION share/gnuradio/grc/blocks
+    dslwp_program_tracking_cc.xml
+    dslwp_lrtc_mod_bc.xml DESTINATION share/gnuradio/grc/blocks
 )

@@ -41,5 +41,6 @@ install(FILES
     fec_encode_b.h
     differential_phase_detection_1bit_cf.h
     frame_spliter_f.h
-    program_tracking_cc.h DESTINATION include/dslwp
+    program_tracking_cc.h
+    lrtc_mod_bc.h DESTINATION include/dslwp
 )
