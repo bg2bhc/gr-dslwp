@@ -105,8 +105,7 @@ namespace gr {
         float dp = in[i]?d_dp:-d_dp;
         for(j=0; j<256; j++)
         {
-          out[i*256+j].real() = asm32[j].real() * cos(d_pacc) - asm32[j].imag() * sin(d_pacc);
-          out[i*256+j].imag() = asm32[j].real() * sin(d_pacc) + asm32[j].imag() * cos(d_pacc);
+          out[i*256+j] = (asm32[j].real() * cos(d_pacc) - asm32[j].imag() * sin(d_pacc)) + 1i * (asm32[j].real() * sin(d_pacc) + asm32[j].imag() * cos(d_pacc));
 
           d_pacc = d_pacc + dp;
 
