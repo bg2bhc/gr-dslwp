@@ -267,7 +267,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(112, 92)</value>
+      <value>(8, 236)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -310,7 +310,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(256, 136)</value>
+      <value>(112, 136)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -436,57 +436,6 @@
     </param>
   </block>
   <block>
-    <key>blocks_file_sink</key>
-    <param>
-      <key>append</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>file</key>
-      <value>/home/lilac/record_b0_250bps_1_2_coherent_4k.raw</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(512, 148)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_file_sink_0</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>complex</value>
-    </param>
-    <param>
-      <key>unbuffered</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
     <key>blocks_message_debug</key>
     <param>
       <key>alias</key>
@@ -588,7 +537,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(536, 240)</value>
+      <value>(328, 240)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -698,7 +647,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(240, 280)</value>
+      <value>(96, 280)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1107,6 +1056,81 @@
     </param>
   </block>
   <block>
+    <key>dslwp_program_tracking_cc</key>
+    <param>
+      <key>alt</key>
+      <value>alt</value>
+    </param>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>fc</key>
+      <value>435400000</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>enable</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(472, 196)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>dslwp_program_tracking_cc_0</value>
+    </param>
+    <param>
+      <key>lat</key>
+      <value>lat</value>
+    </param>
+    <param>
+      <key>lon</key>
+      <value>lon</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>path</key>
+      <value>/home/lilac/program_tracking_dslwp-b_20180601.txt</value>
+    </param>
+    <param>
+      <key>samp_rate</key>
+      <value>if_rate</value>
+    </param>
+    <param>
+      <key>txrx</key>
+      <value>False</value>
+    </param>
+    <param>
+      <key>verbose</key>
+      <value>True</value>
+    </param>
+  </block>
+  <block>
     <key>dslwp_set_gain_by_tag_cc</key>
     <param>
       <key>alias</key>
@@ -1315,6 +1339,37 @@
     <param>
       <key>import</key>
       <value>import math</value>
+    </param>
+  </block>
+  <block>
+    <key>import</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(184, 68)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>import_0_0</value>
+    </param>
+    <param>
+      <key>import</key>
+      <value>from grc_param import *</value>
     </param>
   </block>
   <block>
@@ -2281,13 +2336,7 @@
   </connection>
   <connection>
     <source_block_id>blocks_multiply_xx_0</source_block_id>
-    <sink_block_id>blocks_multiply_const_vxx_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_multiply_xx_0</source_block_id>
-    <sink_block_id>low_pass_filter_3_0_0</sink_block_id>
+    <sink_block_id>dslwp_program_tracking_cc_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -2352,6 +2401,12 @@
     <sink_key>0</sink_key>
   </connection>
   <connection>
+    <source_block_id>dslwp_program_tracking_cc_0</source_block_id>
+    <sink_block_id>low_pass_filter_3_0_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
     <source_block_id>dslwp_set_gain_by_tag_cc_0</source_block_id>
     <sink_block_id>dslwp_oqpsk_coherent_demod_cc_0</sink_block_id>
     <source_key>0</source_key>
@@ -2378,12 +2433,6 @@
   <connection>
     <source_block_id>fft_correlator_hier_0</source_block_id>
     <sink_block_id>dslwp_set_gain_by_tag_cc_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>low_pass_filter_3_0_0</source_block_id>
-    <sink_block_id>blocks_file_sink_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
