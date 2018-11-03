@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<?grc format='1' created='3.7.11'?>
+<?grc format='1' created='3.7.12'?>
 <flow_graph>
   <timestamp>Wed Jan 24 22:55:15 2018</timestamp>
   <block>
@@ -73,12 +73,20 @@
       <value>True</value>
     </param>
     <param>
+      <key>sizing_mode</key>
+      <value>fixed</value>
+    </param>
+    <param>
       <key>thread_safe_setters</key>
       <value></value>
     </param>
     <param>
       <key>title</key>
       <value>demod_dslwp_gmsk_b1</value>
+    </param>
+    <param>
+      <key>placement</key>
+      <value>(0,0)</value>
     </param>
   </block>
   <block>
@@ -105,7 +113,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>3</value>
+      <value>-4</value>
     </param>
   </block>
   <block>
@@ -116,7 +124,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>-500</value>
+      <value>0</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -198,7 +206,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>16</value>
+      <value>8</value>
     </param>
   </block>
   <block>
@@ -967,10 +975,6 @@
   <block>
     <key>dslwp_oqpsk_coherent_demod_cc</key>
     <param>
-      <key>asm_ignore</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>alias</key>
       <value></value>
     </param>
@@ -1115,7 +1119,7 @@
     </param>
     <param>
       <key>path</key>
-      <value>/home/lilac/program_tracking_dslwp-b_20180601.txt</value>
+      <value>/home/lilac/dslwp_dev/program_tracking_dslwp-b_20181102.txt</value>
     </param>
     <param>
       <key>samp_rate</key>
@@ -2082,11 +2086,11 @@
     </param>
     <param>
       <key>ymax</key>
-      <value>0</value>
+      <value>-20</value>
     </param>
     <param>
       <key>ymin</key>
-      <value>-120</value>
+      <value>-140</value>
     </param>
     <param>
       <key>units</key>
@@ -2149,11 +2153,11 @@
     </param>
     <param>
       <key>int_max</key>
-      <value>-50</value>
+      <value>-80</value>
     </param>
     <param>
       <key>int_min</key>
-      <value>-100</value>
+      <value>-130</value>
     </param>
     <param>
       <key>legend</key>
