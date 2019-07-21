@@ -76,7 +76,7 @@ namespace gr {
 				}
 	
 				float power_s = 0;
-				int index_s;
+				int index_s = 0;
 				for(int j=0; j<d_fft_size; j++)
 				{
 					float sum;
