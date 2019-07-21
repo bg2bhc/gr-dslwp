@@ -182,7 +182,7 @@ namespace gr {
 		}
 		
 		gr_complex nco;
-		nco = cos(-d_phase) + 1i*sin(-d_phase);
+		nco = cos(-d_phase) + 1j*sin(-d_phase);
 
 		for(int j=0; j<(d_taps.size()-1); j++)
 		{
@@ -209,7 +209,7 @@ namespace gr {
 			//out[i_output].imag() = d_mf_out[d_samples_per_symbol/2].imag();
 
 			/* For opt_point=4, [B0, B1], [B2, B3]... */
-			out[i_output] = d_mf_out[0].imag() + 1i*d_mf_out[d_samples_per_symbol/2].real();
+			out[i_output] = d_mf_out[0].imag() + 1j*d_mf_out[d_samples_per_symbol/2].real();
 			i_output++;
 			d_symbols_since_asm++;
 

@@ -364,7 +364,7 @@ namespace gr {
 				}
 
 				out[i] = k_real * in[i].real() - k_imag * in[i].imag()
-				  + 1i * (k_real * in[i].imag() + k_imag * in[i].real());
+				  + 1j * (k_real * in[i].imag() + k_imag * in[i].real());
 			}
 			
 

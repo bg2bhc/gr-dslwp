@@ -162,7 +162,7 @@ namespace gr {
 							float phase_acc = 0.0f;
 							for(int j=0; j<d_fft_size; j++)
 							{
-								coeff = cos(-phase_acc) + 1i * sin(-phase_acc);
+								coeff = cos(-phase_acc) + 1j * sin(-phase_acc);
 
 								sum += in_s[i*d_fft_size+j] * coeff;
 
