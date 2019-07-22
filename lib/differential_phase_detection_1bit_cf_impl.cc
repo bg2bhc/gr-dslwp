@@ -150,7 +150,7 @@ namespace gr {
 		}
 
 		gr_complex nco;
-		nco = cos(-d_phase) + 1i*sin(-d_phase);
+		nco = cos(-d_phase) + 1j*sin(-d_phase);
 
 		for(int j=0; j<(d_taps.size()-1); j++)
 		{
