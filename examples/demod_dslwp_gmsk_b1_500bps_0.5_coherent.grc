@@ -46,7 +46,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>demod_dslwp_gmsk_b0</value>
+      <value>demod_dslwp_gmsk_b1</value>
     </param>
     <param>
       <key>max_nouts</key>
@@ -78,7 +78,7 @@
     </param>
     <param>
       <key>title</key>
-      <value>demod_dslwp_gmsk_b0</value>
+      <value>demod_dslwp_gmsk_b1</value>
     </param>
   </block>
   <block>
