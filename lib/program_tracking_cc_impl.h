@@ -32,7 +32,7 @@ namespace gr {
     class program_tracking_cc_impl : public program_tracking_cc
     {
      private:
-			bool d_enable;
+			uint8_t d_enable;
 
 			double d_rgs_x;
 			double d_rgs_y;
@@ -83,7 +83,7 @@ namespace gr {
 			//void ecef2aer(double x, double y, double z, double lat, double lon, double *azm, double *elv, double *range);
 
      public:
-      program_tracking_cc_impl(bool enable, const std::string& path, float lon, float lat, float alt, float fc, uint32_t samp_rate, bool txrx, bool verbose);
+      program_tracking_cc_impl(uint8_t enable, uint32_t timestamp, const std::string& path, float lon, float lat, float alt, float fc, uint32_t samp_rate, bool txrx, bool verbose);
       ~program_tracking_cc_impl();
 
       // Where all the action really happens

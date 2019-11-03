@@ -31,16 +31,16 @@ namespace gr {
   namespace dslwp {
 
     program_tracking_cc::sptr
-    program_tracking_cc::make(bool enable, const std::string& path, float lon, float lat, float alt, float fc, uint32_t samp_rate, bool txrx, bool verbose)
+    program_tracking_cc::make(uint8_t enable, uint32_t timestamp, const std::string& path, float lon, float lat, float alt, float fc, uint32_t samp_rate, bool txrx, bool verbose)
     {
       return gnuradio::get_initial_sptr
-        (new program_tracking_cc_impl(enable, path, lon, lat, alt, fc, samp_rate, txrx, verbose));
+        (new program_tracking_cc_impl(enable, timestamp, path, lon, lat, alt, fc, samp_rate, txrx, verbose));
     }
 
     /*
      * The private constructor
      */
-    program_tracking_cc_impl::program_tracking_cc_impl(bool enable, const std::string& path, float lon, float lat, float alt, float fc, uint32_t samp_rate, bool txrx, bool verbose)
+    program_tracking_cc_impl::program_tracking_cc_impl(uint8_t enable, uint32_t timestamp, const std::string& path, float lon, float lat, float alt, float fc, uint32_t samp_rate, bool txrx, bool verbose)
       : gr::sync_block("program_tracking_cc",
               gr::io_signature::make(1, 1, sizeof(gr_complex)),
               gr::io_signature::make(1, 1, sizeof(gr_complex))),
@@ -69,7 +69,10 @@ namespace gr {
 					exit(0);
 				}
 				
-				d_time_curr = time(NULL);
+                if(d_enable==1)
+				    d_time_curr = time(NULL);
+                else if(d_enable==2)
+				    d_time_curr = timestamp;
 
 				if(d_time_curr < d_timestamp0)
 				{

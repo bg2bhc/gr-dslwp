@@ -3,20 +3,30 @@
   <key>dslwp_program_tracking_cc</key>
   <category>[DSLWP]</category>
   <import>import dslwp</import>
-  <make>dslwp.program_tracking_cc($enable, $path, $lon, $lat, $alt, $fc, $samp_rate, $txrx, $verbose)</make>
+  <make>dslwp.program_tracking_cc($enable, $timestamp, $path, $lon, $lat, $alt, $fc, $samp_rate, $txrx, $verbose)</make>
   <param>
     <name>Enable</name>
     <key>enable</key>
-    <value>True</value>
-    <type>bool</type>
-    <option>
-		<name>On</name>
-		<key>True</key>
-    </option>
+    <value>1</value>
+    <type>enum</type>
     <option>
 		<name>Off</name>
-		<key>False</key>
+		<key>0</key>
     </option>
+    <option>
+		<name>On</name>
+		<key>1</key>
+    </option>
+    <option>
+		<name>Replay</name>
+		<key>2</key>
+    </option>
+  </param>
+  <param>
+    <name>Timestamp</name>
+    <key>timestamp</key>
+    <value>1526774400</value>
+    <type>raw</type>
   </param>
   <param>
     <name>Path</name>

@@ -46,7 +46,7 @@ namespace gr {
        * class. dslwp::program_tracking_cc::make is the public interface for
        * creating new instances.
        */
-      static sptr make(bool enable, const std::string& path, float lon, float lat, float alt, float fc, uint32_t samp_rate, bool txrx, bool verbose);
+      static sptr make(uint8_t enable, uint32_t timestamp, const std::string& path, float lon, float lat, float alt, float fc, uint32_t samp_rate, bool txrx, bool verbose);
     };
 
   } // namespace dslwp
