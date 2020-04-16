@@ -1,0 +1,1883 @@
+-------------------------
+Start at 11:42:00
+-------------------------
+
+Generating: '/home/lilac/DSLWP_DATA/demod_dslwp_gmsk_b1.py'
+
+Executing: /usr/bin/python2 -u /home/lilac/DSLWP_DATA/demod_dslwp_gmsk_b1.py
+
+
+**** Program tracking
+Set home location in ECEF: -2660.999386, 3557.005227, 4561.768982
+
+**** Tracking start!
+
+**** Turbo decoder initiated:
+rate = 0.250000
+info_length = 1784
+encoded_length = 7152
+
+**** Set gain: 1.000000 -> 10952.942383
+
+**** ASM found at: 11:48:47
+Set sample_in_symbol: 12 -> 0
+Set freq: 0.000000 -> -0.426969
+Set phase: 0.000187 -> 0.670677
+Estimated Eb/N0 = 0.299703
+
+**** TM Frame Header
+version_number = 0x3
+spacecraft_id = 0x392
+virtual_channel_id = 0x2
+spare = 0x0
+master_frame_count = 34
+virtual_channel_frame_count = 130
+first_header_pointer = 0
+
+**** TM Packet Header
+version_number = 0x02
+flag_type = 0x01
+slave_header_flag = 0x01
+application_type = 0x02
+nid = 0x00
+group_flag = 0x02
+source_sequence_count = 11266
+packet_data_len = 4596
+
+**** Packet Length Do Not Match!!!
+
+**** TM Packet Too Short!
+
+**** TM Packet Too Short!
+
+**** TM Packet Too Short!
+
+**** TM Packet Too Short!
+
+**** TM Packet Too Short!
+
+**** TM Packet Too Short!
+
+**** TM Packet Too Short!
+
+**** TM Packet Header
+version_number = 0x04
+flag_type = 0x01
+slave_header_flag = 0x00
+application_type = 0x00
+nid = 0xc8
+group_flag = 0x03
+source_sequence_count = 2274
+packet_data_len = 34988
+
+**** Packet Length Do Not Match!!!
+
+**** TM Packet Header
+version_number = 0x06
+flag_type = 0x00
+slave_header_flag = 0x01
+application_type = 0x00
+nid = 0xe8
+group_flag = 0x00
+source_sequence_count = 13186
+packet_data_len = 57928
+
+**** Packet Length Do Not Match!!!
+
+**** Set gain: 10952.942383 -> 11613.695312
+
+**** ASM found at: 11:53:28
+Set sample_in_symbol: 4 -> 0
+Set freq: -0.398778 -> -0.430723
+Set phase: -0.408806 -> -3.108281
+Estimated Eb/N0 = 0.344536
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x196
+virtual_channel_id = 0x1
+spare = 0x0
+master_frame_count = 6
+virtual_channel_frame_count = 128
+first_header_pointer = 255
+* MESSAGE DEBUG PRINT PDU VERBOSE *
+()
+pdu_length = 218
+contents = 
+0000: dc 00 01 28 1e 1f 07 00 09 df 6f e8 3c a3 f3 aa 
+0010: f3 0f 26 65 86 f7 fc e8 de e1 f2 00 44 fc 5e cf 
+0020: d3 f9 4f 20 f2 61 a8 cd f3 52 d5 44 21 2b 39 fb 
+0030: 3b bf a0 d2 ce b6 0e 19 a4 71 f0 f5 8a a6 17 01 
+0040: 6e e9 cf ef f9 d0 25 9b 00 ee e7 91 81 cb 1e d4 
+0050: 30 7a 21 f7 3e 9f 62 93 ee b1 ff 77 a3 4c 55 74 
+0060: d5 9b c7 fc ca 3b 24 7b 07 a0 1b 52 78 1b 0c 77 
+0070: 2d eb 6d 2b 5c 73 f0 6a f7 e7 52 e0 b9 07 9c 9f 
+0080: 62 03 60 e1 fb 91 f0 79 64 86 df 9c 02 aa bc 09 
+0090: 58 ca 2e f8 4b 60 e1 98 67 f8 47 9a a6 3a 95 2a 
+00a0: 16 dd 67 23 27 bf 20 9c 11 ec ee 30 8b 75 01 26 
+00b0: 60 02 c9 15 82 aa 68 c4 5a 05 4d a8 04 17 2c 5a 
+00c0: 52 56 84 b2 70 78 85 a1 64 5c fb a9 f2 d1 1c 3f 
+00d0: b9 55 3c 13 5a 6d f9 e8 69 4d 
+***********************************
+
+**** Set gain: 11613.695312 -> 11273.517578
+
+**** ASM found at: 11:55:54
+Set sample_in_symbol: 3 -> 0
+Set freq: -0.434599 -> -0.434004
+Set phase: 0.614838 -> -2.619441
+Estimated Eb/N0 = 0.329879
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x193
+virtual_channel_id = 0x1
+spare = 0x0
+master_frame_count = 13
+virtual_channel_frame_count = 8
+first_header_pointer = 127
+* MESSAGE DEBUG PRINT PDU VERBOSE *
+()
+pdu_length = 218
+contents = 
+0000: dc 00 09 28 16 88 01 a5 f4 e8 f6 3f f2 ce bc 53 
+0010: 1b 8c d6 e6 8c 23 35 28 e2 04 36 28 4b 40 05 14 
+0020: bd f8 0f d0 c3 ad 34 f1 a2 9b 02 a1 3d a0 0a 94 
+0030: 10 ab 4d 68 17 1a c7 24 51 bb 0a 45 16 3c d8 71 
+0040: 07 23 d2 93 fd 0d d1 34 a5 38 50 b0 82 5e c0 c6 
+0050: f4 b3 80 a6 af e7 79 e7 0c 8a f4 e7 0e 06 69 0c 
+0060: 3e 82 69 00 e2 86 31 bd e9 45 1f d8 91 9b f3 da 
+0070: 52 6d de 68 7b 00 9d 8b 9f c7 46 df d8 50 72 39 
+0080: 3a 8b cd 85 c6 1a ab 7b d1 6a 25 b1 2c a4 45 62 
+0090: 66 57 d0 21 45 00 14 50 01 45 00 14 70 01 45 00 
+00a0: 14 50 00 47 3b bc 8b b1 f8 5d ff 26 6b 6e 7f 6b 
+00b0: a2 b6 22 5a 81 98 d8 a2 b6 46 a1 4a 7a 53 41 ca 
+00c0: 00 a7 53 18 62 9a dc 0a 04 37 a1 2d 1a 88 72 e0 
+00d0: 1c 5b 3f a9 d0 e1 b8 bd 95 4e 
+***********************************
+
+**** Set gain: 11273.517578 -> 11335.370117
+
+**** ASM found at: 11:56:23
+Set sample_in_symbol: 2 -> 0
+Set freq: -0.435051 -> -0.434737
+Set phase: -1.150724 -> -1.361229
+Estimated Eb/N0 = 0.351103
+
+**** Set gain: 11335.370117 -> 12321.746094
+
+**** ASM found at: 11:56:38
+Set sample_in_symbol: 14 -> 0
+Set freq: -0.435169 -> -0.436908
+Set phase: 1.374478 -> 2.511875
+Estimated Eb/N0 = 0.221119
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x193
+virtual_channel_id = 0x0
+spare = 0x0
+master_frame_count = 15
+virtual_channel_frame_count = 10
+first_header_pointer = 98
+
+**** TM Packet Header
+version_number = 0x06
+flag_type = 0x01
+slave_header_flag = 0x01
+application_type = 0x04
+nid = 0x00
+group_flag = 0x00
+source_sequence_count = 2602
+packet_data_len = 7754
+
+**** Packet Length Do Not Match!!!
+
+**** Set gain: 12321.746094 -> 12026.832031
+
+**** ASM found at: 11:56:52
+Set sample_in_symbol: 1 -> 0
+Set freq: -0.435189 -> -0.434543
+Set phase: 2.695073 -> -1.342255
+Estimated Eb/N0 = 0.305113
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x191
+virtual_channel_id = 0x1
+spare = 0x0
+master_frame_count = 43
+virtual_channel_frame_count = 1
+first_header_pointer = 62
+* MESSAGE DEBUG PRINT PDU VERBOSE *
+()
+pdu_length = 218
+contents = 
+0000: 15 8c 28 2d 3e 0a 01 19 9f cf d3 28 4c b6 aa b8 
+0010: 9a ae 99 e8 a8 04 14 ab 8f 96 2a a5 65 25 a1 3a 
+0020: 2a 42 53 48 0c 00 46 d5 40 0f 10 24 5b bc 1d 14 
+0030: 0c 50 38 05 1d 11 51 6e 81 6b 32 cb bf e4 a4 68 
+0040: 9b e3 d5 ff 64 1b 50 06 39 c5 ed 6c 16 fb 1e 21 
+0050: e7 c7 c3 a5 85 2c 9c 24 88 c8 9f 9c 89 76 8b c7 
+0060: 5a 51 30 00 2b 30 fa 7f de 06 2c c2 63 41 28 e3 
+0070: 4c ab 8e f9 2e 70 1e 32 0f 0c 9e 79 1d 03 1b 63 
+0080: 3d ce 13 6c 49 1a a6 10 12 86 bb dc af 37 6e 8b 
+0090: 80 7d 9b d8 12 02 06 0e 25 d3 40 25 44 ce 70 4f 
+00a0: c9 f6 79 ab da 99 7b dd 72 83 52 0f c6 a9 4c 21 
+00b0: bc 18 ab 77 5a a2 76 c7 a7 8e 64 fb ea 14 8e 35 
+00c0: 01 ba 2b 0c 15 90 3c 6a 37 16 1b 2c 93 3f 97 16 
+00d0: be 45 ee 7f ab 8a 5b 9f c0 29 
+***********************************
+
+**** Set gain: 12026.832031 -> 11182.355469
+
+**** ASM found at: 11:57:07
+Set sample_in_symbol: 0 -> 0
+Set freq: -0.435447 -> -0.434935
+Set phase: -1.594819 -> -2.141918
+Estimated Eb/N0 = 0.316793
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x193
+virtual_channel_id = 0x1
+spare = 0x0
+master_frame_count = 17
+virtual_channel_frame_count = 8
+first_header_pointer = 67
+* MESSAGE DEBUG PRINT PDU VERBOSE *
+()
+pdu_length = 218
+contents = 
+0000: dc 00 0d 28 1e 0a 07 01 57 2b 24 87 77 4d 38 26 
+0010: f2 2e 94 9d 79 ae ab 1a 82 bc a4 ff 84 6e 8e ee 
+0020: 69 c1 f8 f3 63 69 00 4a 51 c9 a4 b4 14 bb ee 74 
+0030: 65 09 74 54 a5 e4 36 3d 7e e8 85 76 a8 bf f5 fb 
+0040: 41 86 a0 71 4d 4b 06 36 a8 5e 1f de 8f a5 67 3d 
+0050: 8c e4 57 b2 b2 20 28 a0 02 8b 01 28 a0 02 8a 00 
+0060: 28 a0 e4 45 02 5a 28 00 a2 80 0a fc 76 57 7f c9 
+0070: 48 d1 3f eb ab ff e8 b6 a0 0c 53 c9 02 bb 72 df 
+0080: 47 ba 1c 80 13 83 4d 79 ff 40 39 6e 0f 35 86 9b 
+0090: 52 f6 1e 4a 63 4a 54 81 51 18 3c c0 53 c0 a8 cf 
+00a0: 36 3b 11 45 38 50 86 38 1e 71 40 1c d5 20 1b 81 
+00b0: 9c 9a 65 e9 43 56 1c 87 eb f2 8f 7a 9b 08 76 40 
+00c0: 04 84 71 dd 53 09 b9 39 c5 38 74 a4 21 3b d3 89 
+00d0: cd 02 04 9c 52 63 f1 21 78 93 
+***********************************
+
+**** Set gain: 11182.355469 -> 10474.118164
+
+**** ASM found at: 11:57:21
+Set sample_in_symbol: 1 -> 0
+Set freq: -0.436082 -> -0.434973
+Set phase: -1.322503 -> 1.770737
+Estimated Eb/N0 = 0.370602
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x2ac
+virtual_channel_id = 0x2
+spare = 0x0
+master_frame_count = 237
+virtual_channel_frame_count = 242
+first_header_pointer = 237
+
+**** Set gain: 10474.118164 -> 10571.307617
+
+**** ASM found at: 11:57:36
+Set sample_in_symbol: 1 -> 0
+Set freq: -0.436356 -> -0.434992
+Set phase: 1.841184 -> 1.316009
+Estimated Eb/N0 = 0.354051
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x193
+virtual_channel_id = 0x1
+spare = 0x0
+master_frame_count = 19
+virtual_channel_frame_count = 14
+first_header_pointer = 49
+* MESSAGE DEBUG PRINT PDU VERBOSE *
+()
+pdu_length = 218
+contents = 
+0000: dc 00 0f 28 1e 0a 04 01 97 95 da 60 7f f2 9a 90 
+0010: 01 5b a3 51 5b a7 6a 33 c8 a0 18 0a 3b c0 03 1e 
+0020: b4 1c d1 d0 43 71 cd 48 05 08 10 98 19 e9 4e c7 
+0030: 14 c0 4c 73 4b d0 50 02 08 eb 4a 0e 28 bf f5 fd 
+0040: 44 46 39 a4 14 9f f4 21 f8 c0 a4 ed 4d 8c 00 a5 
+0050: 23 3c 1a 34 fe 82 70 2a bd 79 a6 9a 18 08 28 e4 
+0060: 4d 21 06 31 45 31 92 1d 32 69 71 f3 1a ee 80 19 
+0070: e0 2f bd 59 93 fd 5e 2a a2 f4 fe 8b c5 71 d6 9c 
+0080: c7 e5 c0 15 7f d1 88 fa d2 77 a4 d8 87 0e 29 69 
+0090: df 51 b1 a4 80 2a 08 72 f9 29 7b 88 9f 19 34 fc 
+00a0: fc b8 14 d0 c8 cb 63 02 9a 26 09 57 36 22 3a cc 
+00b0: b9 ff 5c d5 94 c8 96 c4 34 56 44 05 14 00 51 42 
+00c0: 85 14 40 51 40 05 14 00 51 40 05 14 00 51 40 05 
+00d0: 76 3f 0b ba e4 a4 d6 ba 0a 9a 
+***********************************
+
+**** TM Frame Header
+version_number = 0x3
+spacecraft_id = 0x82
+virtual_channel_id = 0x2
+spare = 0x1
+master_frame_count = 231
+virtual_channel_frame_count = 13
+first_header_pointer = 98
+
+**** Set gain: 10571.307617 -> 11124.784180
+
+**** ASM found at: 11:58:05
+Set sample_in_symbol: 0 -> 0
+Set freq: -0.436303 -> -0.434449
+Set phase: -1.076160 -> -2.951617
+Estimated Eb/N0 = 0.313966
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x193
+virtual_channel_id = 0x1
+spare = 0x0
+master_frame_count = 22
+virtual_channel_frame_count = 17
+first_header_pointer = 255
+* MESSAGE DEBUG PRINT PDU VERBOSE *
+()
+pdu_length = 218
+contents = 
+0000: dc 00 12 28 1e 0a 02 09 f4 40 cf f2 cc 62 94 57 
+0010: 42 35 1e b8 c5 35 bd 29 f0 26 8c e0 e6 9e f2 16 
+0020: e4 d5 5f 4f e8 ad 88 c7 a9 a7 85 f9 c9 02 92 d4 
+0030: 48 8b 1c 53 7b d2 62 b0 76 a3 bd 00 32 43 f2 e2 
+0040: 92 10 73 9a 42 25 cf 34 0c 12 73 4d 31 91 67 e7 
+0050: a0 ef bc 6a 5b 10 d3 53 35 95 27 32 31 f7 ac e6 
+0060: 4c 86 51 59 90 14 50 01 45 02 14 d0 01 45 00 14 
+0070: 50 01 45 00 14 50 01 4b 40 09 5d 8f c2 ef f9 29 
+0080: 1a 27 fd 75 7f fd 16 d4 01 88 0d 2d 6d fd 1b 00 
+0090: 14 ee d8 aa 0b 08 bc 1a 91 9b 70 c7 6a 16 81 d0 
+00a0: 8c 8a 0d 2f e8 43 83 61 69 84 e4 f5 a2 fa 8f 71 
+00b0: dd b3 4c 3d 68 60 38 63 2d 2e 07 6a 68 18 b4 7d 
+00c0: 68 4c 08 db 9e 68 1d 28 c4 38 1a 0e 49 e6 a9 05 
+00d0: 84 a8 29 69 05 82 45 34 a1 56 
+***********************************
+
+**** Set gain: 11124.784180 -> 9559.117188
+
+**** ASM found at: 11:58:34
+Set sample_in_symbol: 0 -> 0
+Set freq: -0.436389 -> -0.436696
+Set phase: -0.547798 -> 2.016533
+Estimated Eb/N0 = 0.465385
+
+**** Set gain: 9559.117188 -> 10669.346680
+
+**** ASM found at: 11:58:49
+Set sample_in_symbol: 0 -> 0
+Set freq: -0.437587 -> -0.437105
+Set phase: 1.021185 -> 1.196374
+Estimated Eb/N0 = 0.386345
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x193
+virtual_channel_id = 0x1
+spare = 0x0
+master_frame_count = 24
+virtual_channel_frame_count = 19
+first_header_pointer = 145
+* MESSAGE DEBUG PRINT PDU VERBOSE *
+()
+pdu_length = 218
+contents = 
+0000: dc 00 14 28 1e 0a 05 02 35 34 ec 10 91 8f f2 af 
+0010: c2 9a 6b 73 52 29 e3 a5 24 02 8f 5a 46 3c 53 60 
+0020: 44 3a 8f 62 d2 15 aa 29 c4 1c 66 98 21 ad d2 94 
+0030: 72 c7 ec 10 46 0d 03 af 34 2f e8 45 a4 73 84 26 
+0040: 87 b0 0d 53 4a 83 4e 03 ba 94 5b fa 02 4e 82 99 
+0050: 59 83 14 0c 9a 78 5c 8c 8a a5 df fa 18 98 a5 a4 
+0060: df f4 20 1d 69 9d f9 a0 62 e6 8a 3f a0 03 93 4a 
+0070: 05 0a e0 14 0a 34 b9 0f 41 44 9f 78 53 e9 fd 00 
+0080: aa 7b d3 b2 0d 16 18 a0 64 8a 93 10 53 6a d0 10 
+0090: ee c0 c0 ef 4d 15 20 16 28 81 31 02 f1 4e 07 e4 
+00a0: a2 c0 21 38 5a 43 ca f2 78 a4 c2 8c 74 38 a4 ef 
+00b0: 52 c4 32 53 88 d8 fb 74 69 ef 59 4f fa 26 42 51 
+00c0: 50 40 51 40 08 54 00 51 40 05 14 00 51 40 05 14 
+00d0: 00 50 42 05 19 00 ab aa 39 17 
+***********************************
+
+**** Set gain: 10669.346680 -> 9663.825195
+
+**** ASM found at: 11:59:03
+Set sample_in_symbol: 1 -> 0
+Set freq: -0.437014 -> -0.437101
+Set phase: 2.633950 -> -1.528468
+Estimated Eb/N0 = 0.442913
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x193
+virtual_channel_id = 0x1
+spare = 0x0
+master_frame_count = 40
+virtual_channel_frame_count = 220
+first_header_pointer = 11
+* MESSAGE DEBUG PRINT PDU VERBOSE *
+()
+pdu_length = 218
+contents = 
+0000: dc 40 26 e0 1c 0b 90 01 17 4a d3 f0 f3 fe e1 47 
+0010: 8d e5 cf e9 b4 c4 b5 08 83 9e 40 28 ad 4d 07 5a 
+0020: f0 5a 63 fc 52 1c e0 45 d2 41 47 f5 5b 6c 5d 6d 
+0030: ac eb 1e 56 f1 6c cb 3a 54 dc eb 61 d4 53 9d 15 
+0040: 0b 03 eb 4e 3d 63 f1 55 87 47 1c 55 23 72 77 e5 
+0050: 86 b1 2a a3 f7 43 09 58 12 c0 c0 ae ef 7a 85 be 
+0060: 5f f9 29 89 5e 84 bf d0 b1 d0 62 d4 85 fe 7d 02 
+0070: 23 bd 05 ff 6e 8e b6 1a e3 f6 8f b1 1d db 72 71 
+0080: 8b a8 8c 0a 40 e2 c8 0f 18 15 e0 53 87 15 a6 0a 
+0090: e4 72 23 3e 8d cc 75 b7 90 81 ad 42 86 a9 03 bc 
+00a0: 05 62 ee b3 f8 ec 43 31 82 4b f8 1f fc 2b 86 62 
+00b0: e9 e6 e0 35 c3 18 0f e9 72 e5 2f d1 bc 7d 07 33 
+00c0: 4f de 5a 7f c5 26 61 2c 6c 72 d0 4a f7 be 8f 95 
+00d0: cd 84 c8 ac df f0 62 1a cf 16 
+***********************************
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x193
+virtual_channel_id = 0x1
+spare = 0x0
+master_frame_count = 58
+virtual_channel_frame_count = 21
+first_header_pointer = 97
+* MESSAGE DEBUG PRINT PDU VERBOSE *
+()
+pdu_length = 218
+contents = 
+0000: dc 00 16 28 1e 0a 07 0a 75 8c 62 8a 4c 47 e2 53 
+0010: 83 88 58 fb 53 5d 54 c7 21 28 a8 24 28 a0 02 8a 
+0020: 00 28 a0 22 8a 00 28 a0 02 8a 60 14 52 00 a2 80 
+0030: 0a ec 7e 17 7f c9 48 d1 3f eb ab ff e8 b6 a6 33 
+0040: 13 a0 a3 b5 6c 6a 14 99 cd 2f e8 4c 70 e9 41 a0 
+0050: 80 94 b4 07 f4 3b b5 34 9a 06 2f 6a 43 d6 9b 10 
+0060: 6e c0 c1 28 ce 68 01 ce 0e 29 86 86 00 07 14 a2 
+0070: 80 14 53 5e 43 c2 8a 2e 17 26 41 91 a8 c8 c3 53 
+0080: 7d ff af e8 62 fd e3 48 78 a1 08 50 d8 a6 90 73 
+0090: 93 4a cc 83 a5 38 53 40 25 3c 63 14 0d 07 0c b0 
+00a0: a7 2f 4c d3 04 87 1f 5a 69 e4 d0 02 1a 6d 2e a0 
+00b0: 28 1c d2 9a 00 4e 94 a2 98 0e 3f 4a 0e f4 c0 51 
+00c0: d7 34 77 a0 03 f8 e9 e3 ae 28 ea 08 93 a0 93 4c 
+00d0: 22 65 04 d5 0c 68 19 eb da 0d 
+***********************************
+
+**** Set gain: 9663.825195 -> 10435.769531
+
+**** ASM found at: 12:03:40
+Set sample_in_symbol: 4 -> 0
+Set freq: -0.426851 -> -0.395388
+Set phase: -1.025201 -> 0.873050
+Estimated Eb/N0 = 0.426222
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x1b7
+virtual_channel_id = 0x1
+spare = 0x0
+master_frame_count = 12
+virtual_channel_frame_count = 167
+first_header_pointer = 22
+* MESSAGE DEBUG PRINT PDU VERBOSE *
+()
+pdu_length = 218
+contents = 
+0000: 5e de 28 28 0e 01 20 94 71 43 84 8b f7 ba 7d c7 
+0010: ac 86 fc 6a 15 e8 de 86 07 f3 f8 58 29 26 25 2e 
+0020: 95 ee 13 11 d9 ab 3f 9f f6 d4 8e ff 29 65 53 08 
+0030: 28 44 c9 78 06 b0 a0 02 3a 40 28 01 15 eb 22 f3 
+0040: 7f f5 77 fe c6 5f fd 44 e8 7a 20 1f 81 d6 72 0d 
+0050: 15 02 05 d2 72 73 38 38 e6 5c 75 2b 2f fa c3 f5 
+0060: 2c bf ea cf 93 c1 7b 84 f2 d0 97 89 ed 60 1a df 
+0070: f5 ae 1c 0f fe 39 73 69 48 80 52 b0 5d 52 8b 33 
+0080: cd ad 96 84 5c 17 bd 2e 24 5e f4 f3 ff 1f fd 4e 
+0090: d8 93 f4 b1 99 85 2c 01 73 ce 15 27 f8 ea 4b cd 
+00a0: 15 54 c6 71 06 ab fe 99 ce 49 cf 94 f9 c7 9d ad 
+00b0: aa e5 64 12 a0 dd e1 b0 b3 93 f1 4a a2 80 50 17 
+00c0: 6a f2 1b 7a 32 37 66 5f 6e ff da 28 04 fb 9d 36 
+00d0: 92 59 5b a9 96 00 a3 19 6e c7 
+***********************************
+
+**** Set gain: 10435.769531 -> 9383.396484
+
+**** ASM found at: 12:04:09
+Set sample_in_symbol: 1 -> 0
+Set freq: -0.396350 -> -0.395877
+Set phase: -0.502304 -> 3.045711
+Estimated Eb/N0 = 0.495354
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x193
+virtual_channel_id = 0x0
+spare = 0x0
+master_frame_count = 47
+virtual_channel_frame_count = 6
+first_header_pointer = 0
+
+**** TM Packet Header
+version_number = 0x05
+flag_type = 0x00
+slave_header_flag = 0x01
+application_type = 0x06
+nid = 0x93
+group_flag = 0x03
+source_sequence_count = 2362
+packet_data_len = 23748
+
+**** Packet Length Do Not Match!!!
+
+**** TM Packet Header
+version_number = 0x00
+flag_type = 0x01
+slave_header_flag = 0x01
+application_type = 0x00
+nid = 0xac
+group_flag = 0x00
+source_sequence_count = 422
+packet_data_len = 193
+
+**** Packet Length Do Not Match!!!
+
+**** TM Packet Too Short!
+
+**** TM Packet Too Short!
+
+**** Set gain: 9383.396484 -> 10049.080078
+
+**** ASM found at: 12:04:38
+Set sample_in_symbol: 0 -> 0
+Set freq: -0.396441 -> -0.396403
+Set phase: 2.871481 -> -0.728649
+Estimated Eb/N0 = 0.381509
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x193
+virtual_channel_id = 0x1
+spare = 0x0
+master_frame_count = 49
+virtual_channel_frame_count = 42
+first_header_pointer = 44
+* MESSAGE DEBUG PRINT PDU VERBOSE *
+()
+pdu_length = 218
+contents = 
+0000: dc 00 0b 28 1e 0a 02 05 5a 0d a3 f2 ac 71 40 ad 
+0010: cd 07 0f 39 57 06 9e c3 14 b6 78 f4 a4 3c 9b 6a 
+0020: 76 ea 02 30 e7 8a 33 c5 20 12 83 4e c0 2e ee 31 
+0030: 40 23 74 00 ac 46 29 bd e8 60 3a 3c 19 00 3d 29 
+0040: d3 1f 98 0a 7d 02 da 0c 03 9a 05 48 06 f2 8e b4 
+0050: 00 63 8a 38 39 a0 06 ef 4b 8f 94 9a 00 51 c7 34 
+0060: ee fa 16 c0 41 9e 69 01 e2 9a fe 86 25 1d a9 21 
+0070: 09 91 ba 9c 5a d2 01 c0 e0 62 93 8d a4 d3 06 57 
+0080: 63 93 49 9e 2b 36 c9 33 a6 39 95 8d 47 58 90 14 
+0090: 50 20 a3 80 0a 28 00 a2 80 0a 28 00 a2 80 0b a8 
+00a0: 00 82 80 0a a8 00 a2 80 0a ec 7e 17 7f c9 48 d1 
+00b0: 3f eb ab fd e8 b6 a0 66 25 27 15 b5 cd 38 34 e7 
+00c0: 22 98 06 28 a4 00 1a d4 d9 14 c6 21 c5 1d f9 04 
+00d0: 29 21 78 a7 86 1d a4 bf 63 75 
+***********************************
+
+**** Set gain: 10049.080078 -> 10614.690430
+
+**** ASM found at: 12:05:07
+Set sample_in_symbol: 0 -> 0
+Set freq: -0.396901 -> -0.397075
+Set phase: -2.410381 -> -2.348920
+Estimated Eb/N0 = 0.425072
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x1a0
+virtual_channel_id = 0x1
+spare = 0x0
+master_frame_count = 179
+virtual_channel_frame_count = 204
+first_header_pointer = 154
+* MESSAGE DEBUG PRINT PDU VERBOSE *
+()
+pdu_length = 218
+contents = 
+0000: dc 02 5d 48 1e 0a 03 05 a1 0d 8d 59 f2 4b 56 9f 
+0010: 07 56 7f fb fa 2c 72 8a 52 b4 73 50 84 1d 69 f8 
+0020: a6 90 cc d5 4a 3a 50 04 79 9f 63 f6 a9 24 1d d0 
+0030: 84 8b 39 1c 4b 68 cc 70 db c5 5b d8 6d 11 8a 0f 
+0040: 5b 9d 09 03 7a 9d df 14 12 96 49 d4 d3 43 16 93 
+0050: 89 10 6c 73 60 4e f6 cf eb 20 20 ed f6 8f 22 30 
+0060: 1b 19 86 07 9a 72 8e 39 a2 7d a1 6a d5 81 e7 8b 
+0070: 6f e9 8b 98 07 89 a8 cb 58 a8 9d e4 36 81 3d 69 
+0080: 97 42 92 f2 01 3c 0c fd ee 0b 06 c3 b0 da b0 a5 
+0090: 1d a9 b8 b7 00 56 09 2b 16 bc ba 39 a9 47 06 ca 
+00a0: 7d d1 f4 49 39 c2 3c 55 2a 00 6e 28 35 5e d6 21 
+00b0: ea 53 5f 5a 56 f6 ac 3e 31 ce 4d 29 39 a1 19 4d 
+00c0: d0 07 55 71 48 79 e2 86 0c 8e a3 c5 e2 22 6b 25 
+00d0: ae 02 ca 05 76 5e 75 2e ae c1 
+***********************************
+
+**** Set gain: 10614.690430 -> 9636.422852
+
+**** ASM found at: 12:05:51
+Set sample_in_symbol: 2 -> 0
+Set freq: -0.397438 -> -0.396600
+Set phase: -2.967884 -> 2.628793
+Estimated Eb/N0 = 0.502404
+
+**** Set gain: 9636.422852 -> 10620.541992
+
+**** ASM found at: 12:06:05
+Set sample_in_symbol: 0 -> 0
+Set freq: -0.398133 -> -0.397111
+Set phase: 2.426977 -> 2.725757
+Estimated Eb/N0 = 0.412840
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x193
+virtual_channel_id = 0x1
+spare = 0x0
+master_frame_count = 54
+virtual_channel_frame_count = 47
+first_header_pointer = 121
+* MESSAGE DEBUG PRINT PDU VERBOSE *
+()
+pdu_length = 218
+contents = 
+0000: dc 00 30 28 1e 0a 02 06 05 f4 07 f2 c3 d6 90 57 
+0010: 41 a8 52 81 91 42 60 2e 73 f4 a4 27 9a 60 21 a4 
+0020: 1c d2 01 d9 c5 00 e4 d0 02 b9 aa ed c9 a2 4c 4c 
+0030: 69 ae 77 2d f3 01 59 cb 62 5e c4 14 56 54 0d 04 
+0040: 00 51 40 05 14 00 51 40 05 14 00 51 40 05 14 00 
+0050: 51 40 05 04 00 51 40 05 76 3f 0b bf e4 a4 68 9f 
+0060: f5 d5 ef e4 5b 50 33 19 97 14 d3 5b 3f eb fa 34 
+0070: 12 9c 06 7a 50 90 09 d2 a3 f8 cd 24 03 81 cd 48 
+0080: a3 35 48 63 48 c1 a3 34 58 04 07 9a 7e 4e 29 a0 
+0090: 43 0b 12 69 a4 f1 c5 4d c4 1d a9 e3 9a 61 42 4f 
+00a0: 2f e5 cd 34 8c 53 b0 ec 34 f0 09 a1 78 19 a0 09 
+00b0: e3 24 e2 a0 93 fd 69 14 30 7b 05 19 e3 8a 10 80 
+00c0: f3 40 00 b2 c4 88 71 4a 1b af 35 4b 4f e8 63 73 
+00d0: 93 4b 9c 8c 53 40 17 a6 33 ff 
+***********************************
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x193
+virtual_channel_id = 0x1
+spare = 0x0
+master_frame_count = 55
+virtual_channel_frame_count = 48
+first_header_pointer = 255
+* MESSAGE DEBUG PRINT PDU VERBOSE *
+()
+pdu_length = 218
+contents = 
+0000: dc 00 31 28 1e 0a 08 06 28 34 f0 71 48 3a d2 b0 
+0010: 1f f2 de f4 d3 fa d7 49 a8 87 8a 70 3c 52 ea 03 
+0020: 4d 28 22 84 01 49 d2 80 1c 28 ef 40 08 4e 45 07 
+0030: 8a 18 7f 41 da 94 1c 7e 34 6c 01 ef 4c cf 34 30 
+0040: 16 9c 06 73 8a 2e 08 4c fa d3 97 a6 45 09 05 84 
+0050: 60 70 4d 57 6e b4 98 9a 1a 7a 55 19 4e 64 35 9c 
+0060: 89 91 1d 15 99 01 45 00 14 50 01 45 00 14 50 01 
+0070: 45 00 14 50 01 45 00 14 50 01 45 00 14 50 01 5d 
+0080: 8f c2 ef f9 29 1a 27 fd 75 7f fd 16 d4 01 90 e7 
+0090: 24 91 51 1a dd 9a 8b de 94 1c 50 02 67 26 91 cf 
+00a0: 20 52 7f d0 31 c2 a6 41 c5 38 8d 21 8e 79 a4 3e 
+00b0: 99 a6 26 c4 1d 69 f9 0b 4b 61 a1 84 52 63 22 95 
+00c0: bf a1 0a 05 3c 0a a4 04 9b c9 5c 53 49 04 d3 fe 
+00d0: 86 c8 df a8 1e b4 80 b5 42 35 
+***********************************
+
+**** Set gain: 10620.541992 -> 12947.226562
+
+**** ASM found at: 12:06:49
+Set sample_in_symbol: 0 -> 0
+Set freq: -0.397590 -> -0.399766
+Set phase: -0.202830 -> -2.459831
+Estimated Eb/N0 = 0.241582
+
+**** TM Frame Header
+version_number = 0x1
+spacecraft_id = 0x13b
+virtual_channel_id = 0x3
+spare = 0x0
+master_frame_count = 166
+virtual_channel_frame_count = 255
+first_header_pointer = 29
+
+**** Set gain: 12947.226562 -> 10366.900391
+
+**** ASM found at: 12:07:18
+Set sample_in_symbol: 1 -> 0
+Set freq: -0.397899 -> -0.398001
+Set phase: -0.201656 -> 2.862824
+Estimated Eb/N0 = 0.343953
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x193
+virtual_channel_id = 0x1
+spare = 0x0
+master_frame_count = 60
+virtual_channel_frame_count = 53
+first_header_pointer = 211
+* MESSAGE DEBUG PRINT PDU VERBOSE *
+()
+pdu_length = 218
+contents = 
+0000: dc 00 36 28 1e 0a 03 a2 d3 45 00 7f f1 0a 29 08 
+0010: 28 a0 02 8a 00 28 a0 02 8a 00 28 a0 02 8a 00 28 
+0020: a0 02 bb 1f 85 d7 f2 52 34 5f da ee d7 d2 2d a8 
+0030: 19 8a 47 19 a3 b5 6f fd 1a 0d e6 94 51 b7 e4 0b 
+0040: ba 74 a3 34 21 87 5a 71 1c 51 70 22 34 e1 fd 77 
+0050: d0 87 e3 8a 4c 64 f1 4c 01 81 1d 69 b8 34 ac 01 
+0060: 45 00 3a 97 85 08 06 0c 93 9a 78 1c d0 90 7f 43 
+0070: 86 05 34 9c b7 34 ff a1 87 14 82 97 f5 fd 08 53 
+0080: d6 9a 68 78 2d 28 a6 02 f7 a5 ea 2a 90 00 eb 4e 
+0090: 2d 8a 06 4a e4 0a 61 24 e6 90 ae 27 6a 05 00 25 
+00a0: 28 a5 70 42 e3 91 49 4d a1 9a 41 d6 6d 33 70 0c 
+00b0: 51 d3 14 9d 4e 28 62 0c 50 78 a4 03 09 c9 a4 1c 
+00c0: 1a 68 0e 78 15 17 7a 04 c9 41 e2 80 4f 5a 00 61 
+00d0: 39 34 d3 c0 35 2c 3e 55 7f 83 
+***********************************
+
+**** Set gain: 10366.900391 -> 10217.843750
+
+**** ASM found at: 12:07:47
+Set sample_in_symbol: 1 -> 0
+Set freq: -0.398173 -> -0.397726
+Set phase: 2.817039 -> 2.256072
+Estimated Eb/N0 = 0.444321
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x193
+virtual_channel_id = 0x1
+spare = 0x0
+master_frame_count = 60
+virtual_channel_frame_count = 183
+first_header_pointer = 254
+* MESSAGE DEBUG PRINT PDU VERBOSE *
+()
+pdu_length = 218
+contents = 
+0000: 48 00 38 28 3e 0a 93 77 a2 ce 48 81 b2 1a 64 a7 
+0010: 6c 66 b4 1c 37 d0 a3 65 64 62 14 40 a0 45 08 14 
+0020: 50 01 4b 08 44 06 11 45 02 d5 50 01 45 00 15 50 
+0030: 01 45 00 14 50 01 5d c7 ee cf 39 21 4b 27 fd 75 
+0040: 7f fc 96 d4 01 89 4d 0c d1 9a d8 06 69 c5 74 20 
+0050: b1 9f f0 29 a3 8e 0c 29 d8 04 53 01 52 46 07 4c 
+0060: 61 39 db 8b 10 b6 d2 71 55 61 89 cd 10 21 0e 52 
+0070: 0e 74 32 90 68 b0 ec 27 32 6a 08 88 d2 62 63 85 
+0080: 37 b5 00 06 99 cd a0 0e a2 8a 00 32 7b d2 1e 94 
+0090: 02 45 69 d8 a3 50 5f fd 2f 4a 68 03 3c d1 48 30 
+00a0: 82 33 4a 23 d0 04 3c d3 40 09 4f 0b c5 08 86 74 
+00b0: a3 b7 a5 ea 05 ac f1 4d a7 fd 08 0a 01 e7 da 97 
+00c0: 76 12 53 0d 0f b0 98 a3 a5 26 f1 52 6c 00 f4 35 
+00d0: 10 19 18 bf 3a 48 9e 38 67 6b 
+***********************************
+
+**** Set gain: 10217.843750 -> 11733.524414
+
+**** ASM found at: 12:09:00
+Set sample_in_symbol: 15 -> 0
+Set freq: -0.398374 -> -0.397345
+Set phase: 1.170701 -> 0.456041
+Estimated Eb/N0 = 0.301759
+
+**** Set gain: 11733.524414 -> 10653.054688
+
+**** ASM found at: 12:09:15
+Set sample_in_symbol: 1 -> 0
+Set freq: -0.399551 -> -0.399520
+Set phase: 2.579036 -> -2.480907
+Estimated Eb/N0 = 0.328835
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x193
+virtual_channel_id = 0x1
+spare = 0x0
+master_frame_count = 67
+virtual_channel_frame_count = 60
+first_header_pointer = 34
+* MESSAGE DEBUG PRINT PDU VERBOSE *
+()
+pdu_length = 218
+contents = 
+0000: dd 00 39 28 02 fb 78 e3 da 3f b0 b4 1c f2 93 d6 
+0010: 83 5a 6d 54 03 49 c5 51 49 1a 33 91 1c 3c 15 4d 
+0020: 23 bd 69 4e 59 c1 37 fc 62 06 c2 d3 b0 30 54 1e 
+0030: 98 b1 78 78 54 13 97 1a 02 74 05 7d c1 cc 48 45 
+0040: 33 12 30 70 3e a2 d0 c0 e2 8a 76 27 d2 b6 3b c3 
+0050: 7a 67 95 f3 19 ab df e3 ad a8 eb 4c 0e 30 b4 e9 
+0060: 54 ae ae be 78 e7 76 f4 7d 05 f0 83 1f b4 43 e4 
+0070: 8c d4 4c 3d 07 1a 2c 20 8b 34 29 15 c2 68 1c 63 
+0080: a0 23 68 00 a2 80 0a 28 33 a2 85 ea 6c 11 36 88 
+0090: 00 68 c2 8a 69 61 77 e1 e2 b4 0b ea 3a c6 52 5d 
+00a0: fa c1 7d 86 e8 63 c1 d7 09 08 7d d5 b3 4c 21 e7 
+00b0: dd 82 39 be 4b cc 43 94 14 56 9c 76 af bd 58 e8 
+00c0: f8 88 93 b2 e7 3f d2 ef bb 01 44 c6 23 2a 58 42 
+00d0: a7 fb 51 7c 27 93 77 0d 8e 7b 
+***********************************
+
+**** Set gain: 10653.054688 -> 10260.962891
+
+**** ASM found at: 12:09:29
+Set sample_in_symbol: 1 -> 0
+Set freq: -0.395286 -> -0.399955
+Set phase: -1.283715 -> -2.765170
+Estimated Eb/N0 = 0.426427
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x193
+virtual_channel_id = 0x0
+spare = 0x0
+master_frame_count = 76
+virtual_channel_frame_count = 135
+first_header_pointer = 1
+
+**** TM Packet Header
+version_number = 0x06
+flag_type = 0x01
+slave_header_flag = 0x00
+application_type = 0x02
+nid = 0x26
+group_flag = 0x00
+source_sequence_count = 14190
+packet_data_len = 15174
+
+**** Packet Length Do Not Match!!!
+
+**** TM Packet Header
+version_number = 0x06
+flag_type = 0x01
+slave_header_flag = 0x00
+application_type = 0x03
+nid = 0x7d
+group_flag = 0x02
+source_sequence_count = 1186
+packet_data_len = 61162
+
+**** Packet Length Do Not Match!!!
+
+**** TM Packet Header
+version_number = 0x04
+flag_type = 0x01
+slave_header_flag = 0x00
+application_type = 0x00
+nid = 0x27
+group_flag = 0x03
+source_sequence_count = 4753
+packet_data_len = 61648
+
+**** Packet Length Do Not Match!!!
+
+**** TM Packet Too Short!
+
+**** TM Packet Header
+version_number = 0x06
+flag_type = 0x00
+slave_header_flag = 0x00
+application_type = 0x02
+nid = 0xc2
+group_flag = 0x01
+source_sequence_count = 8675
+packet_data_len = 51200
+
+**** Packet Length Do Not Match!!!
+
+**** TM Packet Too Short!
+
+**** TM Packet Too Short!
+
+**** TM Packet Header
+version_number = 0x04
+flag_type = 0x01
+slave_header_flag = 0x00
+application_type = 0x03
+nid = 0xc1
+group_flag = 0x00
+source_sequence_count = 9377
+packet_data_len = 51500
+
+**** Packet Length Do Not Match!!!
+
+**** TM Packet Too Short!
+
+**** TM Packet Too Short!
+
+**** TM Packet Header
+version_number = 0x06
+flag_type = 0x00
+slave_header_flag = 0x01
+application_type = 0x03
+nid = 0x20
+group_flag = 0x03
+source_sequence_count = 3151
+packet_data_len = 26085
+
+**** Packet Length Do Not Match!!!
+
+**** TM Packet Too Short!
+
+**** TM Packet Header
+version_number = 0x05
+flag_type = 0x00
+slave_header_flag = 0x00
+application_type = 0x05
+nid = 0xcb
+group_flag = 0x00
+source_sequence_count = 10142
+packet_data_len = 11072
+
+**** Packet Length Do Not Match!!!
+
+**** Set gain: 10260.962891 -> 10776.299805
+
+**** ASM found at: 12:09:44
+Set sample_in_symbol: 1 -> 0
+Set freq: -0.398661 -> -0.399720
+Set phase: -1.487602 -> -1.847932
+Estimated Eb/N0 = 0.412799
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x193
+virtual_channel_id = 0x1
+spare = 0x0
+master_frame_count = 69
+virtual_channel_frame_count = 61
+first_header_pointer = 63
+* MESSAGE DEBUG PRINT PDU VERBOSE *
+()
+pdu_length = 218
+contents = 
+0000: dc 00 3e 28 1e 0a 87 08 00 56 09 df 5f d1 4b f0 
+0010: 86 5c 0c d4 38 f9 ab 66 bf a3 51 e4 bd a9 a1 0a 
+0020: 56 92 86 31 28 a5 b6 bf d0 c5 ed 45 31 80 a7 0e 
+0030: b4 20 18 e7 2d 9a 41 c8 a5 71 5c 7c 60 60 a2 c0 
+0040: 2f 4a 4a 7d 42 e1 da 94 50 01 de 8e 06 81 91 49 
+0050: a3 a0 84 a2 93 00 cd 1d a9 80 1c 53 73 cd 20 03 
+0060: d3 34 c6 e9 40 31 bd a9 2a 44 06 93 89 90 15 66 
+0070: 29 7a 8a b3 64 70 a2 10 a2 8a 08 68 a0 02 8a 00 
+0080: 28 a0 02 8a 00 28 a0 02 8a 00 28 a0 03 bd 14 0c 
+0090: 28 a0 41 4b 4c 61 5d 87 c2 ef f9 29 1a 27 fd 75 
+00a0: 7f fd 16 d4 01 8d 83 46 31 5b 7f 46 a2 ea 9e 45 
+00b0: 00 44 06 38 a7 05 34 24 22 45 1b 46 4d 34 b6 4d 
+00c0: 3e 83 34 88 c0 c5 32 93 0b 00 a5 cd 2f e8 03 1c 
+00d0: 54 a5 ef 4c 05 a1 35 a3 9a e6 
+***********************************
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x113
+virtual_channel_id = 0x1
+spare = 0x0
+master_frame_count = 65
+virtual_channel_frame_count = 190
+first_header_pointer = 37
+* MESSAGE DEBUG PRINT PDU VERBOSE *
+()
+pdu_length = 218
+contents = 
+0000: ce 00 3f 09 1e 1a 44 08 28 4e 7a 14 8b 70 1f d4 
+0010: 95 37 e2 d9 0f b8 a8 77 73 ad 9d 18 54 ab 16 35 
+0020: 8e 4a 2b 0e c5 25 d6 04 85 cf 05 a2 2e 49 d1 b0 
+0030: 34 05 83 4b 81 98 a5 1d 61 2e b5 80 cb 4b 4a f8 
+0040: 3a c8 a6 b7 9f 89 1e ca f6 fc 63 2c 29 8e 67 b7 
+0050: ec b8 93 86 d7 1d 70 06 83 a7 34 71 33 e8 cd c6 
+0060: dc 65 34 7b 38 42 5f fb 83 ee 5b cf 54 c4 97 fd 
+0070: 1b 7e b9 2b f6 78 85 a8 40 62 81 aa 49 40 90 8b 
+0080: cf 36 52 e7 61 f7 a1 3b d7 5b fa ea ff eb af f9 
+0090: dc 6b eb af fe ba ff d7 fc e6 e0 cd fb 2f fc ba 
+00a0: f0 cd e6 3b bc 3b 31 38 cb 0f 44 b4 e5 84 67 12 
+00b0: 22 ea 00 b0 63 56 f1 18 7d 1f ac e5 f8 b4 ca fd 
+00c0: 6c 36 36 5f 6b de 2e 63 b9 af 3a 6c ab bd 5e be 
+00d0: 7f 15 dd 6c 51 bf ac 67 d8 31 
+***********************************
+
+**** Set gain: 10776.299805 -> 10481.591797
+
+**** ASM found at: 12:10:27
+Set sample_in_symbol: 1 -> 0
+Set freq: -0.398731 -> -0.398220
+Set phase: -2.193967 -> 0.304591
+Estimated Eb/N0 = 0.395725
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x193
+virtual_channel_id = 0x1
+spare = 0x0
+master_frame_count = 73
+virtual_channel_frame_count = 65
+first_header_pointer = 255
+* MESSAGE DEBUG PRINT PDU VERBOSE *
+()
+pdu_length = 218
+contents = 
+0000: dc 00 42 28 1e 0a 09 08 98 d1 3f eb ab ff e8 b6 
+0010: a0 67 f2 7c e6 94 13 eb 5b 1a a1 70 7a d3 b7 60 
+0020: 71 4c 63 73 4b b8 e2 90 ae 31 a9 dd 14 50 00 09 
+0030: e8 28 c7 19 a1 89 21 33 c5 28 06 87 fd 0c 5c 71 
+0040: 4c cf 34 c4 c7 0c f5 a9 01 e0 50 34 c5 2d da a2 
+0050: 73 86 a1 ff 5f d0 37 71 a7 ae 6a 40 78 e2 92 10 
+0060: 87 91 47 5a a1 86 3a d3 80 a5 60 0e 40 03 d6 a4 
+0070: 90 9d a2 ab fa 02 1c 9c d1 d7 9a 8b 7f 40 2e 69 
+0080: 00 c8 a6 08 07 07 91 4d c7 34 00 a3 00 d3 8f 4e 
+0090: b4 82 e3 0d 38 74 a0 05 02 94 e7 d2 9f 40 b8 da 
+00a0: 4e 28 62 03 cd 2f 6a 18 c6 8e b4 84 d2 13 1a c3 
+00b0: 9c d3 18 e2 90 0c ef 4b 8e 33 49 08 4e f5 32 fc 
+00c0: ab 93 4c 08 0f 7a a9 21 cb 9a ce 42 90 ca 2a 48 
+00d0: 0a 28 00 a2 80 0a 75 bd ca 27 
+***********************************
+
+**** Set gain: 10481.591797 -> 11692.955078
+
+**** ASM found at: 12:10:57
+Set sample_in_symbol: 0 -> 0
+Set freq: -0.399175 -> -0.400187
+Set phase: -2.621803 -> -2.946155
+Estimated Eb/N0 = 0.316756
+
+**** TM Frame Header
+version_number = 0x1
+spacecraft_id = 0x196
+virtual_channel_id = 0x3
+spare = 0x1
+master_frame_count = 106
+virtual_channel_frame_count = 226
+first_header_pointer = 22
+
+**** Set gain: 11692.955078 -> 10918.507812
+
+**** ASM found at: 12:11:26
+Set sample_in_symbol: 1 -> 0
+Set freq: -0.399801 -> -0.400186
+Set phase: 3.055910 -> -2.743243
+Estimated Eb/N0 = 0.359417
+
+**** Set gain: 10918.507812 -> 11435.063477
+
+**** ASM found at: 12:11:40
+Set sample_in_symbol: 14 -> 0
+Set freq: -0.399471 -> -0.399057
+Set phase: 1.050694 -> 1.079498
+Estimated Eb/N0 = 0.373231
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x192
+virtual_channel_id = 0x1
+spare = 0x0
+master_frame_count = 77
+virtual_channel_frame_count = 69
+first_header_pointer = 255
+* MESSAGE DEBUG PRINT PDU VERBOSE *
+()
+pdu_length = 218
+contents = 
+0000: dc 00 46 28 1e 0a 05 09 1d 52 31 cd 53 03 f2 a0 
+0010: 79 a4 27 27 35 b5 cd 3f a1 3e 94 f0 48 a6 30 62 
+0020: 4d 30 0e 0e 69 30 17 1c 66 97 19 18 a1 81 23 bf 
+0030: ca 16 a3 ed 4d b0 36 b3 bd 00 23 75 a7 0e 05 09 
+0040: 00 67 02 a3 3d 69 3f e8 04 ed 49 48 43 4f 4a 60 
+0050: 19 38 a4 21 ff 74 62 a3 3d 68 06 28 a6 9a 5f d0 
+0060: 7f 45 59 5b 2f f4 a8 ea 19 0c 28 a4 20 a2 80 0a 
+0070: 28 00 a2 80 0a 28 00 a2 80 0a 28 00 a2 80 0a 28 
+0080: 00 a2 98 c2 8a 04 14 52 00 a2 80 0a ec 7e 17 7f 
+0090: c9 48 d0 ff eb ab ff e8 b6 a0 0c 7c 0c 52 33 6d 
+00a0: 5c 57 47 99 b0 c1 d3 34 a2 a4 48 7a d5 84 ab 45 
+00b0: 22 3b 8c 63 fc d4 13 a5 29 6e 27 b8 b4 a0 64 d2 
+00c0: d0 07 64 8e 28 cf 7a 18 08 4d 08 7f 7a a0 f4 a1 
+00d0: 01 34 d2 02 36 81 5a 30 b0 23 
+***********************************
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x393
+virtual_channel_id = 0x1
+spare = 0x1
+master_frame_count = 14
+virtual_channel_frame_count = 70
+first_header_pointer = 126
+* MESSAGE DEBUG PRINT PDU VERBOSE *
+()
+pdu_length = 218
+contents = 
+0000: da 0b 86 b8 ba 9d e8 e6 60 30 3d 8a c4 d7 fc 91 
+0010: 85 ab ff 31 46 94 90 17 2b 83 b6 5e 05 65 dc c6 
+0020: 0f 0f 4b 8d ee ca 3a dc f5 d6 38 27 ec c6 c4 42 
+0030: b9 eb 9a 56 95 e9 c7 7f 96 51 8f 9e 74 38 1c b6 
+0040: 56 9a 84 a7 c3 a7 5b 74 5d 8a 91 cb a8 dc d6 85 
+0050: 83 1c 83 02 79 a2 f1 ca 9d 42 e8 af 35 4f 60 19 
+0060: 8d ef b8 52 ba cf a0 0e 23 18 7b 08 7d a5 4b 0d 
+0070: 29 a5 4b 58 e2 9a bb 49 38 02 7c c9 2b 9d 68 2b 
+0080: c1 48 f1 e5 06 90 f4 2b 95 09 c9 26 9a b3 33 0a 
+0090: 38 01 a6 84 08 8a 0d 9e a9 85 57 e4 55 b6 5d 80 
+00a0: be 8a 80 b5 0f 94 53 01 b1 ef 88 ae 45 06 c4 03 
+00b0: 8b 75 bf 92 bb 28 8c 97 bd 91 76 00 a2 a1 17 aa 
+00c0: c2 ef b0 9a e1 71 ee df 81 67 85 69 a9 04 9b 31 
+00d0: fc 38 5b 62 91 9d 16 5d c2 28 
+***********************************
+
+**** Set gain: 11435.063477 -> 11355.428711
+
+**** ASM found at: 12:16:12
+Set sample_in_symbol: 11 -> 0
+Set freq: -0.410517 -> -0.400053
+Set phase: -1.692119 -> 2.989799
+Estimated Eb/N0 = 0.417438
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x1bb
+virtual_channel_id = 0x3
+spare = 0x1
+master_frame_count = 90
+virtual_channel_frame_count = 103
+first_header_pointer = 75
+
+**** Set gain: 11355.428711 -> 10469.354492
+
+**** ASM found at: 12:19:55
+Set sample_in_symbol: 12 -> 0
+Set freq: -0.427137 -> -0.398196
+Set phase: -1.294121 -> -1.619598
+Estimated Eb/N0 = 0.420943
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x193
+virtual_channel_id = 0x1
+spare = 0x0
+master_frame_count = 86
+virtual_channel_frame_count = 76
+first_header_pointer = 153
+* MESSAGE DEBUG PRINT PDU VERBOSE *
+()
+pdu_length = 218
+contents = 
+0000: 4c 12 1c 28 1e 0a 04 03 3e 7e 99 3d cf f1 0a 29 
+0010: 88 28 a0 02 8a 00 28 a1 02 8a 00 29 a0 02 8a 00 
+0020: 28 a0 02 8a 00 2b b1 f8 5d ff 25 23 44 ff ae af 
+0030: fd 22 9a 81 98 8d c9 eb 46 6b 63 61 33 8a 07 4a 
+0040: 01 01 a5 cd 0c 00 f2 60 24 22 8e 68 34 e9 8a 3a 
+0050: d3 b6 80 1c 93 4f e9 40 09 d0 73 4a 1b 03 14 5f 
+0060: 50 11 ba d2 f4 14 20 10 f3 49 06 39 58 03 14 9d 
+0070: 05 00 2f 5a 20 14 ff a0 b4 ae a6 8e f4 30 18 78 
+0080: e5 14 6f 42 1d de 9e 3a 71 de ac a4 39 71 cc 29 
+0090: ca 3b d3 40 87 0a 71 94 85 c0 eb 55 32 1a 21 62 
+00a0: 4d 30 d4 0f 61 4d 3e 79 69 40 28 4f bd 35 e8 06 
+00b0: 07 ad 02 8b 86 e2 81 4e 65 c6 18 24 69 a0 1a 39 
+00c0: 34 ec 1a 17 90 06 a9 f9 0b 44 68 eb df 19 22 9a 
+00d0: 3a a3 9a 5c 73 4c 55 21 89 4c 
+***********************************
+
+**** Set gain: 10469.354492 -> 14632.267578
+
+**** ASM found at: 12:20:24
+Set sample_in_symbol: 0 -> 0
+Set freq: -0.398913 -> -0.397535
+Set phase: -0.504366 -> -1.344573
+Estimated Eb/N0 = 0.201745
+
+**** Set gain: 14632.267578 -> 11808.476562
+
+**** ASM found at: 12:20:39
+Set sample_in_symbol: 2 -> 0
+Set freq: -0.409216 -> -0.399415
+Set phase: 1.097174 -> -0.262036
+Estimated Eb/N0 = 0.311370
+
+**** TM Frame Header
+version_number = 0x3
+spacecraft_id = 0x2fb
+virtual_channel_id = 0x2
+spare = 0x0
+master_frame_count = 48
+virtual_channel_frame_count = 30
+first_header_pointer = 145
+
+**** Set gain: 11808.476562 -> 11749.279297
+
+**** ASM found at: 12:20:54
+Set sample_in_symbol: 1 -> 0
+Set freq: -0.398915 -> -0.399270
+Set phase: 2.006518 -> -1.572187
+Estimated Eb/N0 = 0.324980
+
+**** TM Frame Header
+version_number = 0x1
+spacecraft_id = 0x19f
+virtual_channel_id = 0x3
+spare = 0x1
+master_frame_count = 90
+virtual_channel_frame_count = 71
+first_header_pointer = 255
+
+**** Set gain: 11749.279297 -> 13975.885742
+
+**** ASM found at: 12:21:08
+Set sample_in_symbol: 14 -> 0
+Set freq: -0.399146 -> -0.397236
+Set phase: -3.105822 -> -0.547229
+Estimated Eb/N0 = 0.222943
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x34d
+virtual_channel_id = 0x3
+spare = 0x0
+master_frame_count = 142
+virtual_channel_frame_count = 71
+first_header_pointer = 77
+
+**** TM Frame Header
+version_number = 0x1
+spacecraft_id = 0xf9
+virtual_channel_id = 0x6
+spare = 0x0
+master_frame_count = 240
+virtual_channel_frame_count = 46
+first_header_pointer = 0
+
+**** Set gain: 13975.885742 -> 13094.969727
+
+**** ASM found at: 12:21:37
+Set sample_in_symbol: 1 -> 0
+Set freq: -0.398871 -> -0.400351
+Set phase: -2.143677 -> -1.477929
+Estimated Eb/N0 = 0.223451
+
+**** Set gain: 13094.969727 -> 12798.679688
+
+**** ASM found at: 12:21:52
+Set sample_in_symbol: 15 -> 0
+Set freq: -0.396971 -> -0.397687
+Set phase: 2.746359 -> 2.607307
+Estimated Eb/N0 = 0.282687
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x193
+virtual_channel_id = 0x1
+spare = 0x0
+master_frame_count = 93
+virtual_channel_frame_count = 82
+first_header_pointer = 107
+* MESSAGE DEBUG PRINT PDU VERBOSE *
+()
+pdu_length = 218
+contents = 
+0000: 4c 80 a3 2a 5a 03 61 54 26 a3 d8 90 29 b9 5c 92 
+0010: ec 69 c9 f3 a8 ac 4f a8 24 21 42 0b b8 1a c8 5e 
+0020: 3c b3 f3 6e e1 61 08 2b 9f 4e 1a 6f 45 28 ef f1 
+0030: 38 d3 59 13 c7 52 56 d5 8e 60 c5 f5 ef aa e3 17 
+0040: bd 86 69 84 a7 85 24 88 25 a9 47 16 fe 82 e2 f6 
+0050: e0 68 eb 45 00 6f 6b 4a 80 6c 18 2f 6a fb 72 18 
+0060: f4 02 21 2c 92 1f af 68 09 dd 35 5b 73 ed 45 86 
+0070: 86 e3 27 10 23 81 45 c1 26 58 10 0c 10 23 5b cf 
+0080: 82 69 d4 62 0d b4 bd 34 21 0f be 03 8c 66 96 ef 
+0090: a5 4e 84 2c 42 b7 41 4a d7 a7 32 6d 88 37 bd d9 
+00a0: 12 2c af 2b 22 02 8a 00 28 20 07 e5 7e 42 6a 5a 
+00b0: 84 42 95 ce eb dc be 46 9f ce 5b c7 fb 60 02 a7 
+00c0: b8 db aa b5 f9 9b 7a 01 5c 24 09 dd e4 be ac 89 
+00d0: ed e9 d3 bb 26 5c 15 22 26 4e 
+***********************************
+
+**** Set gain: 12798.679688 -> 11222.145508
+
+**** ASM found at: 12:22:06
+Set sample_in_symbol: 1 -> 0
+Set freq: -0.398535 -> -0.399515
+Set phase: -1.762740 -> -1.799948
+Estimated Eb/N0 = 0.354324
+
+**** TM Frame Header
+version_number = 0x1
+spacecraft_id = 0x41
+virtual_channel_id = 0x7
+spare = 0x1
+master_frame_count = 82
+virtual_channel_frame_count = 70
+first_header_pointer = 50
+
+**** TM Frame Header
+version_number = 0x1
+spacecraft_id = 0x31b
+virtual_channel_id = 0x7
+spare = 0x0
+master_frame_count = 167
+virtual_channel_frame_count = 71
+first_header_pointer = 224
+
+**** Set gain: 11222.145508 -> 15386.669922
+
+**** ASM found at: 12:22:35
+Set sample_in_symbol: 1 -> 0
+Set freq: -0.399188 -> -0.397363
+Set phase: 2.234515 -> -1.233129
+Estimated Eb/N0 = 0.169586
+
+**** TM Frame Header
+version_number = 0x2
+spacecraft_id = 0xe4
+virtual_channel_id = 0x2
+spare = 0x0
+master_frame_count = 115
+virtual_channel_frame_count = 86
+first_header_pointer = 234
+
+**** Set gain: 15386.669922 -> 12054.787109
+
+**** ASM found at: 12:23:05
+Set sample_in_symbol: 0 -> 0
+Set freq: -0.396959 -> -0.399920
+Set phase: 0.785589 -> 2.586105
+Estimated Eb/N0 = 0.289055
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x190
+virtual_channel_id = 0x4
+spare = 0x0
+master_frame_count = 100
+virtual_channel_frame_count = 11
+first_header_pointer = 141
+
+**** Set gain: 12054.787109 -> 11194.845703
+
+**** ASM found at: 12:23:34
+Set sample_in_symbol: 0 -> 0
+Set freq: -0.398416 -> -0.397630
+Set phase: 1.878934 -> 0.312790
+Estimated Eb/N0 = 0.401026
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x39a
+virtual_channel_id = 0x1
+spare = 0x0
+master_frame_count = 42
+virtual_channel_frame_count = 93
+first_header_pointer = 15
+* MESSAGE DEBUG PRINT PDU VERBOSE *
+()
+pdu_length = 218
+contents = 
+0000: 9c 01 77 e6 e7 c8 06 17 7a 05 13 4c 7b 72 2f 1d 
+0010: 91 17 0b 65 8d 6e 0a 24 e3 4f cf a2 23 ec bc 67 
+0020: c8 71 9a b2 ee 45 8e a4 56 d8 83 4e f9 0e 4d b5 
+0030: f0 03 71 f2 a0 46 11 fd e4 e4 96 3d 19 05 3d 29 
+0040: d3 58 38 8e bc 16 a9 ec 07 1e 05 48 17 d3 5f c6 
+0050: 1c 24 a6 9c 3b a0 04 ef 4b c7 bf 28 88 01 07 25 
+0060: 8e 00 36 b0 c1 9c 79 01 e2 98 fe 86 27 2b 88 b4 
+0070: 0a b5 ba 10 76 d9 0d 71 e9 5e 0c 4d f5 d7 46 57 
+0080: 73 97 7d 92 39 44 d6 fd 28 25 94 6d a3 f1 a4 0c 
+0090: 54 01 a4 81 6a 29 81 aa f8 8a 69 40 e2 ca 92 38 
+00a0: 00 aa 82 1a 92 64 a2 80 0a ec 7e 37 7e c9 48 d1 
+00b0: 3d fe a2 79 f3 26 a0 66 35 be 6f a4 d5 79 14 6f 
+00c0: 02 98 07 d9 a1 c0 3b dc df 17 7b 81 65 7d f0 04 
+00d0: 29 21 78 a7 86 15 a5 52 62 f0 
+***********************************
+
+**** Set gain: 11194.845703 -> 11947.086914
+
+**** ASM found at: 12:24:17
+Set sample_in_symbol: 0 -> 0
+Set freq: -0.399194 -> -0.397569
+Set phase: 2.584209 -> -0.593213
+Estimated Eb/N0 = 0.284560
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x196
+virtual_channel_id = 0x6
+spare = 0x0
+master_frame_count = 94
+virtual_channel_frame_count = 108
+first_header_pointer = 247
+
+**** Set gain: 11947.086914 -> 11116.795898
+
+**** ASM found at: 12:25:16
+Set sample_in_symbol: 3 -> 0
+Set freq: -0.397836 -> -0.399974
+Set phase: 2.690748 -> -1.876176
+Estimated Eb/N0 = 0.310583
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x193
+virtual_channel_id = 0x1
+spare = 0x0
+master_frame_count = 108
+virtual_channel_frame_count = 96
+first_header_pointer = 121
+* MESSAGE DEBUG PRINT PDU VERBOSE *
+()
+pdu_length = 218
+contents = 
+0000: dc 00 30 24 08 26 e6 28 23 a6 23 28 83 24 10 57 
+0010: c8 b5 4a f1 47 c2 60 2e 73 1e a4 27 b6 e9 21 a4 
+0020: 1c d2 01 86 c5 01 b2 b0 82 e9 aa ef cb 92 43 68 
+0030: 69 aa 77 27 b3 01 83 79 c2 8e c4 14 76 4e c1 3c 
+0040: 90 53 40 05 16 44 1c 0a 21 95 b0 c4 50 54 ca 44 
+0050: dc 2c 2d 94 21 b2 58 07 f7 3f 1b 3a e2 28 7e 8d 
+0060: c0 f5 ef f4 5b 54 3b 99 97 14 d3 fa 7e 0c 5e 1f 
+0070: 82 d9 06 09 11 92 fd b1 3e 9b 20 fe b6 79 b6 b6 
+0080: c4 63 37 3c b6 ec 7c db a7 fb f8 6d b3 31 d6 4f 
+0090: a8 f4 ed 9c 43 ea 49 b2 b3 c3 85 1c 48 3e 9d b0 
+00a0: d0 06 32 eb 73 90 b5 a6 cb 65 76 5e 8c 07 42 fe 
+00b0: 3c 18 51 6f 70 8d df eb c3 a4 fa 2e 1c 75 ef 7f 
+00c0: 05 af 32 7d 2b 37 bc 25 e1 d1 6e b4 a4 20 bc 8d 
+00d0: 74 ae 47 5b fe be ed 59 95 e3 
+***********************************
+
+**** Set gain: 11116.795898 -> 10607.055664
+
+**** ASM found at: 12:29:04
+Set sample_in_symbol: 12 -> 0
+Set freq: -0.400773 -> -0.397916
+Set phase: 1.098657 -> 2.344596
+Estimated Eb/N0 = 0.376307
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x193
+virtual_channel_id = 0x0
+spare = 0x0
+master_frame_count = 111
+virtual_channel_frame_count = 12
+first_header_pointer = 0
+
+**** TM Packet Header
+version_number = 0x06
+flag_type = 0x00
+slave_header_flag = 0x00
+application_type = 0x02
+nid = 0xc8
+group_flag = 0x01
+source_sequence_count = 639
+packet_data_len = 21853
+
+**** Packet Length Do Not Match!!!
+
+**** TM Packet Header
+version_number = 0x00
+flag_type = 0x01
+slave_header_flag = 0x01
+application_type = 0x00
+nid = 0x0f
+group_flag = 0x03
+source_sequence_count = 3868
+packet_data_len = 72
+
+**** Packet Length Do Not Match!!!
+
+**** TM Packet Too Short!
+
+**** TM Packet Too Short!
+
+**** TM Packet Too Short!
+
+**** TM Packet Too Short!
+
+**** TM Packet Too Short!
+
+**** TM Packet Too Short!
+
+**** Set gain: 10607.055664 -> 13070.505859
+
+**** ASM found at: 12:29:38
+Set sample_in_symbol: 8 -> 0
+Set freq: -0.394385 -> -0.399888
+Set phase: 2.488572 -> -1.120637
+Estimated Eb/N0 = 0.308913
+
+**** TM Frame Header
+version_number = 0x3
+spacecraft_id = 0x2f4
+virtual_channel_id = 0x2
+spare = 0x0
+master_frame_count = 152
+virtual_channel_frame_count = 89
+first_header_pointer = 143
+
+**** TM Packet Header
+version_number = 0x02
+flag_type = 0x01
+slave_header_flag = 0x00
+application_type = 0x01
+nid = 0xf7
+group_flag = 0x01
+source_sequence_count = 10444
+packet_data_len = 5299
+
+**** Packet Length Do Not Match!!!
+
+**** TM Packet Header
+version_number = 0x04
+flag_type = 0x01
+slave_header_flag = 0x00
+application_type = 0x02
+nid = 0x89
+group_flag = 0x02
+source_sequence_count = 4
+packet_data_len = 5498
+
+**** Packet Length Do Not Match!!!
+
+**** Set gain: 13070.505859 -> 11416.021484
+
+**** ASM found at: 12:43:42
+Set sample_in_symbol: 11 -> 0
+Set freq: -0.373317 -> -0.384861
+Set phase: -2.470389 -> -1.737985
+Estimated Eb/N0 = 0.327887
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x1bf
+virtual_channel_id = 0x0
+spare = 0x0
+master_frame_count = 112
+virtual_channel_frame_count = 25
+first_header_pointer = 66
+
+**** TM Packet Header
+version_number = 0x03
+flag_type = 0x00
+slave_header_flag = 0x00
+application_type = 0x00
+nid = 0x27
+group_flag = 0x03
+source_sequence_count = 3482
+packet_data_len = 3785
+
+**** Packet Length Do Not Match!!!
+
+**** TM Packet Header
+version_number = 0x04
+flag_type = 0x01
+slave_header_flag = 0x00
+application_type = 0x07
+nid = 0xcb
+group_flag = 0x02
+source_sequence_count = 3195
+packet_data_len = 54778
+
+**** Packet Length Do Not Match!!!
+
+**** TM Packet Header
+version_number = 0x01
+flag_type = 0x01
+slave_header_flag = 0x01
+application_type = 0x07
+nid = 0xa5
+group_flag = 0x03
+source_sequence_count = 14035
+packet_data_len = 43679
+
+**** Packet Length Do Not Match!!!
+
+**** Set gain: 11416.021484 -> 10940.346680
+
+**** ASM found at: 13:21:21
+Set sample_in_symbol: 8 -> 0
+Set freq: -0.360071 -> -0.417847
+Set phase: -0.810080 -> -2.645349
+Estimated Eb/N0 = 0.326644
+
+**** Set gain: 10940.346680 -> 10538.077148
+
+**** ASM found at: 13:21:36
+Set sample_in_symbol: 15 -> 0
+Set freq: -0.416925 -> -0.416788
+Set phase: -1.184000 -> -2.371986
+Estimated Eb/N0 = 0.426059
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x193
+virtual_channel_id = 0x1
+spare = 0x0
+master_frame_count = 125
+virtual_channel_frame_count = 101
+first_header_pointer = 157
+* MESSAGE DEBUG PRINT PDU VERBOSE *
+()
+pdu_length = 218
+contents = 
+0000: ea 00 02 08 9a 20 13 00 90 d6 4c 4d 92 6c d6 85 
+0010: fd 5c 4a 43 13 7f d9 e6 a6 34 a1 d5 07 b1 f8 0c 
+0020: e3 8f 39 c0 bd c9 5c 39 ff 7c d3 45 b4 c5 69 63 
+0030: 32 9c 36 6b ab 14 ac b6 3a 95 cc 6a 54 cb 76 f7 
+0040: bd c4 df b8 19 56 63 2e 7b 5c 4d fd 58 89 a7 61 
+0050: 07 b9 b9 ac fb ff 43 96 e3 64 ff cb a4 9d c7 56 
+0060: 91 92 7b 83 de bd 61 74 f9 a3 fa b4 ea 62 74 e7 
+0070: bc 37 b8 9c 0b 78 79 9b fe fe 1a 88 94 41 9e f9 
+0080: 4a 49 d7 66 cc 45 dd 81 da 52 5f 8e 4b a2 8d ee 
+0090: bb d7 53 e2 21 f4 99 ee 38 9f 68 18 7f c0 cc 37 
+00a0: 60 a2 b5 31 6b 36 f4 27 4d d7 33 ee 54 3f fd f2 
+00b0: 6c e3 55 c3 39 fb 44 df 77 d9 a3 d9 c3 90 b9 cb 
+00c0: b8 86 22 e7 a7 9f 2f bd f6 69 c2 db 1f 39 e3 e5 
+00d0: b7 be e5 38 6f 0e 50 de 95 61 
+***********************************
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x191
+virtual_channel_id = 0x1
+spare = 0x0
+master_frame_count = 156
+virtual_channel_frame_count = 103
+first_header_pointer = 185
+* MESSAGE DEBUG PRINT PDU VERBOSE *
+()
+pdu_length = 218
+contents = 
+0000: 26 0e 83 20 86 fe 3c 58 bc c1 5f 5a 87 4e 44 04 
+0010: 3e 7d f7 87 3f f8 c6 01 1a 24 69 7c 79 7f ef b3 
+0020: 5c 3f 30 e7 e3 a3 9e 5d 48 8d e5 c0 3f ff dd ff 
+0030: ad cc 76 9d 18 9b bb de 63 ab 11 66 c3 77 8c 57 
+0040: 9c 72 a7 52 af 07 22 79 41 d7 2c d2 8a 9b 8f f9 
+0050: d8 9b fe fb 34 f9 94 5b 07 b1 2e c1 c5 26 e6 83 
+0060: 76 13 ff 90 bf df 67 06 e5 60 93 54 81 92 80 a1 
+0070: 35 2b bc 35 53 54 61 fd 57 18 71 0d 79 05 76 ee 
+0080: e5 ed 02 d0 20 2c a8 c2 69 6e 55 df 55 f5 87 e0 
+0090: e3 07 5a 0c a4 f1 3e 39 04 22 95 f4 ec 22 42 c9 
+00a0: 08 b6 84 c5 68 bb b8 b9 c9 d2 35 95 7d 83 40 00 
+00b0: 26 d2 c9 0d 88 24 c2 87 b6 7b fc eb fc f7 44 e9 
+00c0: 1e 5d 48 01 bb 7f 20 e0 d9 64 09 46 7a 8d 01 b6 
+00d0: 14 13 8e 13 de 77 ed 69 be 06 
+***********************************
+
+**** Set gain: 10538.077148 -> 11125.102539
+
+**** ASM found at: 13:22:05
+Set sample_in_symbol: 0 -> 0
+Set freq: -0.418017 -> -0.417943
+Set phase: -1.994260 -> 1.344144
+Estimated Eb/N0 = 0.361839
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x1f0
+virtual_channel_id = 0x5
+spare = 0x0
+master_frame_count = 128
+virtual_channel_frame_count = 229
+first_header_pointer = 112
+
+**** Set gain: 11125.102539 -> 11634.648438
+
+**** ASM found at: 13:24:01
+Set sample_in_symbol: 14 -> 0
+Set freq: -0.418268 -> -0.417839
+Set phase: 1.820505 -> -2.122109
+Estimated Eb/N0 = 0.354039
+
+**** TM Frame Header
+version_number = 0x2
+spacecraft_id = 0xbf
+virtual_channel_id = 0x2
+spare = 0x1
+master_frame_count = 41
+virtual_channel_frame_count = 6
+first_header_pointer = 0
+
+**** TM Packet Header
+version_number = 0x04
+flag_type = 0x01
+slave_header_flag = 0x00
+application_type = 0x06
+nid = 0xdf
+group_flag = 0x01
+source_sequence_count = 6113
+packet_data_len = 37742
+
+**** Packet Length Do Not Match!!!
+
+**** TM Packet Header
+version_number = 0x07
+flag_type = 0x00
+slave_header_flag = 0x01
+application_type = 0x06
+nid = 0x83
+group_flag = 0x02
+source_sequence_count = 9720
+packet_data_len = 65211
+
+**** Packet Length Do Not Match!!!
+
+**** Set gain: 11634.648438 -> 12867.673828
+
+**** ASM found at: 13:25:14
+Set sample_in_symbol: 0 -> 0
+Set freq: -0.412416 -> -0.397024
+Set phase: -2.424632 -> -1.477779
+Estimated Eb/N0 = 0.299168
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x92
+virtual_channel_id = 0x4
+spare = 0x1
+master_frame_count = 236
+virtual_channel_frame_count = 53
+first_header_pointer = 220
+
+**** Set gain: 12867.673828 -> 11746.174805
+
+**** ASM found at: 13:26:56
+Set sample_in_symbol: 0 -> 0
+Set freq: -0.398476 -> -0.398188
+Set phase: 2.427807 -> 2.001441
+Estimated Eb/N0 = 0.376496
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x193
+virtual_channel_id = 0x0
+spare = 0x0
+master_frame_count = 144
+virtual_channel_frame_count = 34
+first_header_pointer = 118
+
+**** TM Packet Header
+version_number = 0x07
+flag_type = 0x01
+slave_header_flag = 0x00
+application_type = 0x04
+nid = 0x38
+group_flag = 0x03
+source_sequence_count = 14815
+packet_data_len = 29913
+
+**** Packet Length Do Not Match!!!
+
+**** Set gain: 11746.174805 -> 10705.751953
+
+**** ASM found at: 13:32:44
+Set sample_in_symbol: 4 -> 0
+Set freq: -0.422446 -> -0.402876
+Set phase: -0.344520 -> -1.242263
+Estimated Eb/N0 = 0.425836
+
+**** TM Frame Header
+version_number = 0x1
+spacecraft_id = 0x10f
+virtual_channel_id = 0x5
+spare = 0x0
+master_frame_count = 172
+virtual_channel_frame_count = 145
+first_header_pointer = 69
+
+**** Set gain: 10705.751953 -> 11053.593750
+
+**** ASM found at: 13:33:42
+Set sample_in_symbol: 0 -> 0
+Set freq: -0.403628 -> -0.403362
+Set phase: -1.946420 -> 1.139391
+Estimated Eb/N0 = 0.315451
+
+**** TM Frame Header
+version_number = 0x3
+spacecraft_id = 0x372
+virtual_channel_id = 0x0
+spare = 0x0
+master_frame_count = 176
+virtual_channel_frame_count = 149
+first_header_pointer = 47
+
+**** TM Packet Header
+version_number = 0x07
+flag_type = 0x00
+slave_header_flag = 0x01
+application_type = 0x07
+nid = 0x00
+group_flag = 0x00
+source_sequence_count = 1963
+packet_data_len = 62265
+
+**** Packet Length Do Not Match!!!
+
+**** TM Packet Header
+version_number = 0x07
+flag_type = 0x01
+slave_header_flag = 0x00
+application_type = 0x01
+nid = 0x41
+group_flag = 0x02
+source_sequence_count = 4540
+packet_data_len = 56863
+
+**** Packet Length Do Not Match!!!
+
+**** Set gain: 11053.593750 -> 17159.007812
+
+**** ASM found at: 13:34:11
+Set sample_in_symbol: 15 -> 0
+Set freq: -0.408422 -> -0.406553
+Set phase: 1.668202 -> -2.350327
+Estimated Eb/N0 = 0.144577
+
+**** TM Frame Header
+version_number = 0x3
+spacecraft_id = 0xe6
+virtual_channel_id = 0x7
+spare = 0x0
+master_frame_count = 190
+virtual_channel_frame_count = 167
+first_header_pointer = 200
+
+**** Set gain: 17159.007812 -> 11403.888672
+
+**** ASM found at: 13:35:10
+Set sample_in_symbol: 1 -> 0
+Set freq: -0.395633 -> -0.404146
+Set phase: 0.810174 -> 0.969954
+Estimated Eb/N0 = 0.396693
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x193
+virtual_channel_id = 0x1
+spare = 0x0
+master_frame_count = 148
+virtual_channel_frame_count = 154
+first_header_pointer = 87
+* MESSAGE DEBUG PRINT PDU VERBOSE *
+()
+pdu_length = 218
+contents = 
+0000: e2 00 15 ee 75 8e 2e c9 26 74 8b 80 99 f2 af 46 
+0010: 19 f7 b2 b0 ab 0f 3a ea cf 16 9f a6 00 7b 88 bb 
+0020: a4 79 eb 65 7c 23 45 d9 61 db 23 12 16 68 59 88 
+0030: 0a fb e0 b1 26 54 24 0d e9 e0 71 42 13 db 62 2d 
+0040: 88 ff 5d 4a f8 99 73 56 ff 7a 56 41 25 e7 9f b8 
+0050: 22 1a f2 0c a2 94 bc a9 97 bd 6d b2 fc 27 dc c0 
+0060: f3 c4 af 13 de 5e 2c df 1e fa 9a c7 c8 40 00 1e 
+0070: 64 68 1b 4d 4f 3c 10 65 82 f3 40 6c 69 62 1f c5 
+0080: 47 ec d6 d9 41 ae 1f f9 e3 e5 f0 ec 4d c2 1b c0 
+0090: ff e1 47 de c6 e3 b5 3d 4b 97 fb 04 4f 71 a3 e3 
+00a0: c9 c7 ef 63 62 9f 2b 69 e2 04 bd 21 4b fd f4 19 
+00b0: a7 b0 e1 6c 1b 35 7e 20 d8 3d 76 55 ce d2 7c 41 
+00c0: 0f 21 0d 67 a3 53 78 9d f1 66 05 e4 6c b0 8b 48 
+00d0: 1b 19 f0 cb 50 2c a9 f2 f3 38 
+***********************************
+
+>>> Done
+

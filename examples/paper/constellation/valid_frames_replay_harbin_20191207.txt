@@ -1,0 +1,96 @@
+-------------------------
+Start at 11:42:00
+Timestamp = 1562311740
+-------------------------
+24*60+5=1445
+1562311740+1437=1562313177
+1562313207
+
+28*60+27=1707
+1562311740+1699=1562313439
+1562313469
+
+Dwingeloo1  12.794465
+Wakayama1   6.391165
+Shahe1      3.187092
+Harbin1     0.413873
+
+Dwingeloo2  11.642655
+Wakayama2   5.098179
+Shahe2      2.565354
+Harbin2     0.412500
+
+
+
+**** Set gain: 9636.422852 -> 10620.541992
+
+**** ASM found at: 12:06:05
+Set sample_in_symbol: 0 -> 0
+Set freq: -0.398133 -> -0.397111
+Set phase: 2.426977 -> 2.725757
+Estimated Eb/N0 = 0.412840
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x193
+virtual_channel_id = 0x1
+spare = 0x0
+master_frame_count = 55
+virtual_channel_frame_count = 48
+first_header_pointer = 255
+* MESSAGE DEBUG PRINT PDU VERBOSE *
+()
+pdu_length = 218
+contents = 
+0000: dc 00 31 28 1e 0a 08 06 28 34 f0 71 48 3a d2 b0 
+0010: 1f f2 de f4 d3 fa d7 49 a8 87 8a 70 3c 52 ea 03 
+0020: 4d 28 22 84 01 49 d2 80 1c 28 ef 40 08 4e 45 07 
+0030: 8a 18 7f 41 da 94 1c 7e 34 6c 01 ef 4c cf 34 30 
+0040: 16 9c 06 73 8a 2e 08 4c fa d3 97 a6 45 09 05 84 
+0050: 60 70 4d 57 6e b4 98 9a 1a 7a 55 19 4e 64 35 9c 
+0060: 89 91 1d 15 99 01 45 00 14 50 01 45 00 14 50 01 
+0070: 45 00 14 50 01 45 00 14 50 01 45 00 14 50 01 5d 
+0080: 8f c2 ef f9 29 1a 27 fd 75 7f fd 16 d4 01 90 e7 
+0090: 24 91 51 1a dd 9a 8b de 94 1c 50 02 67 26 91 cf 
+00a0: 20 52 7f d0 31 c2 a6 41 c5 38 8d 21 8e 79 a4 3e 
+00b0: 99 a6 26 c4 1d 69 f9 0b 4b 61 a1 84 52 63 22 95 
+00c0: bf a1 0a 05 3c 0a a4 04 9b c9 5c 53 49 04 d3 fe 
+00d0: 86 c8 df a8 1e b4 80 b5 42 35 
+***********************************
+
+
+**** Set gain: 10776.299805 -> 10481.591797
+
+**** ASM found at: 12:10:27
+Set sample_in_symbol: 1 -> 0
+Set freq: -0.398731 -> -0.398220
+Set phase: -2.193967 -> 0.304591
+Estimated Eb/N0 = 0.395725
+
+**** TM Frame Header
+version_number = 0x0
+spacecraft_id = 0x193
+virtual_channel_id = 0x1
+spare = 0x0
+master_frame_count = 73
+virtual_channel_frame_count = 65
+first_header_pointer = 255
+* MESSAGE DEBUG PRINT PDU VERBOSE *
+()
+pdu_length = 218
+contents = 
+0000: dc 00 42 28 1e 0a 09 08 98 d1 3f eb ab ff e8 b6 
+0010: a0 67 f2 7c e6 94 13 eb 5b 1a a1 70 7a d3 b7 60 
+0020: 71 4c 63 73 4b b8 e2 90 ae 31 a9 dd 14 50 00 09 
+0030: e8 28 c7 19 a1 89 21 33 c5 28 06 87 fd 0c 5c 71 
+0040: 4c cf 34 c4 c7 0c f5 a9 01 e0 50 34 c5 2d da a2 
+0050: 73 86 a1 ff 5f d0 37 71 a7 ae 6a 40 78 e2 92 10 
+0060: 87 91 47 5a a1 86 3a d3 80 a5 60 0e 40 03 d6 a4 
+0070: 90 9d a2 ab fa 02 1c 9c d1 d7 9a 8b 7f 40 2e 69 
+0080: 00 c8 a6 08 07 07 91 4d c7 34 00 a3 00 d3 8f 4e 
+0090: b4 82 e3 0d 38 74 a0 05 02 94 e7 d2 9f 40 b8 da 
+00a0: 4e 28 62 03 cd 2f 6a 18 c6 8e b4 84 d2 13 1a c3 
+00b0: 9c d3 18 e2 90 0c ef 4b 8e 33 49 08 4e f5 32 fc 
+00c0: ab 93 4c 08 0f 7a a9 21 cb 9a ce 42 90 ca 2a 48 
+00d0: 0a 28 00 a2 80 0a 75 bd ca 27 
+***********************************

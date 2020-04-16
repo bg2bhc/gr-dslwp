@@ -1,0 +1,8 @@
+> From Daniel Estevez
+
+Meta file should be convert to data only format using convert_metadata_file.py
+
+Then process them by the analysis brunch of gr-dslwp to generate the XXXX_fft.c64 files:
+https://github.com/daniestevez/gr-dslwp/tree/analysis/examples/constellation_XXXX.grc
+
+The threshold may need some adjustment.
