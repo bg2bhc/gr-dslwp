@@ -8,7 +8,7 @@ Papers about this project:
 
 [1]  Wei M, Hu C, Estévez D, et al. Design and flight results of the VHF/UHF communication system of Longjiang lunar microsatellites[J/OL]. Nature Communications, 2020, 11(1): 3425[2020-07-09]. https://doi.org/10.1038/s41467-020-17272-8.
 
-[2]  韦明川，胡超然，阎敬业，等. 首颗自主地月转移微卫星“龙江二号”[J]. 宇航学报，2020，41(6)：790-799.
+[2]  韦明川，胡超然，阎敬业，等. 首颗自主地月转移微卫星“龙江二号”[J]. 宇航学报，2020，41(6)：790-799. http://www.yhxb.org.cn/CN/10.3873/j.issn.1000-1328.2020.06.016.
 
 
 ## Install
