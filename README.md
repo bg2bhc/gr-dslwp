@@ -1,6 +1,6 @@
 # gr-dslwp
 ---------------------------------------
-GNU Radio OOT Module for the amateur radio payload of DSLWP-A/B (formal name is Longjiang-1/2, and Oscar number LO-93/94), a lunar microsatellite mission led by Harbin Institute of Technology.
+GNU Radio OOT Module for the amateur radio payload of DSLWP-A/B (formal name Longjiang-1/2, and Oscar number LO-93/94), a lunar microsatellite mission led by Harbin Institute of Technology.
 
 DSLWP means Discovering the Sky at the Longest Wavelengths Pathfinder, as the main payload of the microsatellites are low frequency receivers for radio astronomy operating on 1~30 MHz band. 
 
