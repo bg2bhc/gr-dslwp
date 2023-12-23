@@ -1,0 +1,31 @@
+id: dslwp_fft_estimator_cc
+label: FFT Estimator CC
+category: '[DSLWP]'
+
+parameters:
+-   id: fft_size
+    label: FFT Size
+    dtype: int
+    hide: ${ 'part' if fft_size == 1 else 'none' }
+-   id: threshold
+    label: Threshold
+    dtype: float
+-   id: tap_len
+    label: Tap Length
+    dtype: int
+
+inputs:
+-   domain: stream
+    dtype: complex
+    vlen: ${ fft_size }
+    multiplicity: '2'
+
+outputs:
+-   domain: stream
+    dtype: complex
+
+templates:
+    imports: import dslwp
+    make: dslwp.fft_estimator_cc(${fft_size}, ${threshold}, ${tap_len})
+
+file_format: 1

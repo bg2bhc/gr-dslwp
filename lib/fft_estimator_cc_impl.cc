@@ -23,6 +23,7 @@
 #endif
 
 #include <gnuradio/io_signature.h>
+#include <gnuradio/expj.h>
 #include "fft_estimator_cc_impl.h"
 #include <math.h>
 
@@ -162,7 +163,7 @@ namespace gr {
 							float phase_acc = 0.0f;
 							for(int j=0; j<d_fft_size; j++)
 							{
-								coeff = cos(-phase_acc) + 1j * sin(-phase_acc);
+							        coeff = gr_expj(-phase_acc);
 
 								sum += in_s[i*d_fft_size+j] * coeff;
 

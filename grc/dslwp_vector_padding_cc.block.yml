@@ -1,0 +1,40 @@
+id: dslwp_vector_padding_cc
+label: Vector Padding CC
+category: '[DSLWP]'
+
+parameters:
+-   id: padding
+    label: Padding
+    dtype: complex
+    default: '0'
+-   id: position
+    label: Position
+    dtype: enum
+    options: ['0', '1']
+    option_labels: [End, Begin]
+-   id: vlen_in
+    label: Vec Length (in)
+    dtype: int
+    default: '512'
+    hide: ${ 'part' if vlen_in == 1 else 'none' }
+-   id: vlen_out
+    label: Vec Length (out)
+    dtype: int
+    default: '1024'
+    hide: ${ 'part' if vlen_in == 1 else 'none' }
+
+inputs:
+-   domain: stream
+    dtype: complex
+    vlen: ${ vlen_in }
+
+outputs:
+-   domain: stream
+    dtype: complex
+    vlen: ${ vlen_out }
+
+templates:
+    imports: import dslwp
+    make: dslwp.vector_padding_cc(${padding}, ${position}, ${vlen_in}, ${vlen_out})
+
+file_format: 1

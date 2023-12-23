@@ -1,3377 +1,1324 @@
-<?xml version='1.0' encoding='utf-8'?>
-<?grc format='1' created='3.7.11'?>
-<flow_graph>
-  <timestamp>Wed Jan 24 22:55:15 2018</timestamp>
-  <block>
-    <key>options</key>
-    <param>
-      <key>author</key>
-      <value></value>
-    </param>
-    <param>
-      <key>window_size</key>
-      <value></value>
-    </param>
-    <param>
-      <key>category</key>
-      <value>[GRC Hier Blocks]</value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>description</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(8, 8)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>generate_options</key>
-      <value>qt_gui</value>
-    </param>
-    <param>
-      <key>hier_block_src_path</key>
-      <value>.:</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>top_block</value>
-    </param>
-    <param>
-      <key>max_nouts</key>
-      <value>16</value>
-    </param>
-    <param>
-      <key>qt_qss_theme</key>
-      <value></value>
-    </param>
-    <param>
-      <key>realtime_scheduling</key>
-      <value></value>
-    </param>
-    <param>
-      <key>run_command</key>
-      <value>{python} -u {filename}</value>
-    </param>
-    <param>
-      <key>run_options</key>
-      <value>prompt</value>
-    </param>
-    <param>
-      <key>run</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>thread_safe_setters</key>
-      <value></value>
-    </param>
-    <param>
-      <key>title</key>
-      <value></value>
-    </param>
-  </block>
-  <block>
-    <key>variable</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(288, 12)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>ebn0</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>-1</value>
-    </param>
-  </block>
-  <block>
-    <key>variable</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(424, 12)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>ebn0_threshold</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>-2</value>
-    </param>
-  </block>
-  <block>
-    <key>variable</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(560, 12)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>pll_loop_bw</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>4</value>
-    </param>
-  </block>
-  <block>
-    <key>variable</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(0, 92)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>samp_rate</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>2000</value>
-    </param>
-  </block>
-  <block>
-    <key>variable</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(288, 84)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>snr</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>10.0**(ebn0/10.0)/sps</value>
-    </param>
-  </block>
-  <block>
-    <key>variable</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(424, 84)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>snr_threshold</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>10.0**(ebn0_threshold/10.0)/sps</value>
-    </param>
-  </block>
-  <block>
-    <key>variable</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(104, 92)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>sps</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>8</value>
-    </param>
-  </block>
-  <block>
-    <key>analog_noise_source_x</key>
-    <param>
-      <key>amp</key>
-      <value>(1.0/snr)**0.5</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(752, 508)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>analog_noise_source_x_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>noise_type</key>
-      <value>analog.GR_GAUSSIAN</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>complex</value>
-    </param>
-    <param>
-      <key>seed</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>analog_sig_source_x</key>
-    <param>
-      <key>amp</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>freq</key>
-      <value>100</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(112, 568)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>analog_sig_source_x_2</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>4096</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>offset</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>complex</value>
-    </param>
-    <param>
-      <key>samp_rate</key>
-      <value>samp_rate</value>
-    </param>
-    <param>
-      <key>waveform</key>
-      <value>analog.GR_COS_WAVE</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_add_const_vxx</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>const</key>
-      <value>-1</value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(352, 260)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_add_const_vxx_0_0</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>float</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_add_xx</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(960, 552)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_add_xx_0</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>complex</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>num_inputs</key>
-      <value>2</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_char_to_float</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(48, 260)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_char_to_float_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>scale</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_delay</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>delay</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(392, 340)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_delay_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>num_ports</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>float</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_message_debug</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(1136, 896)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_message_debug_0_0</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_message_strobe</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(96, 164)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_message_strobe_0_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>msg</key>
-      <value>pmt.cons(pmt.make_dict(), pmt.init_u8vector(223, [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199,200,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,219,220,221,222]))</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>period</key>
-      <value>14560</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_multiply_const_vxx</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>const</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(296, 596)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_multiply_const_vxx_0</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>complex</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_multiply_const_vxx</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>const</key>
-      <value>2</value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(192, 260)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_multiply_const_vxx_0_0</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>float</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_multiply_xx</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(504, 568)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_multiply_xx_0</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>complex</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>num_inputs</key>
-      <value>2</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_multiply_xx</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(528, 264)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_multiply_xx_0_0</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>float</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>num_inputs</key>
-      <value>2</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_multiply_xx</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(664, 280)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_multiply_xx_0_1</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>float</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>num_inputs</key>
-      <value>2</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_pack_k_bits_bb</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(952, 292)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_pack_k_bits_bb_0</value>
-    </param>
-    <param>
-      <key>k</key>
-      <value>8</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_pdu_to_tagged_stream</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(1048, 172)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_pdu_to_tagged_stream_0_0</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>byte</value>
-    </param>
-    <param>
-      <key>tag</key>
-      <value>packet_len</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_throttle</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(1080, 564)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_throttle_0_0_0</value>
-    </param>
-    <param>
-      <key>ignoretag</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>samples_per_second</key>
-      <value>samp_rate</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>complex</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_vector_source_x</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(112, 460)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_vector_source_x_1</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>complex</value>
-    </param>
-    <param>
-      <key>repeat</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>tags</key>
-      <value>[]</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>vector</key>
-      <value>[0.986752-0.162236j, 0.961165-0.275976j, 0.909253-0.416245j, 0.823810-0.566866j, 0.704089-0.710112j, 0.554654-0.832081j, 0.382467-0.923969j, 0.195052-0.980793j, 0.000006-1.000000j, -0.195011-0.980801j, -0.382250-0.924059j, -0.553737-0.832692j, -0.701059-0.713104j, -0.815998-0.578055j, -0.893407-0.449249j, -0.934886-0.354949j, -0.947363-0.320163j, -0.934914-0.354874j, -0.893617-0.448830j, -0.817269-0.576256j, -0.707107-0.707107j, -0.576256-0.817269j, -0.448830-0.893617j, -0.354872-0.934915j, -0.320152-0.947366j, -0.354872-0.934915j, -0.448830-0.893617j, -0.576256-0.817269j, -0.707107-0.707107j, -0.817269-0.576256j, -0.893617-0.448830j, -0.934915-0.354872j, -0.947366-0.320152j, -0.934915-0.354872j, -0.893617-0.448830j, -0.817269-0.576256j, -0.707107-0.707107j, -0.576256-0.817269j, -0.448830-0.893617j, -0.354874-0.934914j, -0.320163-0.947363j, -0.354949-0.934886j, -0.449249-0.893407j, -0.578055-0.815998j, -0.713104-0.701059j, -0.832692-0.553737j, -0.924059-0.382250j, -0.980801-0.195010j, -1.000000+0.000012j, -0.980785+0.195092j, -0.923879+0.382684j, -0.831470+0.555570j, -0.707107+0.707107j, -0.555570+0.831470j, -0.382683+0.923880j, -0.195090+0.980785j, -0.000000+1.000000j, 0.195090+0.980785j, 0.382683+0.923880j, 0.555570+0.831470j, 0.707107+0.707107j, 0.831470+0.555570j, 0.923879+0.382684j, 0.980785+0.195092j, 1.000000+0.000012j, 0.980801-0.195010j, 0.924059-0.382250j, 0.832692-0.553737j, 0.713104-0.701059j, 0.578055-0.815998j, 0.449249-0.893407j, 0.354949-0.934886j, 0.320163-0.947363j, 0.354874-0.934914j, 0.448830-0.893617j, 0.576256-0.817269j, 0.707107-0.707107j, 0.817269-0.576256j, 0.893617-0.448830j, 0.934914-0.354874j, 0.947363-0.320163j, 0.934886-0.354949j, 0.893407-0.449249j, 0.815998-0.578055j, 0.701059-0.713104j, 0.553737-0.832692j, 0.382250-0.924059j, 0.195012-0.980801j, 0.000000-1.000000j, -0.195012-0.980801j, -0.382250-0.924059j, -0.553737-0.832692j, -0.701059-0.713104j, -0.815998-0.578055j, -0.893407-0.449249j, -0.934885-0.354950j, -0.947359-0.320174j, -0.934885-0.354950j, -0.893407-0.449249j, -0.815998-0.578055j, -0.701059-0.713104j, -0.553737-0.832692j, -0.382250-0.924059j, -0.195010-0.980801j, 0.000012-1.000000j, 0.195092-0.980785j, 0.382684-0.923879j, 0.555570-0.831470j, 0.707107-0.707107j, 0.831470-0.555570j, 0.923879-0.382684j, 0.980785-0.195092j, 1.000000-0.000012j, 0.980801+0.195010j, 0.924059+0.382250j, 0.832692+0.553737j, 0.713104+0.701059j, 0.578055+0.815998j, 0.449249+0.893407j, 0.354950+0.934885j, 0.320174+0.947359j, 0.354950+0.934885j, 0.449249+0.893407j, 0.578055+0.815998j, 0.713104+0.701059j, 0.832692+0.553737j, 0.924059+0.382250j, 0.980801+0.195012j, 1.000000+0.000000j, 0.980801-0.195012j, 0.924059-0.382250j, 0.832692-0.553737j, 0.713104-0.701059j, 0.578055-0.815998j, 0.449249-0.893407j, 0.354950-0.934885j, 0.320174-0.947359j, 0.354950-0.934885j, 0.449249-0.893407j, 0.578055-0.815998j, 0.713104-0.701059j, 0.832692-0.553737j, 0.924059-0.382250j, 0.980801-0.195012j, 1.000000+0.000000j, 0.980801+0.195012j, 0.924059+0.382250j, 0.832692+0.553737j, 0.713104+0.701059j, 0.578055+0.815998j, 0.449249+0.893407j, 0.354950+0.934885j, 0.320174+0.947359j, 0.354950+0.934885j, 0.449249+0.893407j, 0.578055+0.815998j, 0.713104+0.701059j, 0.832692+0.553737j, 0.924059+0.382250j, 0.980801+0.195012j, 1.000000+0.000000j, 0.980801-0.195012j, 0.924059-0.382250j, 0.832692-0.553737j, 0.713104-0.701059j, 0.578055-0.815998j, 0.449249-0.893407j, 0.354950-0.934885j, 0.320174-0.947359j, 0.354950-0.934885j, 0.449249-0.893407j, 0.578055-0.815998j, 0.713104-0.701059j, 0.832692-0.553737j, 0.924059-0.382250j, 0.980801-0.195010j, 1.000000+0.000012j, 0.980785+0.195092j, 0.923879+0.382684j, 0.831470+0.555570j, 0.707107+0.707107j, 0.555570+0.831470j, 0.382684+0.923879j, 0.195092+0.980785j, 0.000012+1.000000j, -0.195010+0.980801j, -0.382250+0.924059j, -0.553737+0.832692j, -0.701059+0.713104j, -0.815998+0.578055j, -0.893407+0.449249j, -0.934885+0.354950j, -0.947359+0.320174j, -0.934885+0.354950j, -0.893407+0.449249j, -0.815998+0.578055j, -0.701059+0.713104j, -0.553737+0.832692j, -0.382250+0.924059j, -0.195010+0.980801j, 0.000012+1.000000j, 0.195092+0.980785j, 0.382684+0.923879j, 0.555570+0.831470j, 0.707107+0.707107j, 0.831470+0.555570j, 0.923880+0.382683j, 0.980785+0.195090j, 1.000000+0.000000j, 0.980785-0.195090j, 0.923880-0.382683j, 0.831470-0.555570j, 0.707107-0.707107j, 0.555570-0.831470j, 0.382684-0.923879j, 0.195092-0.980785j, 0.000012-1.000000j, -0.195010-0.980801j, -0.382250-0.924059j, -0.553737-0.832692j, -0.701059-0.713104j, -0.815998-0.578055j, -0.893407-0.449249j, -0.934885-0.354950j, -0.947359-0.320174j, -0.934885-0.354950j, -0.893407-0.449249j, -0.815998-0.578055j, -0.701059-0.713104j, -0.553737-0.832692j, -0.382250-0.924059j, -0.195010-0.980801j, 0.000012-1.000000j, 0.195092-0.980785j, 0.382684-0.923879j, 0.555570-0.831470j, 0.707107-0.707107j, 0.831470-0.555570j, 0.923879-0.382684j, 0.980785-0.195092j, 1.000000-0.000012j, 0.980801+0.195010j, 0.924059+0.382250j, 0.832692+0.553737j, 0.713104+0.701059j, 0.578055+0.815998j, 0.449249+0.893407j, 0.354950+0.934885j, 0.320174+0.947359j, 0.354950+0.934885j, 0.449249+0.893407j, 0.578055+0.815998j, 0.713104+0.701059j, 0.832692+0.553737j, 0.924059+0.382250j, 0.980801+0.195010j, 1.000000-0.000012j, 0.980785-0.195092j, 0.923879-0.382684j, 0.831470-0.555570j, 0.707107-0.707107j, 0.555570-0.831470j, 0.382683-0.923880j, 0.195090-0.980785j, 0.000000-1.000000j, -0.195090-0.980785j, -0.382683-0.923880j, -0.555570-0.831470j, -0.707107-0.707107j, -0.831470-0.555570j, -0.923879-0.382684j, -0.980785-0.195092j, -1.000000-0.000012j, -0.980801+0.195010j, -0.924059+0.382250j, -0.832692+0.553737j, -0.713104+0.701059j, -0.578055+0.815998j, -0.449249+0.893407j, -0.354950+0.934885j, -0.320174+0.947359j, -0.354950+0.934885j, -0.449249+0.893407j, -0.578055+0.815998j, -0.713104+0.701059j, -0.832692+0.553737j, -0.924059+0.382250j, -0.980801+0.195010j, -1.000000-0.000012j, -0.980785-0.195092j, -0.923879-0.382684j, -0.831470-0.555570j, -0.707107-0.707107j, -0.555570-0.831470j, -0.382683-0.923880j, -0.195090-0.980785j, 0.000000-1.000000j, 0.195090-0.980785j, 0.382683-0.923880j, 0.555570-0.831470j, 0.707107-0.707107j, 0.831470-0.555570j, 0.923879-0.382684j, 0.980785-0.195092j, 1.000000-0.000012j, 0.980801+0.195010j, 0.924059+0.382250j, 0.832692+0.553737j, 0.713104+0.701059j, 0.578055+0.815998j, 0.449249+0.893407j, 0.354950+0.934885j, 0.320174+0.947359j, 0.354950+0.934885j, 0.449249+0.893407j, 0.578055+0.815998j, 0.713104+0.701059j, 0.832692+0.553737j, 0.924059+0.382250j, 0.980801+0.195010j, 1.000000-0.000012j, 0.980785-0.195092j, 0.923879-0.382684j, 0.831470-0.555570j, 0.707107-0.707107j, 0.555570-0.831470j, 0.382683-0.923880j, 0.195090-0.980785j, 0.000000-1.000000j, -0.195090-0.980785j, -0.382683-0.923880j, -0.555570-0.831470j, -0.707107-0.707107j, -0.831470-0.555570j, -0.923879-0.382684j, -0.980785-0.195092j, -1.000000-0.000012j, -0.980801+0.195010j, -0.924059+0.382250j, -0.832692+0.553737j, -0.713104+0.701059j, -0.578055+0.815998j, -0.449249+0.893407j, -0.354949+0.934886j, -0.320163+0.947363j, -0.354874+0.934914j, -0.448830+0.893617j, -0.576256+0.817269j, -0.707107+0.707107j, -0.817269+0.576256j, -0.893617+0.448830j, -0.934915+0.354872j, -0.947366+0.320152j, -0.934915+0.354872j, -0.893617+0.448830j, -0.817269+0.576256j, -0.707107+0.707107j, -0.576256+0.817269j, -0.448830+0.893617j, -0.354874+0.934914j, -0.320163+0.947363j, -0.354949+0.934886j, -0.449249+0.893407j, -0.578055+0.815998j, -0.713104+0.701059j, -0.832692+0.553737j, -0.924059+0.382250j, -0.980801+0.195012j, -1.000000-0.000000j, -0.980801-0.195012j, -0.924059-0.382250j, -0.832692-0.553737j, -0.713104-0.701059j, -0.578055-0.815998j, -0.449249-0.893407j, -0.354950-0.934885j, -0.320174-0.947359j, -0.354950-0.934885j, -0.449249-0.893407j, -0.578055-0.815998j, -0.713104-0.701059j, -0.832692-0.553737j, -0.924059-0.382250j, -0.980801-0.195012j, -1.000000-0.000000j, -0.980801+0.195012j, -0.924059+0.382250j, -0.832692+0.553737j, -0.713104+0.701059j, -0.578055+0.815998j, -0.449249+0.893407j, -0.354950+0.934885j, -0.320174+0.947359j, -0.354950+0.934885j, -0.449249+0.893407j, -0.578055+0.815998j, -0.713104+0.701059j, -0.832692+0.553737j, -0.924059+0.382250j, -0.980801+0.195010j, -1.000000-0.000012j, -0.980785-0.195092j, -0.923879-0.382684j, -0.831470-0.555570j, -0.707107-0.707107j, -0.555570-0.831470j, -0.382684-0.923879j, -0.195092-0.980785j, -0.000012-1.000000j, 0.195010-0.980801j, 0.382250-0.924059j, 0.553737-0.832692j, 0.701059-0.713104j, 0.815998-0.578055j, 0.893407-0.449249j, 0.934886-0.354949j, 0.947363-0.320163j, 0.934914-0.354874j, 0.893617-0.448830j, 0.817269-0.576256j, 0.707107-0.707107j, 0.576256-0.817269j, 0.448830-0.893617j, 0.354872-0.934915j, 0.320152-0.947366j, 0.354872-0.934915j, 0.448830-0.893617j, 0.576256-0.817269j, 0.707107-0.707107j, 0.817269-0.576256j, 0.893617-0.448830j, 0.934915-0.354872j, 0.947366-0.320152j, 0.934915-0.354872j, 0.893617-0.448830j, 0.817269-0.576256j, 0.707107-0.707107j, 0.576256-0.817269j, 0.448830-0.893617j, 0.354874-0.934914j, 0.320163-0.947363j, 0.354949-0.934886j, 0.449249-0.893407j, 0.578055-0.815998j, 0.713104-0.701059j, 0.832692-0.553737j, 0.924059-0.382250j, 0.980801-0.195010j, 1.000000+0.000012j, 0.980785+0.195092j, 0.923879+0.382684j, 0.831470+0.555570j, 0.707107+0.707107j, 0.555570+0.831470j, 0.382684+0.923879j, 0.195092+0.980785j, 0.000012+1.000000j, -0.195010+0.980801j, -0.382250+0.924059j, -0.553737+0.832692j, -0.701059+0.713104j, -0.815998+0.578055j, -0.893407+0.449249j, -0.934885+0.354950j, -0.947359+0.320174j, -0.934885+0.354950j, -0.893407+0.449249j, -0.815998+0.578055j, -0.701059+0.713104j, -0.553737+0.832692j, -0.382250+0.924059j, -0.195010+0.980801j, 0.000012+1.000000j, 0.195092+0.980785j, 0.382684+0.923879j, 0.555570+0.831470j, 0.707107+0.707107j, 0.831470+0.555570j, 0.923880+0.382683j, 0.980785+0.195090j, 1.000000+0.000000j, 0.980785-0.195090j, 0.923880-0.382683j, 0.831470-0.555570j, 0.707107-0.707107j, 0.555570-0.831470j, 0.382684-0.923879j, 0.195092-0.980785j, 0.000012-1.000000j, -0.195010-0.980801j, -0.382250-0.924059j, -0.553737-0.832692j, -0.701059-0.713104j, -0.815998-0.578055j, -0.893407-0.449249j, -0.934886-0.354949j, -0.947363-0.320163j, -0.934914-0.354874j, -0.893617-0.448830j, -0.817269-0.576256j, -0.707107-0.707107j, -0.576256-0.817269j, -0.448830-0.893617j, -0.354873-0.934914j, -0.320157-0.947364j, -0.354911-0.934900j, -0.449039-0.893512j, -0.577156-0.816634j, -0.710112-0.704089j, -0.825057-0.565049j, -0.909448-0.415819j, -0.961187-0.275898j]</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_vector_source_x</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(480, 396)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_vector_source_x_1_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>float</value>
-    </param>
-    <param>
-      <key>repeat</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>tags</key>
-      <value>[]</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>vector</key>
-      <value>[1,-1]</value>
-    </param>
-  </block>
-  <block>
-    <key>digital_binary_slicer_fb</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(808, 296)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>digital_binary_slicer_fb_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>digital_gmsk_mod</key>
-    <param>
-      <key>bt</key>
-      <value>0.5</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(824, 372)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>digital_gmsk_mod_0</value>
-    </param>
-    <param>
-      <key>log</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>samples_per_symbol</key>
-      <value>8</value>
-    </param>
-    <param>
-      <key>verbose</key>
-      <value>False</value>
-    </param>
-  </block>
-  <block>
-    <key>dslwp_attach_sync_marker</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>data_format</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(800, 164)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>dslwp_attach_sync_marker_0</value>
-    </param>
-    <param>
-      <key>marker</key>
-      <value>[0x03,0x47,0x76,0xC7,0x27,0x28,0x95,0xB0]</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>dslwp_ccsds_pseudo_randomizer</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>data_format</key>
-      <value>3</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(1040, 828)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>dslwp_ccsds_pseudo_randomizer_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>dslwp_ccsds_pseudo_randomizer</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>data_format</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(536, 172)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>dslwp_ccsds_pseudo_randomizer_0_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>dslwp_ccsds_turbo_decode</key>
-    <param>
-      <key>base</key>
-      <value>223</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>code_type</key>
-      <value>2</value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(872, 920)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>dslwp_ccsds_turbo_decode_0</value>
-    </param>
-    <param>
-      <key>iterations</key>
-      <value>2</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>octets</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>sigma</key>
-      <value>0.707</value>
-    </param>
-    <param>
-      <key>update_sigma</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
-    <key>dslwp_ccsds_turbo_encode</key>
-    <param>
-      <key>base</key>
-      <value>223</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>code_type</key>
-      <value>2</value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(336, 156)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>dslwp_ccsds_turbo_encode_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>octets</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
-    <key>dslwp_frame_spliter_c</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>frame_length</key>
-      <value>3576</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(864, 820)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>dslwp_frame_spliter_c_0</value>
-    </param>
-    <param>
-      <key>key</key>
-      <value>payload_start</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>dslwp_oqpsk_coherent_demod_cc</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>dttl_loop_bw</key>
-      <value>0.05</value>
-    </param>
-    <param>
-      <key>dttl_damping</key>
-      <value>0.707</value>
-    </param>
-    <param>
-      <key>dttl</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>freq_max</key>
-      <value>3.14</value>
-    </param>
-    <param>
-      <key>freq_min</key>
-      <value>-3.14</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(608, 712)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>dslwp_oqpsk_coherent_demod_cc_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>max_rate_deviation</key>
-      <value>1.5</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>opt_point</key>
-      <value>4</value>
-    </param>
-    <param>
-      <key>pll_damping</key>
-      <value>0.707</value>
-    </param>
-    <param>
-      <key>pll_loop_bw</key>
-      <value>2.0*math.pi*pll_loop_bw/samp_rate</value>
-    </param>
-    <param>
-      <key>pll</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>samples_per_symbol</key>
-      <value>sps*2</value>
-    </param>
-    <param>
-      <key>taps</key>
-      <value>[0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000005, 0.000035, 0.000189, 0.000787, 0.002569, 0.006746, 0.014618, 0.026868, 0.043018, 0.061431, 0.079856, 0.096160, 0.108824, 0.117144, 0.121157, 0.121157, 0.117144, 0.108824, 0.096160, 0.079856, 0.061431, 0.043018, 0.026868, 0.014618, 0.006746, 0.002569, 0.000787, 0.000189, 0.000035, 0.000005, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000]</value>
-    </param>
-  </block>
-  <block>
-    <key>dslwp_set_gain_by_tag_cc</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(376, 780)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>gain</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>dslwp_set_gain_by_tag_cc_0</value>
-    </param>
-    <param>
-      <key>k</key>
-      <value>512</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>fft_correlator_hier</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>fft_size</key>
-      <value>512</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(96, 760)</value>
-    </param>
-    <param>
-      <key>gui_hint</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>fft_correlator_hier_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>nthreads</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>tap_len</key>
-      <value>512</value>
-    </param>
-    <param>
-      <key>taps</key>
-      <value>[0.986752+0.162236j, 0.961165+0.275976j, 0.909253+0.416245j, 0.823810+0.566866j, 0.704089+0.710112j, 0.554654+0.832081j, 0.382467+0.923969j, 0.195052+0.980793j, 0.000006+1.000000j, -0.195011+0.980801j, -0.382250+0.924059j, -0.553737+0.832692j, -0.701059+0.713104j, -0.815998+0.578055j, -0.893407+0.449249j, -0.934886+0.354949j, -0.947363+0.320163j, -0.934914+0.354874j, -0.893617+0.448830j, -0.817269+0.576256j, -0.707107+0.707107j, -0.576256+0.817269j, -0.448830+0.893617j, -0.354872+0.934915j, -0.320152+0.947366j, -0.354872+0.934915j, -0.448830+0.893617j, -0.576256+0.817269j, -0.707107+0.707107j, -0.817269+0.576256j, -0.893617+0.448830j, -0.934915+0.354872j, -0.947366+0.320152j, -0.934915+0.354872j, -0.893617+0.448830j, -0.817269+0.576256j, -0.707107+0.707107j, -0.576256+0.817269j, -0.448830+0.893617j, -0.354874+0.934914j, -0.320163+0.947363j, -0.354949+0.934886j, -0.449249+0.893407j, -0.578055+0.815998j, -0.713104+0.701059j, -0.832692+0.553737j, -0.924059+0.382250j, -0.980801+0.195010j, -1.000000-0.000012j, -0.980785-0.195092j, -0.923879-0.382684j, -0.831470-0.555570j, -0.707107-0.707107j, -0.555570-0.831470j, -0.382683-0.923880j, -0.195090-0.980785j, -0.000000-1.000000j, 0.195090-0.980785j, 0.382683-0.923880j, 0.555570-0.831470j, 0.707107-0.707107j, 0.831470-0.555570j, 0.923879-0.382684j, 0.980785-0.195092j, 1.000000-0.000012j, 0.980801+0.195010j, 0.924059+0.382250j, 0.832692+0.553737j, 0.713104+0.701059j, 0.578055+0.815998j, 0.449249+0.893407j, 0.354949+0.934886j, 0.320163+0.947363j, 0.354874+0.934914j, 0.448830+0.893617j, 0.576256+0.817269j, 0.707107+0.707107j, 0.817269+0.576256j, 0.893617+0.448830j, 0.934914+0.354874j, 0.947363+0.320163j, 0.934886+0.354949j, 0.893407+0.449249j, 0.815998+0.578055j, 0.701059+0.713104j, 0.553737+0.832692j, 0.382250+0.924059j, 0.195012+0.980801j, 0.000000+1.000000j, -0.195012+0.980801j, -0.382250+0.924059j, -0.553737+0.832692j, -0.701059+0.713104j, -0.815998+0.578055j, -0.893407+0.449249j, -0.934885+0.354950j, -0.947359+0.320174j, -0.934885+0.354950j, -0.893407+0.449249j, -0.815998+0.578055j, -0.701059+0.713104j, -0.553737+0.832692j, -0.382250+0.924059j, -0.195010+0.980801j, 0.000012+1.000000j, 0.195092+0.980785j, 0.382684+0.923879j, 0.555570+0.831470j, 0.707107+0.707107j, 0.831470+0.555570j, 0.923879+0.382684j, 0.980785+0.195092j, 1.000000+0.000012j, 0.980801-0.195010j, 0.924059-0.382250j, 0.832692-0.553737j, 0.713104-0.701059j, 0.578055-0.815998j, 0.449249-0.893407j, 0.354950-0.934885j, 0.320174-0.947359j, 0.354950-0.934885j, 0.449249-0.893407j, 0.578055-0.815998j, 0.713104-0.701059j, 0.832692-0.553737j, 0.924059-0.382250j, 0.980801-0.195012j, 1.000000-0.000000j, 0.980801+0.195012j, 0.924059+0.382250j, 0.832692+0.553737j, 0.713104+0.701059j, 0.578055+0.815998j, 0.449249+0.893407j, 0.354950+0.934885j, 0.320174+0.947359j, 0.354950+0.934885j, 0.449249+0.893407j, 0.578055+0.815998j, 0.713104+0.701059j, 0.832692+0.553737j, 0.924059+0.382250j, 0.980801+0.195012j, 1.000000-0.000000j, 0.980801-0.195012j, 0.924059-0.382250j, 0.832692-0.553737j, 0.713104-0.701059j, 0.578055-0.815998j, 0.449249-0.893407j, 0.354950-0.934885j, 0.320174-0.947359j, 0.354950-0.934885j, 0.449249-0.893407j, 0.578055-0.815998j, 0.713104-0.701059j, 0.832692-0.553737j, 0.924059-0.382250j, 0.980801-0.195012j, 1.000000-0.000000j, 0.980801+0.195012j, 0.924059+0.382250j, 0.832692+0.553737j, 0.713104+0.701059j, 0.578055+0.815998j, 0.449249+0.893407j, 0.354950+0.934885j, 0.320174+0.947359j, 0.354950+0.934885j, 0.449249+0.893407j, 0.578055+0.815998j, 0.713104+0.701059j, 0.832692+0.553737j, 0.924059+0.382250j, 0.980801+0.195010j, 1.000000-0.000012j, 0.980785-0.195092j, 0.923879-0.382684j, 0.831470-0.555570j, 0.707107-0.707107j, 0.555570-0.831470j, 0.382684-0.923879j, 0.195092-0.980785j, 0.000012-1.000000j, -0.195010-0.980801j, -0.382250-0.924059j, -0.553737-0.832692j, -0.701059-0.713104j, -0.815998-0.578055j, -0.893407-0.449249j, -0.934885-0.354950j, -0.947359-0.320174j, -0.934885-0.354950j, -0.893407-0.449249j, -0.815998-0.578055j, -0.701059-0.713104j, -0.553737-0.832692j, -0.382250-0.924059j, -0.195010-0.980801j, 0.000012-1.000000j, 0.195092-0.980785j, 0.382684-0.923879j, 0.555570-0.831470j, 0.707107-0.707107j, 0.831470-0.555570j, 0.923880-0.382683j, 0.980785-0.195090j, 1.000000-0.000000j, 0.980785+0.195090j, 0.923880+0.382683j, 0.831470+0.555570j, 0.707107+0.707107j, 0.555570+0.831470j, 0.382684+0.923879j, 0.195092+0.980785j, 0.000012+1.000000j, -0.195010+0.980801j, -0.382250+0.924059j, -0.553737+0.832692j, -0.701059+0.713104j, -0.815998+0.578055j, -0.893407+0.449249j, -0.934885+0.354950j, -0.947359+0.320174j, -0.934885+0.354950j, -0.893407+0.449249j, -0.815998+0.578055j, -0.701059+0.713104j, -0.553737+0.832692j, -0.382250+0.924059j, -0.195010+0.980801j, 0.000012+1.000000j, 0.195092+0.980785j, 0.382684+0.923879j, 0.555570+0.831470j, 0.707107+0.707107j, 0.831470+0.555570j, 0.923879+0.382684j, 0.980785+0.195092j, 1.000000+0.000012j, 0.980801-0.195010j, 0.924059-0.382250j, 0.832692-0.553737j, 0.713104-0.701059j, 0.578055-0.815998j, 0.449249-0.893407j, 0.354950-0.934885j, 0.320174-0.947359j, 0.354950-0.934885j, 0.449249-0.893407j, 0.578055-0.815998j, 0.713104-0.701059j, 0.832692-0.553737j, 0.924059-0.382250j, 0.980801-0.195010j, 1.000000+0.000012j, 0.980785+0.195092j, 0.923879+0.382684j, 0.831470+0.555570j, 0.707107+0.707107j, 0.555570+0.831470j, 0.382683+0.923880j, 0.195090+0.980785j, 0.000000+1.000000j, -0.195090+0.980785j, -0.382683+0.923880j, -0.555570+0.831470j, -0.707107+0.707107j, -0.831470+0.555570j, -0.923879+0.382684j, -0.980785+0.195092j, -1.000000+0.000012j, -0.980801-0.195010j, -0.924059-0.382250j, -0.832692-0.553737j, -0.713104-0.701059j, -0.578055-0.815998j, -0.449249-0.893407j, -0.354950-0.934885j, -0.320174-0.947359j, -0.354950-0.934885j, -0.449249-0.893407j, -0.578055-0.815998j, -0.713104-0.701059j, -0.832692-0.553737j, -0.924059-0.382250j, -0.980801-0.195010j, -1.000000+0.000012j, -0.980785+0.195092j, -0.923879+0.382684j, -0.831470+0.555570j, -0.707107+0.707107j, -0.555570+0.831470j, -0.382683+0.923880j, -0.195090+0.980785j, 0.000000+1.000000j, 0.195090+0.980785j, 0.382683+0.923880j, 0.555570+0.831470j, 0.707107+0.707107j, 0.831470+0.555570j, 0.923879+0.382684j, 0.980785+0.195092j, 1.000000+0.000012j, 0.980801-0.195010j, 0.924059-0.382250j, 0.832692-0.553737j, 0.713104-0.701059j, 0.578055-0.815998j, 0.449249-0.893407j, 0.354950-0.934885j, 0.320174-0.947359j, 0.354950-0.934885j, 0.449249-0.893407j, 0.578055-0.815998j, 0.713104-0.701059j, 0.832692-0.553737j, 0.924059-0.382250j, 0.980801-0.195010j, 1.000000+0.000012j, 0.980785+0.195092j, 0.923879+0.382684j, 0.831470+0.555570j, 0.707107+0.707107j, 0.555570+0.831470j, 0.382683+0.923880j, 0.195090+0.980785j, 0.000000+1.000000j, -0.195090+0.980785j, -0.382683+0.923880j, -0.555570+0.831470j, -0.707107+0.707107j, -0.831470+0.555570j, -0.923879+0.382684j, -0.980785+0.195092j, -1.000000+0.000012j, -0.980801-0.195010j, -0.924059-0.382250j, -0.832692-0.553737j, -0.713104-0.701059j, -0.578055-0.815998j, -0.449249-0.893407j, -0.354949-0.934886j, -0.320163-0.947363j, -0.354874-0.934914j, -0.448830-0.893617j, -0.576256-0.817269j, -0.707107-0.707107j, -0.817269-0.576256j, -0.893617-0.448830j, -0.934915-0.354872j, -0.947366-0.320152j, -0.934915-0.354872j, -0.893617-0.448830j, -0.817269-0.576256j, -0.707107-0.707107j, -0.576256-0.817269j, -0.448830-0.893617j, -0.354874-0.934914j, -0.320163-0.947363j, -0.354949-0.934886j, -0.449249-0.893407j, -0.578055-0.815998j, -0.713104-0.701059j, -0.832692-0.553737j, -0.924059-0.382250j, -0.980801-0.195012j, -1.000000+0.000000j, -0.980801+0.195012j, -0.924059+0.382250j, -0.832692+0.553737j, -0.713104+0.701059j, -0.578055+0.815998j, -0.449249+0.893407j, -0.354950+0.934885j, -0.320174+0.947359j, -0.354950+0.934885j, -0.449249+0.893407j, -0.578055+0.815998j, -0.713104+0.701059j, -0.832692+0.553737j, -0.924059+0.382250j, -0.980801+0.195012j, -1.000000+0.000000j, -0.980801-0.195012j, -0.924059-0.382250j, -0.832692-0.553737j, -0.713104-0.701059j, -0.578055-0.815998j, -0.449249-0.893407j, -0.354950-0.934885j, -0.320174-0.947359j, -0.354950-0.934885j, -0.449249-0.893407j, -0.578055-0.815998j, -0.713104-0.701059j, -0.832692-0.553737j, -0.924059-0.382250j, -0.980801-0.195010j, -1.000000+0.000012j, -0.980785+0.195092j, -0.923879+0.382684j, -0.831470+0.555570j, -0.707107+0.707107j, -0.555570+0.831470j, -0.382684+0.923879j, -0.195092+0.980785j, -0.000012+1.000000j, 0.195010+0.980801j, 0.382250+0.924059j, 0.553737+0.832692j, 0.701059+0.713104j, 0.815998+0.578055j, 0.893407+0.449249j, 0.934886+0.354949j, 0.947363+0.320163j, 0.934914+0.354874j, 0.893617+0.448830j, 0.817269+0.576256j, 0.707107+0.707107j, 0.576256+0.817269j, 0.448830+0.893617j, 0.354872+0.934915j, 0.320152+0.947366j, 0.354872+0.934915j, 0.448830+0.893617j, 0.576256+0.817269j, 0.707107+0.707107j, 0.817269+0.576256j, 0.893617+0.448830j, 0.934915+0.354872j, 0.947366+0.320152j, 0.934915+0.354872j, 0.893617+0.448830j, 0.817269+0.576256j, 0.707107+0.707107j, 0.576256+0.817269j, 0.448830+0.893617j, 0.354874+0.934914j, 0.320163+0.947363j, 0.354949+0.934886j, 0.449249+0.893407j, 0.578055+0.815998j, 0.713104+0.701059j, 0.832692+0.553737j, 0.924059+0.382250j, 0.980801+0.195010j, 1.000000-0.000012j, 0.980785-0.195092j, 0.923879-0.382684j, 0.831470-0.555570j, 0.707107-0.707107j, 0.555570-0.831470j, 0.382684-0.923879j, 0.195092-0.980785j, 0.000012-1.000000j, -0.195010-0.980801j, -0.382250-0.924059j, -0.553737-0.832692j, -0.701059-0.713104j, -0.815998-0.578055j, -0.893407-0.449249j, -0.934885-0.354950j, -0.947359-0.320174j, -0.934885-0.354950j, -0.893407-0.449249j, -0.815998-0.578055j, -0.701059-0.713104j, -0.553737-0.832692j, -0.382250-0.924059j, -0.195010-0.980801j, 0.000012-1.000000j, 0.195092-0.980785j, 0.382684-0.923879j, 0.555570-0.831470j, 0.707107-0.707107j, 0.831470-0.555570j, 0.923880-0.382683j, 0.980785-0.195090j, 1.000000-0.000000j, 0.980785+0.195090j, 0.923880+0.382683j, 0.831470+0.555570j, 0.707107+0.707107j, 0.555570+0.831470j, 0.382684+0.923879j, 0.195092+0.980785j, 0.000012+1.000000j, -0.195010+0.980801j, -0.382250+0.924059j, -0.553737+0.832692j, -0.701059+0.713104j, -0.815998+0.578055j, -0.893407+0.449249j, -0.934886+0.354949j, -0.947363+0.320163j, -0.934914+0.354874j, -0.893617+0.448830j, -0.817269+0.576256j, -0.707107+0.707107j, -0.576256+0.817269j, -0.448830+0.893617j, -0.354873+0.934914j, -0.320157+0.947364j, -0.354911+0.934900j, -0.449039+0.893512j, -0.577156+0.816634j, -0.710112+0.704089j, -0.825057+0.565049j, -0.909448+0.415819j, -0.961187+0.275898j]</value>
-    </param>
-    <param>
-      <key>threshold</key>
-      <value>snr_threshold</value>
-    </param>
-  </block>
-  <block>
-    <key>import</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(184, 12)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>import_0</value>
-    </param>
-    <param>
-      <key>import</key>
-      <value>import math</value>
-    </param>
-  </block>
-  <block>
-    <key>qtgui_const_sink_x</key>
-    <param>
-      <key>autoscale</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>axislabels</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(864, 740)</value>
-    </param>
-    <param>
-      <key>gui_hint</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>grid</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>qtgui_const_sink_x_0</value>
-    </param>
-    <param>
-      <key>legend</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>alpha1</key>
-      <value>0.3</value>
-    </param>
-    <param>
-      <key>color1</key>
-      <value>"blue"</value>
-    </param>
-    <param>
-      <key>label1</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker1</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>style1</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>width1</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha10</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color10</key>
-      <value>"red"</value>
-    </param>
-    <param>
-      <key>label10</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker10</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>style10</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>width10</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha2</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color2</key>
-      <value>"red"</value>
-    </param>
-    <param>
-      <key>label2</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker2</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>style2</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>width2</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha3</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color3</key>
-      <value>"red"</value>
-    </param>
-    <param>
-      <key>label3</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker3</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>style3</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>width3</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha4</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color4</key>
-      <value>"red"</value>
-    </param>
-    <param>
-      <key>label4</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker4</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>style4</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>width4</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha5</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color5</key>
-      <value>"red"</value>
-    </param>
-    <param>
-      <key>label5</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker5</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>style5</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>width5</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha6</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color6</key>
-      <value>"red"</value>
-    </param>
-    <param>
-      <key>label6</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker6</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>style6</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>width6</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha7</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color7</key>
-      <value>"red"</value>
-    </param>
-    <param>
-      <key>label7</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker7</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>style7</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>width7</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha8</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color8</key>
-      <value>"red"</value>
-    </param>
-    <param>
-      <key>label8</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker8</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>style8</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>width8</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha9</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color9</key>
-      <value>"red"</value>
-    </param>
-    <param>
-      <key>label9</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker9</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>style9</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>width9</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>name</key>
-      <value>""</value>
-    </param>
-    <param>
-      <key>nconnections</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>size</key>
-      <value>1024</value>
-    </param>
-    <param>
-      <key>tr_chan</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>tr_level</key>
-      <value>0.0</value>
-    </param>
-    <param>
-      <key>tr_mode</key>
-      <value>qtgui.TRIG_MODE_FREE</value>
-    </param>
-    <param>
-      <key>tr_slope</key>
-      <value>qtgui.TRIG_SLOPE_POS</value>
-    </param>
-    <param>
-      <key>tr_tag</key>
-      <value>""</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>complex</value>
-    </param>
-    <param>
-      <key>update_time</key>
-      <value>0.10</value>
-    </param>
-    <param>
-      <key>xmax</key>
-      <value>4</value>
-    </param>
-    <param>
-      <key>xmin</key>
-      <value>-4</value>
-    </param>
-    <param>
-      <key>ymax</key>
-      <value>4</value>
-    </param>
-    <param>
-      <key>ymin</key>
-      <value>-4</value>
-    </param>
-  </block>
-  <block>
-    <key>qtgui_freq_sink_x</key>
-    <param>
-      <key>autoscale</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>average</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>axislabels</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>bw</key>
-      <value>samp_rate</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>fc</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>ctrlpanel</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>fftsize</key>
-      <value>1024</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(376, 884)</value>
-    </param>
-    <param>
-      <key>gui_hint</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>grid</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>qtgui_freq_sink_x_0</value>
-    </param>
-    <param>
-      <key>legend</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>alpha1</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color1</key>
-      <value>"blue"</value>
-    </param>
-    <param>
-      <key>label1</key>
-      <value></value>
-    </param>
-    <param>
-      <key>width1</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha10</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color10</key>
-      <value>"dark blue"</value>
-    </param>
-    <param>
-      <key>label10</key>
-      <value></value>
-    </param>
-    <param>
-      <key>width10</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha2</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color2</key>
-      <value>"red"</value>
-    </param>
-    <param>
-      <key>label2</key>
-      <value></value>
-    </param>
-    <param>
-      <key>width2</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha3</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color3</key>
-      <value>"green"</value>
-    </param>
-    <param>
-      <key>label3</key>
-      <value></value>
-    </param>
-    <param>
-      <key>width3</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha4</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color4</key>
-      <value>"black"</value>
-    </param>
-    <param>
-      <key>label4</key>
-      <value></value>
-    </param>
-    <param>
-      <key>width4</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha5</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color5</key>
-      <value>"cyan"</value>
-    </param>
-    <param>
-      <key>label5</key>
-      <value></value>
-    </param>
-    <param>
-      <key>width5</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha6</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color6</key>
-      <value>"magenta"</value>
-    </param>
-    <param>
-      <key>label6</key>
-      <value></value>
-    </param>
-    <param>
-      <key>width6</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha7</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color7</key>
-      <value>"yellow"</value>
-    </param>
-    <param>
-      <key>label7</key>
-      <value></value>
-    </param>
-    <param>
-      <key>width7</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha8</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color8</key>
-      <value>"dark red"</value>
-    </param>
-    <param>
-      <key>label8</key>
-      <value></value>
-    </param>
-    <param>
-      <key>width8</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha9</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color9</key>
-      <value>"dark green"</value>
-    </param>
-    <param>
-      <key>label9</key>
-      <value></value>
-    </param>
-    <param>
-      <key>width9</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>name</key>
-      <value>""</value>
-    </param>
-    <param>
-      <key>nconnections</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>showports</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>freqhalf</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>tr_chan</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>tr_level</key>
-      <value>0.0</value>
-    </param>
-    <param>
-      <key>tr_mode</key>
-      <value>qtgui.TRIG_MODE_FREE</value>
-    </param>
-    <param>
-      <key>tr_tag</key>
-      <value>""</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>complex</value>
-    </param>
-    <param>
-      <key>update_time</key>
-      <value>0.10</value>
-    </param>
-    <param>
-      <key>wintype</key>
-      <value>firdes.WIN_BLACKMAN_hARRIS</value>
-    </param>
-    <param>
-      <key>label</key>
-      <value>Relative Gain</value>
-    </param>
-    <param>
-      <key>ymax</key>
-      <value>10</value>
-    </param>
-    <param>
-      <key>ymin</key>
-      <value>-140</value>
-    </param>
-    <param>
-      <key>units</key>
-      <value>dB</value>
-    </param>
-  </block>
-  <block>
-    <key>qtgui_time_sink_x</key>
-    <param>
-      <key>autoscale</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>axislabels</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>ctrlpanel</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>entags</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(1000, 364)</value>
-    </param>
-    <param>
-      <key>gui_hint</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>grid</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>qtgui_time_sink_x_1</value>
-    </param>
-    <param>
-      <key>legend</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>alpha1</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color1</key>
-      <value>"blue"</value>
-    </param>
-    <param>
-      <key>label1</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker1</key>
-      <value>-1</value>
-    </param>
-    <param>
-      <key>style1</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>width1</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha10</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color10</key>
-      <value>"blue"</value>
-    </param>
-    <param>
-      <key>label10</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker10</key>
-      <value>-1</value>
-    </param>
-    <param>
-      <key>style10</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>width10</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha2</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color2</key>
-      <value>"red"</value>
-    </param>
-    <param>
-      <key>label2</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker2</key>
-      <value>-1</value>
-    </param>
-    <param>
-      <key>style2</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>width2</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha3</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color3</key>
-      <value>"green"</value>
-    </param>
-    <param>
-      <key>label3</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker3</key>
-      <value>-1</value>
-    </param>
-    <param>
-      <key>style3</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>width3</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha4</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color4</key>
-      <value>"black"</value>
-    </param>
-    <param>
-      <key>label4</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker4</key>
-      <value>-1</value>
-    </param>
-    <param>
-      <key>style4</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>width4</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha5</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color5</key>
-      <value>"cyan"</value>
-    </param>
-    <param>
-      <key>label5</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker5</key>
-      <value>-1</value>
-    </param>
-    <param>
-      <key>style5</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>width5</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha6</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color6</key>
-      <value>"magenta"</value>
-    </param>
-    <param>
-      <key>label6</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker6</key>
-      <value>-1</value>
-    </param>
-    <param>
-      <key>style6</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>width6</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha7</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color7</key>
-      <value>"yellow"</value>
-    </param>
-    <param>
-      <key>label7</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker7</key>
-      <value>-1</value>
-    </param>
-    <param>
-      <key>style7</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>width7</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha8</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color8</key>
-      <value>"dark red"</value>
-    </param>
-    <param>
-      <key>label8</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker8</key>
-      <value>-1</value>
-    </param>
-    <param>
-      <key>style8</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>width8</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha9</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color9</key>
-      <value>"dark green"</value>
-    </param>
-    <param>
-      <key>label9</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker9</key>
-      <value>-1</value>
-    </param>
-    <param>
-      <key>style9</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>width9</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>name</key>
-      <value>""</value>
-    </param>
-    <param>
-      <key>nconnections</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>size</key>
-      <value>512</value>
-    </param>
-    <param>
-      <key>srate</key>
-      <value>samp_rate</value>
-    </param>
-    <param>
-      <key>tr_chan</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>tr_delay</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>tr_level</key>
-      <value>0.0</value>
-    </param>
-    <param>
-      <key>tr_mode</key>
-      <value>qtgui.TRIG_MODE_FREE</value>
-    </param>
-    <param>
-      <key>tr_slope</key>
-      <value>qtgui.TRIG_SLOPE_POS</value>
-    </param>
-    <param>
-      <key>tr_tag</key>
-      <value>""</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>complex</value>
-    </param>
-    <param>
-      <key>update_time</key>
-      <value>0.10</value>
-    </param>
-    <param>
-      <key>ylabel</key>
-      <value>Amplitude</value>
-    </param>
-    <param>
-      <key>yunit</key>
-      <value>""</value>
-    </param>
-    <param>
-      <key>ymax</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>ymin</key>
-      <value>-1</value>
-    </param>
-  </block>
-  <block>
-    <key>qtgui_time_sink_x</key>
-    <param>
-      <key>autoscale</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>axislabels</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>ctrlpanel</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>entags</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(608, 916)</value>
-    </param>
-    <param>
-      <key>gui_hint</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>grid</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>qtgui_time_sink_x_2</value>
-    </param>
-    <param>
-      <key>legend</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>alpha1</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color1</key>
-      <value>"blue"</value>
-    </param>
-    <param>
-      <key>label1</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker1</key>
-      <value>-1</value>
-    </param>
-    <param>
-      <key>style1</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>width1</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha10</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color10</key>
-      <value>"blue"</value>
-    </param>
-    <param>
-      <key>label10</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker10</key>
-      <value>-1</value>
-    </param>
-    <param>
-      <key>style10</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>width10</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha2</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color2</key>
-      <value>"red"</value>
-    </param>
-    <param>
-      <key>label2</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker2</key>
-      <value>-1</value>
-    </param>
-    <param>
-      <key>style2</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>width2</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha3</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color3</key>
-      <value>"green"</value>
-    </param>
-    <param>
-      <key>label3</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker3</key>
-      <value>-1</value>
-    </param>
-    <param>
-      <key>style3</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>width3</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha4</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color4</key>
-      <value>"black"</value>
-    </param>
-    <param>
-      <key>label4</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker4</key>
-      <value>-1</value>
-    </param>
-    <param>
-      <key>style4</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>width4</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha5</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color5</key>
-      <value>"cyan"</value>
-    </param>
-    <param>
-      <key>label5</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker5</key>
-      <value>-1</value>
-    </param>
-    <param>
-      <key>style5</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>width5</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha6</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color6</key>
-      <value>"magenta"</value>
-    </param>
-    <param>
-      <key>label6</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker6</key>
-      <value>-1</value>
-    </param>
-    <param>
-      <key>style6</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>width6</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha7</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color7</key>
-      <value>"yellow"</value>
-    </param>
-    <param>
-      <key>label7</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker7</key>
-      <value>-1</value>
-    </param>
-    <param>
-      <key>style7</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>width7</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha8</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color8</key>
-      <value>"dark red"</value>
-    </param>
-    <param>
-      <key>label8</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker8</key>
-      <value>-1</value>
-    </param>
-    <param>
-      <key>style8</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>width8</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha9</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color9</key>
-      <value>"dark green"</value>
-    </param>
-    <param>
-      <key>label9</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker9</key>
-      <value>-1</value>
-    </param>
-    <param>
-      <key>style9</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>width9</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>name</key>
-      <value>""</value>
-    </param>
-    <param>
-      <key>nconnections</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>size</key>
-      <value>512</value>
-    </param>
-    <param>
-      <key>srate</key>
-      <value>samp_rate</value>
-    </param>
-    <param>
-      <key>tr_chan</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>tr_delay</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>tr_level</key>
-      <value>0.0</value>
-    </param>
-    <param>
-      <key>tr_mode</key>
-      <value>qtgui.TRIG_MODE_FREE</value>
-    </param>
-    <param>
-      <key>tr_slope</key>
-      <value>qtgui.TRIG_SLOPE_POS</value>
-    </param>
-    <param>
-      <key>tr_tag</key>
-      <value>""</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>complex</value>
-    </param>
-    <param>
-      <key>update_time</key>
-      <value>0.10</value>
-    </param>
-    <param>
-      <key>ylabel</key>
-      <value>Amplitude</value>
-    </param>
-    <param>
-      <key>yunit</key>
-      <value>""</value>
-    </param>
-    <param>
-      <key>ymax</key>
-      <value>5</value>
-    </param>
-    <param>
-      <key>ymin</key>
-      <value>-5</value>
-    </param>
-  </block>
-  <connection>
-    <source_block_id>analog_noise_source_x_0</source_block_id>
-    <sink_block_id>blocks_add_xx_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>analog_sig_source_x_2</source_block_id>
-    <sink_block_id>blocks_multiply_const_vxx_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_add_const_vxx_0_0</source_block_id>
-    <sink_block_id>blocks_delay_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_add_const_vxx_0_0</source_block_id>
-    <sink_block_id>blocks_multiply_xx_0_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_add_xx_0</source_block_id>
-    <sink_block_id>blocks_throttle_0_0_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_char_to_float_0</source_block_id>
-    <sink_block_id>blocks_multiply_const_vxx_0_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_delay_0</source_block_id>
-    <sink_block_id>blocks_multiply_xx_0_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>1</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_message_strobe_0_0</source_block_id>
-    <sink_block_id>dslwp_ccsds_turbo_encode_0</sink_block_id>
-    <source_key>strobe</source_key>
-    <sink_key>in</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_multiply_const_vxx_0</source_block_id>
-    <sink_block_id>blocks_multiply_xx_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>1</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_multiply_const_vxx_0_0</source_block_id>
-    <sink_block_id>blocks_add_const_vxx_0_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_multiply_xx_0</source_block_id>
-    <sink_block_id>blocks_add_xx_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>1</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_multiply_xx_0_0</source_block_id>
-    <sink_block_id>blocks_multiply_xx_0_1</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_multiply_xx_0_1</source_block_id>
-    <sink_block_id>digital_binary_slicer_fb_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_pack_k_bits_bb_0</source_block_id>
-    <sink_block_id>digital_gmsk_mod_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_pdu_to_tagged_stream_0_0</source_block_id>
-    <sink_block_id>blocks_char_to_float_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_throttle_0_0_0</source_block_id>
-    <sink_block_id>fft_correlator_hier_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_vector_source_x_1</source_block_id>
-    <sink_block_id>blocks_multiply_xx_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_vector_source_x_1_0</source_block_id>
-    <sink_block_id>blocks_multiply_xx_0_1</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>1</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>digital_binary_slicer_fb_0</source_block_id>
-    <sink_block_id>blocks_pack_k_bits_bb_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>digital_gmsk_mod_0</source_block_id>
-    <sink_block_id>blocks_multiply_xx_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>digital_gmsk_mod_0</source_block_id>
-    <sink_block_id>qtgui_time_sink_x_1</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>dslwp_attach_sync_marker_0</source_block_id>
-    <sink_block_id>blocks_pdu_to_tagged_stream_0_0</sink_block_id>
-    <source_key>out</source_key>
-    <sink_key>pdus</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>dslwp_ccsds_pseudo_randomizer_0</source_block_id>
-    <sink_block_id>dslwp_ccsds_turbo_decode_0</sink_block_id>
-    <source_key>out</source_key>
-    <sink_key>in</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>dslwp_ccsds_pseudo_randomizer_0_0</source_block_id>
-    <sink_block_id>dslwp_attach_sync_marker_0</sink_block_id>
-    <source_key>out</source_key>
-    <sink_key>in</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>dslwp_ccsds_turbo_decode_0</source_block_id>
-    <sink_block_id>blocks_message_debug_0_0</sink_block_id>
-    <source_key>out</source_key>
-    <sink_key>print_pdu</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>dslwp_ccsds_turbo_encode_0</source_block_id>
-    <sink_block_id>dslwp_ccsds_pseudo_randomizer_0_0</sink_block_id>
-    <source_key>out</source_key>
-    <sink_key>in</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>dslwp_frame_spliter_c_0</source_block_id>
-    <sink_block_id>dslwp_ccsds_pseudo_randomizer_0</sink_block_id>
-    <source_key>out</source_key>
-    <sink_key>in</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>dslwp_oqpsk_coherent_demod_cc_0</source_block_id>
-    <sink_block_id>dslwp_frame_spliter_c_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>dslwp_oqpsk_coherent_demod_cc_0</source_block_id>
-    <sink_block_id>qtgui_const_sink_x_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>dslwp_set_gain_by_tag_cc_0</source_block_id>
-    <sink_block_id>dslwp_oqpsk_coherent_demod_cc_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>dslwp_set_gain_by_tag_cc_0</source_block_id>
-    <sink_block_id>qtgui_time_sink_x_2</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>fft_correlator_hier_0</source_block_id>
-    <sink_block_id>dslwp_set_gain_by_tag_cc_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>fft_correlator_hier_0</source_block_id>
-    <sink_block_id>qtgui_freq_sink_x_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-</flow_graph>
+options:
+  parameters:
+    author: ''
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: top_block
+    max_nouts: '16'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: ''
+    window_size: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: ebn0
+  id: variable
+  parameters:
+    comment: ''
+    value: '-1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [288, 12]
+    rotation: 0
+    state: enabled
+- name: ebn0_threshold
+  id: variable
+  parameters:
+    comment: ''
+    value: '-2'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [424, 12]
+    rotation: 0
+    state: enabled
+- name: pll_loop_bw
+  id: variable
+  parameters:
+    comment: ''
+    value: '4'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [560, 12]
+    rotation: 0
+    state: enabled
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '2000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [0, 92]
+    rotation: 0
+    state: enabled
+- name: snr
+  id: variable
+  parameters:
+    comment: ''
+    value: 10.0**(ebn0/10.0)/sps
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [288, 84]
+    rotation: 0
+    state: enabled
+- name: snr_threshold
+  id: variable
+  parameters:
+    comment: ''
+    value: 10.0**(ebn0_threshold/10.0)/sps
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [424, 84]
+    rotation: 0
+    state: enabled
+- name: sps
+  id: variable
+  parameters:
+    comment: ''
+    value: '8'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [104, 92]
+    rotation: 0
+    state: enabled
+- name: analog_noise_source_x_0
+  id: analog_noise_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: (1.0/snr)**0.5
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    noise_type: analog.GR_GAUSSIAN
+    seed: '0'
+    type: complex
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [752, 508]
+    rotation: 0
+    state: enabled
+- name: analog_sig_source_x_2
+  id: analog_sig_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: '1'
+    comment: ''
+    freq: '100'
+    maxoutbuf: '4096'
+    minoutbuf: '0'
+    offset: '0'
+    phase: '0'
+    samp_rate: samp_rate
+    type: complex
+    waveform: analog.GR_COS_WAVE
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [112, 568]
+    rotation: 0
+    state: enabled
+- name: blocks_add_const_vxx_0_0
+  id: blocks_add_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: '-1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [352, 260]
+    rotation: 0
+    state: enabled
+- name: blocks_add_xx_0
+  id: blocks_add_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '2'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [960, 552]
+    rotation: 0
+    state: enabled
+- name: blocks_char_to_float_0
+  id: blocks_char_to_float
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    scale: '1'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [48, 260]
+    rotation: 0
+    state: enabled
+- name: blocks_delay_0
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: '1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [392, 340]
+    rotation: 0
+    state: enabled
+- name: blocks_message_debug_0_0
+  id: blocks_message_debug
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1136, 896]
+    rotation: 0
+    state: enabled
+- name: blocks_message_strobe_0_0
+  id: blocks_message_strobe
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    msg: pmt.cons(pmt.make_dict(), pmt.init_u8vector(223, [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199,200,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,219,220,221,222]))
+    period: '14560'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [96, 164]
+    rotation: 0
+    state: enabled
+- name: blocks_multiply_const_vxx_0
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: '1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [296, 596]
+    rotation: 0
+    state: enabled
+- name: blocks_multiply_const_vxx_0_0
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: '2'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [192, 260]
+    rotation: 0
+    state: enabled
+- name: blocks_multiply_xx_0
+  id: blocks_multiply_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '2'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [504, 568]
+    rotation: 0
+    state: enabled
+- name: blocks_multiply_xx_0_0
+  id: blocks_multiply_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '2'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [528, 264]
+    rotation: 0
+    state: enabled
+- name: blocks_multiply_xx_0_1
+  id: blocks_multiply_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '2'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [664, 280]
+    rotation: 0
+    state: enabled
+- name: blocks_pack_k_bits_bb_0
+  id: blocks_pack_k_bits_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    k: '8'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [952, 292]
+    rotation: 0
+    state: enabled
+- name: blocks_pdu_to_tagged_stream_0_0
+  id: blocks_pdu_to_tagged_stream
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tag: packet_len
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1048, 172]
+    rotation: 0
+    state: enabled
+- name: blocks_throttle_0_0_0
+  id: blocks_throttle
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1080, 564]
+    rotation: 0
+    state: enabled
+- name: blocks_vector_source_x_1
+  id: blocks_vector_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    repeat: 'True'
+    tags: '[]'
+    type: complex
+    vector: '[0.986752-0.162236j, 0.961165-0.275976j, 0.909253-0.416245j, 0.823810-0.566866j,
+      0.704089-0.710112j, 0.554654-0.832081j, 0.382467-0.923969j, 0.195052-0.980793j,
+      0.000006-1.000000j, -0.195011-0.980801j, -0.382250-0.924059j, -0.553737-0.832692j,
+      -0.701059-0.713104j, -0.815998-0.578055j, -0.893407-0.449249j, -0.934886-0.354949j,
+      -0.947363-0.320163j, -0.934914-0.354874j, -0.893617-0.448830j, -0.817269-0.576256j,
+      -0.707107-0.707107j, -0.576256-0.817269j, -0.448830-0.893617j, -0.354872-0.934915j,
+      -0.320152-0.947366j, -0.354872-0.934915j, -0.448830-0.893617j, -0.576256-0.817269j,
+      -0.707107-0.707107j, -0.817269-0.576256j, -0.893617-0.448830j, -0.934915-0.354872j,
+      -0.947366-0.320152j, -0.934915-0.354872j, -0.893617-0.448830j, -0.817269-0.576256j,
+      -0.707107-0.707107j, -0.576256-0.817269j, -0.448830-0.893617j, -0.354874-0.934914j,
+      -0.320163-0.947363j, -0.354949-0.934886j, -0.449249-0.893407j, -0.578055-0.815998j,
+      -0.713104-0.701059j, -0.832692-0.553737j, -0.924059-0.382250j, -0.980801-0.195010j,
+      -1.000000+0.000012j, -0.980785+0.195092j, -0.923879+0.382684j, -0.831470+0.555570j,
+      -0.707107+0.707107j, -0.555570+0.831470j, -0.382683+0.923880j, -0.195090+0.980785j,
+      -0.000000+1.000000j, 0.195090+0.980785j, 0.382683+0.923880j, 0.555570+0.831470j,
+      0.707107+0.707107j, 0.831470+0.555570j, 0.923879+0.382684j, 0.980785+0.195092j,
+      1.000000+0.000012j, 0.980801-0.195010j, 0.924059-0.382250j, 0.832692-0.553737j,
+      0.713104-0.701059j, 0.578055-0.815998j, 0.449249-0.893407j, 0.354949-0.934886j,
+      0.320163-0.947363j, 0.354874-0.934914j, 0.448830-0.893617j, 0.576256-0.817269j,
+      0.707107-0.707107j, 0.817269-0.576256j, 0.893617-0.448830j, 0.934914-0.354874j,
+      0.947363-0.320163j, 0.934886-0.354949j, 0.893407-0.449249j, 0.815998-0.578055j,
+      0.701059-0.713104j, 0.553737-0.832692j, 0.382250-0.924059j, 0.195012-0.980801j,
+      0.000000-1.000000j, -0.195012-0.980801j, -0.382250-0.924059j, -0.553737-0.832692j,
+      -0.701059-0.713104j, -0.815998-0.578055j, -0.893407-0.449249j, -0.934885-0.354950j,
+      -0.947359-0.320174j, -0.934885-0.354950j, -0.893407-0.449249j, -0.815998-0.578055j,
+      -0.701059-0.713104j, -0.553737-0.832692j, -0.382250-0.924059j, -0.195010-0.980801j,
+      0.000012-1.000000j, 0.195092-0.980785j, 0.382684-0.923879j, 0.555570-0.831470j,
+      0.707107-0.707107j, 0.831470-0.555570j, 0.923879-0.382684j, 0.980785-0.195092j,
+      1.000000-0.000012j, 0.980801+0.195010j, 0.924059+0.382250j, 0.832692+0.553737j,
+      0.713104+0.701059j, 0.578055+0.815998j, 0.449249+0.893407j, 0.354950+0.934885j,
+      0.320174+0.947359j, 0.354950+0.934885j, 0.449249+0.893407j, 0.578055+0.815998j,
+      0.713104+0.701059j, 0.832692+0.553737j, 0.924059+0.382250j, 0.980801+0.195012j,
+      1.000000+0.000000j, 0.980801-0.195012j, 0.924059-0.382250j, 0.832692-0.553737j,
+      0.713104-0.701059j, 0.578055-0.815998j, 0.449249-0.893407j, 0.354950-0.934885j,
+      0.320174-0.947359j, 0.354950-0.934885j, 0.449249-0.893407j, 0.578055-0.815998j,
+      0.713104-0.701059j, 0.832692-0.553737j, 0.924059-0.382250j, 0.980801-0.195012j,
+      1.000000+0.000000j, 0.980801+0.195012j, 0.924059+0.382250j, 0.832692+0.553737j,
+      0.713104+0.701059j, 0.578055+0.815998j, 0.449249+0.893407j, 0.354950+0.934885j,
+      0.320174+0.947359j, 0.354950+0.934885j, 0.449249+0.893407j, 0.578055+0.815998j,
+      0.713104+0.701059j, 0.832692+0.553737j, 0.924059+0.382250j, 0.980801+0.195012j,
+      1.000000+0.000000j, 0.980801-0.195012j, 0.924059-0.382250j, 0.832692-0.553737j,
+      0.713104-0.701059j, 0.578055-0.815998j, 0.449249-0.893407j, 0.354950-0.934885j,
+      0.320174-0.947359j, 0.354950-0.934885j, 0.449249-0.893407j, 0.578055-0.815998j,
+      0.713104-0.701059j, 0.832692-0.553737j, 0.924059-0.382250j, 0.980801-0.195010j,
+      1.000000+0.000012j, 0.980785+0.195092j, 0.923879+0.382684j, 0.831470+0.555570j,
+      0.707107+0.707107j, 0.555570+0.831470j, 0.382684+0.923879j, 0.195092+0.980785j,
+      0.000012+1.000000j, -0.195010+0.980801j, -0.382250+0.924059j, -0.553737+0.832692j,
+      -0.701059+0.713104j, -0.815998+0.578055j, -0.893407+0.449249j, -0.934885+0.354950j,
+      -0.947359+0.320174j, -0.934885+0.354950j, -0.893407+0.449249j, -0.815998+0.578055j,
+      -0.701059+0.713104j, -0.553737+0.832692j, -0.382250+0.924059j, -0.195010+0.980801j,
+      0.000012+1.000000j, 0.195092+0.980785j, 0.382684+0.923879j, 0.555570+0.831470j,
+      0.707107+0.707107j, 0.831470+0.555570j, 0.923880+0.382683j, 0.980785+0.195090j,
+      1.000000+0.000000j, 0.980785-0.195090j, 0.923880-0.382683j, 0.831470-0.555570j,
+      0.707107-0.707107j, 0.555570-0.831470j, 0.382684-0.923879j, 0.195092-0.980785j,
+      0.000012-1.000000j, -0.195010-0.980801j, -0.382250-0.924059j, -0.553737-0.832692j,
+      -0.701059-0.713104j, -0.815998-0.578055j, -0.893407-0.449249j, -0.934885-0.354950j,
+      -0.947359-0.320174j, -0.934885-0.354950j, -0.893407-0.449249j, -0.815998-0.578055j,
+      -0.701059-0.713104j, -0.553737-0.832692j, -0.382250-0.924059j, -0.195010-0.980801j,
+      0.000012-1.000000j, 0.195092-0.980785j, 0.382684-0.923879j, 0.555570-0.831470j,
+      0.707107-0.707107j, 0.831470-0.555570j, 0.923879-0.382684j, 0.980785-0.195092j,
+      1.000000-0.000012j, 0.980801+0.195010j, 0.924059+0.382250j, 0.832692+0.553737j,
+      0.713104+0.701059j, 0.578055+0.815998j, 0.449249+0.893407j, 0.354950+0.934885j,
+      0.320174+0.947359j, 0.354950+0.934885j, 0.449249+0.893407j, 0.578055+0.815998j,
+      0.713104+0.701059j, 0.832692+0.553737j, 0.924059+0.382250j, 0.980801+0.195010j,
+      1.000000-0.000012j, 0.980785-0.195092j, 0.923879-0.382684j, 0.831470-0.555570j,
+      0.707107-0.707107j, 0.555570-0.831470j, 0.382683-0.923880j, 0.195090-0.980785j,
+      0.000000-1.000000j, -0.195090-0.980785j, -0.382683-0.923880j, -0.555570-0.831470j,
+      -0.707107-0.707107j, -0.831470-0.555570j, -0.923879-0.382684j, -0.980785-0.195092j,
+      -1.000000-0.000012j, -0.980801+0.195010j, -0.924059+0.382250j, -0.832692+0.553737j,
+      -0.713104+0.701059j, -0.578055+0.815998j, -0.449249+0.893407j, -0.354950+0.934885j,
+      -0.320174+0.947359j, -0.354950+0.934885j, -0.449249+0.893407j, -0.578055+0.815998j,
+      -0.713104+0.701059j, -0.832692+0.553737j, -0.924059+0.382250j, -0.980801+0.195010j,
+      -1.000000-0.000012j, -0.980785-0.195092j, -0.923879-0.382684j, -0.831470-0.555570j,
+      -0.707107-0.707107j, -0.555570-0.831470j, -0.382683-0.923880j, -0.195090-0.980785j,
+      0.000000-1.000000j, 0.195090-0.980785j, 0.382683-0.923880j, 0.555570-0.831470j,
+      0.707107-0.707107j, 0.831470-0.555570j, 0.923879-0.382684j, 0.980785-0.195092j,
+      1.000000-0.000012j, 0.980801+0.195010j, 0.924059+0.382250j, 0.832692+0.553737j,
+      0.713104+0.701059j, 0.578055+0.815998j, 0.449249+0.893407j, 0.354950+0.934885j,
+      0.320174+0.947359j, 0.354950+0.934885j, 0.449249+0.893407j, 0.578055+0.815998j,
+      0.713104+0.701059j, 0.832692+0.553737j, 0.924059+0.382250j, 0.980801+0.195010j,
+      1.000000-0.000012j, 0.980785-0.195092j, 0.923879-0.382684j, 0.831470-0.555570j,
+      0.707107-0.707107j, 0.555570-0.831470j, 0.382683-0.923880j, 0.195090-0.980785j,
+      0.000000-1.000000j, -0.195090-0.980785j, -0.382683-0.923880j, -0.555570-0.831470j,
+      -0.707107-0.707107j, -0.831470-0.555570j, -0.923879-0.382684j, -0.980785-0.195092j,
+      -1.000000-0.000012j, -0.980801+0.195010j, -0.924059+0.382250j, -0.832692+0.553737j,
+      -0.713104+0.701059j, -0.578055+0.815998j, -0.449249+0.893407j, -0.354949+0.934886j,
+      -0.320163+0.947363j, -0.354874+0.934914j, -0.448830+0.893617j, -0.576256+0.817269j,
+      -0.707107+0.707107j, -0.817269+0.576256j, -0.893617+0.448830j, -0.934915+0.354872j,
+      -0.947366+0.320152j, -0.934915+0.354872j, -0.893617+0.448830j, -0.817269+0.576256j,
+      -0.707107+0.707107j, -0.576256+0.817269j, -0.448830+0.893617j, -0.354874+0.934914j,
+      -0.320163+0.947363j, -0.354949+0.934886j, -0.449249+0.893407j, -0.578055+0.815998j,
+      -0.713104+0.701059j, -0.832692+0.553737j, -0.924059+0.382250j, -0.980801+0.195012j,
+      -1.000000-0.000000j, -0.980801-0.195012j, -0.924059-0.382250j, -0.832692-0.553737j,
+      -0.713104-0.701059j, -0.578055-0.815998j, -0.449249-0.893407j, -0.354950-0.934885j,
+      -0.320174-0.947359j, -0.354950-0.934885j, -0.449249-0.893407j, -0.578055-0.815998j,
+      -0.713104-0.701059j, -0.832692-0.553737j, -0.924059-0.382250j, -0.980801-0.195012j,
+      -1.000000-0.000000j, -0.980801+0.195012j, -0.924059+0.382250j, -0.832692+0.553737j,
+      -0.713104+0.701059j, -0.578055+0.815998j, -0.449249+0.893407j, -0.354950+0.934885j,
+      -0.320174+0.947359j, -0.354950+0.934885j, -0.449249+0.893407j, -0.578055+0.815998j,
+      -0.713104+0.701059j, -0.832692+0.553737j, -0.924059+0.382250j, -0.980801+0.195010j,
+      -1.000000-0.000012j, -0.980785-0.195092j, -0.923879-0.382684j, -0.831470-0.555570j,
+      -0.707107-0.707107j, -0.555570-0.831470j, -0.382684-0.923879j, -0.195092-0.980785j,
+      -0.000012-1.000000j, 0.195010-0.980801j, 0.382250-0.924059j, 0.553737-0.832692j,
+      0.701059-0.713104j, 0.815998-0.578055j, 0.893407-0.449249j, 0.934886-0.354949j,
+      0.947363-0.320163j, 0.934914-0.354874j, 0.893617-0.448830j, 0.817269-0.576256j,
+      0.707107-0.707107j, 0.576256-0.817269j, 0.448830-0.893617j, 0.354872-0.934915j,
+      0.320152-0.947366j, 0.354872-0.934915j, 0.448830-0.893617j, 0.576256-0.817269j,
+      0.707107-0.707107j, 0.817269-0.576256j, 0.893617-0.448830j, 0.934915-0.354872j,
+      0.947366-0.320152j, 0.934915-0.354872j, 0.893617-0.448830j, 0.817269-0.576256j,
+      0.707107-0.707107j, 0.576256-0.817269j, 0.448830-0.893617j, 0.354874-0.934914j,
+      0.320163-0.947363j, 0.354949-0.934886j, 0.449249-0.893407j, 0.578055-0.815998j,
+      0.713104-0.701059j, 0.832692-0.553737j, 0.924059-0.382250j, 0.980801-0.195010j,
+      1.000000+0.000012j, 0.980785+0.195092j, 0.923879+0.382684j, 0.831470+0.555570j,
+      0.707107+0.707107j, 0.555570+0.831470j, 0.382684+0.923879j, 0.195092+0.980785j,
+      0.000012+1.000000j, -0.195010+0.980801j, -0.382250+0.924059j, -0.553737+0.832692j,
+      -0.701059+0.713104j, -0.815998+0.578055j, -0.893407+0.449249j, -0.934885+0.354950j,
+      -0.947359+0.320174j, -0.934885+0.354950j, -0.893407+0.449249j, -0.815998+0.578055j,
+      -0.701059+0.713104j, -0.553737+0.832692j, -0.382250+0.924059j, -0.195010+0.980801j,
+      0.000012+1.000000j, 0.195092+0.980785j, 0.382684+0.923879j, 0.555570+0.831470j,
+      0.707107+0.707107j, 0.831470+0.555570j, 0.923880+0.382683j, 0.980785+0.195090j,
+      1.000000+0.000000j, 0.980785-0.195090j, 0.923880-0.382683j, 0.831470-0.555570j,
+      0.707107-0.707107j, 0.555570-0.831470j, 0.382684-0.923879j, 0.195092-0.980785j,
+      0.000012-1.000000j, -0.195010-0.980801j, -0.382250-0.924059j, -0.553737-0.832692j,
+      -0.701059-0.713104j, -0.815998-0.578055j, -0.893407-0.449249j, -0.934886-0.354949j,
+      -0.947363-0.320163j, -0.934914-0.354874j, -0.893617-0.448830j, -0.817269-0.576256j,
+      -0.707107-0.707107j, -0.576256-0.817269j, -0.448830-0.893617j, -0.354873-0.934914j,
+      -0.320157-0.947364j, -0.354911-0.934900j, -0.449039-0.893512j, -0.577156-0.816634j,
+      -0.710112-0.704089j, -0.825057-0.565049j, -0.909448-0.415819j, -0.961187-0.275898j]'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [112, 460]
+    rotation: 0
+    state: disabled
+- name: blocks_vector_source_x_1_0
+  id: blocks_vector_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    repeat: 'True'
+    tags: '[]'
+    type: float
+    vector: '[1,-1]'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [480, 396]
+    rotation: 0
+    state: enabled
+- name: digital_binary_slicer_fb_0
+  id: digital_binary_slicer_fb
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [808, 296]
+    rotation: 0
+    state: enabled
+- name: digital_gmsk_mod_0
+  id: digital_gmsk_mod
+  parameters:
+    affinity: ''
+    alias: ''
+    bt: '0.5'
+    comment: ''
+    log: 'False'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_symbol: '8'
+    verbose: 'False'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [824, 372]
+    rotation: 0
+    state: enabled
+- name: dslwp_attach_sync_marker_0
+  id: dslwp_attach_sync_marker
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    data_format: '1'
+    marker: '[0x03,0x47,0x76,0xC7,0x27,0x28,0x95,0xB0]'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [800, 164]
+    rotation: 0
+    state: enabled
+- name: dslwp_ccsds_pseudo_randomizer_0
+  id: dslwp_ccsds_pseudo_randomizer
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    data_format: '3'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1040, 828]
+    rotation: 0
+    state: enabled
+- name: dslwp_ccsds_pseudo_randomizer_0_0
+  id: dslwp_ccsds_pseudo_randomizer
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    data_format: '1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [536, 172]
+    rotation: 0
+    state: enabled
+- name: dslwp_ccsds_turbo_decode_0
+  id: dslwp_ccsds_turbo_decode
+  parameters:
+    affinity: ''
+    alias: ''
+    base: '223'
+    code_type: '2'
+    comment: ''
+    iterations: '2'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    octets: '1'
+    sigma: '0.707'
+    update_sigma: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [872, 920]
+    rotation: 0
+    state: enabled
+- name: dslwp_ccsds_turbo_encode_0
+  id: dslwp_ccsds_turbo_encode
+  parameters:
+    affinity: ''
+    alias: ''
+    base: '223'
+    code_type: '2'
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    octets: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [336, 156]
+    rotation: 0
+    state: enabled
+- name: dslwp_frame_spliter_c_0
+  id: dslwp_frame_spliter_c
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    frame_length: '3576'
+    key: payload_start
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [864, 820]
+    rotation: 0
+    state: enabled
+- name: dslwp_oqpsk_coherent_demod_cc_0
+  id: dslwp_oqpsk_coherent_demod_cc
+  parameters:
+    affinity: ''
+    alias: ''
+    asm_ignore: '0'
+    comment: ''
+    dttl: '0'
+    dttl_damping: '0.707'
+    dttl_loop_bw: '0.05'
+    freq_max: '3.14'
+    freq_min: '-3.14'
+    max_rate_deviation: '1.5'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    opt_point: '4'
+    pll: '1'
+    pll_damping: '0.707'
+    pll_loop_bw: 2.0*math.pi*pll_loop_bw/samp_rate
+    samples_per_symbol: sps*2
+    taps: '[0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000005, 0.000035,
+      0.000189, 0.000787, 0.002569, 0.006746, 0.014618, 0.026868, 0.043018, 0.061431,
+      0.079856, 0.096160, 0.108824, 0.117144, 0.121157, 0.121157, 0.117144, 0.108824,
+      0.096160, 0.079856, 0.061431, 0.043018, 0.026868, 0.014618, 0.006746, 0.002569,
+      0.000787, 0.000189, 0.000035, 0.000005, 0.000000, 0.000000, 0.000000, 0.000000,
+      0.000000, 0.000000]'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [608, 712]
+    rotation: 0
+    state: enabled
+- name: dslwp_set_gain_by_tag_cc_0
+  id: dslwp_set_gain_by_tag_cc
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    gain: '1'
+    k: '512'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [376, 780]
+    rotation: 0
+    state: enabled
+- name: fft_correlator_hier_0
+  id: fft_correlator_hier
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    fft_size: '512'
+    gui_hint: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    nthreads: '1'
+    tap_len: '512'
+    taps: '[0.986752+0.162236j, 0.961165+0.275976j, 0.909253+0.416245j, 0.823810+0.566866j,
+      0.704089+0.710112j, 0.554654+0.832081j, 0.382467+0.923969j, 0.195052+0.980793j,
+      0.000006+1.000000j, -0.195011+0.980801j, -0.382250+0.924059j, -0.553737+0.832692j,
+      -0.701059+0.713104j, -0.815998+0.578055j, -0.893407+0.449249j, -0.934886+0.354949j,
+      -0.947363+0.320163j, -0.934914+0.354874j, -0.893617+0.448830j, -0.817269+0.576256j,
+      -0.707107+0.707107j, -0.576256+0.817269j, -0.448830+0.893617j, -0.354872+0.934915j,
+      -0.320152+0.947366j, -0.354872+0.934915j, -0.448830+0.893617j, -0.576256+0.817269j,
+      -0.707107+0.707107j, -0.817269+0.576256j, -0.893617+0.448830j, -0.934915+0.354872j,
+      -0.947366+0.320152j, -0.934915+0.354872j, -0.893617+0.448830j, -0.817269+0.576256j,
+      -0.707107+0.707107j, -0.576256+0.817269j, -0.448830+0.893617j, -0.354874+0.934914j,
+      -0.320163+0.947363j, -0.354949+0.934886j, -0.449249+0.893407j, -0.578055+0.815998j,
+      -0.713104+0.701059j, -0.832692+0.553737j, -0.924059+0.382250j, -0.980801+0.195010j,
+      -1.000000-0.000012j, -0.980785-0.195092j, -0.923879-0.382684j, -0.831470-0.555570j,
+      -0.707107-0.707107j, -0.555570-0.831470j, -0.382683-0.923880j, -0.195090-0.980785j,
+      -0.000000-1.000000j, 0.195090-0.980785j, 0.382683-0.923880j, 0.555570-0.831470j,
+      0.707107-0.707107j, 0.831470-0.555570j, 0.923879-0.382684j, 0.980785-0.195092j,
+      1.000000-0.000012j, 0.980801+0.195010j, 0.924059+0.382250j, 0.832692+0.553737j,
+      0.713104+0.701059j, 0.578055+0.815998j, 0.449249+0.893407j, 0.354949+0.934886j,
+      0.320163+0.947363j, 0.354874+0.934914j, 0.448830+0.893617j, 0.576256+0.817269j,
+      0.707107+0.707107j, 0.817269+0.576256j, 0.893617+0.448830j, 0.934914+0.354874j,
+      0.947363+0.320163j, 0.934886+0.354949j, 0.893407+0.449249j, 0.815998+0.578055j,
+      0.701059+0.713104j, 0.553737+0.832692j, 0.382250+0.924059j, 0.195012+0.980801j,
+      0.000000+1.000000j, -0.195012+0.980801j, -0.382250+0.924059j, -0.553737+0.832692j,
+      -0.701059+0.713104j, -0.815998+0.578055j, -0.893407+0.449249j, -0.934885+0.354950j,
+      -0.947359+0.320174j, -0.934885+0.354950j, -0.893407+0.449249j, -0.815998+0.578055j,
+      -0.701059+0.713104j, -0.553737+0.832692j, -0.382250+0.924059j, -0.195010+0.980801j,
+      0.000012+1.000000j, 0.195092+0.980785j, 0.382684+0.923879j, 0.555570+0.831470j,
+      0.707107+0.707107j, 0.831470+0.555570j, 0.923879+0.382684j, 0.980785+0.195092j,
+      1.000000+0.000012j, 0.980801-0.195010j, 0.924059-0.382250j, 0.832692-0.553737j,
+      0.713104-0.701059j, 0.578055-0.815998j, 0.449249-0.893407j, 0.354950-0.934885j,
+      0.320174-0.947359j, 0.354950-0.934885j, 0.449249-0.893407j, 0.578055-0.815998j,
+      0.713104-0.701059j, 0.832692-0.553737j, 0.924059-0.382250j, 0.980801-0.195012j,
+      1.000000-0.000000j, 0.980801+0.195012j, 0.924059+0.382250j, 0.832692+0.553737j,
+      0.713104+0.701059j, 0.578055+0.815998j, 0.449249+0.893407j, 0.354950+0.934885j,
+      0.320174+0.947359j, 0.354950+0.934885j, 0.449249+0.893407j, 0.578055+0.815998j,
+      0.713104+0.701059j, 0.832692+0.553737j, 0.924059+0.382250j, 0.980801+0.195012j,
+      1.000000-0.000000j, 0.980801-0.195012j, 0.924059-0.382250j, 0.832692-0.553737j,
+      0.713104-0.701059j, 0.578055-0.815998j, 0.449249-0.893407j, 0.354950-0.934885j,
+      0.320174-0.947359j, 0.354950-0.934885j, 0.449249-0.893407j, 0.578055-0.815998j,
+      0.713104-0.701059j, 0.832692-0.553737j, 0.924059-0.382250j, 0.980801-0.195012j,
+      1.000000-0.000000j, 0.980801+0.195012j, 0.924059+0.382250j, 0.832692+0.553737j,
+      0.713104+0.701059j, 0.578055+0.815998j, 0.449249+0.893407j, 0.354950+0.934885j,
+      0.320174+0.947359j, 0.354950+0.934885j, 0.449249+0.893407j, 0.578055+0.815998j,
+      0.713104+0.701059j, 0.832692+0.553737j, 0.924059+0.382250j, 0.980801+0.195010j,
+      1.000000-0.000012j, 0.980785-0.195092j, 0.923879-0.382684j, 0.831470-0.555570j,
+      0.707107-0.707107j, 0.555570-0.831470j, 0.382684-0.923879j, 0.195092-0.980785j,
+      0.000012-1.000000j, -0.195010-0.980801j, -0.382250-0.924059j, -0.553737-0.832692j,
+      -0.701059-0.713104j, -0.815998-0.578055j, -0.893407-0.449249j, -0.934885-0.354950j,
+      -0.947359-0.320174j, -0.934885-0.354950j, -0.893407-0.449249j, -0.815998-0.578055j,
+      -0.701059-0.713104j, -0.553737-0.832692j, -0.382250-0.924059j, -0.195010-0.980801j,
+      0.000012-1.000000j, 0.195092-0.980785j, 0.382684-0.923879j, 0.555570-0.831470j,
+      0.707107-0.707107j, 0.831470-0.555570j, 0.923880-0.382683j, 0.980785-0.195090j,
+      1.000000-0.000000j, 0.980785+0.195090j, 0.923880+0.382683j, 0.831470+0.555570j,
+      0.707107+0.707107j, 0.555570+0.831470j, 0.382684+0.923879j, 0.195092+0.980785j,
+      0.000012+1.000000j, -0.195010+0.980801j, -0.382250+0.924059j, -0.553737+0.832692j,
+      -0.701059+0.713104j, -0.815998+0.578055j, -0.893407+0.449249j, -0.934885+0.354950j,
+      -0.947359+0.320174j, -0.934885+0.354950j, -0.893407+0.449249j, -0.815998+0.578055j,
+      -0.701059+0.713104j, -0.553737+0.832692j, -0.382250+0.924059j, -0.195010+0.980801j,
+      0.000012+1.000000j, 0.195092+0.980785j, 0.382684+0.923879j, 0.555570+0.831470j,
+      0.707107+0.707107j, 0.831470+0.555570j, 0.923879+0.382684j, 0.980785+0.195092j,
+      1.000000+0.000012j, 0.980801-0.195010j, 0.924059-0.382250j, 0.832692-0.553737j,
+      0.713104-0.701059j, 0.578055-0.815998j, 0.449249-0.893407j, 0.354950-0.934885j,
+      0.320174-0.947359j, 0.354950-0.934885j, 0.449249-0.893407j, 0.578055-0.815998j,
+      0.713104-0.701059j, 0.832692-0.553737j, 0.924059-0.382250j, 0.980801-0.195010j,
+      1.000000+0.000012j, 0.980785+0.195092j, 0.923879+0.382684j, 0.831470+0.555570j,
+      0.707107+0.707107j, 0.555570+0.831470j, 0.382683+0.923880j, 0.195090+0.980785j,
+      0.000000+1.000000j, -0.195090+0.980785j, -0.382683+0.923880j, -0.555570+0.831470j,
+      -0.707107+0.707107j, -0.831470+0.555570j, -0.923879+0.382684j, -0.980785+0.195092j,
+      -1.000000+0.000012j, -0.980801-0.195010j, -0.924059-0.382250j, -0.832692-0.553737j,
+      -0.713104-0.701059j, -0.578055-0.815998j, -0.449249-0.893407j, -0.354950-0.934885j,
+      -0.320174-0.947359j, -0.354950-0.934885j, -0.449249-0.893407j, -0.578055-0.815998j,
+      -0.713104-0.701059j, -0.832692-0.553737j, -0.924059-0.382250j, -0.980801-0.195010j,
+      -1.000000+0.000012j, -0.980785+0.195092j, -0.923879+0.382684j, -0.831470+0.555570j,
+      -0.707107+0.707107j, -0.555570+0.831470j, -0.382683+0.923880j, -0.195090+0.980785j,
+      0.000000+1.000000j, 0.195090+0.980785j, 0.382683+0.923880j, 0.555570+0.831470j,
+      0.707107+0.707107j, 0.831470+0.555570j, 0.923879+0.382684j, 0.980785+0.195092j,
+      1.000000+0.000012j, 0.980801-0.195010j, 0.924059-0.382250j, 0.832692-0.553737j,
+      0.713104-0.701059j, 0.578055-0.815998j, 0.449249-0.893407j, 0.354950-0.934885j,
+      0.320174-0.947359j, 0.354950-0.934885j, 0.449249-0.893407j, 0.578055-0.815998j,
+      0.713104-0.701059j, 0.832692-0.553737j, 0.924059-0.382250j, 0.980801-0.195010j,
+      1.000000+0.000012j, 0.980785+0.195092j, 0.923879+0.382684j, 0.831470+0.555570j,
+      0.707107+0.707107j, 0.555570+0.831470j, 0.382683+0.923880j, 0.195090+0.980785j,
+      0.000000+1.000000j, -0.195090+0.980785j, -0.382683+0.923880j, -0.555570+0.831470j,
+      -0.707107+0.707107j, -0.831470+0.555570j, -0.923879+0.382684j, -0.980785+0.195092j,
+      -1.000000+0.000012j, -0.980801-0.195010j, -0.924059-0.382250j, -0.832692-0.553737j,
+      -0.713104-0.701059j, -0.578055-0.815998j, -0.449249-0.893407j, -0.354949-0.934886j,
+      -0.320163-0.947363j, -0.354874-0.934914j, -0.448830-0.893617j, -0.576256-0.817269j,
+      -0.707107-0.707107j, -0.817269-0.576256j, -0.893617-0.448830j, -0.934915-0.354872j,
+      -0.947366-0.320152j, -0.934915-0.354872j, -0.893617-0.448830j, -0.817269-0.576256j,
+      -0.707107-0.707107j, -0.576256-0.817269j, -0.448830-0.893617j, -0.354874-0.934914j,
+      -0.320163-0.947363j, -0.354949-0.934886j, -0.449249-0.893407j, -0.578055-0.815998j,
+      -0.713104-0.701059j, -0.832692-0.553737j, -0.924059-0.382250j, -0.980801-0.195012j,
+      -1.000000+0.000000j, -0.980801+0.195012j, -0.924059+0.382250j, -0.832692+0.553737j,
+      -0.713104+0.701059j, -0.578055+0.815998j, -0.449249+0.893407j, -0.354950+0.934885j,
+      -0.320174+0.947359j, -0.354950+0.934885j, -0.449249+0.893407j, -0.578055+0.815998j,
+      -0.713104+0.701059j, -0.832692+0.553737j, -0.924059+0.382250j, -0.980801+0.195012j,
+      -1.000000+0.000000j, -0.980801-0.195012j, -0.924059-0.382250j, -0.832692-0.553737j,
+      -0.713104-0.701059j, -0.578055-0.815998j, -0.449249-0.893407j, -0.354950-0.934885j,
+      -0.320174-0.947359j, -0.354950-0.934885j, -0.449249-0.893407j, -0.578055-0.815998j,
+      -0.713104-0.701059j, -0.832692-0.553737j, -0.924059-0.382250j, -0.980801-0.195010j,
+      -1.000000+0.000012j, -0.980785+0.195092j, -0.923879+0.382684j, -0.831470+0.555570j,
+      -0.707107+0.707107j, -0.555570+0.831470j, -0.382684+0.923879j, -0.195092+0.980785j,
+      -0.000012+1.000000j, 0.195010+0.980801j, 0.382250+0.924059j, 0.553737+0.832692j,
+      0.701059+0.713104j, 0.815998+0.578055j, 0.893407+0.449249j, 0.934886+0.354949j,
+      0.947363+0.320163j, 0.934914+0.354874j, 0.893617+0.448830j, 0.817269+0.576256j,
+      0.707107+0.707107j, 0.576256+0.817269j, 0.448830+0.893617j, 0.354872+0.934915j,
+      0.320152+0.947366j, 0.354872+0.934915j, 0.448830+0.893617j, 0.576256+0.817269j,
+      0.707107+0.707107j, 0.817269+0.576256j, 0.893617+0.448830j, 0.934915+0.354872j,
+      0.947366+0.320152j, 0.934915+0.354872j, 0.893617+0.448830j, 0.817269+0.576256j,
+      0.707107+0.707107j, 0.576256+0.817269j, 0.448830+0.893617j, 0.354874+0.934914j,
+      0.320163+0.947363j, 0.354949+0.934886j, 0.449249+0.893407j, 0.578055+0.815998j,
+      0.713104+0.701059j, 0.832692+0.553737j, 0.924059+0.382250j, 0.980801+0.195010j,
+      1.000000-0.000012j, 0.980785-0.195092j, 0.923879-0.382684j, 0.831470-0.555570j,
+      0.707107-0.707107j, 0.555570-0.831470j, 0.382684-0.923879j, 0.195092-0.980785j,
+      0.000012-1.000000j, -0.195010-0.980801j, -0.382250-0.924059j, -0.553737-0.832692j,
+      -0.701059-0.713104j, -0.815998-0.578055j, -0.893407-0.449249j, -0.934885-0.354950j,
+      -0.947359-0.320174j, -0.934885-0.354950j, -0.893407-0.449249j, -0.815998-0.578055j,
+      -0.701059-0.713104j, -0.553737-0.832692j, -0.382250-0.924059j, -0.195010-0.980801j,
+      0.000012-1.000000j, 0.195092-0.980785j, 0.382684-0.923879j, 0.555570-0.831470j,
+      0.707107-0.707107j, 0.831470-0.555570j, 0.923880-0.382683j, 0.980785-0.195090j,
+      1.000000-0.000000j, 0.980785+0.195090j, 0.923880+0.382683j, 0.831470+0.555570j,
+      0.707107+0.707107j, 0.555570+0.831470j, 0.382684+0.923879j, 0.195092+0.980785j,
+      0.000012+1.000000j, -0.195010+0.980801j, -0.382250+0.924059j, -0.553737+0.832692j,
+      -0.701059+0.713104j, -0.815998+0.578055j, -0.893407+0.449249j, -0.934886+0.354949j,
+      -0.947363+0.320163j, -0.934914+0.354874j, -0.893617+0.448830j, -0.817269+0.576256j,
+      -0.707107+0.707107j, -0.576256+0.817269j, -0.448830+0.893617j, -0.354873+0.934914j,
+      -0.320157+0.947364j, -0.354911+0.934900j, -0.449039+0.893512j, -0.577156+0.816634j,
+      -0.710112+0.704089j, -0.825057+0.565049j, -0.909448+0.415819j, -0.961187+0.275898j]'
+    threshold: snr_threshold
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [96, 760]
+    rotation: 0
+    state: enabled
+- name: import_0
+  id: import
+  parameters:
+    alias: ''
+    comment: ''
+    imports: import math
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 12]
+    rotation: 0
+    state: enabled
+- name: qtgui_const_sink_x_0
+  id: qtgui_const_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '0.3'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'False'
+    axislabels: 'True'
+    color1: '"blue"'
+    color10: '"red"'
+    color2: '"red"'
+    color3: '"red"'
+    color4: '"red"'
+    color5: '"red"'
+    color6: '"red"'
+    color7: '"red"'
+    color8: '"red"'
+    color9: '"red"'
+    comment: ''
+    grid: 'False'
+    gui_hint: ''
+    label1: ''
+    label10: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    label5: ''
+    label6: ''
+    label7: ''
+    label8: ''
+    label9: ''
+    legend: 'True'
+    marker1: '0'
+    marker10: '0'
+    marker2: '0'
+    marker3: '0'
+    marker4: '0'
+    marker5: '0'
+    marker6: '0'
+    marker7: '0'
+    marker8: '0'
+    marker9: '0'
+    name: '""'
+    nconnections: '1'
+    size: '1024'
+    style1: '0'
+    style10: '0'
+    style2: '0'
+    style3: '0'
+    style4: '0'
+    style5: '0'
+    style6: '0'
+    style7: '0'
+    style8: '0'
+    style9: '0'
+    tr_chan: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: complex
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    xmax: '4'
+    xmin: '-4'
+    ymax: '4'
+    ymin: '-4'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [864, 740]
+    rotation: 0
+    state: enabled
+- name: qtgui_freq_sink_x_0
+  id: qtgui_freq_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'False'
+    average: '1.0'
+    axislabels: 'True'
+    bw: samp_rate
+    color1: '"blue"'
+    color10: '"dark blue"'
+    color2: '"red"'
+    color3: '"green"'
+    color4: '"black"'
+    color5: '"cyan"'
+    color6: '"magenta"'
+    color7: '"yellow"'
+    color8: '"dark red"'
+    color9: '"dark green"'
+    comment: ''
+    ctrlpanel: 'False'
+    fc: '0'
+    fftsize: '1024'
+    freqhalf: 'True'
+    grid: 'False'
+    gui_hint: ''
+    label: Relative Gain
+    label1: ''
+    label10: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    label5: ''
+    label6: ''
+    label7: ''
+    label8: ''
+    label9: ''
+    legend: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '""'
+    nconnections: '1'
+    showports: 'True'
+    tr_chan: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_tag: '""'
+    type: complex
+    units: dB
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    wintype: firdes.WIN_BLACKMAN_hARRIS
+    ymax: '10'
+    ymin: '-140'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [376, 884]
+    rotation: 0
+    state: disabled
+- name: qtgui_time_sink_x_1
+  id: qtgui_time_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'False'
+    axislabels: 'True'
+    color1: blue
+    color10: dark blue
+    color2: red
+    color3: green
+    color4: black
+    color5: cyan
+    color6: magenta
+    color7: yellow
+    color8: dark red
+    color9: dark green
+    comment: ''
+    ctrlpanel: 'False'
+    entags: 'True'
+    grid: 'False'
+    gui_hint: ''
+    label1: ''
+    label10: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    label5: ''
+    label6: ''
+    label7: ''
+    label8: ''
+    label9: ''
+    legend: 'True'
+    marker1: '-1'
+    marker10: '-1'
+    marker2: '-1'
+    marker3: '-1'
+    marker4: '-1'
+    marker5: '-1'
+    marker6: '-1'
+    marker7: '-1'
+    marker8: '-1'
+    marker9: '-1'
+    name: '""'
+    nconnections: '1'
+    size: '512'
+    srate: samp_rate
+    stemplot: 'False'
+    style1: '1'
+    style10: '1'
+    style2: '1'
+    style3: '1'
+    style4: '1'
+    style5: '1'
+    style6: '1'
+    style7: '1'
+    style8: '1'
+    style9: '1'
+    tr_chan: '0'
+    tr_delay: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: complex
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    ylabel: Amplitude
+    ymax: '1'
+    ymin: '-1'
+    yunit: '""'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1000, 364]
+    rotation: 0
+    state: disabled
+- name: qtgui_time_sink_x_2
+  id: qtgui_time_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'False'
+    axislabels: 'True'
+    color1: blue
+    color10: dark blue
+    color2: red
+    color3: green
+    color4: black
+    color5: cyan
+    color6: magenta
+    color7: yellow
+    color8: dark red
+    color9: dark green
+    comment: ''
+    ctrlpanel: 'False'
+    entags: 'True'
+    grid: 'False'
+    gui_hint: ''
+    label1: ''
+    label10: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    label5: ''
+    label6: ''
+    label7: ''
+    label8: ''
+    label9: ''
+    legend: 'True'
+    marker1: '-1'
+    marker10: '-1'
+    marker2: '-1'
+    marker3: '-1'
+    marker4: '-1'
+    marker5: '-1'
+    marker6: '-1'
+    marker7: '-1'
+    marker8: '-1'
+    marker9: '-1'
+    name: '""'
+    nconnections: '1'
+    size: '512'
+    srate: samp_rate
+    stemplot: 'False'
+    style1: '1'
+    style10: '1'
+    style2: '1'
+    style3: '1'
+    style4: '1'
+    style5: '1'
+    style6: '1'
+    style7: '1'
+    style8: '1'
+    style9: '1'
+    tr_chan: '0'
+    tr_delay: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: complex
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    ylabel: Amplitude
+    ymax: '5'
+    ymin: '-5'
+    yunit: '""'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [608, 916]
+    rotation: 0
+    state: enabled
+
+connections:
+- [analog_noise_source_x_0, '0', blocks_add_xx_0, '0']
+- [analog_sig_source_x_2, '0', blocks_multiply_const_vxx_0, '0']
+- [blocks_add_const_vxx_0_0, '0', blocks_delay_0, '0']
+- [blocks_add_const_vxx_0_0, '0', blocks_multiply_xx_0_0, '0']
+- [blocks_add_xx_0, '0', blocks_throttle_0_0_0, '0']
+- [blocks_char_to_float_0, '0', blocks_multiply_const_vxx_0_0, '0']
+- [blocks_delay_0, '0', blocks_multiply_xx_0_0, '1']
+- [blocks_message_strobe_0_0, strobe, dslwp_ccsds_turbo_encode_0, in]
+- [blocks_multiply_const_vxx_0, '0', blocks_multiply_xx_0, '1']
+- [blocks_multiply_const_vxx_0_0, '0', blocks_add_const_vxx_0_0, '0']
+- [blocks_multiply_xx_0, '0', blocks_add_xx_0, '1']
+- [blocks_multiply_xx_0_0, '0', blocks_multiply_xx_0_1, '0']
+- [blocks_multiply_xx_0_1, '0', digital_binary_slicer_fb_0, '0']
+- [blocks_pack_k_bits_bb_0, '0', digital_gmsk_mod_0, '0']
+- [blocks_pdu_to_tagged_stream_0_0, '0', blocks_char_to_float_0, '0']
+- [blocks_throttle_0_0_0, '0', fft_correlator_hier_0, '0']
+- [blocks_vector_source_x_1, '0', blocks_multiply_xx_0, '0']
+- [blocks_vector_source_x_1_0, '0', blocks_multiply_xx_0_1, '1']
+- [digital_binary_slicer_fb_0, '0', blocks_pack_k_bits_bb_0, '0']
+- [digital_gmsk_mod_0, '0', blocks_multiply_xx_0, '0']
+- [digital_gmsk_mod_0, '0', qtgui_time_sink_x_1, '0']
+- [dslwp_attach_sync_marker_0, out, blocks_pdu_to_tagged_stream_0_0, pdus]
+- [dslwp_ccsds_pseudo_randomizer_0, out, dslwp_ccsds_turbo_decode_0, in]
+- [dslwp_ccsds_pseudo_randomizer_0_0, out, dslwp_attach_sync_marker_0, in]
+- [dslwp_ccsds_turbo_decode_0, out, blocks_message_debug_0_0, print_pdu]
+- [dslwp_ccsds_turbo_encode_0, out, dslwp_ccsds_pseudo_randomizer_0_0, in]
+- [dslwp_frame_spliter_c_0, out, dslwp_ccsds_pseudo_randomizer_0, in]
+- [dslwp_oqpsk_coherent_demod_cc_0, '0', dslwp_frame_spliter_c_0, '0']
+- [dslwp_oqpsk_coherent_demod_cc_0, '0', qtgui_const_sink_x_0, '0']
+- [dslwp_set_gain_by_tag_cc_0, '0', dslwp_oqpsk_coherent_demod_cc_0, '0']
+- [dslwp_set_gain_by_tag_cc_0, '0', qtgui_time_sink_x_2, '0']
+- [fft_correlator_hier_0, '0', dslwp_set_gain_by_tag_cc_0, '0']
+- [fft_correlator_hier_0, '0', qtgui_freq_sink_x_0, '0']
+
+metadata:
+  file_format: 1

@@ -2,7 +2,7 @@
 
 #define DSLWP_API
 
-%include "gnuradio.i"			// the common stuff
+%include "gnuradio.i"           // the common stuff
 
 //load generated python docstrings
 %include "dslwp_swig_doc.i"
@@ -18,7 +18,6 @@
 #include "dslwp/frame_spliter_c.h"
 #include "dslwp/ccsds_turbo_encode.h"
 #include "dslwp/ccsds_turbo_decode.h"
-#include "dslwp/attach_sync_marker.h"
 #include "dslwp/ccsds_pseudo_randomizer.h"
 #include "dslwp/kiss_encode_pdu.h"
 #include "dslwp/kiss_decode_pdu.h"
@@ -27,8 +26,8 @@
 #include "dslwp/frame_spliter_f.h"
 #include "dslwp/program_tracking_cc.h"
 #include "dslwp/lrtc_mod_bc.h"
+#include "dslwp/attach_sync_marker.h"
 %}
-
 
 %include "dslwp/tm_header_parser.h"
 GR_SWIG_BLOCK_MAGIC2(dslwp, tm_header_parser);
@@ -57,8 +56,7 @@ GR_SWIG_BLOCK_MAGIC2(dslwp, ccsds_turbo_encode);
 
 %include "dslwp/ccsds_turbo_decode.h"
 GR_SWIG_BLOCK_MAGIC2(dslwp, ccsds_turbo_decode);
-%include "dslwp/attach_sync_marker.h"
-GR_SWIG_BLOCK_MAGIC2(dslwp, attach_sync_marker);
+
 %include "dslwp/ccsds_pseudo_randomizer.h"
 GR_SWIG_BLOCK_MAGIC2(dslwp, ccsds_pseudo_randomizer);
 %include "dslwp/kiss_encode_pdu.h"
@@ -76,3 +74,6 @@ GR_SWIG_BLOCK_MAGIC2(dslwp, frame_spliter_f);
 GR_SWIG_BLOCK_MAGIC2(dslwp, program_tracking_cc);
 %include "dslwp/lrtc_mod_bc.h"
 GR_SWIG_BLOCK_MAGIC2(dslwp, lrtc_mod_bc);
+
+%include "dslwp/attach_sync_marker.h"
+GR_SWIG_BLOCK_MAGIC2(dslwp, attach_sync_marker);

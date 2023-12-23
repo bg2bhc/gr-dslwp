@@ -30,26 +30,26 @@ namespace gr {
   namespace dslwp {
 
     attach_sync_marker::sptr
-    attach_sync_marker::make(const std::vector<uint8_t> &marker, int data_format)
+    attach_sync_marker::make(const std::vector<uint8_t> &marker, int data_format, int msg_len, bool check_length, bool pass_other_length)
     {
       return gnuradio::get_initial_sptr
-        (new attach_sync_marker_impl(marker, data_format));
+        (new attach_sync_marker_impl(marker, data_format, msg_len, check_length, pass_other_length));
     }
 
     /*
      * The private constructor
      */
-    attach_sync_marker_impl::attach_sync_marker_impl(const std::vector<uint8_t> &marker, int data_format)
+    attach_sync_marker_impl::attach_sync_marker_impl(const std::vector<uint8_t> &marker, int data_format, int msg_len, bool check_length, bool pass_other_length)
       : gr::sync_block("attach_sync_marker",
               gr::io_signature::make(0, 0, sizeof(float)),
               gr::io_signature::make(0, 0, sizeof(float))),
-              d_marker(marker), d_data_format(data_format)
+              d_marker(marker), d_data_format(data_format), d_msg_len(msg_len), d_check_length(check_length), d_pass_other_length(pass_other_length)
     {
 		d_in_port = pmt::mp("in");
-      	message_port_register_in(d_in_port);
+      		message_port_register_in(d_in_port);
 
 		d_out_port = pmt::mp("out");	      
-      	message_port_register_out(d_out_port);
+      		message_port_register_out(d_out_port);
 
 		set_msg_handler(d_in_port, boost::bind(&attach_sync_marker_impl::pmt_in_callback, this ,_1) );
     }
@@ -68,6 +68,24 @@ namespace gr {
 
 		size_t msg_len;
 		const uint8_t* bytes_in = pmt::u8vector_elements(bytes, msg_len);
+
+		if(d_check_length)
+		{
+			if(msg_len != d_msg_len)
+			{
+				if(d_pass_other_length)
+				{
+					attach_sync_marker_impl::message_port_pub(attach_sync_marker_impl::d_out_port, pmt::cons(pmt::make_dict(), pmt::init_u8vector(msg_len, bytes_in)));
+					fprintf(stdout, "\n**** ASM pass message with length %d!\n", msg_len);
+					return;
+				}
+				else
+				{
+					fprintf(stdout, "\n**** ERROR: ASM input length do not match!\n");
+					return;
+				}
+			}
+		}
 
 		switch(d_data_format)
 		{

@@ -33,11 +33,14 @@ namespace gr {
       pmt::pmt_t d_out_port;
       const std::vector<uint8_t> d_marker;
       int d_data_format;
+      int d_msg_len;
+      bool d_check_length;
+      bool d_pass_other_length;
 
       void pmt_in_callback(pmt::pmt_t msg);
 
      public:
-      attach_sync_marker_impl(const std::vector<uint8_t> &marker, int data_format);
+      attach_sync_marker_impl(const std::vector<uint8_t> &marker, int data_format, int msg_len, bool check_length, bool pass_other_length);
       ~attach_sync_marker_impl();
 
       // Where all the action really happens

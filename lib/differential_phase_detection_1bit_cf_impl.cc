@@ -23,6 +23,7 @@
 #endif
 
 #include <gnuradio/io_signature.h>
+#include <gnuradio/expj.h>
 #include "differential_phase_detection_1bit_cf_impl.h"
 #include <math.h>
 #include <stdio.h>
@@ -150,7 +151,7 @@ namespace gr {
 		}
 
 		gr_complex nco;
-		nco = cos(-d_phase) + 1j*sin(-d_phase);
+		nco = gr_expj(-d_phase);
 
 		for(int j=0; j<(d_taps.size()-1); j++)
 		{

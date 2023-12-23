@@ -53,9 +53,9 @@ namespace gr {
       const char *d_forward_upper[MAX_COMPONENTS];
       const char *d_forward_lower[MAX_COMPONENTS];
       const char *d_backward;
-      t_convcode d_code1;
-      t_convcode d_code2;
-      t_turbocode d_turbo;
+      t_convcode *d_code1;
+      t_convcode *d_code2;
+      t_turbocode *d_turbo;
 
 
       void pmt_in_callback(pmt::pmt_t msg);

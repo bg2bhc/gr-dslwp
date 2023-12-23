@@ -46,7 +46,7 @@ namespace gr {
        * class. dslwp::ccsds_turbo_encode::make is the public interface for
        * creating new instances.
        */
-      static sptr make(int base=223, int octets=1, int code_type=1);
+      static sptr make(int base=223, int octets=1, int code_type=1, bool pass_other_length=1);
     };
 
   } // namespace dslwp
