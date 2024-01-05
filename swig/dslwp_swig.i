@@ -27,6 +27,7 @@
 #include "dslwp/program_tracking_cc.h"
 #include "dslwp/lrtc_mod_bc.h"
 #include "dslwp/attach_sync_marker.h"
+#include "dslwp/tag_to_json_pdu_c.h"
 %}
 
 %include "dslwp/tm_header_parser.h"
@@ -77,3 +78,5 @@ GR_SWIG_BLOCK_MAGIC2(dslwp, lrtc_mod_bc);
 
 %include "dslwp/attach_sync_marker.h"
 GR_SWIG_BLOCK_MAGIC2(dslwp, attach_sync_marker);
+%include "dslwp/tag_to_json_pdu_c.h"
+GR_SWIG_BLOCK_MAGIC2(dslwp, tag_to_json_pdu_c);

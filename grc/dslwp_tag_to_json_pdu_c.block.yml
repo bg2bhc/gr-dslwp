@@ -1,0 +1,18 @@
+id: dslwp_tag_to_json_pdu_c
+label: Tag to JSON PDU C
+category: '[DSLWP]'
+templates:
+  imports: import dslwp
+  make: dslwp.tag_to_json_pdu_c(${key})
+parameters:
+- id: key
+  label: Key
+  dtype: string
+inputs:
+- label: in
+  domain: stream
+  dtype: complex
+outputs:
+- domain: message
+  id: out
+file_format: 1

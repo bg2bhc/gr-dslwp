@@ -51,7 +51,8 @@ list(APPEND dslwp_sources
     frame_spliter_f_impl.cc
     program_tracking_cc_impl.cc
     lrtc_mod_bc_impl.cc
-    attach_sync_marker_impl.cc )
+    attach_sync_marker_impl.cc
+    tag_to_json_pdu_c_impl.cc )
 
 set(dslwp_sources "${dslwp_sources}" PARENT_SCOPE)
 if(NOT dslwp_sources)

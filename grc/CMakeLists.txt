@@ -36,5 +36,6 @@ install(FILES
     dslwp_tm_header_parser.block.yml
     dslwp_tm_parser.block.yml
     dslwp_vector_padding_cc.block.yml
-    dslwp_attach_sync_marker.block.yml DESTINATION share/gnuradio/grc/blocks
+    dslwp_attach_sync_marker.block.yml
+    dslwp_tag_to_json_pdu_c.block.yml DESTINATION share/gnuradio/grc/blocks
 )

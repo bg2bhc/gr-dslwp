@@ -43,5 +43,6 @@ install(FILES
     frame_spliter_f.h
     program_tracking_cc.h
     lrtc_mod_bc.h
-    attach_sync_marker.h DESTINATION include/dslwp
+    attach_sync_marker.h
+    tag_to_json_pdu_c.h DESTINATION include/dslwp
 )
