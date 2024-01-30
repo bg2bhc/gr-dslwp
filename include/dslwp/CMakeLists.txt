@@ -49,5 +49,6 @@ install(FILES
     fec_decode_b.h
     fec_encode_b.h
     tm_converter2.h
-    lrtc_demod2.h DESTINATION include/dslwp
+    lrtc_demod2.h
+    attach_preamble_and_tailer.h DESTINATION include/dslwp
 )

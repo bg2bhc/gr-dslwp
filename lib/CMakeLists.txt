@@ -57,7 +57,8 @@ list(APPEND dslwp_sources
     fec_decode_b_impl.cc
     fec_encode_b_impl.cc
     tm_converter2_impl.cc
-    lrtc_demod2_impl.cc )
+    lrtc_demod2_impl.cc
+    attach_preamble_and_tailer_impl.cc )
 
 set(dslwp_sources "${dslwp_sources}" PARENT_SCOPE)
 if(NOT dslwp_sources)

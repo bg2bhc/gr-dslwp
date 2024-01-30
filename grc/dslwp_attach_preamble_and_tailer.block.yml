@@ -1,0 +1,28 @@
+id: dslwp_attach_preamble_and_tailer
+label: Attach Preamble and Tailer
+category: '[DSLWP]'
+templates:
+  imports: import dslwp
+  make: dslwp.attach_preamble_and_tailer(${len_preamble}, ${len_tailer}, ${padding_type})
+parameters:
+- id: len_preamble
+  label: Len_preamble
+  dtype: int
+  default: '0'
+- id: len_tailer
+  label: Len_tailer
+  dtype: int
+  default: '0'
+- id: padding_type
+  label: Padding_type
+  dtype: enum
+  default: '2'
+  options: ['0', '1', '2', '3']
+  option_labels: ['0x00', '0x55', '0xAA', 'Random']
+inputs:
+- domain: message
+  id: in
+outputs:
+- domain: message
+  id: out
+file_format: 1
