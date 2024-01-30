@@ -1,0 +1,35 @@
+id: dslwp_lrtc_demod
+label: LRTC Demod
+category: '[DSLWP]'
+
+parameters:
+-   id: mode
+    label: Mode
+    dtype: int
+-   id: fft_size
+    label: FFT Size
+    dtype: int
+-   id: n_avg
+    label: N Average
+    dtype: int
+
+inputs:
+-   label: pwr
+    domain: stream
+    dtype: float
+-   label: freq
+    domain: stream
+    dtype: float
+-   label: snr
+    domain: stream
+    dtype: float
+
+outputs:
+-   domain: stream
+    dtype: complex
+
+templates:
+    imports: import dslwp
+    make: dslwp.lrtc_demod(${mode}, ${fft_size}, ${n_avg})
+
+file_format: 1

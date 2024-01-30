@@ -21,13 +21,16 @@
 #include "dslwp/ccsds_pseudo_randomizer.h"
 #include "dslwp/kiss_encode_pdu.h"
 #include "dslwp/kiss_decode_pdu.h"
-#include "dslwp/fec_encode_b.h"
 #include "dslwp/differential_phase_detection_1bit_cf.h"
 #include "dslwp/frame_spliter_f.h"
 #include "dslwp/program_tracking_cc.h"
 #include "dslwp/lrtc_mod_bc.h"
 #include "dslwp/attach_sync_marker.h"
 #include "dslwp/tag_to_json_pdu_c.h"
+#include "dslwp/fft_estimator2_cc.h"
+#include "dslwp/lrtc_demod.h"
+#include "dslwp/fec_decode_b.h"
+#include "dslwp/fec_encode_b.h"
 %}
 
 %include "dslwp/tm_header_parser.h"
@@ -64,8 +67,7 @@ GR_SWIG_BLOCK_MAGIC2(dslwp, ccsds_pseudo_randomizer);
 GR_SWIG_BLOCK_MAGIC2(dslwp, kiss_encode_pdu);
 %include "dslwp/kiss_decode_pdu.h"
 GR_SWIG_BLOCK_MAGIC2(dslwp, kiss_decode_pdu);
-%include "dslwp/fec_encode_b.h"
-GR_SWIG_BLOCK_MAGIC2(dslwp, fec_encode_b);
+
 %include "dslwp/differential_phase_detection_1bit_cf.h"
 GR_SWIG_BLOCK_MAGIC2(dslwp, differential_phase_detection_1bit_cf);
 %include "dslwp/frame_spliter_f.h"
@@ -80,3 +82,12 @@ GR_SWIG_BLOCK_MAGIC2(dslwp, lrtc_mod_bc);
 GR_SWIG_BLOCK_MAGIC2(dslwp, attach_sync_marker);
 %include "dslwp/tag_to_json_pdu_c.h"
 GR_SWIG_BLOCK_MAGIC2(dslwp, tag_to_json_pdu_c);
+%include "dslwp/fft_estimator2_cc.h"
+GR_SWIG_BLOCK_MAGIC2(dslwp, fft_estimator2_cc);
+%include "dslwp/lrtc_demod.h"
+GR_SWIG_BLOCK_MAGIC2(dslwp, lrtc_demod);
+%include "dslwp/fec_decode_b.h"
+GR_SWIG_BLOCK_MAGIC2(dslwp, fec_decode_b);
+
+%include "dslwp/fec_encode_b.h"
+GR_SWIG_BLOCK_MAGIC2(dslwp, fec_encode_b);

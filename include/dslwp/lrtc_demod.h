@@ -18,11 +18,11 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#ifndef INCLUDED_DSLWP_FEC_ENCODE_B_H
-#define INCLUDED_DSLWP_FEC_ENCODE_B_H
+#ifndef INCLUDED_DSLWP_LRTC_DEMOD_H
+#define INCLUDED_DSLWP_LRTC_DEMOD_H
 
 #include <dslwp/api.h>
-#include <gnuradio/sync_block.h>
+#include <gnuradio/sync_decimator.h>
 
 namespace gr {
   namespace dslwp {
@@ -32,24 +32,24 @@ namespace gr {
      * \ingroup dslwp
      *
      */
-    class DSLWP_API fec_encode_b : virtual public gr::sync_block
+    class DSLWP_API lrtc_demod : virtual public gr::sync_decimator
     {
      public:
-      typedef boost::shared_ptr<fec_encode_b> sptr;
+      typedef boost::shared_ptr<lrtc_demod> sptr;
 
       /*!
-       * \brief Return a shared_ptr to a new instance of dslwp::fec_encode_b.
+       * \brief Return a shared_ptr to a new instance of dslwp::lrtc_demod.
        *
-       * To avoid accidental use of raw pointers, dslwp::fec_encode_b's
+       * To avoid accidental use of raw pointers, dslwp::lrtc_demod's
        * constructor is in a private implementation
-       * class. dslwp::fec_encode_b::make is the public interface for
+       * class. dslwp::lrtc_demod::make is the public interface for
        * creating new instances.
        */
-      static sptr make(int frame_len, int preamble_len, int trailer_len, bool continous, bool padding_zero, uint8_t using_randomizer, bool using_m, uint8_t using_convolutional_code);
+      static sptr make(int mode, size_t fft_size, size_t n_avg);
     };
 
   } // namespace dslwp
 } // namespace gr
 
-#endif /* INCLUDED_DSLWP_FEC_ENCODE_B_H */
+#endif /* INCLUDED_DSLWP_LRTC_DEMOD_H */
 

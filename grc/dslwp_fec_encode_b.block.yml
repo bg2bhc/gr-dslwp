@@ -29,6 +29,12 @@ parameters:
     default: 'False'
     options: ['True', 'False']
     option_labels: ['On', 'Off']
+-   id: using_randomizer
+    label: Use Randomizer
+    dtype: enum
+    default: '1'
+    options: ['0', '1', '2']
+    option_labels: ['OFF', 'CCSDS', 'CCSDS Inverted']
 -   id: using_m
     label: Use M Code
     dtype: bool
@@ -56,6 +62,6 @@ outputs:
 templates:
     imports: import dslwp
     make: dslwp.fec_encode_b(${frame_len}, ${preamble_len}, ${trailer_len}, ${continous},
-        ${padding_zero}, ${using_m}, ${using_convolutional_code})
+        ${padding_zero}, ${using_randomizer}, ${using_m}, ${using_convolutional_code})
 
 file_format: 1

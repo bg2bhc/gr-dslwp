@@ -84,6 +84,7 @@ typedef struct Ccsds
     uint16_t cfg_trailer_len;
     uint8_t cfg_continous;
     uint8_t cfg_padding_zero;
+    uint8_t cfg_using_randomizer;
     uint8_t cfg_using_m;
     uint8_t cfg_using_convolutional_code;
 } Ccsds;

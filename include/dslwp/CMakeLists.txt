@@ -38,11 +38,14 @@ install(FILES
     ccsds_pseudo_randomizer.h
     kiss_encode_pdu.h
     kiss_decode_pdu.h
-    fec_encode_b.h
     differential_phase_detection_1bit_cf.h
     frame_spliter_f.h
     program_tracking_cc.h
     lrtc_mod_bc.h
     attach_sync_marker.h
-    tag_to_json_pdu_c.h DESTINATION include/dslwp
+    tag_to_json_pdu_c.h
+    fft_estimator2_cc.h
+    lrtc_demod.h
+    fec_decode_b.h
+    fec_encode_b.h DESTINATION include/dslwp
 )

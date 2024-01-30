@@ -22,7 +22,6 @@ install(FILES
     dslwp_ccsds_turbo_decode.block.yml
     dslwp_ccsds_turbo_encode.block.yml
     dslwp_differential_phase_detection_1bit_cf.block.yml
-    dslwp_fec_encode_b.block.yml
     dslwp_fft_estimator_cc.block.yml
     dslwp_frame_spliter_c.block.yml
     dslwp_frame_spliter_f.block.yml
@@ -37,5 +36,9 @@ install(FILES
     dslwp_tm_parser.block.yml
     dslwp_vector_padding_cc.block.yml
     dslwp_attach_sync_marker.block.yml
-    dslwp_tag_to_json_pdu_c.block.yml DESTINATION share/gnuradio/grc/blocks
+    dslwp_tag_to_json_pdu_c.block.yml
+    dslwp_fft_estimator2_cc.block.yml
+    dslwp_lrtc_demod.block.yml
+    dslwp_fec_decode_b.block.yml
+    dslwp_fec_encode_b.block.yml DESTINATION share/gnuradio/grc/blocks
 )

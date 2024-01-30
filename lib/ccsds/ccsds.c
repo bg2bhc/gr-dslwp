@@ -344,13 +344,38 @@ void ccsds_send(Ccsds *cc, uint8_t *message)
 		uint8_t packet[255], symbols[16], byte;
 		cc->encstate = 0;
 
-		for(i=0; i<cc->len_frame; i++)
+		if(cc->cfg_using_randomizer==0)
 		{
-			packet[i] = message[i]^sequence[i];
+			for(i=0; i<cc->len_frame; i++)
+			{
+				packet[i] = message[i];
+			}
+			for(i=0; i<RS_LENGTH; i++)
+			{
+				packet[i+cc->len_frame] = rs_data[i];
+			}
 		}
-		for(i=0; i<RS_LENGTH; i++)
+		else if(cc->cfg_using_randomizer==1)
 		{
-			packet[i+cc->len_frame] = rs_data[i]^sequence[i+cc->len_frame];
+			for(i=0; i<cc->len_frame; i++)
+			{
+				packet[i] = message[i]^sequence[i];
+			}
+			for(i=0; i<RS_LENGTH; i++)
+			{
+				packet[i+cc->len_frame] = rs_data[i]^sequence[i+cc->len_frame];
+			}
+		}
+		else if(cc->cfg_using_randomizer==2)
+		{
+			for(i=0; i<cc->len_frame; i++)
+			{
+				packet[i] = message[i]^(~sequence[i]);
+			}
+			for(i=0; i<RS_LENGTH; i++)
+			{
+				packet[i+cc->len_frame] = rs_data[i]^(~sequence[i+cc->len_frame]);
+			}
 		}
 		packet[cc->len_frame+RS_LENGTH] = 0;
 
@@ -376,8 +401,21 @@ void ccsds_send(Ccsds *cc, uint8_t *message)
     else
     {
     	int i;
+	if(cc->cfg_using_randomizer==0)
+	{
+		for(i=0; i<cc->len_frame; i++) ccsds_txwrite(cc, message[i]);
+		for(i=0; i<RS_LENGTH; i++) ccsds_txwrite(cc, rs_data[i]);
+	}
+	else if(cc->cfg_using_randomizer==1)
+	{
 		for(i=0; i<cc->len_frame; i++) ccsds_txwrite(cc, message[i]^sequence[i]);
 		for(i=0; i<RS_LENGTH; i++) ccsds_txwrite(cc, rs_data[i]^sequence[i+cc->len_frame]);
+	}
+	else if(cc->cfg_using_randomizer==2)
+	{
+		for(i=0; i<cc->len_frame; i++) ccsds_txwrite(cc, message[i]^(~sequence[i]));
+		for(i=0; i<RS_LENGTH; i++) ccsds_txwrite(cc, rs_data[i]^(~sequence[i+cc->len_frame]));
+	}
     }
 }
 
@@ -421,7 +459,17 @@ void ccsds_pull(Ccsds *cc)
                 if(cc->n_out == cc->len_frame+RS_LENGTH)
                 {
                     cc->syncing = 0;
-                    ccsds_xor_sequence(cc->buf_sync_out, sequence, cc->len_frame+RS_LENGTH);
+                    
+                    //ccsds_xor_sequence(cc->buf_sync_out, sequence, cc->len_frame+RS_LENGTH);
+                    if(cc->cfg_using_randomizer==1)
+                    {
+			for(int i=0; i<cc->len_frame+RS_LENGTH; i++) cc->buf_sync_out[i] ^= sequence[i];
+                    }
+                    else if(cc->cfg_using_randomizer==2)
+                    {
+			for(int i=0; i<cc->len_frame+RS_LENGTH; i++) cc->buf_sync_out[i] ^= ~sequence[i];
+                    }
+	
                     byte_corr = decode_rs(cc->buf_sync_out, (int *)0, 0, RS_BLOCK_LENGTH-cc->len_frame-RS_LENGTH);
                     cc->hook(cc->buf_sync_out, cc->len_frame, byte_corr, cc->obj_ptr);
                 }

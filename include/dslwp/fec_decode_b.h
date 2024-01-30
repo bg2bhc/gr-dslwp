@@ -18,8 +18,8 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#ifndef INCLUDED_DSLWP_FEC_ENCODE_B_H
-#define INCLUDED_DSLWP_FEC_ENCODE_B_H
+#ifndef INCLUDED_DSLWP_FEC_DECODE_B_H
+#define INCLUDED_DSLWP_FEC_DECODE_B_H
 
 #include <dslwp/api.h>
 #include <gnuradio/sync_block.h>
@@ -32,24 +32,24 @@ namespace gr {
      * \ingroup dslwp
      *
      */
-    class DSLWP_API fec_encode_b : virtual public gr::sync_block
+    class DSLWP_API fec_decode_b : virtual public gr::sync_block
     {
      public:
-      typedef boost::shared_ptr<fec_encode_b> sptr;
+      typedef boost::shared_ptr<fec_decode_b> sptr;
 
       /*!
-       * \brief Return a shared_ptr to a new instance of dslwp::fec_encode_b.
+       * \brief Return a shared_ptr to a new instance of dslwp::fec_decode_b.
        *
-       * To avoid accidental use of raw pointers, dslwp::fec_encode_b's
+       * To avoid accidental use of raw pointers, dslwp::fec_decode_b's
        * constructor is in a private implementation
-       * class. dslwp::fec_encode_b::make is the public interface for
+       * class. dslwp::fec_decode_b::make is the public interface for
        * creating new instances.
        */
-      static sptr make(int frame_len, int preamble_len, int trailer_len, bool continous, bool padding_zero, uint8_t using_randomizer, bool using_m, uint8_t using_convolutional_code);
+      static sptr make(int frame_len, uint8_t using_randomizer, bool using_m, bool using_convolutional_code, bool pass_all);
     };
 
   } // namespace dslwp
 } // namespace gr
 
-#endif /* INCLUDED_DSLWP_FEC_ENCODE_B_H */
+#endif /* INCLUDED_DSLWP_FEC_DECODE_B_H */
 
