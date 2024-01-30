@@ -18,11 +18,13 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#ifndef INCLUDED_DSLWP_FEC_DECODE_B_IMPL_H
-#define INCLUDED_DSLWP_FEC_DECODE_B_IMPL_H
+#ifndef INCLUDED_DSLWP_LRTC_DEMOD2_IMPL_H
+#define INCLUDED_DSLWP_LRTC_DEMOD2_IMPL_H
 
-#include <dslwp/fec_decode_b.h>
-#include <stdio.h>
+#include <dslwp/lrtc_demod2.h>
+
+#define MAX_AVG_CORR 32
+#define MAX_FFT_SIZE 1024
 
 extern "C"
 {
@@ -32,18 +34,34 @@ extern "C"
 namespace gr {
   namespace dslwp {
 
-    class fec_decode_b_impl : public fec_decode_b
+    class lrtc_demod2_impl : public lrtc_demod2
     {
      private:
-      pmt::pmt_t d_out_port;
+      size_t d_fft_size;
+      size_t d_n_avg;
+      int d_sample_in_symbol;
+      int d_i_avg_buf;
+      float d_buf_pwr_est[MAX_AVG_CORR][MAX_FFT_SIZE];
+      float d_buf_freq_est[MAX_AVG_CORR][MAX_FFT_SIZE];
+      float d_buf_snr_est[MAX_FFT_SIZE];
+      
+      int d_index_pwr_max;
+      float d_pwr_max;
+      float d_freq_est;
+      
+      pmt::pmt_t d_data_port;
+      pmt::pmt_t d_hk_port;
       Ccsds cc;
       bool d_pass_all;
       static void callback(unsigned char *buf, unsigned short len, int16_t byte_corr, void *obj_ptr);
       static void callback2(unsigned char *buf, unsigned short len, int16_t byte_corr, void *obj_ptr);
+      
+      uint8_t d_bits_out[16];
+      int n_bits_out;
 
      public:
-      fec_decode_b_impl(int frame_len, uint8_t using_randomizer, bool using_m, bool using_convolutional_code, bool pass_all);
-      ~fec_decode_b_impl();
+      lrtc_demod2_impl(int mode, size_t fft_size, size_t n_avg, int frame_len, uint8_t using_randomizer, bool using_m, bool using_convolutional_code, bool pass_all);
+      ~lrtc_demod2_impl();
 
       // Where all the action really happens
       int work(
@@ -56,5 +74,5 @@ namespace gr {
   } // namespace dslwp
 } // namespace gr
 
-#endif /* INCLUDED_DSLWP_FEC_DECODE_B_IMPL_H */
+#endif /* INCLUDED_DSLWP_LRTC_DEMOD2_IMPL_H */
 

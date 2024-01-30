@@ -79,7 +79,8 @@ namespace gr {
             
             d_sample_in_symbol++;            
             if(d_sample_in_symbol==d_fft_size)
-            {            	           	
+            {
+            	d_pwr_max = 0;	           	
             	for(int j=0; j<d_fft_size; j++)
             	{
             		float pwr_avg = 0;

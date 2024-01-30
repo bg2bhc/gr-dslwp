@@ -80,6 +80,7 @@ typedef struct Ccsds
     uint8_t tx_bit_state;
     void *obj_ptr;
     sync_hook_t hook;
+    sync_hook_t hook2;
     uint16_t cfg_preamble_len;
     uint16_t cfg_trailer_len;
     uint8_t cfg_continous;
@@ -89,7 +90,7 @@ typedef struct Ccsds
     uint8_t cfg_using_convolutional_code;
 } Ccsds;
 
-void ccsds_init(Ccsds *cc, uint32_t sync_word, uint16_t len_frame, void *obj_ptr, sync_hook_t hook);
+void ccsds_init(Ccsds *cc, uint32_t sync_word, uint16_t len_frame, void *obj_ptr, sync_hook_t hook, sync_hook_t hook2);
 
 void ccsds_send(Ccsds *cc, uint8_t *message);
 void ccsds_pull(Ccsds *cc);

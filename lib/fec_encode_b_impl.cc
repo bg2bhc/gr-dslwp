@@ -59,7 +59,7 @@ namespace gr {
 
 	set_msg_handler(d_in_port, boost::bind(&fec_encode_b_impl::pmt_in_callback, this ,_1) );
 	set_output_multiple(16);
-	ccsds_init(&cc, 0x1ACFFC1D, frame_len, this, 0);
+	ccsds_init(&cc, 0x1ACFFC1D, frame_len, this, 0, 0);
 	cc.cfg_preamble_len = preamble_len;
 	cc.cfg_trailer_len = trailer_len;
 	cc.cfg_continous = continous;

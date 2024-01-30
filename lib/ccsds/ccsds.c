@@ -33,7 +33,7 @@
 
 extern char sequence[]; //伪随机序列
 
-void ccsds_init(Ccsds *cc, uint32_t sync_word, uint16_t len_frame, void *obj_ptr, sync_hook_t hook)
+void ccsds_init(Ccsds *cc, uint32_t sync_word, uint16_t len_frame, void *obj_ptr, sync_hook_t hook, sync_hook_t hook2)
 {
     //float RATE=0.5;
     //float ebn0 = 12.0;
@@ -56,6 +56,7 @@ void ccsds_init(Ccsds *cc, uint32_t sync_word, uint16_t len_frame, void *obj_ptr
     cc->mask_bit_out = 0x80;
     cc->obj_ptr = obj_ptr;
     cc->hook = hook;
+    cc->hook2 = hook2;
     cc->rx_bit_state = 0;
     cc->tx_bit_state = 0;
 
@@ -534,6 +535,7 @@ void ccsds_pull(Ccsds *cc)
 			        cc->buffer_sync_det = 0;
 			        cc->mask_bit_out = 0x80;
 			        cc->n_out = 0;
+			        cc->hook2(0, 0, 0, cc->obj_ptr);
 			    }
             }
 

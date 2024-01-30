@@ -49,7 +49,7 @@ namespace gr {
 
 	set_output_multiple(16);
 
-	ccsds_init(&cc, 0x1ACFFC1D, frame_len, this, callback);
+	ccsds_init(&cc, 0x1ACFFC1D, frame_len, this, callback, callback2);
 
 	cc.cfg_using_m = using_m;
 	cc.cfg_using_convolutional_code = using_convolutional_code;
@@ -80,6 +80,11 @@ namespace gr {
 	}
     }
 
+    void fec_decode_b_impl::callback2(unsigned char *buf, unsigned short len, int16_t byte_corr, void *obj_ptr)
+    {       
+	fprintf(stdout, "**** ASM Found! ****\n");
+    }
+    
     int
     fec_decode_b_impl::work(int noutput_items,
         gr_vector_const_void_star &input_items,

@@ -1,0 +1,66 @@
+id: dslwp_lrtc_demod2
+label: LRTC Demod2
+category: '[DSLWP]'
+
+parameters:
+-   id: mode
+    label: Mode
+    dtype: int
+-   id: fft_size
+    label: FFT Size
+    dtype: int
+-   id: n_avg
+    label: N Average
+    dtype: int
+-   id: frame_len
+    label: Frame Length
+    dtype: int
+    default: 114
+-   id: using_randomizer
+    label: Use Randomizer
+    dtype: enum
+    default: '1'
+    options: ['0', '1', '2']
+    option_labels: ['OFF', 'CCSDS', 'CCSDS Inverted']
+-   id: using_m
+    label: Using M Code
+    dtype: bool
+    default: 'True'
+    options: ['False', 'True']
+    option_labels: ['Off', 'On']
+-   id: using_convolutional_code
+    label: Using Convolutional Code
+    dtype: bool
+    default: 'True'
+    options: ['False', 'True']
+    option_labels: ['Off', 'On']
+-   id: pass_all
+    label: Pass All
+    dtype: bool
+    default: 'False'
+    hide: ${ ('part' if str(pass_all) == 'False' else 'none') }
+    options: ['False', 'True']
+    option_labels: ['Off', 'On']
+
+inputs:
+-   label: pwr
+    domain: stream
+    dtype: float
+-   label: freq
+    domain: stream
+    dtype: float
+-   label: snr
+    domain: stream
+    dtype: float
+
+outputs:
+-   domain: message
+    id: data
+-   domain: message
+    id: hk
+
+templates:
+    imports: import dslwp
+    make: dslwp.lrtc_demod2(${mode}, ${fft_size}, ${n_avg}, ${frame_len}, ${using_randomizer}, ${using_m}, ${using_convolutional_code}, ${pass_all})
+
+file_format: 1

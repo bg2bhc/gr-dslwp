@@ -43,8 +43,6 @@ namespace gr {
       int d_index_pwr_max;
       float d_pwr_max;
       float d_freq_est;
-      
-      pmt::pmt_t d_out_port;
 
      public:
       lrtc_demod_impl(int mode, size_t fft_size, size_t n_avg);
