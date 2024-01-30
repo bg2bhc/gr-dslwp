@@ -1,0 +1,20 @@
+id: dslwp_tm_converter2
+label: TM Converter2
+category: '[DSLWP]'
+templates:
+  imports: import dslwp
+  make: dslwp.tm_converter2(${header}, ${list})
+parameters:
+- id: header
+  label: Header
+  dtype: string
+- id: list
+  label: List
+  dtype: int_vector
+inputs:
+-   domain: message
+    id: in
+outputs:
+-   domain: message
+    id: out
+file_format: 1

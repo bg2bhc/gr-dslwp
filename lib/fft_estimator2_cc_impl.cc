@@ -103,7 +103,8 @@ namespace gr {
 		}
 		pwr_out[i] = power_s;		
 		freq_out[i] = index_s;
-		if(freq_out[i]>(d_fft_size/2-0.5)) freq_out[i] -= d_fft_size;
+		if(freq_out[i]>(d_fft_size/2-0.5)) freq_out[i] = freq_out[i] - d_fft_size;
+		freq_out[i] = freq_out[i]*2.0f*M_PI/d_fft_size;
 		/*
 		if( index_s == (d_fft_size-1) )
 		{

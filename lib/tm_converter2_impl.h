@@ -18,48 +18,41 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#ifndef INCLUDED_DSLWP_LRTC_DEMOD_IMPL_H
-#define INCLUDED_DSLWP_LRTC_DEMOD_IMPL_H
+#ifndef INCLUDED_DSLWP_TM_CONVERTER2_IMPL_H
+#define INCLUDED_DSLWP_TM_CONVERTER2_IMPL_H
 
-#include <dslwp/lrtc_demod.h>
-
-#define MAX_AVG_CORR 32
-#define MAX_FFT_SIZE 1024
+#include <dslwp/tm_converter2.h>
 
 namespace gr {
   namespace dslwp {
 
-    class lrtc_demod_impl : public lrtc_demod
+    class tm_converter2_impl : public tm_converter2
     {
      private:
-      size_t d_fft_size;
-      size_t d_n_avg;
-      int d_sample_in_symbol;
-      int d_i_avg_buf;
-      float d_buf_pwr_est[MAX_AVG_CORR][MAX_FFT_SIZE];
-      float d_buf_freq_est[MAX_AVG_CORR][MAX_FFT_SIZE];
-      float d_buf_snr_est[MAX_FFT_SIZE];
-      
-      int d_index_pwr_max;
-      float d_pwr_max;
-      float d_freq_est;
-      
+      pmt::pmt_t d_in_port;
       pmt::pmt_t d_out_port;
+      
+      void pmt_in_callback(pmt::pmt_t msg);
+      
+      const std::string d_header;
+      const std::vector<int> d_list;
 
      public:
-      lrtc_demod_impl(int mode, size_t fft_size, size_t n_avg);
-      ~lrtc_demod_impl();
+      tm_converter2_impl(const std::string& header, const std::vector<int> &list);
+      ~tm_converter2_impl();
 
       // Where all the action really happens
-      int work(
-              int noutput_items,
-              gr_vector_const_void_star &input_items,
-              gr_vector_void_star &output_items
-      );
+      void forecast (int noutput_items, gr_vector_int &ninput_items_required);
+
+      int general_work(int noutput_items,
+           gr_vector_int &ninput_items,
+           gr_vector_const_void_star &input_items,
+           gr_vector_void_star &output_items);
+
     };
 
   } // namespace dslwp
 } // namespace gr
 
-#endif /* INCLUDED_DSLWP_LRTC_DEMOD_IMPL_H */
+#endif /* INCLUDED_DSLWP_TM_CONVERTER2_IMPL_H */
 

@@ -47,5 +47,6 @@ install(FILES
     fft_estimator2_cc.h
     lrtc_demod.h
     fec_decode_b.h
-    fec_encode_b.h DESTINATION include/dslwp
+    fec_encode_b.h
+    tm_converter2.h DESTINATION include/dslwp
 )

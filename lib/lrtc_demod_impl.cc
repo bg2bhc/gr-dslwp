@@ -73,15 +73,13 @@ namespace gr {
       for(int i=0; i<noutput_items*d_fft_size; i++)
       {
             d_buf_pwr_est[d_i_avg_buf][d_sample_in_symbol] = pwr[i];
-            d_buf_freq_est[d_sample_in_symbol] = freq[i];
+            d_buf_freq_est[d_i_avg_buf][d_sample_in_symbol] = freq[i];
             //d_buf_phase_est[d_sample_in_symbol] = phase[i];
             d_buf_snr_est[d_sample_in_symbol] = snr[i];
             
             d_sample_in_symbol++;            
             if(d_sample_in_symbol==d_fft_size)
-            {            	
-            	int index_pwr_max=0;
-            	float pwr_max=0;
+            {            	           	
             	for(int j=0; j<d_fft_size; j++)
             	{
             		float pwr_avg = 0;
@@ -90,20 +88,27 @@ namespace gr {
             			pwr_avg += d_buf_pwr_est[k][j];
             		}
             		
-            		if(pwr_avg>pwr_max)
+            		if(pwr_avg > d_pwr_max)
             		{
-            			pwr_max = pwr_avg;
-            			index_pwr_max = j;
+            			d_pwr_max = pwr_avg;
+            			d_index_pwr_max = j;
             		}
             	}
-            	if(d_buf_freq_est[index_pwr_max]>=0)
+            	d_freq_est = 0;
+            	for(int j=0; j<d_n_avg; j++)
             	{
-            		out[nout] = sqrt(d_buf_pwr_est[d_i_avg_buf][index_pwr_max]/pwr_max*d_n_avg);
+            		d_freq_est += d_buf_freq_est[j][d_index_pwr_max];
+            	}
+            	d_freq_est /= d_n_avg;
+            	if(d_buf_freq_est[d_i_avg_buf][d_index_pwr_max]>=d_freq_est)
+            	{
+            		out[nout] = sqrt(d_buf_pwr_est[d_i_avg_buf][d_index_pwr_max]/d_pwr_max*d_n_avg)+1j*d_freq_est;
             	}
             	else
             	{
-            		out[nout] = -sqrt(d_buf_pwr_est[d_i_avg_buf][index_pwr_max]/pwr_max*d_n_avg);
+            		out[nout] = -sqrt(d_buf_pwr_est[d_i_avg_buf][d_index_pwr_max]/d_pwr_max*d_n_avg)+1j*d_freq_est;
             	}
+            	//out[nout] = d_buf_freq_est[d_i_avg_buf][d_index_pwr_max] + 1j * d_freq_est;
             	nout++;
             	
             	d_sample_in_symbol=0;

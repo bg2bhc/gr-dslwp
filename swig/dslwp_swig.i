@@ -31,6 +31,7 @@
 #include "dslwp/lrtc_demod.h"
 #include "dslwp/fec_decode_b.h"
 #include "dslwp/fec_encode_b.h"
+#include "dslwp/tm_converter2.h"
 %}
 
 %include "dslwp/tm_header_parser.h"
@@ -91,3 +92,5 @@ GR_SWIG_BLOCK_MAGIC2(dslwp, fec_decode_b);
 
 %include "dslwp/fec_encode_b.h"
 GR_SWIG_BLOCK_MAGIC2(dslwp, fec_encode_b);
+%include "dslwp/tm_converter2.h"
+GR_SWIG_BLOCK_MAGIC2(dslwp, tm_converter2);
