@@ -45,7 +45,7 @@ namespace gr {
     lrtc_demod_impl::lrtc_demod_impl(int mode, size_t fft_size, size_t n_avg)
       : gr::sync_decimator("lrtc_demod",
               gr::io_signature::makev(3, 3, iosig),
-              gr::io_signature::make(1, 1, sizeof(gr_complex)), fft_size), d_fft_size(fft_size), d_n_avg(n_avg)
+              gr::io_signature::make(1, 1, sizeof(gr_complex)), fft_size), d_fft_size(fft_size), d_n_avg(n_avg), d_mode(mode)
     {
       d_sample_in_symbol = 0;
       d_i_avg_buf = 0;
@@ -96,11 +96,15 @@ namespace gr {
             		}
             	}
             	d_freq_est = 0;
-            	for(int j=0; j<d_n_avg; j++)
+            	if(d_mode==1)
             	{
-            		d_freq_est += d_buf_freq_est[j][d_index_pwr_max];
-            	}
-            	d_freq_est /= d_n_avg;
+		    	for(int j=0; j<d_n_avg; j++)
+		    	{
+		    		d_freq_est += d_buf_freq_est[j][d_index_pwr_max];
+		    	}
+		    	d_freq_est /= d_n_avg;
+		}
+            	
             	if(d_buf_freq_est[d_i_avg_buf][d_index_pwr_max]>=d_freq_est)
             	{
             		out[nout] = sqrt(d_buf_pwr_est[d_i_avg_buf][d_index_pwr_max]/d_pwr_max*d_n_avg)+1j*d_freq_est;

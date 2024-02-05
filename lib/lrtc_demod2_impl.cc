@@ -44,7 +44,7 @@ namespace gr {
     lrtc_demod2_impl::lrtc_demod2_impl(int mode, size_t fft_size, size_t n_avg, int frame_len, uint8_t using_randomizer, bool using_m, bool using_convolutional_code, bool pass_all)
       : gr::sync_block("lrtc_demod2",
               gr::io_signature::makev(3, 3, iosig),
-              gr::io_signature::make(0, 0, 0)), d_fft_size(fft_size), d_n_avg(n_avg), d_pass_all(pass_all)
+              gr::io_signature::make(0, 0, 0)), d_fft_size(fft_size), d_n_avg(n_avg), d_pass_all(pass_all), d_mode(mode)
     {
 	d_sample_in_symbol = 0;
 	d_i_avg_buf = 0;
@@ -140,11 +140,14 @@ namespace gr {
             		}
             	}
             	d_freq_est = 0;
-            	for(int j=0; j<d_n_avg; j++)
+            	if(d_mode==1)
             	{
-            		d_freq_est += d_buf_freq_est[j][d_index_pwr_max];
+		    	for(int j=0; j<d_n_avg; j++)
+		    	{
+		    		d_freq_est += d_buf_freq_est[j][d_index_pwr_max];
+		    	}
+		    	d_freq_est /= d_n_avg;
             	}
-            	d_freq_est /= d_n_avg;
             	
             	d_bits_out[n_bits_out] = (d_buf_freq_est[d_i_avg_buf][d_index_pwr_max]>=d_freq_est) ? 1 : 0;
             	n_bits_out++;

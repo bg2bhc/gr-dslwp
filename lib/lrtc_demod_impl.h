@@ -32,6 +32,7 @@ namespace gr {
     class lrtc_demod_impl : public lrtc_demod
     {
      private:
+      int d_mode;
       size_t d_fft_size;
       size_t d_n_avg;
       int d_sample_in_symbol;
