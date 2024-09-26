@@ -1,22 +1,47 @@
 <block>
-  <name>Attach preamble and tailer</name>
+  <name>Attach Preamble and Tailer</name>
   <key>dslwp_attach_preamble_and_tailer</key>
   <category>[DSLWP]</category>
   <import>import dslwp</import>
   <make>dslwp.attach_preamble_and_tailer($len_preamble, $len_tailer, $padding_type)</make>
   <param>
-    <name>Len_preamble</name>
+    <name>Preamble Length</name>
     <key>len_preamble</key>
     <type>int</type>
   </param>
   <param>
-    <name>Len_tailer</name>
+    <name>Tailer Length</name>
     <key>len_tailer</key>
     <type>int</type>
   </param>
   <param>
-    <name>Padding_type</name>
+    <name>Padding Type</name>
     <key>padding_type</key>
-    <type>byte</type>
+    <value>0</value>
+	<type>byte</type>
+	<option>
+		<name>0x00</name>
+		<key>0</key>
+	</option>
+	<option>
+		<name>0x55</name>
+		<key>1</key>
+	</option>
+	<option>
+		<name>0xAA</name>
+		<key>2</key>
+	</option>
+	<option>
+		<name>Random</name>
+		<key>3</key>
+	</option>
   </param>
+  <sink>
+    <name>in</name>
+    <type>message</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>message</type>
+  </source>
 </block>
