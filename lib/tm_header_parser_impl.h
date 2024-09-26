@@ -33,6 +33,7 @@ namespace gr {
       pmt::pmt_t d_out_port_0;
       pmt::pmt_t d_out_port_1;
       pmt::pmt_t d_out_port_2;
+      pmt::pmt_t d_out_port_3;
 
       void pmt_in_callback(pmt::pmt_t msg);
 
