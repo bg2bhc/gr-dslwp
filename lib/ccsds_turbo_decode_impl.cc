@@ -102,7 +102,7 @@ namespace gr {
 				d_code2 = convcode_initialize((char **)d_forward_lower, (char *)d_backward, N_components_lower);
 				d_turbo = turbo_initialize(d_code1, d_code2, d_pi, d_info_length);
 				d_rate = 1.0/2.0;
-				d_encoded_length = d_turbo.encoded_length*2/3;
+				d_encoded_length = d_turbo->encoded_length*2/3;
 				break;
 			}
 			case RATE_1_3:
@@ -119,7 +119,7 @@ namespace gr {
 				d_code2 = convcode_initialize((char **)d_forward_lower, (char *)d_backward, N_components_lower);
 				d_turbo = turbo_initialize(d_code1, d_code2, d_pi, d_info_length);
 				d_rate = 1.0/3.0;
-				d_encoded_length = d_turbo.encoded_length;
+				d_encoded_length = d_turbo->encoded_length;
 				break;
 			}
 			case RATE_1_4:
@@ -137,7 +137,7 @@ namespace gr {
 				d_code2 = convcode_initialize((char **)d_forward_lower, (char *)d_backward, N_components_lower);
 				d_turbo = turbo_initialize(d_code1, d_code2, d_pi, d_info_length);
 				d_rate = 1.0/4.0;
-				d_encoded_length = d_turbo.encoded_length;
+				d_encoded_length = d_turbo->encoded_length;
 				break;
 			}
 			case RATE_1_6:
@@ -157,7 +157,7 @@ namespace gr {
 				d_code2 = convcode_initialize((char **)d_forward_lower, (char *)d_backward, N_components_lower);
 				d_turbo = turbo_initialize(d_code1, d_code2, d_pi, d_info_length);
 				d_rate = 1.0/6.0;
-				d_encoded_length = d_turbo.encoded_length;
+				d_encoded_length = d_turbo->encoded_length;
 				break;
 			}
 			default:
@@ -223,11 +223,11 @@ namespace gr {
 
 		if(msg_len == d_encoded_length)
 		{
-			double *bits_depunctured = (double *)malloc(sizeof(double)*d_turbo.encoded_length);
+			double *bits_depunctured = (double *)malloc(sizeof(double)*d_turbo->encoded_length);
 			if(d_code_type == RATE_1_2)
 			{
 				int j=0;
-				for(int i=0; i<d_turbo.encoded_length; i++)
+				for(int i=0; i<d_turbo->encoded_length; i++)
 				{
 					if(puncturing(i))
 					{

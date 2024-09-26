@@ -46,7 +46,7 @@ namespace gr {
        * class. dslwp::attach_sync_marker::make is the public interface for
        * creating new instances.
        */
-      static sptr make(const std::vector<uint8_t> &marker, int data_format);
+      static sptr make(const std::vector<uint8_t> &marker, int data_format, int msg_len, bool check_length, bool pass_other_length);
     };
 
   } // namespace dslwp

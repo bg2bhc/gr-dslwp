@@ -1,0 +1,17 @@
+<block>
+  <name>Tm converter2</name>
+  <key>dslwp_tm_converter2</key>
+  <category>[DSLWP]</category>
+  <import>import dslwp</import>
+  <make>dslwp.tm_converter2($header, $list)</make>
+  <param>
+    <name>Header</name>
+    <key>header</key>
+    <type>string</type>
+  </param>
+  <param>
+    <name>List</name>
+    <key>list</key>
+    <type>int_vector</type>
+  </param>
+</block>

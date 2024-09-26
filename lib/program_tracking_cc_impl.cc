@@ -366,8 +366,7 @@ namespace gr {
 					sample_in_second++;
 				}
 
-				out[i] = k_real * in[i].real() - k_imag * in[i].imag()
-				  + 1j * (k_real * in[i].imag() + k_imag * in[i].real());
+				out[i] = gr_complex(k_real, k_imag) * in[i];
 			}
 			
 

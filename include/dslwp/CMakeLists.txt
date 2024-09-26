@@ -42,5 +42,12 @@ install(FILES
     differential_phase_detection_1bit_cf.h
     frame_spliter_f.h
     program_tracking_cc.h
-    lrtc_mod_bc.h DESTINATION include/dslwp
+    lrtc_mod_bc.h
+    attach_preamble_and_tailer.h
+    fec_decode_b.h
+    fft_estimator2_cc.h
+    lrtc_demod2.h
+    lrtc_demod.h
+    tag_to_json_pdu_c.h
+    tm_converter2.h DESTINATION include/dslwp
 )

@@ -38,20 +38,20 @@ namespace gr {
   namespace dslwp {
 
     ccsds_turbo_encode::sptr
-    ccsds_turbo_encode::make(int base, int octets, int code_type)
+    ccsds_turbo_encode::make(int base, int octets, int code_type, bool pass_other_length)
     {
       return gnuradio::get_initial_sptr
-        (new ccsds_turbo_encode_impl(base, octets, code_type));
+        (new ccsds_turbo_encode_impl(base, octets, code_type, pass_other_length));
     }
 
     /*
      * The private constructor
      */
-    ccsds_turbo_encode_impl::ccsds_turbo_encode_impl(int base, int octets, int code_type)
+    ccsds_turbo_encode_impl::ccsds_turbo_encode_impl(int base, int octets, int code_type, bool pass_other_length)
       : gr::sync_block("ccsds_turbo_encode",
               gr::io_signature::make(0, 0, sizeof(int)),
               gr::io_signature::make(0, 0, sizeof(int))),
-              d_base(base), d_octets(octets), d_code_type(code_type)
+              d_base(base), d_octets(octets), d_code_type(code_type), d_pass_other_length(pass_other_length)
     {
 		d_in_port = pmt::mp("in");
       	message_port_register_in(d_in_port);
@@ -102,7 +102,7 @@ namespace gr {
 				d_code2 = convcode_initialize((char **)d_forward_lower, (char *)d_backward, N_components_lower);
 				d_turbo = turbo_initialize(d_code1, d_code2, d_pi, d_info_length);
 				d_rate = 1.0/2.0;
-				d_encoded_length = d_turbo.encoded_length*2/3;
+				d_encoded_length = d_turbo->encoded_length*2/3;
 				break;
 			}
 			case RATE_1_3:
@@ -119,7 +119,7 @@ namespace gr {
 				d_code2 = convcode_initialize((char **)d_forward_lower, (char *)d_backward, N_components_lower);
 				d_turbo = turbo_initialize(d_code1, d_code2, d_pi, d_info_length);
 				d_rate = 1.0/3.0;
-				d_encoded_length = d_turbo.encoded_length;
+				d_encoded_length = d_turbo->encoded_length;
 				break;
 			}
 			case RATE_1_4:
@@ -137,7 +137,7 @@ namespace gr {
 				d_code2 = convcode_initialize((char **)d_forward_lower, (char *)d_backward, N_components_lower);
 				d_turbo = turbo_initialize(d_code1, d_code2, d_pi, d_info_length);
 				d_rate = 1.0/4.0;
-				d_encoded_length = d_turbo.encoded_length;
+				d_encoded_length = d_turbo->encoded_length;
 				break;
 			}
 			case RATE_1_6:
@@ -157,7 +157,7 @@ namespace gr {
 				d_code2 = convcode_initialize((char **)d_forward_lower, (char *)d_backward, N_components_lower);
 				d_turbo = turbo_initialize(d_code1, d_code2, d_pi, d_info_length);
 				d_rate = 1.0/6.0;
-				d_encoded_length = d_turbo.encoded_length;
+				d_encoded_length = d_turbo->encoded_length;
 				break;
 			}
 			default:
@@ -226,7 +226,7 @@ namespace gr {
 			if(d_code_type == RATE_1_2)
 			{
 				int j=0;
-				for(int i=0; i<d_turbo.encoded_length; i++)
+				for(int i=0; i<d_turbo->encoded_length; i++)
 				{				
 					if(puncturing(i))
 					{
@@ -251,7 +251,15 @@ namespace gr {
 		}
 		else
 		{
-			fprintf(stdout, "\n**** ERROR: Turbo encoder input length do not match!\n");
+			if(d_pass_other_length)
+			{
+				ccsds_turbo_encode_impl::message_port_pub(ccsds_turbo_encode_impl::d_out_port, pmt::cons(pmt::make_dict(), pmt::init_u8vector(msg_len, bytes_in)));
+				fprintf(stdout, "\n**** Turbo encoder pass message with length %d!\n", msg_len);
+			}
+			else
+			{
+				fprintf(stdout, "\n**** ERROR: Turbo encoder input length do not match!\n");
+			}
 		}
     }
 

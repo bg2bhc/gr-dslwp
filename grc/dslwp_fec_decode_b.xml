@@ -1,0 +1,36 @@
+<block>
+  <name>Fec decode b</name>
+  <key>dslwp_fec_decode_b</key>
+  <category>[DSLWP]</category>
+  <import>import dslwp</import>
+  <make>dslwp.fec_decode_b($frame_len, $using_randomizer, $using_m, $using_convolutional_code, $pass_all)</make>
+  <param>
+    <name>Frame_len</name>
+    <key>frame_len</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Using_randomizer</name>
+    <key>using_randomizer</key>
+    <type>raw</type>
+  </param>
+  <param>
+    <name>Using_m</name>
+    <key>using_m</key>
+    <type>raw</type>
+  </param>
+  <param>
+    <name>Using_convolutional_code</name>
+    <key>using_convolutional_code</key>
+    <type>raw</type>
+  </param>
+  <param>
+    <name>Pass_all</name>
+    <key>pass_all</key>
+    <type>raw</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>byte</type>
+  </sink>
+</block>

@@ -1,0 +1,32 @@
+<block>
+  <name>LRTC Demod</name>
+  <key>dslwp_lrtc_demod</key>
+  <category>[dslwp]</category>
+  <import>import dslwp</import>
+  <make>dslwp.lrtc_demod($mode, $fft_size, $n_avg)</make>
+  <param>
+    <name>Mode</name>
+    <key>mode</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>FFT Size</name>
+    <key>fft_size</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>N Avg</name>
+    <key>n_avg</key>
+    <type>int</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>complex</type>
+    <vlen>$fft_size</vlen>
+    <nports>2</nports>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>complex</type>
+  </source>
+</block>

@@ -41,6 +41,7 @@ namespace gr {
       int d_base;
       int d_octets;
       int d_code_type;
+      bool d_pass_other_length;
 
       float d_rate;
       int d_info_length;
@@ -50,16 +51,16 @@ namespace gr {
       const char *d_forward_upper[MAX_COMPONENTS];
       const char *d_forward_lower[MAX_COMPONENTS];
       const char *d_backward;
-      t_convcode d_code1;
-      t_convcode d_code2;
-      t_turbocode d_turbo;
+      t_convcode *d_code1;
+      t_convcode *d_code2;
+      t_turbocode *d_turbo;
 
 
       void pmt_in_callback(pmt::pmt_t msg);
       int puncturing(int k);
 
      public:
-      ccsds_turbo_encode_impl(int base, int octets, int code_type);
+      ccsds_turbo_encode_impl(int base, int octets, int code_type, bool pass_other_length);
       ~ccsds_turbo_encode_impl();
 
       // Where all the action really happens

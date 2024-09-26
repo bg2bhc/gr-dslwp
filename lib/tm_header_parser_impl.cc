@@ -62,6 +62,9 @@ namespace gr {
 	d_out_port_2 = pmt::mp("out 2");	      
       	message_port_register_out(d_out_port_2);
 
+	d_out_port_2 = pmt::mp("out 3");	      
+      	message_port_register_out(d_out_port_3);
+
 	set_msg_handler(d_in_port, boost::bind(&tm_header_parser_impl::pmt_in_callback, this ,_1) );
     }
 
@@ -121,6 +124,11 @@ namespace gr {
 			case 2:
 			{
 				tm_header_parser_impl::message_port_pub(tm_header_parser_impl::d_out_port_2, pmt::cons(pmt::make_dict(), pmt::init_u8vector(msg_len-LEN_TM_HEADER, (const uint8_t *)bytes_in+LEN_TM_HEADER)));
+				break;
+			}
+			case 3:
+			{
+				tm_header_parser_impl::message_port_pub(tm_header_parser_impl::d_out_port_3, pmt::cons(pmt::make_dict(), pmt::init_u8vector(msg_len-LEN_TM_HEADER, (const uint8_t *)bytes_in+LEN_TM_HEADER)));
 				break;
 			}
 		}

@@ -1,0 +1,101 @@
+<block>
+  <name>LRTC Demod 2</name>
+  <key>dslwp_lrtc_demod2</key>
+  <category>[dslwp]</category>
+  <import>import dslwp</import>
+  <make>dslwp.lrtc_demod2($mode, $fft_size, $n_avg, $frame_len, $using_randomizer, $using_m, $using_convolutional_code, $pass_all)</make>
+  <param>
+    <name>Mode</name>
+    <key>mode</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>FFT Size</name>
+    <key>fft_size</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>N Avg</name>
+    <key>n_avg</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Frame Length</name>
+    <key>n_avg</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Using Randomizer</name>
+    <key>using_randomizer</key>
+    <value>1</value>
+    <type>enum</type>
+    <option>
+	<name>OFF</name>
+	<key>0</key>
+    </option>
+    <option>
+	<name>CCSDS</name>
+	<key>1</key>
+    </option>
+    <option>
+	<name>CCSDS Inverted</name>
+	<key>2</key>
+    </option>
+  </param>
+  <param>
+    <name>Use M Code</name>
+    <key>using_m</key>
+    <value>True</value>
+    <type>bool</type>
+    <option>
+	<name>ON</name>
+	<key>True</key>
+    </option>
+    <option>
+	<name>OFF</name>
+	<key>False</key>
+    </option>
+  </param>
+  <param>
+    <name>Use Convolutional Code</name>
+    <key>using_convolutional_code</key>
+    <value>1</value>
+    <type>enum</type>
+    <option>
+	<name>OFF</name>
+	<key>0</key>
+    </option>
+    <option>
+	<name>Steam</name>
+	<key>1</key>
+    </option>
+    <option>
+	<name>Packet</name>
+	<key>2</key>
+    </option>
+  </param>
+  <param>
+    <name>Pass All</name>
+    <key>pass_all</key>
+    <value>0</value>
+    <type>enum</type>
+    <option>
+	<name>Off</name>
+	<key>0</key>
+    </option>
+    <option>
+	<name>On</name>
+	<key>1</key>
+    </option>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>complex</type>
+    <vlen>$fft_size</vlen>
+    <nports>2</nports>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>complex</type>
+  </source>
+</block>

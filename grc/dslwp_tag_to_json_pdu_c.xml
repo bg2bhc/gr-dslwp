@@ -1,0 +1,16 @@
+<block>
+  <name>Tag to json pdu c</name>
+  <key>dslwp_tag_to_json_pdu_c</key>
+  <category>[DSLWP]</category>
+  <import>import dslwp</import>
+  <make>dslwp.tag_to_json_pdu_c($key)</make>
+  <param>
+    <name>Key</name>
+    <key>key</key>
+    <type>string</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>complex</type>
+  </sink>
+</block>

@@ -38,16 +38,16 @@ namespace gr {
   namespace dslwp {
 
     fec_encode_b::sptr
-    fec_encode_b::make(int frame_len, int preamble_len, int trailer_len, bool continous, bool padding_zero, bool using_m, uint8_t using_convolutional_code)
+    fec_encode_b::make(int frame_len, int preamble_len, int trailer_len, bool continous, bool padding_zero, uint8_t using_randomizer, bool using_m, uint8_t using_convolutional_code)
     {
       return gnuradio::get_initial_sptr
-        (new fec_encode_b_impl(frame_len, preamble_len, trailer_len, continous, padding_zero, using_m, using_convolutional_code));
+        (new fec_encode_b_impl(frame_len, preamble_len, trailer_len, continous, padding_zero, using_randomizer, using_m, using_convolutional_code));
     }
 
     /*
      * The private constructor
      */
-    fec_encode_b_impl::fec_encode_b_impl(int frame_len, int preamble_len, int trailer_len, bool continous, bool padding_zero, bool using_m, uint8_t using_convolutional_code)
+    fec_encode_b_impl::fec_encode_b_impl(int frame_len, int preamble_len, int trailer_len, bool continous, bool padding_zero, uint8_t using_randomizer, bool using_m, uint8_t using_convolutional_code)
       : gr::sync_block("fec_encode_b",
               gr::io_signature::make(0, 0, 0),
               gr::io_signature::make(1, 1, sizeof(char)))
@@ -59,13 +59,14 @@ namespace gr {
 
 	set_msg_handler(d_in_port, boost::bind(&fec_encode_b_impl::pmt_in_callback, this ,_1) );
 	set_output_multiple(16);
-	ccsds_init(&cc, 0x1ACFFC1D, frame_len, this, 0);
+	ccsds_init(&cc, 0x1ACFFC1D, frame_len, this, 0, 0);
 	cc.cfg_preamble_len = preamble_len;
 	cc.cfg_trailer_len = trailer_len;
 	cc.cfg_continous = continous;
 	cc.cfg_padding_zero = padding_zero;
 	cc.cfg_using_m = using_m;
 	cc.cfg_using_convolutional_code = using_convolutional_code;
+	cc.cfg_using_randomizer = using_randomizer;
     }
 
     /*

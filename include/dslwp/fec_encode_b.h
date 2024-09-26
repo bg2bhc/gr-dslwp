@@ -46,7 +46,7 @@ namespace gr {
        * class. dslwp::fec_encode_b::make is the public interface for
        * creating new instances.
        */
-      static sptr make(int frame_len, int preamble_len, int trailer_len, bool continous, bool padding_zero, bool using_m, uint8_t using_convolutional_code);
+      static sptr make(int frame_len, int preamble_len, int trailer_len, bool continous, bool padding_zero, uint8_t using_randomizer, bool using_m, uint8_t using_convolutional_code);
     };
 
   } // namespace dslwp
