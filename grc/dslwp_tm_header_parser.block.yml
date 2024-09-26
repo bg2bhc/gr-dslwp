@@ -18,6 +18,9 @@ outputs:
 -   domain: message
     id: out 2
     optional: true
+-   domain: message
+    id: out 3
+    optional: true
 
 templates:
     imports: import dslwp
