@@ -81,10 +81,10 @@ namespace gr {
               gr::io_signature::make(0, 0, sizeof(char))),
 		d_len_preamble(len_preamble), d_len_tailer(len_tailer), d_padding_type(padding_type)
     {
-	d_in_port = pmt::mp("in");
+      	d_in_port = pmt::mp("in");
       	message_port_register_in(d_in_port);
 
-	d_out_port = pmt::mp("out");	      
+      	d_out_port = pmt::mp("out");	      
       	message_port_register_out(d_out_port);
 
 	set_msg_handler(d_in_port, boost::bind(&attach_preamble_and_tailer_impl::pmt_in_callback, this ,_1) );
@@ -102,30 +102,73 @@ namespace gr {
 	pmt::pmt_t meta(pmt::car(msg));
 	pmt::pmt_t bytes(pmt::cdr(msg));
 
-	size_t msg_len, i;
+	size_t msg_len;
+    int i;
 	const uint8_t* bytes_in = pmt::u8vector_elements(bytes, msg_len);
 	uint8_t bytes_out[1024];
 
-	for(i=0; i<d_len_preamble; i++)
-	{
-		if(d_padding_type==0) bytes_out[i] = 0x00;
-		else if(d_padding_type==1) bytes_out[i] = 0x55;
-		else if(d_padding_type==2) bytes_out[i] = 0xAA;
-		else if(d_padding_type==3) bytes_out[i] = sequence[i%255];
-	}
+    if(((d_len_preamble+msg_len) < 0) || ((d_len_tailer+msg_len) < 0)) return;
+    
+    if((d_len_preamble >= 0) && (d_len_tailer >= 0))
+    {
+	    for(i=0; i<d_len_preamble; i++)
+	    {
+		    if(d_padding_type==0) bytes_out[i] = 0x00;
+		    else if(d_padding_type==1) bytes_out[i] = 0x55;
+		    else if(d_padding_type==2) bytes_out[i] = 0xAA;
+		    else if(d_padding_type==3) bytes_out[i] = sequence[i%255];
+	    }
 
-	for(i=0; i<msg_len; i++)
-	{
-		bytes_out[i+d_len_preamble] = bytes_in[i];
-	}
+	    for(i=0; i<msg_len; i++)
+	    {
+		    bytes_out[i+d_len_preamble] = bytes_in[i];
+	    }
 
-	for(i=0; i<d_len_tailer; i++)
-	{
-		if(d_padding_type==0) bytes_out[i+d_len_preamble+msg_len] = 0x00;
-		else if(d_padding_type==1) bytes_out[i+d_len_preamble+msg_len] = 0x55;
-		else if(d_padding_type==2) bytes_out[i+d_len_preamble+msg_len] = 0xAA;
-		else if(d_padding_type==3) bytes_out[i+d_len_preamble+msg_len] = sequence[i%255];
-	}
+	    for(i=0; i<d_len_tailer; i++)
+	    {
+		    if(d_padding_type==0) bytes_out[i+d_len_preamble+msg_len] = 0x00;
+		    else if(d_padding_type==1) bytes_out[i+d_len_preamble+msg_len] = 0x55;
+		    else if(d_padding_type==2) bytes_out[i+d_len_preamble+msg_len] = 0xAA;
+		    else if(d_padding_type==3) bytes_out[i+d_len_preamble+msg_len] = sequence[i%255];
+	    }
+    }
+    else if((d_len_preamble >= 0) && (d_len_tailer < 0))
+    {
+	    for(i=0; i<d_len_preamble; i++)
+	    {
+		    if(d_padding_type==0) bytes_out[i] = 0x00;
+		    else if(d_padding_type==1) bytes_out[i] = 0x55;
+		    else if(d_padding_type==2) bytes_out[i] = 0xAA;
+		    else if(d_padding_type==3) bytes_out[i] = sequence[i%255];
+	    }
+
+	    for(i=0; i<msg_len+d_len_tailer; i++)
+	    {
+		    bytes_out[i+d_len_preamble] = bytes_in[i];
+	    }
+    }
+    else if((d_len_preamble < 0) && (d_len_tailer >= 0))
+    {
+	    for(i=0; i<msg_len+d_len_preamble; i++)
+	    {
+		    bytes_out[i] = bytes_in[i-d_len_preamble];
+	    }
+
+	    for(i=0; i<d_len_tailer; i++)
+	    {
+		    if(d_padding_type==0) bytes_out[i+d_len_preamble+msg_len] = 0x00;
+		    else if(d_padding_type==1) bytes_out[i+d_len_preamble+msg_len] = 0x55;
+		    else if(d_padding_type==2) bytes_out[i+d_len_preamble+msg_len] = 0xAA;
+		    else if(d_padding_type==3) bytes_out[i+d_len_preamble+msg_len] = sequence[i%255];
+	    }
+    }
+    else
+    {
+	    for(i=0; i<msg_len+d_len_preamble+d_len_tailer; i++)
+	    {
+		    bytes_out[i] = bytes_in[i-d_len_preamble];
+	    }
+    }
 
 	//bytes_in, msg_len
 

@@ -29,8 +29,8 @@ namespace gr {
     class attach_preamble_and_tailer_impl : public attach_preamble_and_tailer
     {
      private:
-      unsigned char d_len_preamble;
-      unsigned char d_len_tailer;
+      int d_len_preamble;
+      int d_len_tailer;
       unsigned char d_padding_type;
       pmt::pmt_t d_in_port;
       pmt::pmt_t d_out_port;
