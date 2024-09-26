@@ -62,7 +62,7 @@ namespace gr {
 	d_out_port_2 = pmt::mp("out 2");	      
       	message_port_register_out(d_out_port_2);
 
-	d_out_port_2 = pmt::mp("out 3");	      
+	d_out_port_3 = pmt::mp("out 3");	      
       	message_port_register_out(d_out_port_3);
 
 	set_msg_handler(d_in_port, boost::bind(&tm_header_parser_impl::pmt_in_callback, this ,_1) );
