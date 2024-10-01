@@ -18,7 +18,7 @@
     <name>Padding Type</name>
     <key>padding_type</key>
     <value>0</value>
-	<type>byte</type>
+	<type>int</type>
 	<option>
 		<name>0x00</name>
 		<key>0</key>
