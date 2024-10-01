@@ -17,8 +17,8 @@ parameters:
   label: Padding_type
   dtype: enum
   default: '2'
-  options: ['0', '1', '2', '3']
-  option_labels: ['0x00', '0x55', '0xAA', 'Random']
+  options: ['0', '1', '2', '3', '4']
+  option_labels: ['0x00', '0x55', '0xAA', 'Random', '0xC0']
 inputs:
 - domain: message
   id: in
