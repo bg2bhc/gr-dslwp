@@ -35,6 +35,10 @@
 		<name>Random</name>
 		<key>3</key>
 	</option>
+	<option>
+		<name>0xC0</name>
+		<key>4</key>
+	</option>
   </param>
   <sink>
     <name>in</name>

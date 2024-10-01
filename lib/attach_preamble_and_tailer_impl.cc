@@ -117,6 +117,7 @@ namespace gr {
 		    else if(d_padding_type==1) bytes_out[i] = 0x55;
 		    else if(d_padding_type==2) bytes_out[i] = 0xAA;
 		    else if(d_padding_type==3) bytes_out[i] = sequence[i%255];
+		    else if(d_padding_type==4) bytes_out[i] = 0xC0;
 	    }
 
 	    for(i=0; i<msg_len; i++)
@@ -130,6 +131,7 @@ namespace gr {
 		    else if(d_padding_type==1) bytes_out[i+d_len_preamble+msg_len] = 0x55;
 		    else if(d_padding_type==2) bytes_out[i+d_len_preamble+msg_len] = 0xAA;
 		    else if(d_padding_type==3) bytes_out[i+d_len_preamble+msg_len] = sequence[i%255];
+		    else if(d_padding_type==4) bytes_out[i+d_len_preamble+msg_len] = 0xC0;
 	    }
     }
     else if((d_len_preamble >= 0) && (d_len_tailer < 0))
@@ -140,6 +142,7 @@ namespace gr {
 		    else if(d_padding_type==1) bytes_out[i] = 0x55;
 		    else if(d_padding_type==2) bytes_out[i] = 0xAA;
 		    else if(d_padding_type==3) bytes_out[i] = sequence[i%255];
+		    else if(d_padding_type==4) bytes_out[i] = 0xC0;
 	    }
 
 	    for(i=0; i<msg_len+d_len_tailer; i++)
@@ -160,6 +163,7 @@ namespace gr {
 		    else if(d_padding_type==1) bytes_out[i+d_len_preamble+msg_len] = 0x55;
 		    else if(d_padding_type==2) bytes_out[i+d_len_preamble+msg_len] = 0xAA;
 		    else if(d_padding_type==3) bytes_out[i+d_len_preamble+msg_len] = sequence[i%255];
+		    else if(d_padding_type==4) bytes_out[i+d_len_preamble+msg_len] = 0xC0;
 	    }
     }
     else
