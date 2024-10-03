@@ -28,7 +28,8 @@
 
 extern "C"
 {
-	#include "ccsds/ccsds.h"
+    #include "ccsds/ccsds.h"
+    #include "stdio.h"s
 }
 
 namespace gr {
