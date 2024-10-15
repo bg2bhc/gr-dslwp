@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_06f077f2b4b004a0b68c90c961bda4ef" kind="dir">
+    <compoundname>ccsds</compoundname>
+    <innerfile refid="ccsds_8h">ccsds.h</innerfile>
+    <innerfile refid="fifobuf_8h">fifobuf.h</innerfile>
+    <innerfile refid="libconvcodes_8h">libconvcodes.h</innerfile>
+    <innerfile refid="libturbocodes_8h">libturbocodes.h</innerfile>
+    <innerfile refid="randomizer_8h">randomizer.h</innerfile>
+    <innerfile refid="rs_8h">rs.h</innerfile>
+    <innerfile refid="tab_8h">tab.h</innerfile>
+    <innerfile refid="viterbi27_8h">viterbi27.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/lilac/gr-dslwp/lib/ccsds/"/>
+  </compounddef>
+</doxygen>

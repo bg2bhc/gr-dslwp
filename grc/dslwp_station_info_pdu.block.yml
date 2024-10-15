@@ -1,0 +1,41 @@
+id: dslwp_station_info_pdu
+label: Station Info PDU
+category: '[DSLWP]'
+templates:
+  imports: import dslwp
+  make: dslwp.station_info_pdu(${nickname}, ${lat}, ${lon}, ${alt}, ${satellite},
+    ${format})
+parameters:
+- id: nickname
+  label: Nick Name
+  dtype: string
+  default: MYCALL
+- id: lat
+  label: Latitude
+  dtype: float
+  default: 0.0
+- id: lon
+  label: Longitude
+  dtype: float
+  default: 0.0
+- id: alt
+  label: Altitude
+  dtype: float
+  default: 0.0
+- id: satellite
+  label: Satellite
+  dtype: string
+  default: ASRTU-1
+- id: format
+  label: Format
+  dtype: enum
+  default: '1'
+  options: ['0', '1']
+  option_labels: ['Json', 'Dictionary']
+inputs:
+- domain: message
+  id: in
+outputs:
+- domain: message
+  id: out
+file_format: 1

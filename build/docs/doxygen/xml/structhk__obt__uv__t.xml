@@ -1,0 +1,730 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structhk__obt__uv__t" kind="struct" language="C++" prot="public">
+    <compoundname>hk_obt_uv_t</compoundname>
+    <includes refid="sdar__hk_8h" local="no">sdar_hk.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structhk__obt__uv__t_1ac1392cfe2ddfa7d5812a26b6627b39ea" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t hk_obt_uv_t::rsvd0</definition>
+        <argsstring></argsstring>
+        <name>rsvd0</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="9" column="10" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1a138fcffaa91e9c83bd05a9887261707b" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t hk_obt_uv_t::config</definition>
+        <argsstring></argsstring>
+        <name>config</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="10" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1a29d73f2b8b9cefcb10edb0afe09c5523" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t hk_obt_uv_t::flag_direct_ins</definition>
+        <argsstring></argsstring>
+        <name>flag_direct_ins</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="11" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1ae3a9d43b257f572e3bfb06192a8aacc6" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t hk_obt_uv_t::payload_mode</definition>
+        <argsstring></argsstring>
+        <name>payload_mode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="12" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1ac5236a9d6412b3c1adc1c61ea8994b2c" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t hk_obt_uv_t::tx_mode</definition>
+        <argsstring></argsstring>
+        <name>tx_mode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="13" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1a4ad1585ac76a928c8b55469917108f1d" prot="public" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t hk_obt_uv_t::gain_tx</definition>
+        <argsstring></argsstring>
+        <name>gain_tx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="14" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1a2fd9226ee34200351adcaebe90f631e4" prot="public" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t hk_obt_uv_t::i_3v3</definition>
+        <argsstring></argsstring>
+        <name>i_3v3</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="16" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1adaff0a90938630c5f290350db6a39fc4" prot="public" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t hk_obt_uv_t::u_3v3</definition>
+        <argsstring></argsstring>
+        <name>u_3v3</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="17" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1aea58c8c02ae300bb134003c7dbfa9d93" prot="public" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t hk_obt_uv_t::i_vbat_tx</definition>
+        <argsstring></argsstring>
+        <name>i_vbat_tx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="18" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1acf0a6bf1d32c7fe1f72226a0e2ce5b00" prot="public" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t hk_obt_uv_t::u_vbat_tx</definition>
+        <argsstring></argsstring>
+        <name>u_vbat_tx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="19" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1aa9abd489ea906f07fc86b16c345a8338" prot="public" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t hk_obt_uv_t::i_vbat_rx</definition>
+        <argsstring></argsstring>
+        <name>i_vbat_rx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="21" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1a18dc02fada629ef272b9409f39faffd8" prot="public" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t hk_obt_uv_t::u_vbat_rx</definition>
+        <argsstring></argsstring>
+        <name>u_vbat_rx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="22" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1a9ac5879073ee1c96fc4e5c4bc9c50a97" prot="public" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t hk_obt_uv_t::t_stm32</definition>
+        <argsstring></argsstring>
+        <name>t_stm32</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="23" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1ac15acac2c218f28fe1c94f2f13fa7311" prot="public" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t hk_obt_uv_t::t_pa</definition>
+        <argsstring></argsstring>
+        <name>t_pa</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="24" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1ac9ad3062bcf9fbae6b9c22a45f82b818" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t hk_obt_uv_t::n_tx_rf</definition>
+        <argsstring></argsstring>
+        <name>n_tx_rf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="26" column="10" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1a74ce1926d67e6370262c8b579362c05e" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t hk_obt_uv_t::n_rx_rf</definition>
+        <argsstring></argsstring>
+        <name>n_rx_rf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="27" column="10" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1a0946fc55decef6ab3d9c489595a8780b" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t hk_obt_uv_t::rsvd1</definition>
+        <argsstring></argsstring>
+        <name>rsvd1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="28" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1a9598d50f926dca53fb1138f51aa09f67" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t hk_obt_uv_t::cmd_rf_last_rx</definition>
+        <argsstring></argsstring>
+        <name>cmd_rf_last_rx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="29" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1a1c7238e8df66bb3093b31b7ba7929b68" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t hk_obt_uv_t::n_rx_err_rf</definition>
+        <argsstring></argsstring>
+        <name>n_rx_err_rf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="30" column="10" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1a6673db178dbd1ee3f51ed3ceda866e57" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t hk_obt_uv_t::n_tx_can</definition>
+        <argsstring></argsstring>
+        <name>n_tx_can</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="32" column="10" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1af71090cc842bc27605b75ee515e8aa7c" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t hk_obt_uv_t::n_rx_can</definition>
+        <argsstring></argsstring>
+        <name>n_rx_can</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="33" column="10" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1aa8985ca828fbb2c3c76a3828d730e7ba" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t hk_obt_uv_t::n_tx_err_can</definition>
+        <argsstring></argsstring>
+        <name>n_tx_err_can</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="34" column="10" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1a1369ae800facbd110419ff6e678720a8" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t hk_obt_uv_t::n_rx_err_can</definition>
+        <argsstring></argsstring>
+        <name>n_rx_err_can</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="35" column="10" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1a078b0dfb9ebece34a8dd9f03612149d6" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t hk_obt_uv_t::n_tc</definition>
+        <argsstring></argsstring>
+        <name>n_tc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="37" column="10" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1a91d1d1b6edf4c5d9a5f39d78ef15beec" prot="public" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t hk_obt_uv_t::dc_fm_tc</definition>
+        <argsstring></argsstring>
+        <name>dc_fm_tc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="38" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1af28055a71181b1287c3cb142355ed440" prot="public" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t hk_obt_uv_t::dc_fm_ham</definition>
+        <argsstring></argsstring>
+        <name>dc_fm_ham</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="39" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1ae6b07b37a096c7122bc57ab58491013c" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t hk_obt_uv_t::rssi_fm_tc</definition>
+        <argsstring></argsstring>
+        <name>rssi_fm_tc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="41" column="10" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1a1768272b1a51f8c16147f4404a5fc811" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t hk_obt_uv_t::rssi_fm_ham</definition>
+        <argsstring></argsstring>
+        <name>rssi_fm_ham</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="42" column="10" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1a52eccd52c2d399235c2fe39797a63b91" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t hk_obt_uv_t::reset_flag</definition>
+        <argsstring></argsstring>
+        <name>reset_flag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="44" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1ad27c7451a20654c4fa15c83d0cdf2daa" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t hk_obt_uv_t::sys_flag</definition>
+        <argsstring></argsstring>
+        <name>sys_flag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="45" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1ad3eec807ce05b8a4634923c96e071e5e" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t hk_obt_uv_t::dma_overflow</definition>
+        <argsstring></argsstring>
+        <name>dma_overflow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="46" column="10" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1ac7a23c22b95f72ae04ea43c5dd328e96" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t hk_obt_uv_t::runtime</definition>
+        <argsstring></argsstring>
+        <name>runtime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="47" column="10" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1aeec8a05c9d5eb4a7f4d1bd7331baf630" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t hk_obt_uv_t::reset_count</definition>
+        <argsstring></argsstring>
+        <name>reset_count</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="49" column="10" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1acfc65afa24376faa7c4875cc25fdfcd2" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t hk_obt_uv_t::ctcss_count</definition>
+        <argsstring></argsstring>
+        <name>ctcss_count</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="50" column="10" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1a409392a3ebaec5cbcfcdbe78debf696e" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t hk_obt_uv_t::rsvd5</definition>
+        <argsstring></argsstring>
+        <name>rsvd5</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="52" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1a6dfd90904b0068f6ddb2fb48435f12b9" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t hk_obt_uv_t::rsvd6</definition>
+        <argsstring></argsstring>
+        <name>rsvd6</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="53" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1a48429ae13cc557bcf909da2acf6d1992" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t hk_obt_uv_t::antdet1</definition>
+        <argsstring></argsstring>
+        <name>antdet1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="54" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1a6d9a0d8df2fa05c5f8455f3698e2c43b" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t hk_obt_uv_t::antdet2</definition>
+        <argsstring></argsstring>
+        <name>antdet2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="55" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1ab46a42d8b60259938355e4383a224212" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t hk_obt_uv_t::avr_rsvd2</definition>
+        <argsstring></argsstring>
+        <name>avr_rsvd2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="57" column="10" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1ad9f5c3301eaa8664882c3f1794363ba0" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t hk_obt_uv_t::avr_adf7021_ld</definition>
+        <argsstring></argsstring>
+        <name>avr_adf7021_ld</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="58" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1af87d3b2f57139eef450e67c92b81f93f" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t hk_obt_uv_t::avr_err_flag</definition>
+        <argsstring></argsstring>
+        <name>avr_err_flag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="59" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1a766da69a06e215e98457f3c80f1ead81" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t hk_obt_uv_t::avr_n_tx_i2c</definition>
+        <argsstring></argsstring>
+        <name>avr_n_tx_i2c</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="60" column="10" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1a9aed8a68b85e2fd239181488fb10cd8a" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t hk_obt_uv_t::avr_n_rx_i2c</definition>
+        <argsstring></argsstring>
+        <name>avr_n_rx_i2c</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="61" column="10" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1a4f025236b3b2f433aa6e767f21bef55a" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t hk_obt_uv_t::avr_n_tx_232</definition>
+        <argsstring></argsstring>
+        <name>avr_n_tx_232</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="63" column="10" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1ae05e6ef3763d6187070cb96e3a4c6a76" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t hk_obt_uv_t::avr_n_rx_232</definition>
+        <argsstring></argsstring>
+        <name>avr_n_rx_232</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="64" column="10" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1a694927eaa8c7f123389218bb1716afff" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t hk_obt_uv_t::avr_runtime</definition>
+        <argsstring></argsstring>
+        <name>avr_runtime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="65" column="10" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1a05d85709de44948d41306f5e7c9fdc6b" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t hk_obt_uv_t::avr_rssi_analog</definition>
+        <argsstring></argsstring>
+        <name>avr_rssi_analog</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="67" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1ad2bee8751b72480624cf86116f769579" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t hk_obt_uv_t::avr_n_rssi_const</definition>
+        <argsstring></argsstring>
+        <name>avr_n_rssi_const</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="68" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1a0ae2f0500c33b1ff59dbd0a5e974a04b" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t hk_obt_uv_t::avr_unlock_count</definition>
+        <argsstring></argsstring>
+        <name>avr_unlock_count</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="69" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1a04e894b01059df747cfdcf8a3bb78607" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t hk_obt_uv_t::avr_reset_flag</definition>
+        <argsstring></argsstring>
+        <name>avr_reset_flag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="70" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhk__obt__uv__t_1aa9534cadeba534ff411d9053db8e14cd" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t hk_obt_uv_t::avr_reset_count</definition>
+        <argsstring></argsstring>
+        <name>avr_reset_count</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="72" column="10" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="6" column="1" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="7" bodyend="73"/>
+    <listofallmembers>
+      <member refid="structhk__obt__uv__t_1a48429ae13cc557bcf909da2acf6d1992" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>antdet1</name></member>
+      <member refid="structhk__obt__uv__t_1a6d9a0d8df2fa05c5f8455f3698e2c43b" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>antdet2</name></member>
+      <member refid="structhk__obt__uv__t_1ad9f5c3301eaa8664882c3f1794363ba0" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>avr_adf7021_ld</name></member>
+      <member refid="structhk__obt__uv__t_1af87d3b2f57139eef450e67c92b81f93f" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>avr_err_flag</name></member>
+      <member refid="structhk__obt__uv__t_1ad2bee8751b72480624cf86116f769579" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>avr_n_rssi_const</name></member>
+      <member refid="structhk__obt__uv__t_1ae05e6ef3763d6187070cb96e3a4c6a76" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>avr_n_rx_232</name></member>
+      <member refid="structhk__obt__uv__t_1a9aed8a68b85e2fd239181488fb10cd8a" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>avr_n_rx_i2c</name></member>
+      <member refid="structhk__obt__uv__t_1a4f025236b3b2f433aa6e767f21bef55a" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>avr_n_tx_232</name></member>
+      <member refid="structhk__obt__uv__t_1a766da69a06e215e98457f3c80f1ead81" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>avr_n_tx_i2c</name></member>
+      <member refid="structhk__obt__uv__t_1aa9534cadeba534ff411d9053db8e14cd" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>avr_reset_count</name></member>
+      <member refid="structhk__obt__uv__t_1a04e894b01059df747cfdcf8a3bb78607" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>avr_reset_flag</name></member>
+      <member refid="structhk__obt__uv__t_1a05d85709de44948d41306f5e7c9fdc6b" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>avr_rssi_analog</name></member>
+      <member refid="structhk__obt__uv__t_1ab46a42d8b60259938355e4383a224212" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>avr_rsvd2</name></member>
+      <member refid="structhk__obt__uv__t_1a694927eaa8c7f123389218bb1716afff" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>avr_runtime</name></member>
+      <member refid="structhk__obt__uv__t_1a0ae2f0500c33b1ff59dbd0a5e974a04b" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>avr_unlock_count</name></member>
+      <member refid="structhk__obt__uv__t_1a9598d50f926dca53fb1138f51aa09f67" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>cmd_rf_last_rx</name></member>
+      <member refid="structhk__obt__uv__t_1a138fcffaa91e9c83bd05a9887261707b" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>config</name></member>
+      <member refid="structhk__obt__uv__t_1acfc65afa24376faa7c4875cc25fdfcd2" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>ctcss_count</name></member>
+      <member refid="structhk__obt__uv__t_1af28055a71181b1287c3cb142355ed440" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>dc_fm_ham</name></member>
+      <member refid="structhk__obt__uv__t_1a91d1d1b6edf4c5d9a5f39d78ef15beec" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>dc_fm_tc</name></member>
+      <member refid="structhk__obt__uv__t_1ad3eec807ce05b8a4634923c96e071e5e" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>dma_overflow</name></member>
+      <member refid="structhk__obt__uv__t_1a29d73f2b8b9cefcb10edb0afe09c5523" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>flag_direct_ins</name></member>
+      <member refid="structhk__obt__uv__t_1a4ad1585ac76a928c8b55469917108f1d" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>gain_tx</name></member>
+      <member refid="structhk__obt__uv__t_1a2fd9226ee34200351adcaebe90f631e4" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>i_3v3</name></member>
+      <member refid="structhk__obt__uv__t_1aa9abd489ea906f07fc86b16c345a8338" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>i_vbat_rx</name></member>
+      <member refid="structhk__obt__uv__t_1aea58c8c02ae300bb134003c7dbfa9d93" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>i_vbat_tx</name></member>
+      <member refid="structhk__obt__uv__t_1af71090cc842bc27605b75ee515e8aa7c" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>n_rx_can</name></member>
+      <member refid="structhk__obt__uv__t_1a1369ae800facbd110419ff6e678720a8" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>n_rx_err_can</name></member>
+      <member refid="structhk__obt__uv__t_1a1c7238e8df66bb3093b31b7ba7929b68" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>n_rx_err_rf</name></member>
+      <member refid="structhk__obt__uv__t_1a74ce1926d67e6370262c8b579362c05e" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>n_rx_rf</name></member>
+      <member refid="structhk__obt__uv__t_1a078b0dfb9ebece34a8dd9f03612149d6" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>n_tc</name></member>
+      <member refid="structhk__obt__uv__t_1a6673db178dbd1ee3f51ed3ceda866e57" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>n_tx_can</name></member>
+      <member refid="structhk__obt__uv__t_1aa8985ca828fbb2c3c76a3828d730e7ba" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>n_tx_err_can</name></member>
+      <member refid="structhk__obt__uv__t_1ac9ad3062bcf9fbae6b9c22a45f82b818" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>n_tx_rf</name></member>
+      <member refid="structhk__obt__uv__t_1ae3a9d43b257f572e3bfb06192a8aacc6" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>payload_mode</name></member>
+      <member refid="structhk__obt__uv__t_1aeec8a05c9d5eb4a7f4d1bd7331baf630" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>reset_count</name></member>
+      <member refid="structhk__obt__uv__t_1a52eccd52c2d399235c2fe39797a63b91" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>reset_flag</name></member>
+      <member refid="structhk__obt__uv__t_1a1768272b1a51f8c16147f4404a5fc811" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>rssi_fm_ham</name></member>
+      <member refid="structhk__obt__uv__t_1ae6b07b37a096c7122bc57ab58491013c" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>rssi_fm_tc</name></member>
+      <member refid="structhk__obt__uv__t_1ac1392cfe2ddfa7d5812a26b6627b39ea" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>rsvd0</name></member>
+      <member refid="structhk__obt__uv__t_1a0946fc55decef6ab3d9c489595a8780b" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>rsvd1</name></member>
+      <member refid="structhk__obt__uv__t_1a409392a3ebaec5cbcfcdbe78debf696e" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>rsvd5</name></member>
+      <member refid="structhk__obt__uv__t_1a6dfd90904b0068f6ddb2fb48435f12b9" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>rsvd6</name></member>
+      <member refid="structhk__obt__uv__t_1ac7a23c22b95f72ae04ea43c5dd328e96" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>runtime</name></member>
+      <member refid="structhk__obt__uv__t_1ad27c7451a20654c4fa15c83d0cdf2daa" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>sys_flag</name></member>
+      <member refid="structhk__obt__uv__t_1ac15acac2c218f28fe1c94f2f13fa7311" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>t_pa</name></member>
+      <member refid="structhk__obt__uv__t_1a9ac5879073ee1c96fc4e5c4bc9c50a97" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>t_stm32</name></member>
+      <member refid="structhk__obt__uv__t_1ac5236a9d6412b3c1adc1c61ea8994b2c" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>tx_mode</name></member>
+      <member refid="structhk__obt__uv__t_1adaff0a90938630c5f290350db6a39fc4" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>u_3v3</name></member>
+      <member refid="structhk__obt__uv__t_1a18dc02fada629ef272b9409f39faffd8" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>u_vbat_rx</name></member>
+      <member refid="structhk__obt__uv__t_1acf0a6bf1d32c7fe1f72226a0e2ce5b00" prot="public" virt="non-virtual"><scope>hk_obt_uv_t</scope><name>u_vbat_tx</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

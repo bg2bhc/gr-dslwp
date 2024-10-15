@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/_dslwp_swig_doc_tag.dir/_dslwp_swig_doc_tag.cpp.o -o _dslwp_swig_doc_tag 

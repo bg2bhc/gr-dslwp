@@ -1,0 +1,387 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl" kind="class" language="C++" prot="public">
+    <compoundname>gr::dslwp::ccsds_turbo_encode_impl</compoundname>
+    <basecompoundref refid="classgr_1_1dslwp_1_1ccsds__turbo__encode" prot="public" virt="non-virtual">gr::dslwp::ccsds_turbo_encode</basecompoundref>
+    <includes refid="ccsds__turbo__encode__impl_8h" local="no">ccsds_turbo_encode_impl.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1af4aa5872eab33b8ccc8df338f5982758" prot="private" static="no" mutable="no">
+        <type>pmt::pmt_t</type>
+        <definition>pmt::pmt_t gr::dslwp::ccsds_turbo_encode_impl::d_in_port</definition>
+        <argsstring></argsstring>
+        <name>d_in_port</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" line="39" column="18" bodyfile="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1a94aee45ff24dd56268f39b00baf5a8a2" prot="private" static="no" mutable="no">
+        <type>pmt::pmt_t</type>
+        <definition>pmt::pmt_t gr::dslwp::ccsds_turbo_encode_impl::d_out_port</definition>
+        <argsstring></argsstring>
+        <name>d_out_port</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" line="40" column="18" bodyfile="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1aeb82090ef55e7f2cc128aa944f34883e" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dslwp::ccsds_turbo_encode_impl::d_base</definition>
+        <argsstring></argsstring>
+        <name>d_base</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" line="41" column="11" bodyfile="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1a35dd9ef482b5d76efd6fb37b239e29f5" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dslwp::ccsds_turbo_encode_impl::d_octets</definition>
+        <argsstring></argsstring>
+        <name>d_octets</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" line="42" column="11" bodyfile="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1abaf703fe1e352cddb965853e60b51bfb" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dslwp::ccsds_turbo_encode_impl::d_code_type</definition>
+        <argsstring></argsstring>
+        <name>d_code_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" line="43" column="11" bodyfile="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1a91abeb76fb30f8eb400bfac221edf2c7" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool gr::dslwp::ccsds_turbo_encode_impl::d_pass_other_length</definition>
+        <argsstring></argsstring>
+        <name>d_pass_other_length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" line="44" column="12" bodyfile="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1acc92fc9facfdd484c0fed709352e177b" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float gr::dslwp::ccsds_turbo_encode_impl::d_rate</definition>
+        <argsstring></argsstring>
+        <name>d_rate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" line="46" column="13" bodyfile="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1aa94f5d9b5301155ad7c29335d5984074" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dslwp::ccsds_turbo_encode_impl::d_info_length</definition>
+        <argsstring></argsstring>
+        <name>d_info_length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" line="47" column="11" bodyfile="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1aa50507f9e2e902f8e41611901f50ffb2" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dslwp::ccsds_turbo_encode_impl::d_encoded_length</definition>
+        <argsstring></argsstring>
+        <name>d_encoded_length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" line="48" column="11" bodyfile="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1a43b74dbeeb0c23ba7b4347b184e63741" prot="private" static="no" mutable="no">
+        <type>int *</type>
+        <definition>int* gr::dslwp::ccsds_turbo_encode_impl::d_pi</definition>
+        <argsstring></argsstring>
+        <name>d_pi</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" line="50" column="11" bodyfile="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1a4ef7f184b76537a6df5f2f66645cf85b" prot="private" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* gr::dslwp::ccsds_turbo_encode_impl::d_forward_upper[MAX_COMPONENTS]</definition>
+        <argsstring>[MAX_COMPONENTS]</argsstring>
+        <name>d_forward_upper</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" line="51" column="18" bodyfile="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1a412163579990252e689704e71d17f2a8" prot="private" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* gr::dslwp::ccsds_turbo_encode_impl::d_forward_lower[MAX_COMPONENTS]</definition>
+        <argsstring>[MAX_COMPONENTS]</argsstring>
+        <name>d_forward_lower</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" line="52" column="18" bodyfile="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1a68e196dc73b25ea0c2d223788d30eff0" prot="private" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* gr::dslwp::ccsds_turbo_encode_impl::d_backward</definition>
+        <argsstring></argsstring>
+        <name>d_backward</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" line="53" column="18" bodyfile="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1a5a42e35dfe08f9270b5fd3381c4e2c3c" prot="private" static="no" mutable="no">
+        <type><ref refid="libconvcodes_8h_1a96b322677983517c605a9f15e007c43f" kindref="member">t_convcode</ref> *</type>
+        <definition>t_convcode* gr::dslwp::ccsds_turbo_encode_impl::d_code1</definition>
+        <argsstring></argsstring>
+        <name>d_code1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" line="54" column="18" bodyfile="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1a483ac19a738425d1a50a409214d06610" prot="private" static="no" mutable="no">
+        <type><ref refid="libconvcodes_8h_1a96b322677983517c605a9f15e007c43f" kindref="member">t_convcode</ref> *</type>
+        <definition>t_convcode* gr::dslwp::ccsds_turbo_encode_impl::d_code2</definition>
+        <argsstring></argsstring>
+        <name>d_code2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" line="55" column="18" bodyfile="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1a87b17823ec9b0e419298b42bd34d1e28" prot="private" static="no" mutable="no">
+        <type><ref refid="libturbocodes_8h_1a4c539eb5e9811882ff3ccbb230319a05" kindref="member">t_turbocode</ref> *</type>
+        <definition>t_turbocode* gr::dslwp::ccsds_turbo_encode_impl::d_turbo</definition>
+        <argsstring></argsstring>
+        <name>d_turbo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" line="56" column="19" bodyfile="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1a3331e50c71948ae5308fb97f96a602ab" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dslwp::ccsds_turbo_encode_impl::pmt_in_callback</definition>
+        <argsstring>(pmt::pmt_t msg)</argsstring>
+        <name>pmt_in_callback</name>
+        <param>
+          <type>pmt::pmt_t</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" line="59" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1a2339dd3fd9b4f3043274a0255c5f18b9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::dslwp::ccsds_turbo_encode_impl::puncturing</definition>
+        <argsstring>(int k)</argsstring>
+        <name>puncturing</name>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" line="60" column="11"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1a6df6726e5d6bdebcad4f8483ed8ce676" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::dslwp::ccsds_turbo_encode_impl::ccsds_turbo_encode_impl</definition>
+        <argsstring>(int base, int octets, int code_type, bool pass_other_length)</argsstring>
+        <name>ccsds_turbo_encode_impl</name>
+        <param>
+          <type>int</type>
+          <declname>base</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>octets</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>code_type</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>pass_other_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" line="63" column="7"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1a17de26729525821be57afe87a23bf1a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::dslwp::ccsds_turbo_encode_impl::~ccsds_turbo_encode_impl</definition>
+        <argsstring>()</argsstring>
+        <name>~ccsds_turbo_encode_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" line="64" column="7"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1a75108780ef61bc2c8998de51c6c09351" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::dslwp::ccsds_turbo_encode_impl::work</definition>
+        <argsstring>(int noutput_items, gr_vector_const_void_star &amp;input_items, gr_vector_void_star &amp;output_items)</argsstring>
+        <name>work</name>
+        <param>
+          <type>int</type>
+          <declname>noutput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_const_void_star &amp;</type>
+          <declname>input_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_void_star &amp;</type>
+          <declname>output_items</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" line="67" column="11"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>gr::dslwp::ccsds_turbo_encode</label>
+        <link refid="classgr_1_1dslwp_1_1ccsds__turbo__encode"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>gr::sync_block</label>
+      </node>
+      <node id="1">
+        <label>gr::dslwp::ccsds_turbo_encode_impl</label>
+        <link refid="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>gr::dslwp::ccsds_turbo_encode</label>
+        <link refid="classgr_1_1dslwp_1_1ccsds__turbo__encode"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>gr::sync_block</label>
+      </node>
+      <node id="1">
+        <label>gr::dslwp::ccsds_turbo_encode_impl</label>
+        <link refid="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" line="36" column="5" bodyfile="/home/lilac/gr-dslwp/lib/ccsds_turbo_encode_impl.h" bodystart="37" bodyend="70"/>
+    <listofallmembers>
+      <member refid="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1a6df6726e5d6bdebcad4f8483ed8ce676" prot="public" virt="non-virtual"><scope>gr::dslwp::ccsds_turbo_encode_impl</scope><name>ccsds_turbo_encode_impl</name></member>
+      <member refid="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1a68e196dc73b25ea0c2d223788d30eff0" prot="private" virt="non-virtual"><scope>gr::dslwp::ccsds_turbo_encode_impl</scope><name>d_backward</name></member>
+      <member refid="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1aeb82090ef55e7f2cc128aa944f34883e" prot="private" virt="non-virtual"><scope>gr::dslwp::ccsds_turbo_encode_impl</scope><name>d_base</name></member>
+      <member refid="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1a5a42e35dfe08f9270b5fd3381c4e2c3c" prot="private" virt="non-virtual"><scope>gr::dslwp::ccsds_turbo_encode_impl</scope><name>d_code1</name></member>
+      <member refid="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1a483ac19a738425d1a50a409214d06610" prot="private" virt="non-virtual"><scope>gr::dslwp::ccsds_turbo_encode_impl</scope><name>d_code2</name></member>
+      <member refid="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1abaf703fe1e352cddb965853e60b51bfb" prot="private" virt="non-virtual"><scope>gr::dslwp::ccsds_turbo_encode_impl</scope><name>d_code_type</name></member>
+      <member refid="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1aa50507f9e2e902f8e41611901f50ffb2" prot="private" virt="non-virtual"><scope>gr::dslwp::ccsds_turbo_encode_impl</scope><name>d_encoded_length</name></member>
+      <member refid="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1a412163579990252e689704e71d17f2a8" prot="private" virt="non-virtual"><scope>gr::dslwp::ccsds_turbo_encode_impl</scope><name>d_forward_lower</name></member>
+      <member refid="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1a4ef7f184b76537a6df5f2f66645cf85b" prot="private" virt="non-virtual"><scope>gr::dslwp::ccsds_turbo_encode_impl</scope><name>d_forward_upper</name></member>
+      <member refid="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1af4aa5872eab33b8ccc8df338f5982758" prot="private" virt="non-virtual"><scope>gr::dslwp::ccsds_turbo_encode_impl</scope><name>d_in_port</name></member>
+      <member refid="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1aa94f5d9b5301155ad7c29335d5984074" prot="private" virt="non-virtual"><scope>gr::dslwp::ccsds_turbo_encode_impl</scope><name>d_info_length</name></member>
+      <member refid="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1a35dd9ef482b5d76efd6fb37b239e29f5" prot="private" virt="non-virtual"><scope>gr::dslwp::ccsds_turbo_encode_impl</scope><name>d_octets</name></member>
+      <member refid="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1a94aee45ff24dd56268f39b00baf5a8a2" prot="private" virt="non-virtual"><scope>gr::dslwp::ccsds_turbo_encode_impl</scope><name>d_out_port</name></member>
+      <member refid="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1a91abeb76fb30f8eb400bfac221edf2c7" prot="private" virt="non-virtual"><scope>gr::dslwp::ccsds_turbo_encode_impl</scope><name>d_pass_other_length</name></member>
+      <member refid="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1a43b74dbeeb0c23ba7b4347b184e63741" prot="private" virt="non-virtual"><scope>gr::dslwp::ccsds_turbo_encode_impl</scope><name>d_pi</name></member>
+      <member refid="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1acc92fc9facfdd484c0fed709352e177b" prot="private" virt="non-virtual"><scope>gr::dslwp::ccsds_turbo_encode_impl</scope><name>d_rate</name></member>
+      <member refid="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1a87b17823ec9b0e419298b42bd34d1e28" prot="private" virt="non-virtual"><scope>gr::dslwp::ccsds_turbo_encode_impl</scope><name>d_turbo</name></member>
+      <member refid="classgr_1_1dslwp_1_1ccsds__turbo__encode_1a6b4b374bf14e316a383390c753e6cc79" prot="public" virt="non-virtual"><scope>gr::dslwp::ccsds_turbo_encode_impl</scope><name>make</name></member>
+      <member refid="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1a3331e50c71948ae5308fb97f96a602ab" prot="private" virt="non-virtual"><scope>gr::dslwp::ccsds_turbo_encode_impl</scope><name>pmt_in_callback</name></member>
+      <member refid="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1a2339dd3fd9b4f3043274a0255c5f18b9" prot="private" virt="non-virtual"><scope>gr::dslwp::ccsds_turbo_encode_impl</scope><name>puncturing</name></member>
+      <member refid="classgr_1_1dslwp_1_1ccsds__turbo__encode_1aefcab435670a921cfd1a238e2462b2b0" prot="public" virt="non-virtual"><scope>gr::dslwp::ccsds_turbo_encode_impl</scope><name>sptr</name></member>
+      <member refid="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1a75108780ef61bc2c8998de51c6c09351" prot="public" virt="non-virtual"><scope>gr::dslwp::ccsds_turbo_encode_impl</scope><name>work</name></member>
+      <member refid="classgr_1_1dslwp_1_1ccsds__turbo__encode__impl_1a17de26729525821be57afe87a23bf1a5" prot="public" virt="non-virtual"><scope>gr::dslwp::ccsds_turbo_encode_impl</scope><name>~ccsds_turbo_encode_impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

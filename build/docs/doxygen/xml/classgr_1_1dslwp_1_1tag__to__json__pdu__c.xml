@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classgr_1_1dslwp_1_1tag__to__json__pdu__c" kind="class" language="C++" prot="public">
+    <compoundname>gr::dslwp::tag_to_json_pdu_c</compoundname>
+    <basecompoundref prot="public" virt="virtual">gr::sync_block</basecompoundref>
+    <derivedcompoundref refid="classgr_1_1dslwp_1_1tag__to__json__pdu__c__impl" prot="public" virt="non-virtual">gr::dslwp::tag_to_json_pdu_c_impl</derivedcompoundref>
+    <includes refid="tag__to__json__pdu__c_8h" local="no">tag_to_json_pdu_c.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classgr_1_1dslwp_1_1tag__to__json__pdu__c_1a9898a82e3b7dddd58e9c719cc517f0d9" prot="public" static="no">
+        <type>boost::shared_ptr&lt; <ref refid="classgr_1_1dslwp_1_1tag__to__json__pdu__c" kindref="compound">tag_to_json_pdu_c</ref> &gt;</type>
+        <definition>typedef boost::shared_ptr&lt;tag_to_json_pdu_c&gt; gr::dslwp::tag_to_json_pdu_c::sptr</definition>
+        <argsstring></argsstring>
+        <name>sptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/include/dslwp/tag_to_json_pdu_c.h" line="38" column="33" bodyfile="/home/lilac/gr-dslwp/include/dslwp/tag_to_json_pdu_c.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1tag__to__json__pdu__c_1a73e96a9c21c0448b10d500ab706da1ff" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classgr_1_1dslwp_1_1tag__to__json__pdu__c_1a9898a82e3b7dddd58e9c719cc517f0d9" kindref="member">sptr</ref></type>
+        <definition>static sptr gr::dslwp::tag_to_json_pdu_c::make</definition>
+        <argsstring>(const std::string &amp;key)</argsstring>
+        <name>make</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para>Return a shared_ptr to a new instance of <ref refid="classgr_1_1dslwp_1_1tag__to__json__pdu__c" kindref="compound">dslwp::tag_to_json_pdu_c</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>To avoid accidental use of raw pointers, <ref refid="classgr_1_1dslwp_1_1tag__to__json__pdu__c" kindref="compound">dslwp::tag_to_json_pdu_c</ref>&apos;s constructor is in a private implementation class. <ref refid="classgr_1_1dslwp_1_1tag__to__json__pdu__c_1a73e96a9c21c0448b10d500ab706da1ff" kindref="member">dslwp::tag_to_json_pdu_c::make</ref> is the public interface for creating new instances. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/include/dslwp/tag_to_json_pdu_c.h" line="48" column="19"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>&lt;+description of block+&gt; </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>gr::dslwp::tag_to_json_pdu_c</label>
+        <link refid="classgr_1_1dslwp_1_1tag__to__json__pdu__c"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>gr::sync_block</label>
+      </node>
+      <node id="3">
+        <label>gr::dslwp::tag_to_json_pdu_c_impl</label>
+        <link refid="classgr_1_1dslwp_1_1tag__to__json__pdu__c__impl"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>gr::dslwp::tag_to_json_pdu_c</label>
+        <link refid="classgr_1_1dslwp_1_1tag__to__json__pdu__c"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>gr::sync_block</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/lilac/gr-dslwp/include/dslwp/tag_to_json_pdu_c.h" line="35" column="5" bodyfile="/home/lilac/gr-dslwp/include/dslwp/tag_to_json_pdu_c.h" bodystart="36" bodyend="49"/>
+    <listofallmembers>
+      <member refid="classgr_1_1dslwp_1_1tag__to__json__pdu__c_1a73e96a9c21c0448b10d500ab706da1ff" prot="public" virt="non-virtual"><scope>gr::dslwp::tag_to_json_pdu_c</scope><name>make</name></member>
+      <member refid="classgr_1_1dslwp_1_1tag__to__json__pdu__c_1a9898a82e3b7dddd58e9c719cc517f0d9" prot="public" virt="non-virtual"><scope>gr::dslwp::tag_to_json_pdu_c</scope><name>sptr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

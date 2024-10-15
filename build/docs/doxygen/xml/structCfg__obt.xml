@@ -1,0 +1,338 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structCfg__obt" kind="struct" language="C++" prot="public">
+    <compoundname>Cfg_obt</compoundname>
+    <includes refid="sdar__hk_8h" local="no">sdar_hk.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structCfg__obt_1a4ce6f0448f5309330795a566771ecdcb" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t Cfg_obt::id[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="144" column="8" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structCfg__obt_1abe8087b284ffa79f6d0fd78e533a21b4" prot="public" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t Cfg_obt::gain_tx_HI</definition>
+        <argsstring></argsstring>
+        <name>gain_tx_HI</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="145" column="8" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structCfg__obt_1a3ae3e058b36b39d9484e678841c79226" prot="public" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t Cfg_obt::gain_tx_LO</definition>
+        <argsstring></argsstring>
+        <name>gain_tx_LO</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="146" column="8" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structCfg__obt_1ab8c05fbc4892a565e524f4417db97e9e" prot="public" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t Cfg_obt::bias_I</definition>
+        <argsstring></argsstring>
+        <name>bias_I</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="147" column="8" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structCfg__obt_1a88faa8c0288576654f897275b3b5da05" prot="public" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t Cfg_obt::bias_Q</definition>
+        <argsstring></argsstring>
+        <name>bias_Q</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="149" column="8" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structCfg__obt_1a6239a7472ceff1d2da0a983b3d5316d8" prot="public" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t Cfg_obt::threshold_u_vbat_rx_powerdown</definition>
+        <argsstring></argsstring>
+        <name>threshold_u_vbat_rx_powerdown</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="150" column="8" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structCfg__obt_1ad2d904d32ecb708474f376da83b5e6e5" prot="public" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t Cfg_obt::threshold_u_vbat_rx_repeateroff</definition>
+        <argsstring></argsstring>
+        <name>threshold_u_vbat_rx_repeateroff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="151" column="8" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structCfg__obt_1aaade8f1587af367264c709ed952d5827" prot="public" static="no" mutable="no">
+        <type>int8_t</type>
+        <definition>int8_t Cfg_obt::threshold_t_pa</definition>
+        <argsstring></argsstring>
+        <name>threshold_t_pa</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="152" column="7" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structCfg__obt_1a47d22f7948e75e4a346437f3967f3860" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t Cfg_obt::contious_en</definition>
+        <argsstring></argsstring>
+        <name>contious_en</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="153" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structCfg__obt_1a870be2f63e1ade50a6d8df7b5f845a2e" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t Cfg_obt::cam_ham_en</definition>
+        <argsstring></argsstring>
+        <name>cam_ham_en</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="155" column="8" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structCfg__obt_1aba493e3d9a6276e46f7844e7ac7f5edb" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t Cfg_obt::ctcss_en</definition>
+        <argsstring></argsstring>
+        <name>ctcss_en</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="156" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structCfg__obt_1a343d15c8309d84fec9743793164f3be3" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t Cfg_obt::ctcss_n_integration</definition>
+        <argsstring></argsstring>
+        <name>ctcss_n_integration</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="157" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structCfg__obt_1ad726e7b601e44c7094ff9e3d2e357e68" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t Cfg_obt::ctcss_n_tail</definition>
+        <argsstring></argsstring>
+        <name>ctcss_n_tail</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="158" column="8" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structCfg__obt_1af3959c6ce24e017eea8cf6351e0fdb86" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Cfg_obt::ctcss_coeff</definition>
+        <argsstring></argsstring>
+        <name>ctcss_coeff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="159" column="6" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structCfg__obt_1a6bc5ece29da6209c354e641862dd5c4a" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Cfg_obt::ctcss_threshold</definition>
+        <argsstring></argsstring>
+        <name>ctcss_threshold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="161" column="6" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structCfg__obt_1a404100b42fb11251713d3bb74ff8707e" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Cfg_obt::gain_fmdm_ham</definition>
+        <argsstring></argsstring>
+        <name>gain_fmdm_ham</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="162" column="6" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structCfg__obt_1a635475acf899de048668505a7ad6761d" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Cfg_obt::gain_fmdm_tc</definition>
+        <argsstring></argsstring>
+        <name>gain_fmdm_tc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="164" column="6" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structCfg__obt_1abaf8391403063beedf5fdc020ce6811e" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t Cfg_obt::interval_hk_OBC</definition>
+        <argsstring></argsstring>
+        <name>interval_hk_OBC</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="165" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structCfg__obt_1abb9d5a2577d827f136428b468255558a" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t Cfg_obt::interval_hk_TLM</definition>
+        <argsstring></argsstring>
+        <name>interval_hk_TLM</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="167" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="167" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structCfg__obt_1a0853885b197609d6f1657c1241cf347c" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t Cfg_obt::interval_hk_BEACON</definition>
+        <argsstring></argsstring>
+        <name>interval_hk_BEACON</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="168" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structCfg__obt_1a7c32c6771bbbfe7e197d2918f8c19a38" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char Cfg_obt::message[28]</definition>
+        <argsstring>[28]</argsstring>
+        <name>message</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="170" column="5" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structCfg__obt_1a99d1b967c8a325c1eb6e5e8e1057639a" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t Cfg_obt::cam_delay</definition>
+        <argsstring></argsstring>
+        <name>cam_delay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="171" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structCfg__obt_1a051692df5571d62393d0dc8bbda292c8" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t Cfg_obt::crc</definition>
+        <argsstring></argsstring>
+        <name>crc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="173" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="173" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" line="141" column="1" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/sdar_hk.h" bodystart="142" bodyend="175"/>
+    <listofallmembers>
+      <member refid="structCfg__obt_1ab8c05fbc4892a565e524f4417db97e9e" prot="public" virt="non-virtual"><scope>Cfg_obt</scope><name>bias_I</name></member>
+      <member refid="structCfg__obt_1a88faa8c0288576654f897275b3b5da05" prot="public" virt="non-virtual"><scope>Cfg_obt</scope><name>bias_Q</name></member>
+      <member refid="structCfg__obt_1a99d1b967c8a325c1eb6e5e8e1057639a" prot="public" virt="non-virtual"><scope>Cfg_obt</scope><name>cam_delay</name></member>
+      <member refid="structCfg__obt_1a870be2f63e1ade50a6d8df7b5f845a2e" prot="public" virt="non-virtual"><scope>Cfg_obt</scope><name>cam_ham_en</name></member>
+      <member refid="structCfg__obt_1a47d22f7948e75e4a346437f3967f3860" prot="public" virt="non-virtual"><scope>Cfg_obt</scope><name>contious_en</name></member>
+      <member refid="structCfg__obt_1a051692df5571d62393d0dc8bbda292c8" prot="public" virt="non-virtual"><scope>Cfg_obt</scope><name>crc</name></member>
+      <member refid="structCfg__obt_1af3959c6ce24e017eea8cf6351e0fdb86" prot="public" virt="non-virtual"><scope>Cfg_obt</scope><name>ctcss_coeff</name></member>
+      <member refid="structCfg__obt_1aba493e3d9a6276e46f7844e7ac7f5edb" prot="public" virt="non-virtual"><scope>Cfg_obt</scope><name>ctcss_en</name></member>
+      <member refid="structCfg__obt_1a343d15c8309d84fec9743793164f3be3" prot="public" virt="non-virtual"><scope>Cfg_obt</scope><name>ctcss_n_integration</name></member>
+      <member refid="structCfg__obt_1ad726e7b601e44c7094ff9e3d2e357e68" prot="public" virt="non-virtual"><scope>Cfg_obt</scope><name>ctcss_n_tail</name></member>
+      <member refid="structCfg__obt_1a6bc5ece29da6209c354e641862dd5c4a" prot="public" virt="non-virtual"><scope>Cfg_obt</scope><name>ctcss_threshold</name></member>
+      <member refid="structCfg__obt_1a404100b42fb11251713d3bb74ff8707e" prot="public" virt="non-virtual"><scope>Cfg_obt</scope><name>gain_fmdm_ham</name></member>
+      <member refid="structCfg__obt_1a635475acf899de048668505a7ad6761d" prot="public" virt="non-virtual"><scope>Cfg_obt</scope><name>gain_fmdm_tc</name></member>
+      <member refid="structCfg__obt_1abe8087b284ffa79f6d0fd78e533a21b4" prot="public" virt="non-virtual"><scope>Cfg_obt</scope><name>gain_tx_HI</name></member>
+      <member refid="structCfg__obt_1a3ae3e058b36b39d9484e678841c79226" prot="public" virt="non-virtual"><scope>Cfg_obt</scope><name>gain_tx_LO</name></member>
+      <member refid="structCfg__obt_1a4ce6f0448f5309330795a566771ecdcb" prot="public" virt="non-virtual"><scope>Cfg_obt</scope><name>id</name></member>
+      <member refid="structCfg__obt_1a0853885b197609d6f1657c1241cf347c" prot="public" virt="non-virtual"><scope>Cfg_obt</scope><name>interval_hk_BEACON</name></member>
+      <member refid="structCfg__obt_1abaf8391403063beedf5fdc020ce6811e" prot="public" virt="non-virtual"><scope>Cfg_obt</scope><name>interval_hk_OBC</name></member>
+      <member refid="structCfg__obt_1abb9d5a2577d827f136428b468255558a" prot="public" virt="non-virtual"><scope>Cfg_obt</scope><name>interval_hk_TLM</name></member>
+      <member refid="structCfg__obt_1a7c32c6771bbbfe7e197d2918f8c19a38" prot="public" virt="non-virtual"><scope>Cfg_obt</scope><name>message</name></member>
+      <member refid="structCfg__obt_1aaade8f1587af367264c709ed952d5827" prot="public" virt="non-virtual"><scope>Cfg_obt</scope><name>threshold_t_pa</name></member>
+      <member refid="structCfg__obt_1a6239a7472ceff1d2da0a983b3d5316d8" prot="public" virt="non-virtual"><scope>Cfg_obt</scope><name>threshold_u_vbat_rx_powerdown</name></member>
+      <member refid="structCfg__obt_1ad2d904d32ecb708474f376da83b5e6e5" prot="public" virt="non-virtual"><scope>Cfg_obt</scope><name>threshold_u_vbat_rx_repeateroff</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,225 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classgr_1_1dslwp_1_1kiss__decode__pdu__impl" kind="class" language="C++" prot="public">
+    <compoundname>gr::dslwp::kiss_decode_pdu_impl</compoundname>
+    <basecompoundref refid="classgr_1_1dslwp_1_1kiss__decode__pdu" prot="public" virt="non-virtual">gr::dslwp::kiss_decode_pdu</basecompoundref>
+    <includes refid="kiss__decode__pdu__impl_8h" local="no">kiss_decode_pdu_impl.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1kiss__decode__pdu__impl_1a65afb5960c33366e684d1db5b072130a" prot="private" static="no" mutable="no">
+        <type>pmt::pmt_t</type>
+        <definition>pmt::pmt_t gr::dslwp::kiss_decode_pdu_impl::d_in_port</definition>
+        <argsstring></argsstring>
+        <name>d_in_port</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/kiss_decode_pdu_impl.h" line="44" column="18" bodyfile="/home/lilac/gr-dslwp/lib/kiss_decode_pdu_impl.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1kiss__decode__pdu__impl_1aa855751074657ad0795738082d133c0c" prot="private" static="no" mutable="no">
+        <type>pmt::pmt_t</type>
+        <definition>pmt::pmt_t gr::dslwp::kiss_decode_pdu_impl::d_out_port</definition>
+        <argsstring></argsstring>
+        <name>d_out_port</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/kiss_decode_pdu_impl.h" line="45" column="18" bodyfile="/home/lilac/gr-dslwp/lib/kiss_decode_pdu_impl.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1kiss__decode__pdu__impl_1a3357c7148c8b66b4f48fb22bc80fa674" prot="private" static="no" mutable="no">
+        <type><ref refid="structKiss" kindref="compound">Kiss</ref></type>
+        <definition>Kiss gr::dslwp::kiss_decode_pdu_impl::ki</definition>
+        <argsstring></argsstring>
+        <name>ki</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/kiss_decode_pdu_impl.h" line="46" column="12" bodyfile="/home/lilac/gr-dslwp/lib/kiss_decode_pdu_impl.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1kiss__decode__pdu__impl_1a77aa207b7ba0aa6251b04e13d647b833" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dslwp::kiss_decode_pdu_impl::pmt_in_callback</definition>
+        <argsstring>(pmt::pmt_t msg)</argsstring>
+        <name>pmt_in_callback</name>
+        <param>
+          <type>pmt::pmt_t</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/kiss_decode_pdu_impl.h" line="48" column="12"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1kiss__decode__pdu__impl_1a408e390cef9dfc5fcfa6ebbec466111f" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void gr::dslwp::kiss_decode_pdu_impl::kiss_msg_callback</definition>
+        <argsstring>(void *obj_ptr, char *ptr, uint16_t len)</argsstring>
+        <name>kiss_msg_callback</name>
+        <param>
+          <type>void *</type>
+          <declname>obj_ptr</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>ptr</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/kiss_decode_pdu_impl.h" line="49" column="19"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1kiss__decode__pdu__impl_1a9872155c30a47bdc2b19f5ccb82169ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::dslwp::kiss_decode_pdu_impl::kiss_decode_pdu_impl</definition>
+        <argsstring>()</argsstring>
+        <name>kiss_decode_pdu_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/kiss_decode_pdu_impl.h" line="52" column="7"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1kiss__decode__pdu__impl_1aaa3711f4097c24f5b950f92cc077c31f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::dslwp::kiss_decode_pdu_impl::~kiss_decode_pdu_impl</definition>
+        <argsstring>()</argsstring>
+        <name>~kiss_decode_pdu_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/kiss_decode_pdu_impl.h" line="53" column="7"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1kiss__decode__pdu__impl_1a9716ce5cee75b634ac79ab0e04dada68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dslwp::kiss_decode_pdu_impl::forecast</definition>
+        <argsstring>(int noutput_items, gr_vector_int &amp;ninput_items_required)</argsstring>
+        <name>forecast</name>
+        <param>
+          <type>int</type>
+          <declname>noutput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_int &amp;</type>
+          <declname>ninput_items_required</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/kiss_decode_pdu_impl.h" line="56" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1kiss__decode__pdu__impl_1a5eb078cf8211b2a92adef3829866776d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::dslwp::kiss_decode_pdu_impl::general_work</definition>
+        <argsstring>(int noutput_items, gr_vector_int &amp;ninput_items, gr_vector_const_void_star &amp;input_items, gr_vector_void_star &amp;output_items)</argsstring>
+        <name>general_work</name>
+        <param>
+          <type>int</type>
+          <declname>noutput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_int &amp;</type>
+          <declname>ninput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_const_void_star &amp;</type>
+          <declname>input_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_void_star &amp;</type>
+          <declname>output_items</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/kiss_decode_pdu_impl.h" line="58" column="11"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>gr::dslwp::kiss_decode_pdu_impl</label>
+        <link refid="classgr_1_1dslwp_1_1kiss__decode__pdu__impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>gr::block</label>
+      </node>
+      <node id="2">
+        <label>gr::dslwp::kiss_decode_pdu</label>
+        <link refid="classgr_1_1dslwp_1_1kiss__decode__pdu"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>gr::dslwp::kiss_decode_pdu_impl</label>
+        <link refid="classgr_1_1dslwp_1_1kiss__decode__pdu__impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>gr::block</label>
+      </node>
+      <node id="2">
+        <label>gr::dslwp::kiss_decode_pdu</label>
+        <link refid="classgr_1_1dslwp_1_1kiss__decode__pdu"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/lilac/gr-dslwp/lib/kiss_decode_pdu_impl.h" line="41" column="5" bodyfile="/home/lilac/gr-dslwp/lib/kiss_decode_pdu_impl.h" bodystart="42" bodyend="62"/>
+    <listofallmembers>
+      <member refid="classgr_1_1dslwp_1_1kiss__decode__pdu__impl_1a65afb5960c33366e684d1db5b072130a" prot="private" virt="non-virtual"><scope>gr::dslwp::kiss_decode_pdu_impl</scope><name>d_in_port</name></member>
+      <member refid="classgr_1_1dslwp_1_1kiss__decode__pdu__impl_1aa855751074657ad0795738082d133c0c" prot="private" virt="non-virtual"><scope>gr::dslwp::kiss_decode_pdu_impl</scope><name>d_out_port</name></member>
+      <member refid="classgr_1_1dslwp_1_1kiss__decode__pdu__impl_1a9716ce5cee75b634ac79ab0e04dada68" prot="public" virt="non-virtual"><scope>gr::dslwp::kiss_decode_pdu_impl</scope><name>forecast</name></member>
+      <member refid="classgr_1_1dslwp_1_1kiss__decode__pdu__impl_1a5eb078cf8211b2a92adef3829866776d" prot="public" virt="non-virtual"><scope>gr::dslwp::kiss_decode_pdu_impl</scope><name>general_work</name></member>
+      <member refid="classgr_1_1dslwp_1_1kiss__decode__pdu__impl_1a3357c7148c8b66b4f48fb22bc80fa674" prot="private" virt="non-virtual"><scope>gr::dslwp::kiss_decode_pdu_impl</scope><name>ki</name></member>
+      <member refid="classgr_1_1dslwp_1_1kiss__decode__pdu__impl_1a9872155c30a47bdc2b19f5ccb82169ed" prot="public" virt="non-virtual"><scope>gr::dslwp::kiss_decode_pdu_impl</scope><name>kiss_decode_pdu_impl</name></member>
+      <member refid="classgr_1_1dslwp_1_1kiss__decode__pdu__impl_1a408e390cef9dfc5fcfa6ebbec466111f" prot="private" virt="non-virtual"><scope>gr::dslwp::kiss_decode_pdu_impl</scope><name>kiss_msg_callback</name></member>
+      <member refid="classgr_1_1dslwp_1_1kiss__decode__pdu_1ac86b0edf7b9f6e4ecec48e0a4bf26f63" prot="public" virt="non-virtual"><scope>gr::dslwp::kiss_decode_pdu_impl</scope><name>make</name></member>
+      <member refid="classgr_1_1dslwp_1_1kiss__decode__pdu__impl_1a77aa207b7ba0aa6251b04e13d647b833" prot="private" virt="non-virtual"><scope>gr::dslwp::kiss_decode_pdu_impl</scope><name>pmt_in_callback</name></member>
+      <member refid="classgr_1_1dslwp_1_1kiss__decode__pdu_1a6a391cb7fd5a04731092ded25538a470" prot="public" virt="non-virtual"><scope>gr::dslwp::kiss_decode_pdu_impl</scope><name>sptr</name></member>
+      <member refid="classgr_1_1dslwp_1_1kiss__decode__pdu__impl_1aaa3711f4097c24f5b950f92cc077c31f" prot="public" virt="non-virtual"><scope>gr::dslwp::kiss_decode_pdu_impl</scope><name>~kiss_decode_pdu_impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

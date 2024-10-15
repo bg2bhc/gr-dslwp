@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="tm__parser__impl_8h" kind="file" language="C++">
+    <compoundname>tm_parser_impl.h</compoundname>
+    <includes refid="tm__parser_8h" local="no">dslwp/tm_parser.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>tm_parser_impl.h</label>
+        <link refid="tm__parser__impl_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>gnuradio/attributes.h</label>
+      </node>
+      <node id="2">
+        <label>dslwp/tm_parser.h</label>
+        <link refid="tm__parser_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>gnuradio/block.h</label>
+      </node>
+      <node id="3">
+        <label>dslwp/api.h</label>
+        <link refid="api_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespacegr">gr</innernamespace>
+    <innernamespace refid="namespacegr_1_1dslwp">gr::dslwp</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/lilac/gr-dslwp/lib/tm_parser_impl.h"/>
+  </compounddef>
+</doxygen>

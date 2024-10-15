@@ -1,0 +1,296 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structcfg__uv__t" kind="struct" language="C++" prot="public">
+    <compoundname>cfg_uv_t</compoundname>
+    <includes refid="dslwp__hk_8h" local="no">dslwp_hk.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structcfg__uv__t_1af3fcd74ca7959950f63f5c34c9dd11ad" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t cfg_uv_t::dem_clk_divide</definition>
+        <argsstring></argsstring>
+        <name>dem_clk_divide</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" line="181" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcfg__uv__t_1ae82e8048c91ef8ca9ab674fed0c987a6" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t cfg_uv_t::tx_frequency_deviation</definition>
+        <argsstring></argsstring>
+        <name>tx_frequency_deviation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" line="182" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcfg__uv__t_1a35b4132a1b5209615401a4907625e3cb" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t cfg_uv_t::tx_gain</definition>
+        <argsstring></argsstring>
+        <name>tx_gain</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" line="183" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcfg__uv__t_1a489f448521a8d03ab12f435c554a6b66" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t cfg_uv_t::turbo_rate</definition>
+        <argsstring></argsstring>
+        <name>turbo_rate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" line="184" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcfg__uv__t_1ab3bcbe5f562b2055cc6d2e6472f8cdfb" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t cfg_uv_t::precoder_en</definition>
+        <argsstring></argsstring>
+        <name>precoder_en</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" line="185" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcfg__uv__t_1a23f30fdb3b2128521ba9f799a248263a" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t cfg_uv_t::preamble_len</definition>
+        <argsstring></argsstring>
+        <name>preamble_len</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" line="186" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcfg__uv__t_1a2d65845d40ea19d9295285799e2413d4" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t cfg_uv_t::trailer_len</definition>
+        <argsstring></argsstring>
+        <name>trailer_len</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" line="187" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcfg__uv__t_1a06ab267434124df3393141e581ce4c8e" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t cfg_uv_t::rx_freq</definition>
+        <argsstring></argsstring>
+        <name>rx_freq</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" line="188" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" bodystart="188" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcfg__uv__t_1a8f67ca5e16fcb9381bf41812584b4ac9" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float cfg_uv_t::snr_threshold</definition>
+        <argsstring></argsstring>
+        <name>snr_threshold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" line="190" column="7" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" bodystart="190" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcfg__uv__t_1adedeb8e5c4e0035d1790ff7cf4467908" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t cfg_uv_t::gmsk_beacon_en</definition>
+        <argsstring></argsstring>
+        <name>gmsk_beacon_en</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" line="191" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcfg__uv__t_1ae640f57b76383b6600654a3d3cfd8037" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t cfg_uv_t::jt4_beacon_en</definition>
+        <argsstring></argsstring>
+        <name>jt4_beacon_en</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" line="192" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" bodystart="192" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcfg__uv__t_1a835942f5847ddd3ced3017c448bdaf5f" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t cfg_uv_t::interval_beacon</definition>
+        <argsstring></argsstring>
+        <name>interval_beacon</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" line="193" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcfg__uv__t_1ae2698ae1e02f3ec068c558437c123821" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t cfg_uv_t::interval_vc0_timeout</definition>
+        <argsstring></argsstring>
+        <name>interval_vc0_timeout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" line="194" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" bodystart="194" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcfg__uv__t_1a9bc0bbf5be30cd741ae1edb03a004a2a" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char cfg_uv_t::message_hk[8]</definition>
+        <argsstring>[8]</argsstring>
+        <name>message_hk</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" line="196" column="6" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcfg__uv__t_1a4831caca7401c1aec28955995975fb39" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char cfg_uv_t::callsign[5]</definition>
+        <argsstring>[5]</argsstring>
+        <name>callsign</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" line="198" column="6" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" bodystart="198" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcfg__uv__t_1afb7b6376487b38ea2813a61b64b811f8" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t cfg_uv_t::open_camera_en</definition>
+        <argsstring></argsstring>
+        <name>open_camera_en</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" line="199" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcfg__uv__t_1a1591071d864cdb40de85fb6da4da0241" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t cfg_uv_t::repeater_en</definition>
+        <argsstring></argsstring>
+        <name>repeater_en</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" line="200" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcfg__uv__t_1ab67956141a495d3e13499acf26c7f379" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t cfg_uv_t::take_picture_at_power_on</definition>
+        <argsstring></argsstring>
+        <name>take_picture_at_power_on</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" line="201" column="9" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" bodystart="201" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcfg__uv__t_1a68046c37966ceaa4a27f9858305a9f05" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t cfg_uv_t::rx7021_r9</definition>
+        <argsstring></argsstring>
+        <name>rx7021_r9</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" line="203" column="10" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" bodystart="203" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcfg__uv__t_1a7d99bc91772d481d837d730ac0b00bee" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t cfg_uv_t::crc</definition>
+        <argsstring></argsstring>
+        <name>crc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" line="204" column="10" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" bodystart="204" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" line="178" column="1" bodyfile="/home/lilac/gr-dslwp/lib/telemetry/dslwp_hk.h" bodystart="179" bodyend="206"/>
+    <listofallmembers>
+      <member refid="structcfg__uv__t_1a4831caca7401c1aec28955995975fb39" prot="public" virt="non-virtual"><scope>cfg_uv_t</scope><name>callsign</name></member>
+      <member refid="structcfg__uv__t_1a7d99bc91772d481d837d730ac0b00bee" prot="public" virt="non-virtual"><scope>cfg_uv_t</scope><name>crc</name></member>
+      <member refid="structcfg__uv__t_1af3fcd74ca7959950f63f5c34c9dd11ad" prot="public" virt="non-virtual"><scope>cfg_uv_t</scope><name>dem_clk_divide</name></member>
+      <member refid="structcfg__uv__t_1adedeb8e5c4e0035d1790ff7cf4467908" prot="public" virt="non-virtual"><scope>cfg_uv_t</scope><name>gmsk_beacon_en</name></member>
+      <member refid="structcfg__uv__t_1a835942f5847ddd3ced3017c448bdaf5f" prot="public" virt="non-virtual"><scope>cfg_uv_t</scope><name>interval_beacon</name></member>
+      <member refid="structcfg__uv__t_1ae2698ae1e02f3ec068c558437c123821" prot="public" virt="non-virtual"><scope>cfg_uv_t</scope><name>interval_vc0_timeout</name></member>
+      <member refid="structcfg__uv__t_1ae640f57b76383b6600654a3d3cfd8037" prot="public" virt="non-virtual"><scope>cfg_uv_t</scope><name>jt4_beacon_en</name></member>
+      <member refid="structcfg__uv__t_1a9bc0bbf5be30cd741ae1edb03a004a2a" prot="public" virt="non-virtual"><scope>cfg_uv_t</scope><name>message_hk</name></member>
+      <member refid="structcfg__uv__t_1afb7b6376487b38ea2813a61b64b811f8" prot="public" virt="non-virtual"><scope>cfg_uv_t</scope><name>open_camera_en</name></member>
+      <member refid="structcfg__uv__t_1a23f30fdb3b2128521ba9f799a248263a" prot="public" virt="non-virtual"><scope>cfg_uv_t</scope><name>preamble_len</name></member>
+      <member refid="structcfg__uv__t_1ab3bcbe5f562b2055cc6d2e6472f8cdfb" prot="public" virt="non-virtual"><scope>cfg_uv_t</scope><name>precoder_en</name></member>
+      <member refid="structcfg__uv__t_1a1591071d864cdb40de85fb6da4da0241" prot="public" virt="non-virtual"><scope>cfg_uv_t</scope><name>repeater_en</name></member>
+      <member refid="structcfg__uv__t_1a68046c37966ceaa4a27f9858305a9f05" prot="public" virt="non-virtual"><scope>cfg_uv_t</scope><name>rx7021_r9</name></member>
+      <member refid="structcfg__uv__t_1a06ab267434124df3393141e581ce4c8e" prot="public" virt="non-virtual"><scope>cfg_uv_t</scope><name>rx_freq</name></member>
+      <member refid="structcfg__uv__t_1a8f67ca5e16fcb9381bf41812584b4ac9" prot="public" virt="non-virtual"><scope>cfg_uv_t</scope><name>snr_threshold</name></member>
+      <member refid="structcfg__uv__t_1ab67956141a495d3e13499acf26c7f379" prot="public" virt="non-virtual"><scope>cfg_uv_t</scope><name>take_picture_at_power_on</name></member>
+      <member refid="structcfg__uv__t_1a2d65845d40ea19d9295285799e2413d4" prot="public" virt="non-virtual"><scope>cfg_uv_t</scope><name>trailer_len</name></member>
+      <member refid="structcfg__uv__t_1a489f448521a8d03ab12f435c554a6b66" prot="public" virt="non-virtual"><scope>cfg_uv_t</scope><name>turbo_rate</name></member>
+      <member refid="structcfg__uv__t_1ae82e8048c91ef8ca9ab674fed0c987a6" prot="public" virt="non-virtual"><scope>cfg_uv_t</scope><name>tx_frequency_deviation</name></member>
+      <member refid="structcfg__uv__t_1a35b4132a1b5209615401a4907625e3cb" prot="public" virt="non-virtual"><scope>cfg_uv_t</scope><name>tx_gain</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,217 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classgr_1_1dslwp_1_1fec__encode__b__impl" kind="class" language="C++" prot="public">
+    <compoundname>gr::dslwp::fec_encode_b_impl</compoundname>
+    <basecompoundref refid="classgr_1_1dslwp_1_1fec__encode__b" prot="public" virt="non-virtual">gr::dslwp::fec_encode_b</basecompoundref>
+    <includes refid="fec__encode__b__impl_8h" local="no">fec_encode_b_impl.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1fec__encode__b__impl_1ad9df84f9d24c2efc58ade38adbf7bf3c" prot="private" static="no" mutable="no">
+        <type>pmt::pmt_t</type>
+        <definition>pmt::pmt_t gr::dslwp::fec_encode_b_impl::d_in_port</definition>
+        <argsstring></argsstring>
+        <name>d_in_port</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/fec_encode_b_impl.h" line="44" column="18" bodyfile="/home/lilac/gr-dslwp/lib/fec_encode_b_impl.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1fec__encode__b__impl_1a2d2bd5b2592f89d99d28f1bed51d1f34" prot="private" static="no" mutable="no">
+        <type>pmt::pmt_t</type>
+        <definition>pmt::pmt_t gr::dslwp::fec_encode_b_impl::d_ptt_port</definition>
+        <argsstring></argsstring>
+        <name>d_ptt_port</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/fec_encode_b_impl.h" line="45" column="18" bodyfile="/home/lilac/gr-dslwp/lib/fec_encode_b_impl.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1fec__encode__b__impl_1ab88444a26c37bd23555db1f18e59c42f" prot="private" static="no" mutable="no">
+        <type><ref refid="structCcsds" kindref="compound">Ccsds</ref></type>
+        <definition>Ccsds gr::dslwp::fec_encode_b_impl::cc</definition>
+        <argsstring></argsstring>
+        <name>cc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/fec_encode_b_impl.h" line="46" column="13" bodyfile="/home/lilac/gr-dslwp/lib/fec_encode_b_impl.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1fec__encode__b__impl_1a51fb59e6863dd69c1670776d7c098a57" prot="private" static="no" mutable="no">
+        <type>char</type>
+        <definition>char gr::dslwp::fec_encode_b_impl::d_ptt</definition>
+        <argsstring></argsstring>
+        <name>d_ptt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/fec_encode_b_impl.h" line="47" column="12" bodyfile="/home/lilac/gr-dslwp/lib/fec_encode_b_impl.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1fec__encode__b__impl_1a34530197d6cf27bdc108ab2c9d5ce8dc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dslwp::fec_encode_b_impl::pmt_in_callback</definition>
+        <argsstring>(pmt::pmt_t msg)</argsstring>
+        <name>pmt_in_callback</name>
+        <param>
+          <type>pmt::pmt_t</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/fec_encode_b_impl.h" line="48" column="12"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1fec__encode__b__impl_1ae4a46fb484a8cb81ce90b58dc29c77dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::dslwp::fec_encode_b_impl::fec_encode_b_impl</definition>
+        <argsstring>(int frame_len, int preamble_len, int trailer_len, bool continous, bool padding_zero, uint8_t using_randomizer, bool using_m, uint8_t using_convolutional_code)</argsstring>
+        <name>fec_encode_b_impl</name>
+        <param>
+          <type>int</type>
+          <declname>frame_len</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>preamble_len</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>trailer_len</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>continous</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>padding_zero</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>using_randomizer</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>using_m</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>using_convolutional_code</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/fec_encode_b_impl.h" line="51" column="7"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1fec__encode__b__impl_1a5ea54cd512ef100cfc988ea9278c2087" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::dslwp::fec_encode_b_impl::~fec_encode_b_impl</definition>
+        <argsstring>()</argsstring>
+        <name>~fec_encode_b_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/fec_encode_b_impl.h" line="52" column="7"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1fec__encode__b__impl_1ab13353358f1a0df9ff23a340627e0a9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::dslwp::fec_encode_b_impl::work</definition>
+        <argsstring>(int noutput_items, gr_vector_const_void_star &amp;input_items, gr_vector_void_star &amp;output_items)</argsstring>
+        <name>work</name>
+        <param>
+          <type>int</type>
+          <declname>noutput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_const_void_star &amp;</type>
+          <declname>input_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_void_star &amp;</type>
+          <declname>output_items</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/fec_encode_b_impl.h" line="55" column="11"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>gr::sync_block</label>
+      </node>
+      <node id="2">
+        <label>gr::dslwp::fec_encode_b</label>
+        <link refid="classgr_1_1dslwp_1_1fec__encode__b"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>gr::dslwp::fec_encode_b_impl</label>
+        <link refid="classgr_1_1dslwp_1_1fec__encode__b__impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>gr::sync_block</label>
+      </node>
+      <node id="2">
+        <label>gr::dslwp::fec_encode_b</label>
+        <link refid="classgr_1_1dslwp_1_1fec__encode__b"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>gr::dslwp::fec_encode_b_impl</label>
+        <link refid="classgr_1_1dslwp_1_1fec__encode__b__impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/lilac/gr-dslwp/lib/fec_encode_b_impl.h" line="41" column="5" bodyfile="/home/lilac/gr-dslwp/lib/fec_encode_b_impl.h" bodystart="42" bodyend="58"/>
+    <listofallmembers>
+      <member refid="classgr_1_1dslwp_1_1fec__encode__b__impl_1ab88444a26c37bd23555db1f18e59c42f" prot="private" virt="non-virtual"><scope>gr::dslwp::fec_encode_b_impl</scope><name>cc</name></member>
+      <member refid="classgr_1_1dslwp_1_1fec__encode__b__impl_1ad9df84f9d24c2efc58ade38adbf7bf3c" prot="private" virt="non-virtual"><scope>gr::dslwp::fec_encode_b_impl</scope><name>d_in_port</name></member>
+      <member refid="classgr_1_1dslwp_1_1fec__encode__b__impl_1a51fb59e6863dd69c1670776d7c098a57" prot="private" virt="non-virtual"><scope>gr::dslwp::fec_encode_b_impl</scope><name>d_ptt</name></member>
+      <member refid="classgr_1_1dslwp_1_1fec__encode__b__impl_1a2d2bd5b2592f89d99d28f1bed51d1f34" prot="private" virt="non-virtual"><scope>gr::dslwp::fec_encode_b_impl</scope><name>d_ptt_port</name></member>
+      <member refid="classgr_1_1dslwp_1_1fec__encode__b__impl_1ae4a46fb484a8cb81ce90b58dc29c77dd" prot="public" virt="non-virtual"><scope>gr::dslwp::fec_encode_b_impl</scope><name>fec_encode_b_impl</name></member>
+      <member refid="classgr_1_1dslwp_1_1fec__encode__b_1a1d9b0e2c33d6cc1f693e8519c7843ad0" prot="public" virt="non-virtual"><scope>gr::dslwp::fec_encode_b_impl</scope><name>make</name></member>
+      <member refid="classgr_1_1dslwp_1_1fec__encode__b__impl_1a34530197d6cf27bdc108ab2c9d5ce8dc" prot="private" virt="non-virtual"><scope>gr::dslwp::fec_encode_b_impl</scope><name>pmt_in_callback</name></member>
+      <member refid="classgr_1_1dslwp_1_1fec__encode__b_1aae81e2579d7bf117ce068510a9052df8" prot="public" virt="non-virtual"><scope>gr::dslwp::fec_encode_b_impl</scope><name>sptr</name></member>
+      <member refid="classgr_1_1dslwp_1_1fec__encode__b__impl_1ab13353358f1a0df9ff23a340627e0a9d" prot="public" virt="non-virtual"><scope>gr::dslwp::fec_encode_b_impl</scope><name>work</name></member>
+      <member refid="classgr_1_1dslwp_1_1fec__encode__b__impl_1a5ea54cd512ef100cfc988ea9278c2087" prot="public" virt="non-virtual"><scope>gr::dslwp::fec_encode_b_impl</scope><name>~fec_encode_b_impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

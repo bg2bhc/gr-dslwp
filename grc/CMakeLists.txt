@@ -43,5 +43,6 @@ install(FILES
     dslwp_fec_encode_b.block.yml
     dslwp_tm_converter2.block.yml
     dslwp_lrtc_demod2.block.yml
-    dslwp_attach_preamble_and_tailer.block.yml DESTINATION share/gnuradio/grc/blocks
+    dslwp_attach_preamble_and_tailer.block.yml
+    dslwp_station_info_pdu.block.yml DESTINATION share/gnuradio/grc/blocks
 )

@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classgr_1_1dslwp_1_1set__gain__by__tag__cc" kind="class" language="C++" prot="public">
+    <compoundname>gr::dslwp::set_gain_by_tag_cc</compoundname>
+    <basecompoundref prot="public" virt="virtual">gr::sync_block</basecompoundref>
+    <includes refid="set__gain__by__tag__cc_8h" local="no">set_gain_by_tag_cc.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classgr_1_1dslwp_1_1set__gain__by__tag__cc_1a5728c172f9e18a8a1b8abb63c080058a" prot="public" static="no">
+        <type>boost::shared_ptr&lt; <ref refid="classgr_1_1dslwp_1_1set__gain__by__tag__cc" kindref="compound">set_gain_by_tag_cc</ref> &gt;</type>
+        <definition>typedef boost::shared_ptr&lt;set_gain_by_tag_cc&gt; gr::dslwp::set_gain_by_tag_cc::sptr</definition>
+        <argsstring></argsstring>
+        <name>sptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/include/dslwp/set_gain_by_tag_cc.h" line="39" column="33" bodyfile="/home/lilac/gr-dslwp/include/dslwp/set_gain_by_tag_cc.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1set__gain__by__tag__cc_1af466008a4441db5c961eb53890758620" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classgr_1_1dslwp_1_1set__gain__by__tag__cc_1a5728c172f9e18a8a1b8abb63c080058a" kindref="member">sptr</ref></type>
+        <definition>static sptr gr::dslwp::set_gain_by_tag_cc::make</definition>
+        <argsstring>(float k, float gain)</argsstring>
+        <name>make</name>
+        <param>
+          <type>float</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>gain</declname>
+        </param>
+        <briefdescription>
+<para>Return a shared_ptr to a new instance of <ref refid="classgr_1_1dslwp_1_1set__gain__by__tag__cc" kindref="compound">dslwp::set_gain_by_tag_cc</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>To avoid accidental use of raw pointers, <ref refid="classgr_1_1dslwp_1_1set__gain__by__tag__cc" kindref="compound">dslwp::set_gain_by_tag_cc</ref>&apos;s constructor is in a private implementation class. <ref refid="classgr_1_1dslwp_1_1set__gain__by__tag__cc_1af466008a4441db5c961eb53890758620" kindref="member">dslwp::set_gain_by_tag_cc::make</ref> is the public interface for creating new instances. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/include/dslwp/set_gain_by_tag_cc.h" line="49" column="19"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>&lt;+description of block+&gt; </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>gr::dslwp::set_gain_by_tag_cc</label>
+        <link refid="classgr_1_1dslwp_1_1set__gain__by__tag__cc"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>gr::sync_block</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>gr::dslwp::set_gain_by_tag_cc</label>
+        <link refid="classgr_1_1dslwp_1_1set__gain__by__tag__cc"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>gr::sync_block</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/lilac/gr-dslwp/include/dslwp/set_gain_by_tag_cc.h" line="36" column="5" bodyfile="/home/lilac/gr-dslwp/include/dslwp/set_gain_by_tag_cc.h" bodystart="37" bodyend="50"/>
+    <listofallmembers>
+      <member refid="classgr_1_1dslwp_1_1set__gain__by__tag__cc_1af466008a4441db5c961eb53890758620" prot="public" virt="non-virtual"><scope>gr::dslwp::set_gain_by_tag_cc</scope><name>make</name></member>
+      <member refid="classgr_1_1dslwp_1_1set__gain__by__tag__cc_1a5728c172f9e18a8a1b8abb63c080058a" prot="public" virt="non-virtual"><scope>gr::dslwp::set_gain_by_tag_cc</scope><name>sptr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

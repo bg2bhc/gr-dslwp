@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classgr_1_1dslwp_1_1lrtc__mod__bc__impl" kind="class" language="C++" prot="public">
+    <compoundname>gr::dslwp::lrtc_mod_bc_impl</compoundname>
+    <basecompoundref refid="classgr_1_1dslwp_1_1lrtc__mod__bc" prot="public" virt="non-virtual">gr::dslwp::lrtc_mod_bc</basecompoundref>
+    <includes refid="lrtc__mod__bc__impl_8h" local="no">lrtc_mod_bc_impl.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1lrtc__mod__bc__impl_1ad9226770d697b47cc0266f5db710a234" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float gr::dslwp::lrtc_mod_bc_impl::d_pacc</definition>
+        <argsstring></argsstring>
+        <name>d_pacc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/lrtc_mod_bc_impl.h" line="33" column="13" bodyfile="/home/lilac/gr-dslwp/lib/lrtc_mod_bc_impl.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1lrtc__mod__bc__impl_1ad6f947bba70bf50b5285e412ac19f349" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float gr::dslwp::lrtc_mod_bc_impl::d_dp</definition>
+        <argsstring></argsstring>
+        <name>d_dp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/lrtc_mod_bc_impl.h" line="34" column="13" bodyfile="/home/lilac/gr-dslwp/lib/lrtc_mod_bc_impl.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1lrtc__mod__bc__impl_1ad7596c7c58f7c1cf0e7906e713b20ee7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::dslwp::lrtc_mod_bc_impl::lrtc_mod_bc_impl</definition>
+        <argsstring>()</argsstring>
+        <name>lrtc_mod_bc_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/lrtc_mod_bc_impl.h" line="37" column="7"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1lrtc__mod__bc__impl_1a56bad2b66e17941089587e6d9c1c12a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::dslwp::lrtc_mod_bc_impl::~lrtc_mod_bc_impl</definition>
+        <argsstring>()</argsstring>
+        <name>~lrtc_mod_bc_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/lrtc_mod_bc_impl.h" line="38" column="7"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1lrtc__mod__bc__impl_1ae969c58386cf4657cc427f5b4091d8f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::dslwp::lrtc_mod_bc_impl::work</definition>
+        <argsstring>(int noutput_items, gr_vector_const_void_star &amp;input_items, gr_vector_void_star &amp;output_items)</argsstring>
+        <name>work</name>
+        <param>
+          <type>int</type>
+          <declname>noutput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_const_void_star &amp;</type>
+          <declname>input_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_void_star &amp;</type>
+          <declname>output_items</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/lrtc_mod_bc_impl.h" line="41" column="11"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>gr::sync_interpolator</label>
+      </node>
+      <node id="1">
+        <label>gr::dslwp::lrtc_mod_bc_impl</label>
+        <link refid="classgr_1_1dslwp_1_1lrtc__mod__bc__impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>gr::dslwp::lrtc_mod_bc</label>
+        <link refid="classgr_1_1dslwp_1_1lrtc__mod__bc"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>gr::sync_interpolator</label>
+      </node>
+      <node id="1">
+        <label>gr::dslwp::lrtc_mod_bc_impl</label>
+        <link refid="classgr_1_1dslwp_1_1lrtc__mod__bc__impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>gr::dslwp::lrtc_mod_bc</label>
+        <link refid="classgr_1_1dslwp_1_1lrtc__mod__bc"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/lilac/gr-dslwp/lib/lrtc_mod_bc_impl.h" line="29" column="5" bodyfile="/home/lilac/gr-dslwp/lib/lrtc_mod_bc_impl.h" bodystart="30" bodyend="44"/>
+    <listofallmembers>
+      <member refid="classgr_1_1dslwp_1_1lrtc__mod__bc__impl_1ad6f947bba70bf50b5285e412ac19f349" prot="private" virt="non-virtual"><scope>gr::dslwp::lrtc_mod_bc_impl</scope><name>d_dp</name></member>
+      <member refid="classgr_1_1dslwp_1_1lrtc__mod__bc__impl_1ad9226770d697b47cc0266f5db710a234" prot="private" virt="non-virtual"><scope>gr::dslwp::lrtc_mod_bc_impl</scope><name>d_pacc</name></member>
+      <member refid="classgr_1_1dslwp_1_1lrtc__mod__bc__impl_1ad7596c7c58f7c1cf0e7906e713b20ee7" prot="public" virt="non-virtual"><scope>gr::dslwp::lrtc_mod_bc_impl</scope><name>lrtc_mod_bc_impl</name></member>
+      <member refid="classgr_1_1dslwp_1_1lrtc__mod__bc_1a87204b777844c818578975c778d6c451" prot="public" virt="non-virtual"><scope>gr::dslwp::lrtc_mod_bc_impl</scope><name>make</name></member>
+      <member refid="classgr_1_1dslwp_1_1lrtc__mod__bc_1a40affa64d72a119bd8598d4a5d1ac6b0" prot="public" virt="non-virtual"><scope>gr::dslwp::lrtc_mod_bc_impl</scope><name>sptr</name></member>
+      <member refid="classgr_1_1dslwp_1_1lrtc__mod__bc__impl_1ae969c58386cf4657cc427f5b4091d8f4" prot="public" virt="non-virtual"><scope>gr::dslwp::lrtc_mod_bc_impl</scope><name>work</name></member>
+      <member refid="classgr_1_1dslwp_1_1lrtc__mod__bc__impl_1a56bad2b66e17941089587e6d9c1c12a9" prot="public" virt="non-virtual"><scope>gr::dslwp::lrtc_mod_bc_impl</scope><name>~lrtc_mod_bc_impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

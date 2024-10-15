@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="lrtc__demod2__impl_8h" kind="file" language="C++">
+    <compoundname>lrtc_demod2_impl.h</compoundname>
+    <includes refid="lrtc__demod2_8h" local="no">dslwp/lrtc_demod2.h</includes>
+    <includes refid="ccsds_8h" local="yes">ccsds/ccsds.h</includes>
+    <includes local="yes">stdio.h</includes>
+    <incdepgraph>
+      <node id="13">
+        <label>stdbool.h</label>
+      </node>
+      <node id="11">
+        <label>tab.h</label>
+        <link refid="tab_8h"/>
+      </node>
+      <node id="10">
+        <label>rs.h</label>
+        <link refid="rs_8h"/>
+      </node>
+      <node id="14">
+        <label>stdint.h</label>
+      </node>
+      <node id="5">
+        <label>gnuradio/sync_block.h</label>
+      </node>
+      <node id="4">
+        <label>gnuradio/attributes.h</label>
+      </node>
+      <node id="12">
+        <label>fifobuf.h</label>
+        <link refid="fifobuf_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>viterbi27.h</label>
+        <link refid="viterbi27_8h"/>
+      </node>
+      <node id="9">
+        <label>randomizer.h</label>
+        <link refid="randomizer_8h"/>
+      </node>
+      <node id="1">
+        <label>lrtc_demod2_impl.h</label>
+        <link refid="lrtc__demod2__impl_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dslwp/lrtc_demod2.h</label>
+        <link refid="lrtc__demod2_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>ccsds/ccsds.h</label>
+        <link refid="ccsds_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>dslwp/api.h</label>
+        <link refid="api_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>stdio.h</label>
+      </node>
+      <node id="7">
+        <label>inttypes.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classgr_1_1dslwp_1_1lrtc__demod2__impl" prot="public">gr::dslwp::lrtc_demod2_impl</innerclass>
+    <innernamespace refid="namespacegr">gr</innernamespace>
+    <innernamespace refid="namespacegr_1_1dslwp">gr::dslwp</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="lrtc__demod2__impl_8h_1a5b87303ec3e33fe5f038e24b437581c0" prot="public" static="no">
+        <name>MAX_AVG_CORR</name>
+        <initializer>32</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/lrtc_demod2_impl.h" line="26" column="9" bodyfile="/home/lilac/gr-dslwp/lib/lrtc_demod2_impl.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="lrtc__demod2__impl_8h_1a98cbec7e63ecb2bee0ba38e7511177c5" prot="public" static="no">
+        <name>MAX_FFT_SIZE</name>
+        <initializer>1024</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/lrtc_demod2_impl.h" line="27" column="9" bodyfile="/home/lilac/gr-dslwp/lib/lrtc_demod2_impl.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/lilac/gr-dslwp/lib/lrtc_demod2_impl.h"/>
+  </compounddef>
+</doxygen>

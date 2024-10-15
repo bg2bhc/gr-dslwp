@@ -1,0 +1,247 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classgr_1_1dslwp_1_1attach__sync__marker__impl" kind="class" language="C++" prot="public">
+    <compoundname>gr::dslwp::attach_sync_marker_impl</compoundname>
+    <basecompoundref refid="classgr_1_1dslwp_1_1attach__sync__marker" prot="public" virt="non-virtual">gr::dslwp::attach_sync_marker</basecompoundref>
+    <includes refid="attach__sync__marker__impl_8h" local="no">attach_sync_marker_impl.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1attach__sync__marker__impl_1a5ac4805348bb666adfc2eba49bb8f3d7" prot="private" static="no" mutable="no">
+        <type>pmt::pmt_t</type>
+        <definition>pmt::pmt_t gr::dslwp::attach_sync_marker_impl::d_in_port</definition>
+        <argsstring></argsstring>
+        <name>d_in_port</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/attach_sync_marker_impl.h" line="32" column="18" bodyfile="/home/lilac/gr-dslwp/lib/attach_sync_marker_impl.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1attach__sync__marker__impl_1a8beb1d3ae048fa715cf001cc5df9a443" prot="private" static="no" mutable="no">
+        <type>pmt::pmt_t</type>
+        <definition>pmt::pmt_t gr::dslwp::attach_sync_marker_impl::d_out_port</definition>
+        <argsstring></argsstring>
+        <name>d_out_port</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/attach_sync_marker_impl.h" line="33" column="18" bodyfile="/home/lilac/gr-dslwp/lib/attach_sync_marker_impl.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1attach__sync__marker__impl_1acd36e113e9769026bccfa957e7c5a715" prot="private" static="no" mutable="no">
+        <type>const std::vector&lt; uint8_t &gt;</type>
+        <definition>const std::vector&lt;uint8_t&gt; gr::dslwp::attach_sync_marker_impl::d_marker</definition>
+        <argsstring></argsstring>
+        <name>d_marker</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/attach_sync_marker_impl.h" line="34" column="25" bodyfile="/home/lilac/gr-dslwp/lib/attach_sync_marker_impl.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1attach__sync__marker__impl_1a0c46400ac01c6d693737cc0f412c8f65" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dslwp::attach_sync_marker_impl::d_data_format</definition>
+        <argsstring></argsstring>
+        <name>d_data_format</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/attach_sync_marker_impl.h" line="35" column="11" bodyfile="/home/lilac/gr-dslwp/lib/attach_sync_marker_impl.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1attach__sync__marker__impl_1a8e46a367871fd502b23fc774533606b0" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dslwp::attach_sync_marker_impl::d_msg_len</definition>
+        <argsstring></argsstring>
+        <name>d_msg_len</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/attach_sync_marker_impl.h" line="36" column="11" bodyfile="/home/lilac/gr-dslwp/lib/attach_sync_marker_impl.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1attach__sync__marker__impl_1acc8d0575be599cdf3d2349ad45a27c85" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool gr::dslwp::attach_sync_marker_impl::d_check_length</definition>
+        <argsstring></argsstring>
+        <name>d_check_length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/attach_sync_marker_impl.h" line="37" column="12" bodyfile="/home/lilac/gr-dslwp/lib/attach_sync_marker_impl.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dslwp_1_1attach__sync__marker__impl_1a41e67f622571743d12628cdf35769c8f" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool gr::dslwp::attach_sync_marker_impl::d_pass_other_length</definition>
+        <argsstring></argsstring>
+        <name>d_pass_other_length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/attach_sync_marker_impl.h" line="38" column="12" bodyfile="/home/lilac/gr-dslwp/lib/attach_sync_marker_impl.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1attach__sync__marker__impl_1ab4320f3ce3640a797d80eeb84ad7732e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dslwp::attach_sync_marker_impl::pmt_in_callback</definition>
+        <argsstring>(pmt::pmt_t msg)</argsstring>
+        <name>pmt_in_callback</name>
+        <param>
+          <type>pmt::pmt_t</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/attach_sync_marker_impl.h" line="40" column="12"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1attach__sync__marker__impl_1ac3459b7fd20bb1bba1d00dabe7a3de56" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::dslwp::attach_sync_marker_impl::attach_sync_marker_impl</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;marker, int data_format, int msg_len, bool check_length, bool pass_other_length)</argsstring>
+        <name>attach_sync_marker_impl</name>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>marker</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>data_format</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>msg_len</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>check_length</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>pass_other_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/attach_sync_marker_impl.h" line="43" column="7"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1attach__sync__marker__impl_1a3028acc8d6cc0551e9a42f2f3a9c8898" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::dslwp::attach_sync_marker_impl::~attach_sync_marker_impl</definition>
+        <argsstring>()</argsstring>
+        <name>~attach_sync_marker_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/attach_sync_marker_impl.h" line="44" column="7"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dslwp_1_1attach__sync__marker__impl_1a2149198e8e73adc3cc6c85e82150a838" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::dslwp::attach_sync_marker_impl::work</definition>
+        <argsstring>(int noutput_items, gr_vector_const_void_star &amp;input_items, gr_vector_void_star &amp;output_items)</argsstring>
+        <name>work</name>
+        <param>
+          <type>int</type>
+          <declname>noutput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_const_void_star &amp;</type>
+          <declname>input_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_void_star &amp;</type>
+          <declname>output_items</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/lilac/gr-dslwp/lib/attach_sync_marker_impl.h" line="47" column="11"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>gr::sync_block</label>
+      </node>
+      <node id="2">
+        <label>gr::dslwp::attach_sync_marker</label>
+        <link refid="classgr_1_1dslwp_1_1attach__sync__marker"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>gr::dslwp::attach_sync_marker_impl</label>
+        <link refid="classgr_1_1dslwp_1_1attach__sync__marker__impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>gr::sync_block</label>
+      </node>
+      <node id="2">
+        <label>gr::dslwp::attach_sync_marker</label>
+        <link refid="classgr_1_1dslwp_1_1attach__sync__marker"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>gr::dslwp::attach_sync_marker_impl</label>
+        <link refid="classgr_1_1dslwp_1_1attach__sync__marker__impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/lilac/gr-dslwp/lib/attach_sync_marker_impl.h" line="29" column="5" bodyfile="/home/lilac/gr-dslwp/lib/attach_sync_marker_impl.h" bodystart="30" bodyend="50"/>
+    <listofallmembers>
+      <member refid="classgr_1_1dslwp_1_1attach__sync__marker__impl_1ac3459b7fd20bb1bba1d00dabe7a3de56" prot="public" virt="non-virtual"><scope>gr::dslwp::attach_sync_marker_impl</scope><name>attach_sync_marker_impl</name></member>
+      <member refid="classgr_1_1dslwp_1_1attach__sync__marker__impl_1acc8d0575be599cdf3d2349ad45a27c85" prot="private" virt="non-virtual"><scope>gr::dslwp::attach_sync_marker_impl</scope><name>d_check_length</name></member>
+      <member refid="classgr_1_1dslwp_1_1attach__sync__marker__impl_1a0c46400ac01c6d693737cc0f412c8f65" prot="private" virt="non-virtual"><scope>gr::dslwp::attach_sync_marker_impl</scope><name>d_data_format</name></member>
+      <member refid="classgr_1_1dslwp_1_1attach__sync__marker__impl_1a5ac4805348bb666adfc2eba49bb8f3d7" prot="private" virt="non-virtual"><scope>gr::dslwp::attach_sync_marker_impl</scope><name>d_in_port</name></member>
+      <member refid="classgr_1_1dslwp_1_1attach__sync__marker__impl_1acd36e113e9769026bccfa957e7c5a715" prot="private" virt="non-virtual"><scope>gr::dslwp::attach_sync_marker_impl</scope><name>d_marker</name></member>
+      <member refid="classgr_1_1dslwp_1_1attach__sync__marker__impl_1a8e46a367871fd502b23fc774533606b0" prot="private" virt="non-virtual"><scope>gr::dslwp::attach_sync_marker_impl</scope><name>d_msg_len</name></member>
+      <member refid="classgr_1_1dslwp_1_1attach__sync__marker__impl_1a8beb1d3ae048fa715cf001cc5df9a443" prot="private" virt="non-virtual"><scope>gr::dslwp::attach_sync_marker_impl</scope><name>d_out_port</name></member>
+      <member refid="classgr_1_1dslwp_1_1attach__sync__marker__impl_1a41e67f622571743d12628cdf35769c8f" prot="private" virt="non-virtual"><scope>gr::dslwp::attach_sync_marker_impl</scope><name>d_pass_other_length</name></member>
+      <member refid="classgr_1_1dslwp_1_1attach__sync__marker_1a3e9430764e0cefb1ee4149f97c3c0c41" prot="public" virt="non-virtual"><scope>gr::dslwp::attach_sync_marker_impl</scope><name>make</name></member>
+      <member refid="classgr_1_1dslwp_1_1attach__sync__marker__impl_1ab4320f3ce3640a797d80eeb84ad7732e" prot="private" virt="non-virtual"><scope>gr::dslwp::attach_sync_marker_impl</scope><name>pmt_in_callback</name></member>
+      <member refid="classgr_1_1dslwp_1_1attach__sync__marker_1a7dbf529faf565fd6cd46eb3845b33c95" prot="public" virt="non-virtual"><scope>gr::dslwp::attach_sync_marker_impl</scope><name>sptr</name></member>
+      <member refid="classgr_1_1dslwp_1_1attach__sync__marker__impl_1a2149198e8e73adc3cc6c85e82150a838" prot="public" virt="non-virtual"><scope>gr::dslwp::attach_sync_marker_impl</scope><name>work</name></member>
+      <member refid="classgr_1_1dslwp_1_1attach__sync__marker__impl_1a3028acc8d6cc0551e9a42f2f3a9c8898" prot="public" virt="non-virtual"><scope>gr::dslwp::attach_sync_marker_impl</scope><name>~attach_sync_marker_impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

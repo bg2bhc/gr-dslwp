@@ -34,6 +34,7 @@
 #include "dslwp/tm_converter2.h"
 #include "dslwp/lrtc_demod2.h"
 #include "dslwp/attach_preamble_and_tailer.h"
+#include "dslwp/station_info_pdu.h"
 %}
 
 %include "dslwp/tm_header_parser.h"
@@ -100,3 +101,5 @@ GR_SWIG_BLOCK_MAGIC2(dslwp, tm_converter2);
 GR_SWIG_BLOCK_MAGIC2(dslwp, lrtc_demod2);
 %include "dslwp/attach_preamble_and_tailer.h"
 GR_SWIG_BLOCK_MAGIC2(dslwp, attach_preamble_and_tailer);
+%include "dslwp/station_info_pdu.h"
+GR_SWIG_BLOCK_MAGIC2(dslwp, station_info_pdu);

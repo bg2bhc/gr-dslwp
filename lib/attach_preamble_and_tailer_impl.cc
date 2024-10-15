@@ -103,7 +103,7 @@ namespace gr {
 	pmt::pmt_t bytes(pmt::cdr(msg));
 
 	size_t msg_len;
-    int i;
+	int i;
 	const uint8_t* bytes_in = pmt::u8vector_elements(bytes, msg_len);
 	uint8_t bytes_out[1024];
 

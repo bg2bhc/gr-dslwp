@@ -50,5 +50,6 @@ install(FILES
     fec_encode_b.h
     tm_converter2.h
     lrtc_demod2.h
-    attach_preamble_and_tailer.h DESTINATION include/dslwp
+    attach_preamble_and_tailer.h
+    station_info_pdu.h DESTINATION include/dslwp
 )

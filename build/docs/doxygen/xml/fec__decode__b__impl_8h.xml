@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="fec__decode__b__impl_8h" kind="file" language="C++">
+    <compoundname>fec_decode_b_impl.h</compoundname>
+    <includes refid="fec__decode__b_8h" local="no">dslwp/fec_decode_b.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes refid="ccsds_8h" local="yes">ccsds/ccsds.h</includes>
+    <incdepgraph>
+      <node id="14">
+        <label>stdbool.h</label>
+      </node>
+      <node id="12">
+        <label>tab.h</label>
+        <link refid="tab_8h"/>
+      </node>
+      <node id="11">
+        <label>rs.h</label>
+        <link refid="rs_8h"/>
+      </node>
+      <node id="15">
+        <label>stdint.h</label>
+      </node>
+      <node id="5">
+        <label>gnuradio/sync_block.h</label>
+      </node>
+      <node id="4">
+        <label>gnuradio/attributes.h</label>
+      </node>
+      <node id="13">
+        <label>fifobuf.h</label>
+        <link refid="fifobuf_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>fec_decode_b_impl.h</label>
+        <link refid="fec__decode__b__impl_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>viterbi27.h</label>
+        <link refid="viterbi27_8h"/>
+      </node>
+      <node id="10">
+        <label>randomizer.h</label>
+        <link refid="randomizer_8h"/>
+      </node>
+      <node id="7">
+        <label>ccsds/ccsds.h</label>
+        <link refid="ccsds_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>dslwp/api.h</label>
+        <link refid="api_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>stdio.h</label>
+      </node>
+      <node id="2">
+        <label>dslwp/fec_decode_b.h</label>
+        <link refid="fec__decode__b_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>inttypes.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classgr_1_1dslwp_1_1fec__decode__b__impl" prot="public">gr::dslwp::fec_decode_b_impl</innerclass>
+    <innernamespace refid="namespacegr">gr</innernamespace>
+    <innernamespace refid="namespacegr_1_1dslwp">gr::dslwp</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/lilac/gr-dslwp/lib/fec_decode_b_impl.h"/>
+  </compounddef>
+</doxygen>

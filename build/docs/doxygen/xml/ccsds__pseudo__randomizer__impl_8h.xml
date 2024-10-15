@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="ccsds__pseudo__randomizer__impl_8h" kind="file" language="C++">
+    <compoundname>ccsds_pseudo_randomizer_impl.h</compoundname>
+    <includes refid="ccsds__pseudo__randomizer_8h" local="no">dslwp/ccsds_pseudo_randomizer.h</includes>
+    <includes refid="randomizer_8h" local="yes">ccsds/randomizer.h</includes>
+    <incdepgraph>
+      <node id="5">
+        <label>gnuradio/sync_block.h</label>
+      </node>
+      <node id="4">
+        <label>gnuradio/attributes.h</label>
+      </node>
+      <node id="1">
+        <label>ccsds_pseudo_randomizer_impl.h</label>
+        <link refid="ccsds__pseudo__randomizer__impl_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>ccsds/randomizer.h</label>
+        <link refid="randomizer_8h"/>
+      </node>
+      <node id="2">
+        <label>dslwp/ccsds_pseudo_randomizer.h</label>
+        <link refid="ccsds__pseudo__randomizer_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>dslwp/api.h</label>
+        <link refid="api_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classgr_1_1dslwp_1_1ccsds__pseudo__randomizer__impl" prot="public">gr::dslwp::ccsds_pseudo_randomizer_impl</innerclass>
+    <innernamespace refid="namespacegr">gr</innernamespace>
+    <innernamespace refid="namespacegr_1_1dslwp">gr::dslwp</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/lilac/gr-dslwp/lib/ccsds_pseudo_randomizer_impl.h"/>
+  </compounddef>
+</doxygen>
