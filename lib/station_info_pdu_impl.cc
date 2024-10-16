@@ -25,6 +25,8 @@
 #include <gnuradio/io_signature.h>
 #include "station_info_pdu_impl.h"
 
+#include <time.h>
+
 namespace gr {
   namespace dslwp {
 
@@ -77,6 +79,7 @@ namespace gr {
 	else if(d_format == 1)
 	{
 		pmt::pmt_t p_dict = pmt::make_dict();
+		p_dict = pmt::dict_add(p_dict, pmt::mp("timestamp"), pmt::from_uint64((uint64_t)time(NULL)));
 		//p_dict = pmt::dict_add(p_dict, pmt::mp("nickname"), pmt::intern(d_nickname));
 		p_dict = pmt::dict_add(p_dict, pmt::mp("lat"), pmt::from_float(d_lat));
 		p_dict = pmt::dict_add(p_dict, pmt::mp("lon"), pmt::from_float(d_lon));
