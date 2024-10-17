@@ -77,15 +77,8 @@ namespace gr {
 	if(d_format == 0)
 	{
 		char buf_json[2048];
-		int len_json = 0;
-		len_json = sprintf(buf_json, "{\"sat_name\": \"%s\", \"physical_channel\": %d, \"proxy_nickname\": \"%s\", \"proxy_long\": %f, \"proxy_alt\": %f, \"proxy_lat\": %f, \"raw_data\": \"b'", d_satellite.data(), d_physical_channel, d_nickname.data(), d_lon, d_alt, d_lat);
-		/*
-		len_json = d_satellite.size();
-		for(int i=0; i<len_json; i++)
-		{
-			buf_json[i] = d_satellite[i];
-		}
-		*/
+		int len_json = sprintf(buf_json, "{\"sat_name\": \"%s\", \"physical_channel\": %d, \"proxy_nickname\": \"%s\", \"proxy_long\": %f, \"proxy_alt\": %f, \"proxy_lat\": %f, \"raw_data\": \"b'", d_satellite.data(), d_physical_channel, d_nickname.data(), d_lon, d_alt, d_lat);
+
 		for(int i=0; i<msg_len; i++)
 		{
 			len_json += sprintf(buf_json+len_json, "%02x", bytes_in[i]);
