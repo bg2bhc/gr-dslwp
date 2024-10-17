@@ -26,25 +26,27 @@
 #include "station_info_pdu_impl.h"
 
 #include <time.h>
+#include <stdio.h>
+#include <string.h>
 
 namespace gr {
   namespace dslwp {
 
     station_info_pdu::sptr
-    station_info_pdu::make(const std::string& nickname, float lat, float lon, float alt, const std::string& satellite, int format)
+    station_info_pdu::make(const std::string& nickname, float lat, float lon, float alt, const std::string& satellite, int physical_channel, int format)
     {
       return gnuradio::get_initial_sptr
-        (new station_info_pdu_impl(nickname, lat, lon, alt, satellite, format));
+        (new station_info_pdu_impl(nickname, lat, lon, alt, satellite, physical_channel, format));
     }
 
 
     /*
      * The private constructor
      */
-    station_info_pdu_impl::station_info_pdu_impl(const std::string& nickname, float lat, float lon, float alt, const std::string& satellite, int format)
+    station_info_pdu_impl::station_info_pdu_impl(const std::string& nickname, float lat, float lon, float alt, const std::string& satellite, int physical_channel, int format)
       : gr::sync_block("station_info_pdu",
               gr::io_signature::make(0, 0, 0),
-              gr::io_signature::make(0, 0, 0)), d_nickname(nickname), d_lat(lat), d_lon(lon), d_alt(alt), d_satellite(satellite), d_format(format)
+              gr::io_signature::make(0, 0, 0)), d_nickname(nickname), d_lat(lat), d_lon(lon), d_alt(alt), d_satellite(satellite), d_physical_channel(physical_channel), d_format(format)
     {
       	d_in_port = pmt::mp("in");
       	message_port_register_in(d_in_port);
@@ -70,11 +72,28 @@ namespace gr {
 	size_t msg_len;
 	int len_out;
 	const uint8_t* bytes_in = pmt::u8vector_elements(bytes, msg_len);
-	uint8_t bytes_out[1024];
+	//uint8_t bytes_out[1024];
 	
 	if(d_format == 0)
 	{
-		station_info_pdu_impl::message_port_pub(station_info_pdu_impl::d_out_port, pmt::cons(pmt::make_dict(), bytes));
+		char buf_json[2048];
+		int len_json = 0;
+		len_json = sprintf(buf_json, "{\"sat_name\": \"%s\", \"physical_channel\": %d, \"proxy_nickname\": \"%s\", \"proxy_long\": %f, \"proxy_alt\": %f, \"proxy_lat\": %f, \"raw_data\": \"b'", d_satellite.data(), d_physical_channel, d_nickname.data(), d_lon, d_alt, d_lat);
+		/*
+		len_json = d_satellite.size();
+		for(int i=0; i<len_json; i++)
+		{
+			buf_json[i] = d_satellite[i];
+		}
+		*/
+		for(int i=0; i<msg_len; i++)
+		{
+			len_json += sprintf(buf_json+len_json, "%02x", bytes_in[i]);
+		}
+		
+		len_json += sprintf(buf_json+len_json, "'\", \"proxy_receive_time\": %ld}", time(NULL));
+		
+		station_info_pdu_impl::message_port_pub(station_info_pdu_impl::d_out_port, pmt::cons(pmt::make_dict(), pmt::init_u8vector(len_json, (const uint8_t *)buf_json)));
 	}
 	else if(d_format == 1)
 	{

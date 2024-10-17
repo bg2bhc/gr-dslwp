@@ -3,7 +3,7 @@ label: Station Info PDU
 category: '[DSLWP]'
 templates:
   imports: import dslwp
-  make: dslwp.station_info_pdu(${nickname}, ${lat}, ${lon}, ${alt}, ${satellite},
+  make: dslwp.station_info_pdu(${nickname}, ${lat}, ${lon}, ${alt}, ${satellite}, ${physical_channel},
     ${format})
 parameters:
 - id: nickname
@@ -26,10 +26,14 @@ parameters:
   label: Satellite
   dtype: string
   default: ASRTU-1
+- id: physical_channel
+  label: Physical Channel
+  dtype: int
+  default: 0
 - id: format
   label: Format
   dtype: enum
-  default: '1'
+  default: '0'
   options: ['0', '1']
   option_labels: ['Json', 'Dictionary']
 inputs:

@@ -45,7 +45,7 @@ namespace gr {
        * class. dslwp::station_info_pdu::make is the public interface for
        * creating new instances.
        */
-      static sptr make(const std::string& nickname, float lat, float lon, float alt, const std::string& satellite, int format);
+      static sptr make(const std::string& nickname, float lat, float lon, float alt, const std::string& satellite, int physical_channel, int format);
     };
 
   } // namespace dslwp

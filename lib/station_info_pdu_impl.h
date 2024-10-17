@@ -32,17 +32,18 @@ namespace gr {
       // Nothing to declare in this block.
       pmt::pmt_t d_in_port;
       pmt::pmt_t d_out_port;
-      const std::string& d_nickname;
+      const std::string d_nickname;
       float d_lat;
       float d_lon;
       float d_alt;
-      const std::string& d_satellite;
+      const std::string d_satellite;
+      int d_physical_channel;
       int d_format;
       
       void pmt_in_callback(pmt::pmt_t msg);
 
      public:
-      station_info_pdu_impl(const std::string& nickname, float lat, float lon, float alt, const std::string& satellite, int format);
+      station_info_pdu_impl(const std::string& nickname, float lat, float lon, float alt, const std::string& satellite, int physical_channel, int format);
       ~station_info_pdu_impl();
 
       // Where all the action really happens
