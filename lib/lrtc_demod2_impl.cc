@@ -1,51 +1,56 @@
 /* -*- c++ -*- */
 /*
- * Copyright 2024 gr-dslwp author.
+ * Copyright 2025 BG2BHC.
  *
- * This is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 3, or (at your option)
- * any later version.
- *
- * This software is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this software; see the file COPYING.  If not, write to
- * the Free Software Foundation, Inc., 51 Franklin Street,
- * Boston, MA 02110-1301, USA.
+ * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
-
-#include <gnuradio/io_signature.h>
 #include "lrtc_demod2_impl.h"
+#include <gnuradio/io_signature.h>
 
 namespace gr {
-  namespace dslwp {
+namespace dslwp {
 
-    lrtc_demod2::sptr
-    lrtc_demod2::make(int mode, size_t fft_size, size_t n_avg, int frame_len, uint8_t using_randomizer, bool using_m, bool using_convolutional_code, bool pass_all)
-    {
-      return gnuradio::get_initial_sptr
-        (new lrtc_demod2_impl(mode, fft_size, n_avg, frame_len, using_randomizer, using_m, using_convolutional_code, pass_all));
-    }
+lrtc_demod2::sptr lrtc_demod2::make(int mode,
+                                    size_t fft_size,
+                                    size_t n_avg,
+                                    int frame_len,
+                                    uint8_t using_randomizer,
+                                    bool using_m,
+                                    bool using_convolutional_code,
+                                    bool pass_all)
+{
+    return gnuradio::make_block_sptr<lrtc_demod2_impl>(mode,
+                                                       fft_size,
+                                                       n_avg,
+                                                       frame_len,
+                                                       using_randomizer,
+                                                       using_m,
+                                                       using_convolutional_code,
+                                                       pass_all);
+}
 
-    static int ios[] = { sizeof(float), sizeof(float), sizeof(float) };
-    static std::vector<int> iosig(ios, ios + sizeof(ios) / sizeof(int));
+static int ios[] = { sizeof(float), sizeof(float), sizeof(float) };
+static std::vector<int> iosig(ios, ios + sizeof(ios) / sizeof(int));
 
-    /*
-     * The private constructor
-     */
-    lrtc_demod2_impl::lrtc_demod2_impl(int mode, size_t fft_size, size_t n_avg, int frame_len, uint8_t using_randomizer, bool using_m, bool using_convolutional_code, bool pass_all)
-      : gr::sync_block("lrtc_demod2",
-              gr::io_signature::makev(3, 3, iosig),
-              gr::io_signature::make(0, 0, 0)), d_fft_size(fft_size), d_n_avg(n_avg), d_pass_all(pass_all), d_mode(mode)
-    {
+/*
+ * The private constructor
+ */
+lrtc_demod2_impl::lrtc_demod2_impl(int mode,
+                                   size_t fft_size,
+                                   size_t n_avg,
+                                   int frame_len,
+                                   uint8_t using_randomizer,
+                                   bool using_m,
+                                   bool using_convolutional_code,
+                                   bool pass_all)
+    : gr::sync_block("lrtc_demod2",
+                     gr::io_signature::makev(3, 3, iosig),
+                     gr::io_signature::make(0, 0, 0)), d_fft_size(fft_size), d_n_avg(n_avg), d_pass_all(pass_all), d_mode(mode)
+{
 	d_sample_in_symbol = 0;
 	d_i_avg_buf = 0;
       
@@ -63,17 +68,15 @@ namespace gr {
 	cc.cfg_using_m = using_m;
 	cc.cfg_using_convolutional_code = using_convolutional_code;
 	cc.cfg_using_randomizer = using_randomizer;
-    }
+}
 
-    /*
-     * Our virtual destructor.
-     */
-    lrtc_demod2_impl::~lrtc_demod2_impl()
-    {
-    }
+/*
+ * Our virtual destructor.
+ */
+lrtc_demod2_impl::~lrtc_demod2_impl() {}
 
-    void lrtc_demod2_impl::callback(unsigned char *buf, unsigned short len, int16_t byte_corr, void *obj_ptr)
-    {
+void lrtc_demod2_impl::callback(unsigned char *buf, unsigned short len, int16_t byte_corr, void *obj_ptr)
+{
 	static time_t time_curr;
 	static struct tm *tblock_curr;
 	lrtc_demod2_impl *obj_ptr_loc = (lrtc_demod2_impl *)obj_ptr;
@@ -87,10 +90,10 @@ namespace gr {
 	{
 		obj_ptr_loc->message_port_pub(obj_ptr_loc->d_data_port, pmt::cons(pmt::make_dict(), pmt::init_u8vector(len, buf)));
 	}
-    }
-    
-    void lrtc_demod2_impl::callback2(unsigned char *buf, unsigned short len, int16_t byte_corr, void *obj_ptr)
-    {       
+}
+
+void lrtc_demod2_impl::callback2(unsigned char *buf, unsigned short len, int16_t byte_corr, void *obj_ptr)
+{       
 	lrtc_demod2_impl *obj_ptr_loc = (lrtc_demod2_impl *)obj_ptr;
 	
 	char buf_json[100];
@@ -102,16 +105,15 @@ namespace gr {
 	
 	len_json = sprintf(buf_json, "{\"snr_est\": %f}", obj_ptr_loc->d_buf_snr_est[obj_ptr_loc->d_index_pwr_max]);
 	obj_ptr_loc->message_port_pub(obj_ptr_loc->d_hk_port, pmt::cons(pmt::make_dict(), pmt::init_u8vector(len_json, (const uint8_t *)buf_json)));
-    }
+}
 
-    int
-    lrtc_demod2_impl::work(int noutput_items,
-        gr_vector_const_void_star &input_items,
-        gr_vector_void_star &output_items)
-    {
-      const float *pwr = (const float *) input_items[0];
-      const float *freq = (const float *) input_items[1];
-      const float *snr = (const float *) input_items[2];
+int lrtc_demod2_impl::work(int noutput_items,
+                           gr_vector_const_void_star& input_items,
+                           gr_vector_void_star& output_items)
+{
+	const float *pwr = (const float *) input_items[0];
+	const float *freq = (const float *) input_items[1];
+	const float *snr = (const float *) input_items[2];
 
       // Do <+signal processing+>
       for(int i=0; i<noutput_items; i++)
@@ -165,10 +167,9 @@ namespace gr {
       }
       //fprintf(stdout, "nout=%d\n", nout);
 
-      // Tell runtime system how many output items we produced.
-      return noutput_items;
-    }
+    // Tell runtime system how many output items we produced.
+    return noutput_items;
+}
 
-  } /* namespace dslwp */
+} /* namespace dslwp */
 } /* namespace gr */
-

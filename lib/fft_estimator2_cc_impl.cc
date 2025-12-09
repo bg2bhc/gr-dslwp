@@ -1,69 +1,56 @@
 /* -*- c++ -*- */
 /*
- * Copyright 2024 gr-dslwp author.
+ * Copyright 2025 BG2BHC.
  *
- * This is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 3, or (at your option)
- * any later version.
- *
- * This software is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this software; see the file COPYING.  If not, write to
- * the Free Software Foundation, Inc., 51 Franklin Street,
- * Boston, MA 02110-1301, USA.
+ * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
-
+#include "fft_estimator2_cc_impl.h"
 #include <gnuradio/io_signature.h>
 #include <gnuradio/expj.h>
-#include "fft_estimator2_cc_impl.h"
 
 namespace gr {
-  namespace dslwp {
+namespace dslwp {
 
-    fft_estimator2_cc::sptr
-    fft_estimator2_cc::make(size_t fft_size, float threshold, size_t tap_len)
-    {
-      return gnuradio::get_initial_sptr
-        (new fft_estimator2_cc_impl(fft_size, threshold, tap_len));
-    }
+fft_estimator2_cc::sptr
+fft_estimator2_cc::make(size_t fft_size, float threshold, size_t tap_len)
+{
+    return gnuradio::make_block_sptr<fft_estimator2_cc_impl>(
+        fft_size, threshold, tap_len);
+}
 
-    static int ios[] = { sizeof(gr_complex), sizeof(float), sizeof(float), sizeof(float) };
-    static std::vector<int> iosig(ios, ios + sizeof(ios) / sizeof(int));
+static int ios[] = { sizeof(gr_complex), sizeof(float), sizeof(float), sizeof(float) };
+static std::vector<int> iosig(ios, ios + sizeof(ios) / sizeof(int));
 
-    /*
-     * The private constructor
-     */
-    fft_estimator2_cc_impl::fft_estimator2_cc_impl(size_t fft_size, float threshold, size_t tap_len)
-      : gr::sync_block("fft_estimator2_cc",
-              gr::io_signature::make(2, 2, sizeof(gr_complex)*fft_size),
-              gr::io_signature::makev(1, 4, iosig)),
-              d_fft_size(fft_size), d_threshold(threshold), d_over_threshold(0), d_tap_len(tap_len)
-    {
+/*
+ * The private constructor
+ */
+fft_estimator2_cc_impl::fft_estimator2_cc_impl(size_t fft_size,
+                                               float threshold,
+                                               size_t tap_len)
+    : gr::sync_block("fft_estimator2_cc",
+                     gr::io_signature::make(
+                         2 /* min inputs */, 2 /* max inputs */, sizeof(gr_complex)*fft_size),
+                     gr::io_signature::makev(
+                         1 /* min outputs */, 4 /*max outputs */, iosig)),
+	d_fft_size(fft_size), d_threshold(threshold), d_over_threshold(0), d_tap_len(tap_len)
+{
       d_power = (float *)malloc(sizeof(float) * fft_size);
       set_history(2);
-    }
+}
 
-    /*
-     * Our virtual destructor.
-     */
-    fft_estimator2_cc_impl::~fft_estimator2_cc_impl()
-    {
-    }
+/*
+ * Our virtual destructor.
+ */
+fft_estimator2_cc_impl::~fft_estimator2_cc_impl() {}
 
-    int
-    fft_estimator2_cc_impl::work(int noutput_items,
-        gr_vector_const_void_star &input_items,
-        gr_vector_void_star &output_items)
-    {
+int fft_estimator2_cc_impl::work(int noutput_items,
+                                 gr_vector_const_void_star& input_items,
+                                 gr_vector_void_star& output_items)
+{
       const gr_complex *in_fft = (const gr_complex *) input_items[0];
       const gr_complex *in_s = (const gr_complex *) input_items[1];
       gr_complex *out = (gr_complex *) output_items[0];
@@ -274,6 +261,5 @@ namespace gr {
       return noutput_items;
     }
 
-  } /* namespace dslwp */
+} /* namespace dslwp */
 } /* namespace gr */
-

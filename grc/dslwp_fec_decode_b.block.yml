@@ -2,9 +2,9 @@ id: dslwp_fec_decode_b
 label: FEC Decode
 category: '[DSLWP]'
 templates:
-  imports: import dslwp
-  make: dslwp.fec_decode_b(${frame_len}, ${using_randomizer}, ${using_m}, ${using_convolutional_code},
-    ${pass_all})
+  imports: from gnuradio import dslwp
+  make: dslwp.fec_decode_b(${frame_len}, ${using_randomizer}, ${using_m}, ${using_convolutional_code}, ${pass_all})
+
 parameters:
 - id: frame_len
   label: Frame Length

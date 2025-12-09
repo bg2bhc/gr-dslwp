@@ -1,71 +1,54 @@
 /* -*- c++ -*- */
 /*
- * Copyright 2024 gr-dslwp author.
+ * Copyright 2025 BG2BHC.
  *
- * This is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 3, or (at your option)
- * any later version.
- *
- * This software is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this software; see the file COPYING.  If not, write to
- * the Free Software Foundation, Inc., 51 Franklin Street,
- * Boston, MA 02110-1301, USA.
+ * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
-
-#include <gnuradio/io_signature.h>
 #include "tag_to_json_pdu_c_impl.h"
+#include <gnuradio/io_signature.h>
 #include <stdio.h>
 
 namespace gr {
-  namespace dslwp {
+namespace dslwp {
 
-    tag_to_json_pdu_c::sptr
-    tag_to_json_pdu_c::make(const std::string &key)
-    {
-      return gnuradio::get_initial_sptr
-        (new tag_to_json_pdu_c_impl(key));
-    }
+using input_type = gr_complex;
+tag_to_json_pdu_c::sptr tag_to_json_pdu_c::make(const std::string& key)
+{
+    return gnuradio::make_block_sptr<tag_to_json_pdu_c_impl>(key);
+}
 
 
-    /*
-     * The private constructor
-     */
-    tag_to_json_pdu_c_impl::tag_to_json_pdu_c_impl(const std::string &key)
-      : gr::sync_block("tag_to_json_pdu_c",
-              gr::io_signature::make(1, 1, sizeof(gr_complex)),
-              gr::io_signature::make(0, 0, 0))
-    {
+/*
+ * The private constructor
+ */
+tag_to_json_pdu_c_impl::tag_to_json_pdu_c_impl(const std::string& key)
+    : gr::sync_block("tag_to_json_pdu_c",
+                     gr::io_signature::make(
+                         1 /* min inputs */, 1 /* max inputs */, sizeof(input_type)),
+                     gr::io_signature::make(
+                         0 /* min outputs */, 0 /*max outputs */, 0))
+{
 		d_key = key;
 		p_key = pmt::mp(key);
 		d_out_port = pmt::mp("out");
 		message_port_register_out(d_out_port);
-    }
+}
 
-    /*
-     * Our virtual destructor.
-     */
-    tag_to_json_pdu_c_impl::~tag_to_json_pdu_c_impl()
-    {
-    }
+/*
+ * Our virtual destructor.
+ */
+tag_to_json_pdu_c_impl::~tag_to_json_pdu_c_impl() {}
 
-    int
-    tag_to_json_pdu_c_impl::work(int noutput_items,
-        gr_vector_const_void_star &input_items,
-        gr_vector_void_star &output_items)
-    {
-      const gr_complex *in = (const gr_complex *) input_items[0];
-
-      // Do <+signal processing+>
+int tag_to_json_pdu_c_impl::work(int noutput_items,
+                                 gr_vector_const_void_star& input_items,
+                                 gr_vector_void_star& output_items)
+{
+    auto in = static_cast<const input_type*>(input_items[0]);
+    // Do <+signal processing+>
       std::vector<tag_t> tags;
       get_tags_in_window(tags, 0, 0, noutput_items);
 
@@ -88,11 +71,9 @@ namespace gr {
                   }
             }
       }
+    // Tell runtime system how many output items we produced.
+    return noutput_items;
+}
 
-      // Tell runtime system how many output items we produced.
-      return noutput_items;
-    }
-
-  } /* namespace dslwp */
+} /* namespace dslwp */
 } /* namespace gr */
-

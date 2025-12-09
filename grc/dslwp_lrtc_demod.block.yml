@@ -2,6 +2,10 @@ id: dslwp_lrtc_demod
 label: LRTC Demod
 category: '[DSLWP]'
 
+templates:
+  imports: from gnuradio import dslwp
+  make: dslwp.lrtc_demod(${mode}, ${fft_size}, ${n_avg})
+
 parameters:
 -   id: mode
     label: Mode
@@ -28,8 +32,6 @@ outputs:
 -   domain: stream
     dtype: complex
 
-templates:
-    imports: import dslwp
-    make: dslwp.lrtc_demod(${mode}, ${fft_size}, ${n_avg})
-
+#  'file_format' specifies the version of the GRC yml format used in the file
+#  and should usually not be changed.
 file_format: 1

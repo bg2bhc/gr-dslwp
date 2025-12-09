@@ -1,101 +1,130 @@
 /* -*- c++ -*- */
-/* 
- * Copyright 2018 <+YOU OR YOUR COMPANY+>.
- * 
- * This is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 3, or (at your option)
- * any later version.
- * 
- * This software is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this software; see the file COPYING.  If not, write to
- * the Free Software Foundation, Inc., 51 Franklin Street,
- * Boston, MA 02110-1301, USA.
+/*
+ * Copyright 2025 BG2BHC.
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
-
+#include "oqpsk_coherent_demod_cc_impl.h"
 #include <gnuradio/io_signature.h>
 #include <gnuradio/expj.h>
-#include "oqpsk_coherent_demod_cc_impl.h"
 #include <math.h>
 #include <stdio.h>
 #include <time.h>
 
 namespace gr {
-  namespace dslwp {
+namespace dslwp {
 
-    oqpsk_coherent_demod_cc::sptr
-    oqpsk_coherent_demod_cc::make(int samples_per_symbol, const std::vector<gr_complex> &taps, int opt_point, int pll, float pll_loop_bw, float pll_damping, float freq_max, float freq_min, int dttl, float dttl_loop_bw, float dttl_damping, float max_rate_deviation, int asm_ignore)
-    {
-      return gnuradio::get_initial_sptr
-	      (new oqpsk_coherent_demod_cc_impl(samples_per_symbol, taps, opt_point, pll, pll_loop_bw, pll_damping, freq_max, freq_min, dttl, dttl_loop_bw, dttl_damping, max_rate_deviation, asm_ignore));
-    }
+using input_type = gr_complex;
+using output_type = gr_complex;
+oqpsk_coherent_demod_cc::sptr
+oqpsk_coherent_demod_cc::make(int samples_per_symbol,
+                              const std::vector<gr_complex>& taps,
+                              int opt_point,
+                              int pll,
+                              float pll_loop_bw,
+                              float pll_damping,
+                              float freq_max,
+                              float freq_min,
+                              int dttl,
+                              float dttl_loop_bw,
+                              float dttl_damping,
+                              float max_rate_deviation,
+                              int asm_ignore)
+{
+    return gnuradio::make_block_sptr<oqpsk_coherent_demod_cc_impl>(samples_per_symbol,
+                                                                   taps,
+                                                                   opt_point,
+                                                                   pll,
+                                                                   pll_loop_bw,
+                                                                   pll_damping,
+                                                                   freq_max,
+                                                                   freq_min,
+                                                                   dttl,
+                                                                   dttl_loop_bw,
+                                                                   dttl_damping,
+                                                                   max_rate_deviation,
+                                                                   asm_ignore);
+}
 
-    /*
-     * The private constructor
-     */
-	  oqpsk_coherent_demod_cc_impl::oqpsk_coherent_demod_cc_impl(int samples_per_symbol, const std::vector<gr_complex> &taps, int opt_point, int pll, float pll_loop_bw, float pll_damping, float freq_max, float freq_min, int dttl, float dttl_loop_bw, float dttl_damping, float max_rate_deviation, int asm_ignore)
-      : gr::block("oqpsk_coherent_demod_cc",
-              gr::io_signature::make(1, 1, sizeof(gr_complex)),
-              gr::io_signature::make(1, 1, sizeof(gr_complex))),
-      d_samples_per_symbol(samples_per_symbol), d_taps(taps), d_opt_point(opt_point), d_pll(pll), d_pll_loop_bw(pll_loop_bw), d_pll_damping(pll_damping), d_freq_max(freq_max), d_freq_min(freq_min), d_dttl(dttl), d_dttl_loop_bw(dttl_loop_bw), d_dttl_damping(dttl_damping), d_max_rate_deviation(max_rate_deviation), d_asm_ignore(asm_ignore), d_symbols_since_asm(0)
-    {
-		d_mix_out = (gr_complex *)malloc(sizeof(gr_complex)*taps.size());		
-		for(int i=0; i<taps.size(); i++)
-		{
-			d_mix_out[i] = 1.0f;
-		}
 
-		d_mf_out = (gr_complex *)malloc(sizeof(gr_complex)*(samples_per_symbol/2+1));
-		for(int i=0; i<samples_per_symbol/2+1; i++)
-		{
-			d_mf_out[i] = 1.0f;
-		}
-
-		float denom = 1.0f + 2.0f*pll_damping*pll_loop_bw + pll_loop_bw*pll_loop_bw;
-		d_alpha = (4*pll_damping*pll_loop_bw)/denom;
-		d_beta = (4*pll_loop_bw*pll_loop_bw)/denom;
-
-		set_tag_propagation_policy(TPP_DONT);
-
-		d_sample_in_symbol = 0;
-		d_freq = 0;
-		d_phase = 0;
+/*
+ * The private constructor
+ */
+oqpsk_coherent_demod_cc_impl::oqpsk_coherent_demod_cc_impl(
+    int samples_per_symbol,
+    const std::vector<gr_complex>& taps,
+    int opt_point,
+    int pll,
+    float pll_loop_bw,
+    float pll_damping,
+    float freq_max,
+    float freq_min,
+    int dttl,
+    float dttl_loop_bw,
+    float dttl_damping,
+    float max_rate_deviation,
+    int asm_ignore)
+    : gr::block("oqpsk_coherent_demod_cc",
+                gr::io_signature::make(
+                    1 /* min inputs */, 1 /* max inputs */, sizeof(input_type)),
+                gr::io_signature::make(
+                    1 /* min outputs */, 1 /*max outputs */, sizeof(output_type))),
+	d_samples_per_symbol(samples_per_symbol), d_taps(taps), d_opt_point(opt_point), d_pll(pll), d_pll_loop_bw(pll_loop_bw), d_pll_damping(pll_damping), d_freq_max(freq_max), d_freq_min(freq_min), d_dttl(dttl), d_dttl_loop_bw(dttl_loop_bw), d_dttl_damping(dttl_damping), d_max_rate_deviation(max_rate_deviation), d_asm_ignore(asm_ignore), d_symbols_since_asm(0)
+{
+	d_mix_out = (gr_complex *)malloc(sizeof(gr_complex)*taps.size());		
+	for(int i=0; i<taps.size(); i++)
+	{
+		d_mix_out[i] = 1.0f;
 	}
 
-    /*
-     * Our virtual destructor.
-     */
-    oqpsk_coherent_demod_cc_impl::~oqpsk_coherent_demod_cc_impl()
-    {
-    }
+	d_mf_out = (gr_complex *)malloc(sizeof(gr_complex)*(samples_per_symbol/2+1));
+	for(int i=0; i<samples_per_symbol/2+1; i++)
+	{
+		d_mf_out[i] = 1.0f;
+	}
 
-    void
-    oqpsk_coherent_demod_cc_impl::forecast (int noutput_items, gr_vector_int &ninput_items_required)
-    {
+	float denom = 1.0f + 2.0f*pll_damping*pll_loop_bw + pll_loop_bw*pll_loop_bw;
+	d_alpha = (4*pll_damping*pll_loop_bw)/denom;
+	d_beta = (4*pll_loop_bw*pll_loop_bw)/denom;
+
+	set_tag_propagation_policy(TPP_DONT);
+
+	d_sample_in_symbol = 0;
+	d_freq = 0;
+	d_phase = 0;
+}
+
+/*
+ * Our virtual destructor.
+ */
+oqpsk_coherent_demod_cc_impl::~oqpsk_coherent_demod_cc_impl() {
+	free(d_mix_out);
+	d_mix_out = nullptr; 
+	free(d_mf_out);
+	d_mf_out = nullptr; 
+}
+
+void oqpsk_coherent_demod_cc_impl::forecast(int noutput_items,
+                                            gr_vector_int& ninput_items_required)
+{
       /* <+forecast+> e.g. ninput_items_required[0] = noutput_items */
 		ninput_items_required[0] = d_samples_per_symbol * noutput_items;
-    }
+}
 
-    int
-    oqpsk_coherent_demod_cc_impl::general_work (int noutput_items,
-                       gr_vector_int &ninput_items,
-                       gr_vector_const_void_star &input_items,
-                       gr_vector_void_star &output_items)
-    {
-      const gr_complex *in = (const gr_complex *) input_items[0];
-      gr_complex *out = (gr_complex *) output_items[0];
-      int i_output = 0;
-      bool use_asm;
-
+int oqpsk_coherent_demod_cc_impl::general_work(int noutput_items,
+                                               gr_vector_int& ninput_items,
+                                               gr_vector_const_void_star& input_items,
+                                               gr_vector_void_star& output_items)
+{
+    auto in = static_cast<const input_type*>(input_items[0]);
+    auto out = static_cast<output_type*>(output_items[0]);
+	int i_output = 0;
+	bool use_asm;
+    // Do <+signal processing+>
       for(int i=0; i<ninput_items[0]; i++)
       {
 		std::vector<tag_t> tags;
@@ -258,15 +287,13 @@ namespace gr {
 
       }
 
-      // Do <+signal processing+>
-      // Tell runtime system how many input items we consumed on
-      // each input stream.
-      consume_each (ninput_items[0]);
+    // Tell runtime system how many input items we consumed on
+    // each input stream.
+    consume_each(ninput_items[0]);
 
-      // Tell runtime system how many output items we produced.
-      return i_output;
-    }
+    // Tell runtime system how many output items we produced.
+    return i_output;
+}
 
-  } /* namespace dslwp */
+} /* namespace dslwp */
 } /* namespace gr */
-

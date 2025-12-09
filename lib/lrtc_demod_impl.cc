@@ -1,74 +1,64 @@
 /* -*- c++ -*- */
 /*
- * Copyright 2024 gr-dslwp author.
+ * Copyright 2025 BG2BHC.
  *
- * This is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 3, or (at your option)
- * any later version.
- *
- * This software is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this software; see the file COPYING.  If not, write to
- * the Free Software Foundation, Inc., 51 Franklin Street,
- * Boston, MA 02110-1301, USA.
+ * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
-
-#include <gnuradio/io_signature.h>
 #include "lrtc_demod_impl.h"
-#include "stdio.h"
-#include "math.h"
+#include <gnuradio/io_signature.h>
+#include <stdio.h>
+#include <math.h>
+#include <complex>
+
+constexpr auto M_1Jf = std::complex<float>(0, 1);
 
 namespace gr {
-  namespace dslwp {
+namespace dslwp {
 
-    lrtc_demod::sptr
-    lrtc_demod::make(int mode, size_t fft_size, size_t n_avg)
-    {
-      return gnuradio::get_initial_sptr
-        (new lrtc_demod_impl(mode, fft_size, n_avg));
-    }
 
-    static int ios[] = { sizeof(float), sizeof(float), sizeof(float) };
-    static std::vector<int> iosig(ios, ios + sizeof(ios) / sizeof(int));
-    /*
-     * The private constructor
-     */
-    lrtc_demod_impl::lrtc_demod_impl(int mode, size_t fft_size, size_t n_avg)
-      : gr::sync_decimator("lrtc_demod",
-              gr::io_signature::makev(3, 3, iosig),
-              gr::io_signature::make(1, 1, sizeof(gr_complex)), fft_size), d_fft_size(fft_size), d_n_avg(n_avg), d_mode(mode)
-    {
+lrtc_demod::sptr lrtc_demod::make(int mode, size_t fft_size, size_t n_avg)
+{
+    return gnuradio::make_block_sptr<lrtc_demod_impl>(mode, fft_size, n_avg);
+}
+
+static int ios[] = { sizeof(float), sizeof(float), sizeof(float) };
+static std::vector<int> iosig(ios, ios + sizeof(ios) / sizeof(int));
+/*
+ * The private constructor
+ */
+lrtc_demod_impl::lrtc_demod_impl(int mode, size_t fft_size, size_t n_avg)
+    : gr::sync_decimator("lrtc_demod",
+                         gr::io_signature::makev(
+                             3 /* min inputs */, 3 /* max inputs */, iosig),
+                         gr::io_signature::make(1 /* min outputs */,
+                                                1 /*max outputs */,
+                                                sizeof(gr_complex)),
+                         fft_size /*<+decimation+>*/),
+	d_fft_size(fft_size), d_n_avg(n_avg), d_mode(mode)
+{
       d_sample_in_symbol = 0;
       d_i_avg_buf = 0;
-    }
+}
 
-    /*
-     * Our virtual destructor.
-     */
-    lrtc_demod_impl::~lrtc_demod_impl()
-    {
-    }
+/*
+ * Our virtual destructor.
+ */
+lrtc_demod_impl::~lrtc_demod_impl() {}
 
-    int
-    lrtc_demod_impl::work(int noutput_items,
-        gr_vector_const_void_star &input_items,
-        gr_vector_void_star &output_items)
-    {
+int lrtc_demod_impl::work(int noutput_items,
+                          gr_vector_const_void_star& input_items,
+                          gr_vector_void_star& output_items)
+{
       const float *pwr = (const float *) input_items[0];
       const float *freq = (const float *) input_items[1];
       const float *snr = (const float *) input_items[2];
       gr_complex *out = (gr_complex *) output_items[0];
 
-      // Do <+signal processing+>
+    // Do <+signal processing+>
       int nout=0;
       for(int i=0; i<noutput_items*d_fft_size; i++)
       {
@@ -107,11 +97,11 @@ namespace gr {
             	
             	if(d_buf_freq_est[d_i_avg_buf][d_index_pwr_max]>=d_freq_est)
             	{
-            		out[nout] = sqrt(d_buf_pwr_est[d_i_avg_buf][d_index_pwr_max]/d_pwr_max*d_n_avg)+1j*d_freq_est;
+            		out[nout] = sqrt(d_buf_pwr_est[d_i_avg_buf][d_index_pwr_max]/d_pwr_max*d_n_avg)+M_1Jf*d_freq_est;
             	}
             	else
             	{
-            		out[nout] = -sqrt(d_buf_pwr_est[d_i_avg_buf][d_index_pwr_max]/d_pwr_max*d_n_avg)+1j*d_freq_est;
+            		out[nout] = -sqrt(d_buf_pwr_est[d_i_avg_buf][d_index_pwr_max]/d_pwr_max*d_n_avg)+M_1Jf*d_freq_est;
             	}
             	//out[nout] = d_buf_freq_est[d_i_avg_buf][d_index_pwr_max] + 1j * d_freq_est;
             	nout++;
@@ -125,8 +115,7 @@ namespace gr {
 
       // Tell runtime system how many output items we produced.
       return nout;
-    }
+}
 
-  } /* namespace dslwp */
+} /* namespace dslwp */
 } /* namespace gr */
-
