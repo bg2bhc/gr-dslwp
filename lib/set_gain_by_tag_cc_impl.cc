@@ -1,66 +1,53 @@
 /* -*- c++ -*- */
-/* 
- * Copyright 2018 <+YOU OR YOUR COMPANY+>.
- * 
- * This is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 3, or (at your option)
- * any later version.
- * 
- * This software is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this software; see the file COPYING.  If not, write to
- * the Free Software Foundation, Inc., 51 Franklin Street,
- * Boston, MA 02110-1301, USA.
+/*
+ * Copyright 2025 BG2BHC.
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
-
-#include <gnuradio/io_signature.h>
 #include "set_gain_by_tag_cc_impl.h"
+#include <gnuradio/io_signature.h>
 #include <stdio.h>
 
 namespace gr {
-  namespace dslwp {
+namespace dslwp {
 
-    set_gain_by_tag_cc::sptr
-    set_gain_by_tag_cc::make(float k, float gain)
-    {
-      return gnuradio::get_initial_sptr
-        (new set_gain_by_tag_cc_impl(k, gain));
-    }
+using input_type = gr_complex;
+using output_type = gr_complex;
+set_gain_by_tag_cc::sptr set_gain_by_tag_cc::make(float k, float gain)
+{
+    return gnuradio::make_block_sptr<set_gain_by_tag_cc_impl>(k, gain);
+}
 
-    /*
-     * The private constructor
-     */
-    set_gain_by_tag_cc_impl::set_gain_by_tag_cc_impl(float k, float gain)
-      : gr::sync_block("set_gain_by_tag_cc",
-              gr::io_signature::make(1, 1, sizeof(gr_complex)),
-              gr::io_signature::make(1, 1, sizeof(gr_complex))), d_k(k), d_gain(gain)
-    {}
 
-    /*
-     * Our virtual destructor.
-     */
-    set_gain_by_tag_cc_impl::~set_gain_by_tag_cc_impl()
-    {
-    }
+/*
+ * The private constructor
+ */
+set_gain_by_tag_cc_impl::set_gain_by_tag_cc_impl(float k, float gain)
+    : gr::sync_block("set_gain_by_tag_cc",
+                     gr::io_signature::make(
+                         1 /* min inputs */, 1 /* max inputs */, sizeof(input_type)),
+                     gr::io_signature::make(
+                         1 /* min outputs */, 1 /*max outputs */, sizeof(output_type))), d_k(k), d_gain(gain)
+{
+}
 
-    int
-    set_gain_by_tag_cc_impl::work(int noutput_items,
-        gr_vector_const_void_star &input_items,
-        gr_vector_void_star &output_items)
-    {
-      const gr_complex *in = (const gr_complex *) input_items[0];
-      gr_complex *out = (gr_complex *) output_items[0];
+/*
+ * Our virtual destructor.
+ */
+set_gain_by_tag_cc_impl::~set_gain_by_tag_cc_impl() {}
 
-      // Do <+signal processing+>
+int set_gain_by_tag_cc_impl::work(int noutput_items,
+                                  gr_vector_const_void_star& input_items,
+                                  gr_vector_void_star& output_items)
+{
+    auto in = static_cast<const input_type*>(input_items[0]);
+    auto out = static_cast<output_type*>(output_items[0]);
+
+    // Do <+signal processing+>
       for(int i=0; i<noutput_items; i++)
       {
 		std::vector<tag_t> tags;
@@ -83,10 +70,9 @@ namespace gr {
 		out[i] = in[i]*d_gain;
       }
 
-      // Tell runtime system how many output items we produced.
-      return noutput_items;
-    }
+    // Tell runtime system how many output items we produced.
+    return noutput_items;
+}
 
-  } /* namespace dslwp */
+} /* namespace dslwp */
 } /* namespace gr */
-

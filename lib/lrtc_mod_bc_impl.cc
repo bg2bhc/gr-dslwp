@@ -1,67 +1,55 @@
 /* -*- c++ -*- */
-/* 
- * Copyright 2018 <+YOU OR YOUR COMPANY+>.
- * 
- * This is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 3, or (at your option)
- * any later version.
- * 
- * This software is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this software; see the file COPYING.  If not, write to
- * the Free Software Foundation, Inc., 51 Franklin Street,
- * Boston, MA 02110-1301, USA.
+/*
+ * Copyright 2025 BG2BHC.
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
-
+#include "lrtc_mod_bc_impl.h"
 #include <gnuradio/io_signature.h>
 #include <gnuradio/expj.h>
-#include "lrtc_mod_bc_impl.h"
 
 namespace gr {
-  namespace dslwp {
+namespace dslwp {
 
-    lrtc_mod_bc::sptr
-    lrtc_mod_bc::make()
-    {
-      return gnuradio::get_initial_sptr
-        (new lrtc_mod_bc_impl());
-    }
+using input_type = char;
+using output_type = gr_complex;
+lrtc_mod_bc::sptr lrtc_mod_bc::make()
+{
+    return gnuradio::make_block_sptr<lrtc_mod_bc_impl>();
+}
 
-    /*
-     * The private constructor
-     */
-    lrtc_mod_bc_impl::lrtc_mod_bc_impl()
-      : gr::sync_interpolator("lrtc_mod_bc",
-              gr::io_signature::make(1, 1, sizeof(char)),
-              gr::io_signature::make(1, 1, sizeof(gr_complex)), 256)
-    {
+
+/*
+ * The private constructor
+ */
+lrtc_mod_bc_impl::lrtc_mod_bc_impl()
+    : gr::sync_interpolator(
+          "lrtc_mod_bc",
+          gr::io_signature::make(
+              1 /* min inputs */, 1 /* max inputs */, sizeof(input_type)),
+          gr::io_signature::make(
+              1 /* min outputs */, 1 /*max outputs */, sizeof(output_type)),
+          256 /*<+interpolation+>*/)
+{
       d_pacc = 0.0f;
       d_dp = 101.0f/256.0f*M_PI; //d_dp = 1.2394; f_dev = d_dp/2/pi*2000Hz = 394.53 Hz
-    }
+}
 
-    /*
-     * Our virtual destructor.
-     */
-    lrtc_mod_bc_impl::~lrtc_mod_bc_impl()
-    {
-    }
+/*
+ * Our virtual destructor.
+ */
+lrtc_mod_bc_impl::~lrtc_mod_bc_impl() {}
 
-    int
-    lrtc_mod_bc_impl::work(int noutput_items,
-        gr_vector_const_void_star &input_items,
-        gr_vector_void_star &output_items)
-    {
-      const char *in = (const char *) input_items[0];
-      gr_complex *out = (gr_complex *) output_items[0];
+int lrtc_mod_bc_impl::work(int noutput_items,
+                           gr_vector_const_void_star& input_items,
+                           gr_vector_void_star& output_items)
+{
+    auto in = static_cast<const input_type*>(input_items[0]);
+    auto out = static_cast<output_type*>(output_items[0]);
       int i, j;
 
       static gr_complex asm32[] = 
@@ -131,8 +119,7 @@ namespace gr {
 	gr_complex(-0.320157, 0.947364), gr_complex(-0.354911, 0.9349), gr_complex(-0.449039, 0.893512), gr_complex(-0.577156, 0.816634),
 	gr_complex(-0.710112, 0.704089), gr_complex(-0.825057, 0.565049), gr_complex(-0.909448, 0.415819), gr_complex(-0.961187, 0.275898)
       };
-
-      // Do <+signal processing+>
+    // Do <+signal processing+>
       for(i=0; i<noutput_items/256; i++)
       {
         float dp = in[i]?d_dp:-d_dp;
@@ -152,11 +139,9 @@ namespace gr {
           }
         }
       }    
+    // Tell runtime system how many output items we produced.
+    return noutput_items;
+}
 
-      // Tell runtime system how many output items we produced.
-      return noutput_items;
-    }
-
-  } /* namespace dslwp */
+} /* namespace dslwp */
 } /* namespace gr */
-

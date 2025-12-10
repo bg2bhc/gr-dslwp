@@ -2,9 +2,10 @@ id: dslwp_station_info_pdu
 label: Station Info PDU
 category: '[DSLWP]'
 templates:
-  imports: import dslwp
-  make: dslwp.station_info_pdu(${nickname}, ${lat}, ${lon}, ${alt}, ${satellite}, ${physical_channel},
-    ${format})
+  imports: from gnuradio import dslwp
+  make: dslwp.station_info_pdu(${nickname}, ${lat}, ${lon}, ${alt}, ${satellite}, ${physical_channel}, ${format})
+
+
 parameters:
 - id: nickname
   label: Nick Name

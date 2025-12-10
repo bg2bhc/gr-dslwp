@@ -1,30 +1,15 @@
 /* -*- c++ -*- */
-/* 
- * Copyright 2018 <+YOU OR YOUR COMPANY+>.
- * 
- * This is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 3, or (at your option)
- * any later version.
- * 
- * This software is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this software; see the file COPYING.  If not, write to
- * the Free Software Foundation, Inc., 51 Franklin Street,
- * Boston, MA 02110-1301, USA.
+/*
+ * Copyright 2025 BG2BHC.
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
-
-#include <gnuradio/io_signature.h>
 #include "ccsds_turbo_encode_impl.h"
-
+#include <gnuradio/io_signature.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -35,31 +20,37 @@
 #define RATE_1_6 6
 
 namespace gr {
-  namespace dslwp {
+namespace dslwp {
 
-    ccsds_turbo_encode::sptr
-    ccsds_turbo_encode::make(int base, int octets, int code_type, bool pass_other_length)
-    {
-      return gnuradio::get_initial_sptr
-        (new ccsds_turbo_encode_impl(base, octets, code_type, pass_other_length));
-    }
+ccsds_turbo_encode::sptr
+ccsds_turbo_encode::make(int base, int octets, int code_type, bool pass_other_length)
+{
+    return gnuradio::make_block_sptr<ccsds_turbo_encode_impl>(
+        base, octets, code_type, pass_other_length);
+}
 
-    /*
-     * The private constructor
-     */
-    ccsds_turbo_encode_impl::ccsds_turbo_encode_impl(int base, int octets, int code_type, bool pass_other_length)
-      : gr::sync_block("ccsds_turbo_encode",
-              gr::io_signature::make(0, 0, sizeof(int)),
-              gr::io_signature::make(0, 0, sizeof(int))),
-              d_base(base), d_octets(octets), d_code_type(code_type), d_pass_other_length(pass_other_length)
-    {
-		d_in_port = pmt::mp("in");
+
+/*
+ * The private constructor
+ */
+ccsds_turbo_encode_impl::ccsds_turbo_encode_impl(int base,
+                                                 int octets,
+                                                 int code_type,
+                                                 bool pass_other_length)
+    : gr::sync_block("ccsds_turbo_encode",
+                     gr::io_signature::make(
+                         0 /* min inputs */, 0 /* max inputs */, 0),
+                     gr::io_signature::make(
+                         0 /* min outputs */, 0 /*max outputs */, 0)),
+						 d_base(base), d_octets(octets), d_code_type(code_type), d_pass_other_length(pass_other_length)
+{
+d_in_port = pmt::mp("in");
       	message_port_register_in(d_in_port);
 
 		d_out_port = pmt::mp("out");	      
       	message_port_register_out(d_out_port);
 
-		set_msg_handler(d_in_port, boost::bind(&ccsds_turbo_encode_impl::pmt_in_callback, this ,_1) );
+		set_msg_handler(d_in_port, [this](pmt::pmt_t msg) { this->pmt_in_callback(msg); } );
 
 		d_info_length = base * 8 * octets;
 
@@ -171,14 +162,12 @@ namespace gr {
 		fprintf(stdout, "rate = %f\n", d_rate);
 		fprintf(stdout, "info_length = %d\n", d_info_length);
 		fprintf(stdout, "encoded_length = %d\n", d_encoded_length);
-    }
+}
 
-    /*
-     * Our virtual destructor.
-     */
-    ccsds_turbo_encode_impl::~ccsds_turbo_encode_impl()
-    {
-    }
+/*
+ * Our virtual destructor.
+ */
+ccsds_turbo_encode_impl::~ccsds_turbo_encode_impl() {}
 
 	// puncturing function: return 1 if bit k has to be punctured
 	int ccsds_turbo_encode_impl::puncturing(int k){
@@ -262,16 +251,15 @@ namespace gr {
 			}
 		}
     }
+int ccsds_turbo_encode_impl::work(int noutput_items,
+                                  gr_vector_const_void_star& input_items,
+                                  gr_vector_void_star& output_items)
+{
+    // Do <+signal processing+>
 
-    int
-    ccsds_turbo_encode_impl::work(int noutput_items,
-        gr_vector_const_void_star &input_items,
-        gr_vector_void_star &output_items)
-    {
-      // Tell runtime system how many output items we produced.
-      return noutput_items;
-    }
+    // Tell runtime system how many output items we produced.
+    return noutput_items;
+}
 
-  } /* namespace dslwp */
+} /* namespace dslwp */
 } /* namespace gr */
-

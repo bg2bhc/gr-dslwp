@@ -1,29 +1,15 @@
 /* -*- c++ -*- */
 /*
- * Copyright 2024 gr-dslwp author.
+ * Copyright 2025 BG2BHC.
  *
- * This is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 3, or (at your option)
- * any later version.
- *
- * This software is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this software; see the file COPYING.  If not, write to
- * the Free Software Foundation, Inc., 51 Franklin Street,
- * Boston, MA 02110-1301, USA.
+ * SPDX-License-Identifier: GPL-3.0-or-later
  */
-
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
 
-#include <gnuradio/io_signature.h>
 #include "attach_preamble_and_tailer_impl.h"
+#include <gnuradio/io_signature.h>
 
 static unsigned char sequence[255] =
 {
@@ -62,42 +48,42 @@ static unsigned char sequence[255] =
 };
 
 namespace gr {
-  namespace dslwp {
+namespace dslwp {
 
-    attach_preamble_and_tailer::sptr
-    attach_preamble_and_tailer::make(int len_preamble, int len_tailer, unsigned char padding_type)
-    {
-      return gnuradio::get_initial_sptr
-        (new attach_preamble_and_tailer_impl(len_preamble, len_tailer, padding_type));
-    }
+attach_preamble_and_tailer::sptr attach_preamble_and_tailer::make(
+    int len_preamble, int len_tailer, unsigned char padding_type)
+{
+    return gnuradio::make_block_sptr<attach_preamble_and_tailer_impl>(
+        len_preamble, len_tailer, padding_type);
+}
 
 
-    /*
-     * The private constructor
-     */
-    attach_preamble_and_tailer_impl::attach_preamble_and_tailer_impl(int len_preamble, int len_tailer, unsigned char padding_type)
-      : gr::block("attach_preamble_and_tailer",
-              gr::io_signature::make(0, 0, sizeof(char)),
-              gr::io_signature::make(0, 0, sizeof(char))),
-		d_len_preamble(len_preamble), d_len_tailer(len_tailer), d_padding_type(padding_type)
-    {
+/*
+ * The private constructor
+ */
+attach_preamble_and_tailer_impl::attach_preamble_and_tailer_impl(
+    int len_preamble, int len_tailer, unsigned char padding_type)
+    : gr::block("attach_preamble_and_tailer",
+                gr::io_signature::make(
+                    0 /* min inputs */, 0 /* max inputs */, sizeof(char)),
+                gr::io_signature::make(
+                    0 /* min outputs */, 0 /*max outputs */, sizeof(char))),
+	  d_len_preamble(len_preamble), d_len_tailer(len_tailer), d_padding_type(padding_type)
+{
       	d_in_port = pmt::mp("in");
       	message_port_register_in(d_in_port);
 
       	d_out_port = pmt::mp("out");	      
       	message_port_register_out(d_out_port);
 
-	set_msg_handler(d_in_port, boost::bind(&attach_preamble_and_tailer_impl::pmt_in_callback, this ,_1) );
-    }
+	set_msg_handler(d_in_port, [this](pmt::pmt_t msg) { this->pmt_in_callback(msg); } );
+}
 
-    /*
-     * Our virtual destructor.
-     */
-    attach_preamble_and_tailer_impl::~attach_preamble_and_tailer_impl()
-    {
-    }
-
-    void attach_preamble_and_tailer_impl::pmt_in_callback(pmt::pmt_t msg)
+/*
+ * Our virtual destructor.
+ */
+attach_preamble_and_tailer_impl::~attach_preamble_and_tailer_impl() {}
+void attach_preamble_and_tailer_impl::pmt_in_callback(pmt::pmt_t msg)
     {
 	pmt::pmt_t meta(pmt::car(msg));
 	pmt::pmt_t bytes(pmt::cdr(msg));
@@ -178,23 +164,26 @@ namespace gr {
 
 	attach_preamble_and_tailer_impl::message_port_pub(attach_preamble_and_tailer_impl::d_out_port, pmt::cons(pmt::make_dict(), pmt::init_u8vector(d_len_preamble+msg_len+d_len_tailer, (const uint8_t *)bytes_out))); 
     }
-    
-    void
-    attach_preamble_and_tailer_impl::forecast (int noutput_items, gr_vector_int &ninput_items_required)
-    {
-      /* <+forecast+> e.g. ninput_items_required[0] = noutput_items */
-    }
 
-    int
-    attach_preamble_and_tailer_impl::general_work (int noutput_items,
-                       gr_vector_int &ninput_items,
-                       gr_vector_const_void_star &input_items,
-                       gr_vector_void_star &output_items)
-    {
-      // Tell runtime system how many output items we produced.
-      return noutput_items;
-    }
+void attach_preamble_and_tailer_impl::forecast(int noutput_items,
+                                               gr_vector_int& ninput_items_required)
+{
+    /* <+forecast+> e.g. ninput_items_required[0] = noutput_items */
+}
 
-  } /* namespace dslwp */
+int attach_preamble_and_tailer_impl::general_work(int noutput_items,
+                                                  gr_vector_int& ninput_items,
+                                                  gr_vector_const_void_star& input_items,
+                                                  gr_vector_void_star& output_items)
+{
+    // Do <+signal processing+>
+    // Tell runtime system how many input items we consumed on
+    // each input stream.
+    consume_each(noutput_items);
+
+    // Tell runtime system how many output items we produced.
+    return noutput_items;
+}
+
+} /* namespace dslwp */
 } /* namespace gr */
-

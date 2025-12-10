@@ -1,52 +1,59 @@
 /* -*- c++ -*- */
-/* 
- * Copyright 2018 <+YOU OR YOUR COMPANY+>.
- * 
- * This is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 3, or (at your option)
- * any later version.
- * 
- * This software is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this software; see the file COPYING.  If not, write to
- * the Free Software Foundation, Inc., 51 Franklin Street,
- * Boston, MA 02110-1301, USA.
+/*
+ * Copyright 2025 BG2BHC.
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
  */
+
 
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
-
-#include <gnuradio/io_signature.h>
 #include "program_tracking_cc_impl.h"
-
+#include <gnuradio/io_signature.h>
 #include <math.h>
-
 namespace gr {
-  namespace dslwp {
+namespace dslwp {
 
-    program_tracking_cc::sptr
-    program_tracking_cc::make(uint8_t enable, uint32_t timestamp, const std::string& path, float lon, float lat, float alt, float fc, uint32_t samp_rate, bool txrx, bool verbose)
-    {
-      return gnuradio::get_initial_sptr
-        (new program_tracking_cc_impl(enable, timestamp, path, lon, lat, alt, fc, samp_rate, txrx, verbose));
-    }
+using input_type = gr_complex;
+using output_type = gr_complex;
+program_tracking_cc::sptr program_tracking_cc::make(uint8_t enable,
+                                                    uint32_t timestamp,
+                                                    const std::string& path,
+                                                    float lon,
+                                                    float lat,
+                                                    float alt,
+                                                    float fc,
+                                                    uint32_t samp_rate,
+                                                    bool txrx,
+                                                    bool verbose)
+{
+    return gnuradio::make_block_sptr<program_tracking_cc_impl>(
+        enable, timestamp, path, lon, lat, alt, fc, samp_rate, txrx, verbose);
+}
 
-    /*
-     * The private constructor
-     */
-    program_tracking_cc_impl::program_tracking_cc_impl(uint8_t enable, uint32_t timestamp, const std::string& path, float lon, float lat, float alt, float fc, uint32_t samp_rate, bool txrx, bool verbose)
-      : gr::sync_block("program_tracking_cc",
-              gr::io_signature::make(1, 1, sizeof(gr_complex)),
-              gr::io_signature::make(1, 1, sizeof(gr_complex))),
-							d_enable(enable), d_fc(fc), d_samp_rate(samp_rate), d_txrx(txrx), d_verbose(verbose)
-    {
-			if(d_enable)
+
+/*
+ * The private constructor
+ */
+program_tracking_cc_impl::program_tracking_cc_impl(uint8_t enable,
+                                                   uint32_t timestamp,
+                                                   const std::string& path,
+                                                   float lon,
+                                                   float lat,
+                                                   float alt,
+                                                   float fc,
+                                                   uint32_t samp_rate,
+                                                   bool txrx,
+                                                   bool verbose)
+    : gr::sync_block("program_tracking_cc",
+                     gr::io_signature::make(
+                         1 /* min inputs */, 1 /* max inputs */, sizeof(input_type)),
+                     gr::io_signature::make(
+                         1 /* min outputs */, 1 /*max outputs */, sizeof(output_type))),
+	d_enable(enable), d_fc(fc), d_samp_rate(samp_rate), d_txrx(txrx), d_verbose(verbose)	
+{
+if(d_enable)
 			{
 				d_fp = fopen((const char *)(path.data()), "r");
 
@@ -154,15 +161,14 @@ namespace gr {
 					}
 				}
 			}
-		}
+}
 
-    /*
-     * Our virtual destructor.
-     */
-    program_tracking_cc_impl::~program_tracking_cc_impl()
-    {
-			fclose(d_fp);
-    }
+/*
+ * Our virtual destructor.
+ */
+program_tracking_cc_impl::~program_tracking_cc_impl() {
+	fclose(d_fp);
+}
 
 		void program_tracking_cc_impl::lla2ecef(double lat, double lon, double alt, double *rx, double *ry, double *rz)
 		{
@@ -206,21 +212,20 @@ namespace gr {
 				*az = 2*M_PI - *az;
 			}
 		}
+int program_tracking_cc_impl::work(int noutput_items,
+                                   gr_vector_const_void_star& input_items,
+                                   gr_vector_void_star& output_items)
+{
+    auto in = static_cast<const input_type*>(input_items[0]);
+    auto out = static_cast<output_type*>(output_items[0]);
+	int i;
+	static float k_real = 1, k_imag = 0;
+	static double  current_phase = 0;
+	static uint32_t sample_in_second = 0;
 
-    int
-    program_tracking_cc_impl::work(int noutput_items,
-        gr_vector_const_void_star &input_items,
-        gr_vector_void_star &output_items)
-    {
-      const gr_complex *in = (const gr_complex *) input_items[0];
-      gr_complex *out = (gr_complex *) output_items[0];
+    // Do <+signal processing+>
 
-			int i;
-			static float k_real = 1, k_imag = 0;
-			static double  current_phase = 0;
-			static uint32_t sample_in_second = 0;
-
-			for(i=0; i<noutput_items; i++)
+	for(i=0; i<noutput_items; i++)
 			{
 				if(d_enable)
 				{
@@ -368,12 +373,9 @@ namespace gr {
 
 				out[i] = gr_complex(k_real, k_imag) * in[i];
 			}
-			
+    // Tell runtime system how many output items we produced.
+    return noutput_items;
+}
 
-      // Tell runtime system how many output items we produced.
-      return noutput_items;
-    }
-
-  } /* namespace dslwp */
+} /* namespace dslwp */
 } /* namespace gr */
-

@@ -1,75 +1,57 @@
 /* -*- c++ -*- */
-/* 
- * Copyright 2018 <+YOU OR YOUR COMPANY+>.
- * 
- * This is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 3, or (at your option)
- * any later version.
- * 
- * This software is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this software; see the file COPYING.  If not, write to
- * the Free Software Foundation, Inc., 51 Franklin Street,
- * Boston, MA 02110-1301, USA.
+/*
+ * Copyright 2025 BG2BHC.
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
-
-#include <gnuradio/io_signature.h>
 #include "frame_spliter_c_impl.h"
+#include <gnuradio/io_signature.h>
 #include <stdio.h>
-
 #include <cmath>
-
 namespace gr {
-  namespace dslwp {
+namespace dslwp {
 
-    frame_spliter_c::sptr
-    frame_spliter_c::make(const std::string &key, int frame_length)
-    {
-      return gnuradio::get_initial_sptr
-        (new frame_spliter_c_impl(key, frame_length));
-    }
+using input_type = gr_complex;
+frame_spliter_c::sptr frame_spliter_c::make(const std::string& key, int frame_length)
+{
+    return gnuradio::make_block_sptr<frame_spliter_c_impl>(key, frame_length);
+}
 
-    /*
-     * The private constructor
-     */
-    frame_spliter_c_impl::frame_spliter_c_impl(const std::string &key, int frame_length)
-      : gr::sync_block("frame_spliter_c",
-              gr::io_signature::make(1, 1, sizeof(gr_complex)),
-              gr::io_signature::make(0, 0, 0)),
-              d_frame_length(frame_length)
-    {
+
+/*
+ * The private constructor
+ */
+frame_spliter_c_impl::frame_spliter_c_impl(const std::string& key, int frame_length)
+    : gr::sync_block("frame_spliter_c",
+                     gr::io_signature::make(
+                         1 /* min inputs */, 1 /* max inputs */, sizeof(input_type)),
+                     gr::io_signature::make(
+                         0 /* min outputs */, 0 /*max outputs */, 0)),
+	d_frame_length(frame_length)
+{
 		d_out_port = pmt::mp("out");
 		d_key = pmt::mp(key);
 		message_port_register_out(d_out_port);
 		d_bits_in = -1;
 		d_payload = (float *)malloc(sizeof(float)*frame_length);
 		d_eb_n0_est = NAN;
-    }
+}
 
-    /*
-     * Our virtual destructor.
-     */
-    frame_spliter_c_impl::~frame_spliter_c_impl()
-    {
-    }
+/*
+ * Our virtual destructor.
+ */
+frame_spliter_c_impl::~frame_spliter_c_impl() {}
 
-    int
-    frame_spliter_c_impl::work(int noutput_items,
-        gr_vector_const_void_star &input_items,
-        gr_vector_void_star &output_items)
-    {
-      const gr_complex *in = (const gr_complex *) input_items[0];
-
-      // Do <+signal processing+>
+int frame_spliter_c_impl::work(int noutput_items,
+                               gr_vector_const_void_star& input_items,
+                               gr_vector_void_star& output_items)
+{
+    auto in = static_cast<const input_type*>(input_items[0]);
+    // Do <+signal processing+>
       for(int i=0; i<noutput_items; i++)
       {
 		std::vector<tag_t> tags;
@@ -128,11 +110,9 @@ namespace gr {
 		}
 
       }
+    // Tell runtime system how many output items we produced.
+    return noutput_items;
+}
 
-      // Tell runtime system how many output items we produced.
-      return noutput_items;
-    }
-
-  } /* namespace dslwp */
+} /* namespace dslwp */
 } /* namespace gr */
-

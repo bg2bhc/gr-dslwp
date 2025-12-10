@@ -2,6 +2,11 @@ id: dslwp_vector_padding_cc
 label: Vector Padding CC
 category: '[DSLWP]'
 
+templates:
+  imports: from gnuradio import dslwp
+  make: dslwp.vector_padding_cc(${padding}, ${position}, ${vlen_in}, ${vlen_out})
+
+
 parameters:
 -   id: padding
     label: Padding
@@ -33,8 +38,6 @@ outputs:
     dtype: complex
     vlen: ${ vlen_out }
 
-templates:
-    imports: import dslwp
-    make: dslwp.vector_padding_cc(${padding}, ${position}, ${vlen_in}, ${vlen_out})
-
+#  'file_format' specifies the version of the GRC yml format used in the file
+#  and should usually not be changed.
 file_format: 1

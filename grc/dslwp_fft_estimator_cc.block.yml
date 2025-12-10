@@ -2,6 +2,10 @@ id: dslwp_fft_estimator_cc
 label: FFT Estimator CC
 category: '[DSLWP]'
 
+templates:
+  imports: from gnuradio import dslwp
+  make: dslwp.fft_estimator_cc(${fft_size}, ${threshold}, ${tap_len})
+
 parameters:
 -   id: fft_size
     label: FFT Size
@@ -24,8 +28,7 @@ outputs:
 -   domain: stream
     dtype: complex
 
-templates:
-    imports: import dslwp
-    make: dslwp.fft_estimator_cc(${fft_size}, ${threshold}, ${tap_len})
 
+#  'file_format' specifies the version of the GRC yml format used in the file
+#  and should usually not be changed.
 file_format: 1

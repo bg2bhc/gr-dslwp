@@ -1,51 +1,48 @@
 /* -*- c++ -*- */
 /*
- * Copyright 2024 gr-dslwp author.
+ * Copyright 2025 BG2BHC.
  *
- * This is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 3, or (at your option)
- * any later version.
- *
- * This software is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this software; see the file COPYING.  If not, write to
- * the Free Software Foundation, Inc., 51 Franklin Street,
- * Boston, MA 02110-1301, USA.
+ * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
-
-#include <gnuradio/io_signature.h>
 #include "fec_decode_b_impl.h"
+#include <gnuradio/io_signature.h>
 
 namespace gr {
-  namespace dslwp {
+namespace dslwp {
 
-    fec_decode_b::sptr
-    fec_decode_b::make(int frame_len, uint8_t using_randomizer, bool using_m, bool using_convolutional_code, bool pass_all)
-    {
-      return gnuradio::get_initial_sptr
-        (new fec_decode_b_impl(frame_len, using_randomizer, using_m, using_convolutional_code, pass_all));
-    }
+using input_type = unsigned char;
+
+fec_decode_b::sptr fec_decode_b::make(int frame_len,
+                                      uint8_t using_randomizer,
+                                      bool using_m,
+                                      bool using_convolutional_code,
+                                      bool pass_all)
+{
+    return gnuradio::make_block_sptr<fec_decode_b_impl>(
+        frame_len, using_randomizer, using_m, using_convolutional_code, pass_all);
+}
 
 
-    /*
-     * The private constructor
-     */
-    fec_decode_b_impl::fec_decode_b_impl(int frame_len, uint8_t using_randomizer, bool using_m, bool using_convolutional_code, bool pass_all)
-      : gr::sync_block("fec_decode_b",
-              gr::io_signature::make(1, 1, sizeof(char)),
-              gr::io_signature::make(0, 0, 0)), d_pass_all(pass_all)
-    {
+/*
+ * The private constructor
+ */
+fec_decode_b_impl::fec_decode_b_impl(int frame_len,
+                                     uint8_t using_randomizer,
+                                     bool using_m,
+                                     bool using_convolutional_code,
+                                     bool pass_all)
+    : gr::sync_block("fec_decode_b",
+                     gr::io_signature::make(
+                         1 /* min inputs */, 1 /* max inputs */, sizeof(input_type)),
+                     gr::io_signature::make(
+                         0 /* min outputs */, 0 /*max outputs */, 0)), d_pass_all(pass_all)
+{
 	d_out_port = pmt::mp("out");
-      	message_port_register_out(d_out_port);
+    message_port_register_out(d_out_port);
 
 	set_output_multiple(16);
 
@@ -54,17 +51,14 @@ namespace gr {
 	cc.cfg_using_m = using_m;
 	cc.cfg_using_convolutional_code = using_convolutional_code;
 	cc.cfg_using_randomizer = using_randomizer;
-    }
+}
 
-    /*
-     * Our virtual destructor.
-     */
-    fec_decode_b_impl::~fec_decode_b_impl()
-    {
-    }
-    
-    void fec_decode_b_impl::callback(unsigned char *buf, unsigned short len, int16_t byte_corr, void *obj_ptr)
-    {
+/*
+ * Our virtual destructor.
+ */
+fec_decode_b_impl::~fec_decode_b_impl() {}
+void fec_decode_b_impl::callback(unsigned char *buf, unsigned short len, int16_t byte_corr, void *obj_ptr)
+{
 	static time_t time_curr;
 	static struct tm *tblock_curr;
 	fec_decode_b_impl *obj_ptr_loc = (fec_decode_b_impl *)obj_ptr;
@@ -78,28 +72,26 @@ namespace gr {
 	{
 		obj_ptr_loc->message_port_pub(obj_ptr_loc->d_out_port, pmt::cons(pmt::make_dict(), pmt::init_u8vector(len, buf)));
 	}
-    }
+}
 
-    void fec_decode_b_impl::callback2(unsigned char *buf, unsigned short len, int16_t byte_corr, void *obj_ptr)
-    {       
+void fec_decode_b_impl::callback2(unsigned char *buf, unsigned short len, int16_t byte_corr, void *obj_ptr)
+{       
 	fprintf(stdout, "**** ASM Found! ****\n");
-    }
+}
+int fec_decode_b_impl::work(int noutput_items,
+                            gr_vector_const_void_star& input_items,
+                            gr_vector_void_star& output_items)
+{
+    auto in = static_cast<const input_type*>(input_items[0]);
     
-    int
-    fec_decode_b_impl::work(int noutput_items,
-        gr_vector_const_void_star &input_items,
-        gr_vector_void_star &output_items)
-    {
-        unsigned char *in = (unsigned char *) input_items[0];
 
-        // Do <+signal processing+>
+    // Do <+signal processing+>
 	ccsds_rx_proc(&cc, in, noutput_items);
 	ccsds_pull(&cc);
 
-        // Tell runtime system how many output items we produced.
-        return noutput_items;
-    }
+    // Tell runtime system how many output items we produced.
+    return noutput_items;
+}
 
-  } /* namespace dslwp */
+} /* namespace dslwp */
 } /* namespace gr */
-

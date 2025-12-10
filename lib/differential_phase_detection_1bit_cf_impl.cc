@@ -1,53 +1,45 @@
 /* -*- c++ -*- */
-/* 
- * Copyright 2018 <+YOU OR YOUR COMPANY+>.
- * 
- * This is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 3, or (at your option)
- * any later version.
- * 
- * This software is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this software; see the file COPYING.  If not, write to
- * the Free Software Foundation, Inc., 51 Franklin Street,
- * Boston, MA 02110-1301, USA.
+/*
+ * Copyright 2025 BG2BHC.
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
-
-#include <gnuradio/io_signature.h>
-#include <gnuradio/expj.h>
 #include "differential_phase_detection_1bit_cf_impl.h"
+#include <gnuradio/expj.h>
+#include <gnuradio/io_signature.h>
 #include <math.h>
 #include <stdio.h>
 #include <time.h>
 
 namespace gr {
-  namespace dslwp {
+namespace dslwp {
 
-    differential_phase_detection_1bit_cf::sptr
-    differential_phase_detection_1bit_cf::make(int samples_per_symbol, const std::vector<gr_complex> &taps, int opt_point, int delay)
-    {
-      return gnuradio::get_initial_sptr
-        (new differential_phase_detection_1bit_cf_impl(samples_per_symbol, taps, opt_point, delay));
-    }
+using input_type = gr_complex;
+using output_type = float;
+differential_phase_detection_1bit_cf::sptr differential_phase_detection_1bit_cf::make(
+    int samples_per_symbol, const std::vector<gr_complex>& taps, int opt_point, int delay)
+{
+    return gnuradio::make_block_sptr<differential_phase_detection_1bit_cf_impl>(
+        samples_per_symbol, taps, opt_point, delay);
+}
 
-    /*
-     * The private constructor
-     */
-    differential_phase_detection_1bit_cf_impl::differential_phase_detection_1bit_cf_impl(int samples_per_symbol, const std::vector<gr_complex> &taps, int opt_point, int delay)
-      : gr::block("differential_phase_detection_1bit_cf",
-              gr::io_signature::make(1, 1, sizeof(gr_complex)),
-              gr::io_signature::make(1, 1, sizeof(float))),
-              d_samples_per_symbol(samples_per_symbol), d_taps(taps), d_opt_point(opt_point), d_delay(delay)
-    {
+
+/*
+ * The private constructor
+ */
+differential_phase_detection_1bit_cf_impl::differential_phase_detection_1bit_cf_impl(
+    int samples_per_symbol, const std::vector<gr_complex>& taps, int opt_point, int delay)
+    : gr::block("differential_phase_detection_1bit_cf",
+                gr::io_signature::make(
+                    1 /* min inputs */, 1 /* max inputs */, sizeof(input_type)),
+                gr::io_signature::make(
+                    1 /* min outputs */, 1 /*max outputs */, sizeof(output_type))),
+	d_samples_per_symbol(samples_per_symbol), d_taps(taps), d_opt_point(opt_point), d_delay(delay)
+{
 	d_mix_out = (gr_complex *)malloc(sizeof(gr_complex)*taps.size());		
 	for(int i=0; i<taps.size(); i++)
 	{
@@ -63,30 +55,28 @@ namespace gr {
 	set_tag_propagation_policy(TPP_DONT);
 
 	d_sample_in_symbol = 0;
-    }
+}
 
-    /*
-     * Our virtual destructor.
-     */
-    differential_phase_detection_1bit_cf_impl::~differential_phase_detection_1bit_cf_impl()
-    {
-    }
+/*
+ * Our virtual destructor.
+ */
+differential_phase_detection_1bit_cf_impl::~differential_phase_detection_1bit_cf_impl() {}
 
-    void
-    differential_phase_detection_1bit_cf_impl::forecast (int noutput_items, gr_vector_int &ninput_items_required)
-    {
-      /* <+forecast+> e.g. ninput_items_required[0] = noutput_items */
+void differential_phase_detection_1bit_cf_impl::forecast(
+    int noutput_items, gr_vector_int& ninput_items_required)
+{
+    /* <+forecast+> e.g. ninput_items_required[0] = noutput_items */
 	ninput_items_required[0] = d_samples_per_symbol * noutput_items;
-    }
+}
 
-    int
-    differential_phase_detection_1bit_cf_impl::general_work (int noutput_items,
-                       gr_vector_int &ninput_items,
-                       gr_vector_const_void_star &input_items,
-                       gr_vector_void_star &output_items)
-    {
-      const gr_complex *in = (const gr_complex *) input_items[0];
-      float *out = (float *) output_items[0];
+int differential_phase_detection_1bit_cf_impl::general_work(
+    int noutput_items,
+    gr_vector_int& ninput_items,
+    gr_vector_const_void_star& input_items,
+    gr_vector_void_star& output_items)
+{
+    auto in = static_cast<const input_type*>(input_items[0]);
+    auto out = static_cast<output_type*>(output_items[0]);
       int i_output = 0;
 
       for(int i=0; i<ninput_items[0]; i++)
@@ -192,16 +182,14 @@ namespace gr {
 			d_phase += 2.0f*M_PI;
 		}
 	}
+    // Do <+signal processing+>
+    // Tell runtime system how many input items we consumed on
+    // each input stream.
+    consume_each(ninput_items[0]);
 
-      // Do <+signal processing+>
-      // Tell runtime system how many input items we consumed on
-      // each input stream.
-      consume_each (ninput_items[0]);
+    // Tell runtime system how many output items we produced.
+    return i_output;
+}
 
-      // Tell runtime system how many output items we produced.
-      return i_output;
-    }
-
-  } /* namespace dslwp */
+} /* namespace dslwp */
 } /* namespace gr */
-

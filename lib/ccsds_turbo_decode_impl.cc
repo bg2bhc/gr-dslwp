@@ -1,30 +1,15 @@
 /* -*- c++ -*- */
-/* 
- * Copyright 2018 <+YOU OR YOUR COMPANY+>.
- * 
- * This is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 3, or (at your option)
- * any later version.
- * 
- * This software is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this software; see the file COPYING.  If not, write to
- * the Free Software Foundation, Inc., 51 Franklin Street,
- * Boston, MA 02110-1301, USA.
+/*
+ * Copyright 2025 BG2BHC.
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
-
-#include <gnuradio/io_signature.h>
 #include "ccsds_turbo_decode_impl.h"
-
+#include <gnuradio/io_signature.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -35,31 +20,43 @@
 #define RATE_1_6 6
 
 namespace gr {
-  namespace dslwp {
+namespace dslwp {
 
-    ccsds_turbo_decode::sptr
-    ccsds_turbo_decode::make(int base, int octets, int code_type, int iterations, float sigma, uint8_t update_sigma)
-    {
-      return gnuradio::get_initial_sptr
-        (new ccsds_turbo_decode_impl(base, octets, code_type, iterations, sigma, update_sigma));
-    }
+ccsds_turbo_decode::sptr ccsds_turbo_decode::make(int base,
+                                                  int octets,
+                                                  int code_type,
+                                                  int iterations,
+                                                  float sigma,
+                                                  uint8_t update_sigma)
+{
+    return gnuradio::make_block_sptr<ccsds_turbo_decode_impl>(
+        base, octets, code_type, iterations, sigma, update_sigma);
+}
 
-    /*
-     * The private constructor
-     */
-    ccsds_turbo_decode_impl::ccsds_turbo_decode_impl(int base, int octets, int code_type, int iterations, float sigma, uint8_t update_sigma)
-      : gr::sync_block("ccsds_turbo_decode",
-              gr::io_signature::make(0, 0, sizeof(int)),
-              gr::io_signature::make(0, 0, sizeof(int))),
-              d_base(base), d_octets(octets), d_code_type(code_type), d_iterations(iterations), d_sigma(sigma), d_update_sigma(update_sigma)
-    {
+
+/*
+ * The private constructor
+ */
+ccsds_turbo_decode_impl::ccsds_turbo_decode_impl(int base,
+                                                 int octets,
+                                                 int code_type,
+                                                 int iterations,
+                                                 float sigma,
+                                                 uint8_t update_sigma)
+    : gr::sync_block("ccsds_turbo_decode",
+                     gr::io_signature::make(
+                         0 /* min inputs */, 0 /* max inputs */, 0),
+                     gr::io_signature::make(
+                         0 /* min outputs */, 0 /*max outputs */, 0)),
+	d_base(base), d_octets(octets), d_code_type(code_type), d_iterations(iterations), d_sigma(sigma), d_update_sigma(update_sigma)
+{
 		d_in_port = pmt::mp("in");
       	message_port_register_in(d_in_port);
 
 		d_out_port = pmt::mp("out");	      
       	message_port_register_out(d_out_port);
 
-		set_msg_handler(d_in_port, boost::bind(&ccsds_turbo_decode_impl::pmt_in_callback, this ,_1) );
+		set_msg_handler(d_in_port, [this](pmt::pmt_t msg) { this->pmt_in_callback(msg); });
 
 		d_info_length = base * 8 * octets;
 
@@ -171,16 +168,14 @@ namespace gr {
 		fprintf(stdout, "rate = %f\n", d_rate);
 		fprintf(stdout, "info_length = %d\n", d_info_length);
 		fprintf(stdout, "encoded_length = %d\n", d_encoded_length);
-    }
+}
 
-    /*
-     * Our virtual destructor.
-     */
-    ccsds_turbo_decode_impl::~ccsds_turbo_decode_impl()
-    {
-    }
+/*
+ * Our virtual destructor.
+ */
+ccsds_turbo_decode_impl::~ccsds_turbo_decode_impl() {}
 
-	// puncturing function: return 1 if bit k has to be punctured
+// puncturing function: return 1 if bit k has to be punctured
 	int ccsds_turbo_decode_impl::puncturing(int k){
 
 		int bit_idx = k % 3;
@@ -271,16 +266,15 @@ namespace gr {
 			fprintf(stdout, "\n**** ERROR: Turbo decoder input length do not match!\n");
 		}
     }
+int ccsds_turbo_decode_impl::work(int noutput_items,
+                                  gr_vector_const_void_star& input_items,
+                                  gr_vector_void_star& output_items)
+{
+    // Do <+signal processing+>
 
-    int
-    ccsds_turbo_decode_impl::work(int noutput_items,
-        gr_vector_const_void_star &input_items,
-        gr_vector_void_star &output_items)
-    {
-      // Tell runtime system how many output items we produced.
-      return noutput_items;
-    }
+    // Tell runtime system how many output items we produced.
+    return noutput_items;
+}
 
-  } /* namespace dslwp */
+} /* namespace dslwp */
 } /* namespace gr */
-

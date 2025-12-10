@@ -1,75 +1,54 @@
 /* -*- c++ -*- */
-/* 
- * Copyright 2017 <+YOU OR YOUR COMPANY+>.
- * 
- * This is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 3, or (at your option)
- * any later version.
- * 
- * This software is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this software; see the file COPYING.  If not, write to
- * the Free Software Foundation, Inc., 51 Franklin Street,
- * Boston, MA 02110-1301, USA.
+/*
+ * Copyright 2025 BG2BHC.
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
-
-#include <gnuradio/io_signature.h>
 #include "tm_parser_impl.h"
-
+#include <gnuradio/io_signature.h>
 #include <stdio.h>
 #include <string.h>
-
 extern "C"
 {
     #include "telemetry/dslwp_hk.h"
     #include "telemetry/sdar_hk.h"
     #include "telemetry/dslwp_packet_header.h"
 }
-
 #define sw16(x) (uint16_t)( ( ( ((uint16_t)x) & ((uint16_t)0x00FFU) ) << 8 ) | ( ( ((uint16_t)x) & ((uint16_t)0xFF00U) ) >> 8 ) )
 #define sw32(x) (uint32_t)( ( ( ((uint32_t)x) & ((uint32_t)0x000000FFU) ) << 24 ) | ( ( ((uint32_t)x) & ((uint32_t)0x0000FF00U) ) << 8 ) | ( ( ((uint32_t)x) & ((uint32_t)0x00FF0000U) ) >> 8 ) | ( ( ((uint32_t)x) & ((uint32_t)0xFF000000U) ) >> 24 ) )
-
 namespace gr {
-  namespace dslwp {
+namespace dslwp {
 
-    tm_parser::sptr
-    tm_parser::make()
-    {
-      return gnuradio::get_initial_sptr
-        (new tm_parser_impl());
-    }
 
-    /*
-     * The private constructor
-     */
-    tm_parser_impl::tm_parser_impl()
-      : gr::block("tm_parser",
-              gr::io_signature::make(0, 0, 0),
-              gr::io_signature::make(0, 0, 0))
-    {
+tm_parser::sptr tm_parser::make() { return gnuradio::make_block_sptr<tm_parser_impl>(); }
+
+
+/*
+ * The private constructor
+ */
+tm_parser_impl::tm_parser_impl()
+    : gr::block("tm_parser",
+                gr::io_signature::make(
+                    0 /* min inputs */, 0 /* max inputs */, 0),
+                gr::io_signature::make(
+                    0 /* min outputs */, 0 /*max outputs */, 0))
+{
 	d_in_port = pmt::mp("in");
       	message_port_register_in(d_in_port);
-	set_msg_handler(d_in_port, boost::bind(&tm_parser_impl::pmt_in_callback, this ,_1) );
-    }
+	set_msg_handler(d_in_port, [this](pmt::pmt_t msg) { this->pmt_in_callback(msg); });
+}
 
-    /*
-     * Our virtual destructor.
-     */
-    tm_parser_impl::~tm_parser_impl()
-    {
-    }
+/*
+ * Our virtual destructor.
+ */
+tm_parser_impl::~tm_parser_impl() {}
 
-    void tm_parser_impl::pmt_in_callback(pmt::pmt_t msg)
-    {
+void tm_parser_impl::pmt_in_callback(pmt::pmt_t msg)
+{
 	pmt::pmt_t meta(pmt::car(msg));
 	pmt::pmt_t bytes(pmt::cdr(msg));
 
@@ -542,32 +521,25 @@ namespace gr {
 		  fprintf(stdout, "\n**** Packet Length Do Not Match!!!\n");
 		}
 	}
-    }
+}
+void tm_parser_impl::forecast(int noutput_items, gr_vector_int& ninput_items_required)
+{
+    /* <+forecast+> e.g. ninput_items_required[0] = noutput_items */
+}
 
-    void
-    tm_parser_impl::forecast (int noutput_items, gr_vector_int &ninput_items_required)
-    {
-      /* <+forecast+> e.g. ninput_items_required[0] = noutput_items */
-    }
+int tm_parser_impl::general_work(int noutput_items,
+                                 gr_vector_int& ninput_items,
+                                 gr_vector_const_void_star& input_items,
+                                 gr_vector_void_star& output_items)
+{
+    // Do <+signal processing+>
+    // Tell runtime system how many input items we consumed on
+    // each input stream.
+    consume_each(noutput_items);
 
-    int
-    tm_parser_impl::general_work (int noutput_items,
-                       gr_vector_int &ninput_items,
-                       gr_vector_const_void_star &input_items,
-                       gr_vector_void_star &output_items)
-    {
-      //const <+ITYPE+> *in = (const <+ITYPE+> *) input_items[0];
-      //<+OTYPE+> *out = (<+OTYPE+> *) output_items[0];
+    // Tell runtime system how many output items we produced.
+    return noutput_items;
+}
 
-      // Do <+signal processing+>
-      // Tell runtime system how many input items we consumed on
-      // each input stream.
-      consume_each (noutput_items);
-
-      // Tell runtime system how many output items we produced.
-      return noutput_items;
-    }
-
-  } /* namespace dslwp */
+} /* namespace dslwp */
 } /* namespace gr */
-
